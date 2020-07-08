@@ -2,8 +2,8 @@
 Changelog for package bacchus_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.0.1 (2020-07-08)
+------------------
 * renamed file
 * changed to cmp9767m base
 * removed outdated deps

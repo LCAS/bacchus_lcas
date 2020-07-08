@@ -8,26 +8,18 @@ project(bacchus_gazebo)
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
-  amcl
-  fake_localization
-  dynamic_reconfigure
-  gazebo_ros_control
-  gazebo_ros
-  map_server
-  actionlib
-  move_base
-  #razor_imu_9dof
-  robot_localization
-  robot_state_publisher
-  roscpp
+  nav_msgs
   rospy
+  sensor_msgs
   std_msgs
-  control_msgs
-  geometry_msgs
-  trajectory_msgs
-  tf
-  xacro
+  thorvald_twist_mux
+  velodyne_description
+  #velodyne_gazebo_plugins
+  kinect2_description
 )
+
+find_package (gazebo REQUIRED)
+
 
 if(CMAKE_HOST_UNIX)
   catkin_add_env_hooks(90-bacchus_gazebo SHELLS sh DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/env_hooks)
@@ -35,12 +27,9 @@ else()
   message(FATAL_ERROR "Only UNIX builds supported.")
 endif()
 
-
-
-
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
-find_package(gazebo REQUIRED)
+
 
 ## Uncomment this if the package has a setup.py. This macro ensures
 ## modules and global scripts declared therein get installed
@@ -57,10 +46,10 @@ find_package(gazebo REQUIRED)
 ##   your messages/services/actions (e.g. std_msgs, actionlib_msgs, ...).
 ## * In the file package.xml:
 ##   * add a build_depend tag for "message_generation"
-##   * add a build_depend and a run_depend tag for each package in MSG_DEP_SET
+##   * add a build_depend and a exec_depend tag for each package in MSG_DEP_SET
 ##   * If MSG_DEP_SET isn't empty the following dependency has been pulled in
 ##     but can be declared for certainty nonetheless:
-##     * add a run_depend tag for "message_runtime"
+##     * add a exec_depend tag for "message_runtime"
 ## * In this file (CMakeLists.txt):
 ##   * add "message_generation" and every package in MSG_DEP_SET to
 ##     find_package(catkin REQUIRED COMPONENTS ...)
@@ -95,8 +84,7 @@ find_package(gazebo REQUIRED)
 ## Generate added messages and services with any dependencies listed here
 # generate_messages(
 #   DEPENDENCIES
-#   geometry_msgs#   std_msgs
-#   actionlib_msgs   trajectory_msgs
+#   nav_msgs#   sensor_msgs#   std_msgs
 # )
 
 ################################################
@@ -106,7 +94,7 @@ find_package(gazebo REQUIRED)
 ## To declare and build dynamic reconfigure parameters within this
 ## package, follow these steps:
 ## * In the file package.xml:
-##   * add a build_depend and a run_depend tag for "dynamic_reconfigure"
+##   * add a build_depend and a exec_depend tag for "dynamic_reconfigure"
 ## * In this file (CMakeLists.txt):
 ##   * add "dynamic_reconfigure" to
 ##     find_package(catkin REQUIRED COMPONENTS ...)
@@ -128,8 +116,13 @@ find_package(gazebo REQUIRED)
 ## LIBRARIES: libraries you create in this project that dependent projects also need
 ## CATKIN_DEPENDS: catkin_packages dependent projects also need
 ## DEPENDS: system dependencies of this project that dependent projects also need
+
 catkin_package(
+  INCLUDE_DIRS ${GAZEBO_INCLUDE_DIRS}
+  LIBRARIES  ActorCollisionsPlugin
+  CATKIN_DEPENDS roscpp #gazebo_plugins gazebo_ros
 )
+
 
 ###########
 ## Build ##
@@ -137,10 +130,16 @@ catkin_package(
 
 ## Specify additional locations of header files
 ## Your package locations should be listed before other locations
-include_directories(
-# include
-  ${catkin_INCLUDE_DIRS}
+include_directories(include)
+include_directories( ${catkin_INCLUDE_DIRS} 
+                     ${Boost_INCLUDE_DIR} 
+                     ${GAZEBO_INCLUDE_DIRS}
 )
+set(CMAKE_CXX_FLAGS "-std=c++11 ${CMAKE_CXX_FLAGS} ${GAZEBO_CXX_FLAGS}")
+
+
+link_directories(${GAZEBO_LIBRARY_DIRS})
+add_library(ActorCollisionsPlugin src/ActorCollisionsPlugin.cc)
 
 ## Declare a C++ library
 # add_library(${PROJECT_NAME}
@@ -156,7 +155,6 @@ include_directories(
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
 # add_executable(${PROJECT_NAME}_node src/bacchus_gazebo_node.cpp)
-# add_executable(traj_action_interface graspberry_planning_basic/action_interface/joint_trajectory_action.cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -169,8 +167,9 @@ include_directories(
 # add_dependencies(${PROJECT_NAME}_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Specify libraries to link a library or executable target against
-# target_link_libraries(traj_action_interface
-#   ${catkin_LIBRARIES} ${Boost_LIBRARIES})
+# target_link_libraries(${PROJECT_NAME}_node
+#   ${catkin_LIBRARIES}
+# )
 
 #############
 ## Install ##
@@ -178,21 +177,25 @@ include_directories(
 
 # all install targets should use catkin DESTINATION variables
 # See http://ros.org/doc/api/catkin/html/adv_user_guide/variables.html
+install(PROGRAMS
+  tests/simple_test.py
+  scripts/sprayer.py
+  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+)
 
 ## Mark executable scripts (Python etc.) for installation
 ## in contrast to setup.py, you can choose the destination
 # install(PROGRAMS
-#   scripts/move_base_seq.py
-#   scripts/gazebo_people_tracker.py
+#   scripts/my_python_script
 #   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 # )
 
 ## Mark executables and/or libraries for installation
-# install(TARGETS ${PROJECT_NAME} ${PROJECT_NAME}_node
-#   ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
-#   LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
-#   RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
-# )
+install(TARGETS ActorCollisionsPlugin
+  ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+  LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+  RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+)
 
 ## Mark cpp header files for installation
 # install(DIRECTORY include/${PROJECT_NAME}/
@@ -200,8 +203,6 @@ include_directories(
 #   FILES_MATCHING PATTERN "*.h"
 #   PATTERN ".svn" EXCLUDE
 # )
-# install(TARGETS traj_action_interface
-#   RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})
 
 ## Mark other files for installation (e.g. launch and bag files, etc.)
 # install(FILES
@@ -210,9 +211,10 @@ include_directories(
 #   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 # )
 
-install(DIRECTORY config launch models urdf rviz worlds
-  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
-)
+foreach (dir tests config launch models urdf worlds maps rviz)
+    install(DIRECTORY ${dir}/
+    DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/${dir})
+endforeach(dir)
 
 #############
 ## Testing ##
@@ -226,3 +228,9 @@ install(DIRECTORY config launch models urdf rviz worlds
 
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
+
+
+if(CATKIN_ENABLE_TESTING)
+  find_package(rostest REQUIRED)
+  add_rostest(tests/testme.test)
+endif()

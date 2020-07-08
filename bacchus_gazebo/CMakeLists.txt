@@ -13,7 +13,6 @@ find_package(catkin REQUIRED COMPONENTS
   dynamic_reconfigure
   gazebo_ros_control
   gazebo_ros
-  graspberry_planning_basic
   map_server
   actionlib
   move_base

@@ -1,0 +1,18 @@
+material station_label_3/image
+{
+  technique
+  {
+    pass
+    {
+      scene_blend alpha_blend
+      depth_write off
+
+
+      texture_unit
+      {
+        texture stlabel3.jpg
+        filtering trilinear
+      }
+    }
+  }
+}

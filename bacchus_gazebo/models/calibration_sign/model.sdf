@@ -1,0 +1,41 @@
+<?xml version='1.0'?>
+<sdf version="1.5">
+  <model name="calibration_sign">
+    <pose>0 0 0 0 0 3.14</pose>
+    <static>true</static>
+    <link name="sign">
+      <visual name="sign">
+        <pose>0 -0.02 1.25 1.57 0 0</pose>
+        <geometry>
+          <plane>
+            <normal>0 0 1</normal>
+            <size>0.21 0.297</size>
+          </plane>
+        </geometry>
+        <material>
+          <script>
+            <uri>model://calibration_sign/materials/scripts</uri>
+            <uri>model://calibration_sign/materials/textures</uri>
+            <name>calibration_sign/image</name>
+          </script>  
+        </material>
+      </visual>
+    </link>
+    <link name="pole">
+      <visual name="pole">
+      <pose>0 0 0.625 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.04 0.04 1.25</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.1 0.1 0.1 1</ambient>
+          <diffuse>0.1 0.1 0.2 1</diffuse>
+          <specular>0 0 0 0</specular>
+          <emissive>0 0 0 1</emissive> 
+        </material>
+      </visual>
+    </link>
+  </model>
+</sdf>

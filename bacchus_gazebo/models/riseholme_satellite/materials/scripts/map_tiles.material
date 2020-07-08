@@ -1,0 +1,224 @@
+material riseholme_satellite/0_0
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture tile_53.269027_-0.525153236.png
+      }
+    }
+  }
+}
+
+material riseholme_satellite/0_1
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture tile_53.269027_-0.524724083.png
+      }
+    }
+  }
+}
+
+material riseholme_satellite/0_2
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture tile_53.269027_-0.524294929.png
+      }
+    }
+  }
+}
+
+material riseholme_satellite/0_3
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture tile_53.269027_-0.523865776.png
+      }
+    }
+  }
+}
+
+material riseholme_satellite/1_0
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture tile_53.2687704_-0.525153236.png
+      }
+    }
+  }
+}
+
+material riseholme_satellite/1_1
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture tile_53.2687704_-0.524724083.png
+      }
+    }
+  }
+}
+
+material riseholme_satellite/1_2
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture tile_53.2687704_-0.524294929.png
+      }
+    }
+  }
+}
+
+material riseholme_satellite/1_3
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture tile_53.2687704_-0.523865776.png
+      }
+    }
+  }
+}
+
+material riseholme_satellite/2_0
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture tile_53.2685137_-0.525153236.png
+      }
+    }
+  }
+}
+
+material riseholme_satellite/2_1
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture tile_53.2685137_-0.524724083.png
+      }
+    }
+  }
+}
+
+material riseholme_satellite/2_2
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture tile_53.2685137_-0.524294929.png
+      }
+    }
+  }
+}
+
+material riseholme_satellite/2_3
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture tile_53.2685137_-0.523865776.png
+      }
+    }
+  }
+}
+
+material riseholme_satellite/3_0
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture tile_53.268257_-0.525153236.png
+      }
+    }
+  }
+}
+
+material riseholme_satellite/3_1
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture tile_53.268257_-0.524724083.png
+      }
+    }
+  }
+}
+
+material riseholme_satellite/3_2
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture tile_53.268257_-0.524294929.png
+      }
+    }
+  }
+}
+
+material riseholme_satellite/3_3
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture tile_53.268257_-0.523865776.png
+      }
+    }
+  }
+}
+

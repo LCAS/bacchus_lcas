@@ -1,0 +1,69 @@
+<?xml version='1.0'?>
+<sdf version="1.5">
+  <model name="docking_pole">
+    <pose>0 0 0 0 0 3.14</pose>
+    <static>true</static>
+    <link name="link">
+      <visual name="docking_pole">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://docking_pole/meshes/docking_pole.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.5 0.5 0.5 1</ambient>
+          <diffuse>0.05 0.05 0.05 1</diffuse>
+          <specular>0.01 0.01 0.01 1</specular>
+          <emissive>0.1 0.1 0.1 1</emissive>
+        </material>
+      </visual>
+      <light name="light_1" type="spot">
+        <pose frame=''>0.075 0 0.625 0 -0.7854 0</pose>
+        <attenuation>
+          <range>30</range>
+          <linear>0.05</linear>
+        </attenuation>
+        <diffuse>1 0 0 1</diffuse>
+        <specular>1 0 0 1</specular>
+        <spot>
+          <inner_angle>0.3</inner_angle>
+          <outer_angle>0.35</outer_angle>
+          <falloff>1</falloff>
+        </spot>
+        <direction>0 0 -1</direction>
+      </light>
+      <light name="light_2" type="spot">
+        <pose frame=''>0 -0.075 0.625 0 -0.7854 -1.5708</pose>
+        <attenuation>
+          <range>30</range>
+          <linear>0.05</linear>
+        </attenuation>
+        <diffuse>1 0 0 1</diffuse>
+        <specular>1 0 0 1</specular>
+        <spot>
+          <inner_angle>0.3</inner_angle>
+          <outer_angle>0.35</outer_angle>
+          <falloff>1</falloff>
+        </spot>
+        <direction>0 0 -1</direction>
+      </light>
+    </link>
+
+    <plugin name='light_control' filename='libFlashLightPlugin.so'>
+    <enable>true</enable>
+    <light>
+      <id>docking_pole/light1</id>
+      <duration>1</duration>
+      <interval>0</interval>
+      <color>1 0 0</color>
+    </light>
+    <light>
+      <id>docking_pole/light2</id>
+      <duration>1</duration>
+      <interval>0</interval>
+      <color>1 0 0</color>
+    </light>
+    </plugin>
+  </model>
+</sdf>

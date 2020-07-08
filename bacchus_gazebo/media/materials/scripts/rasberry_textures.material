@@ -1,0 +1,15 @@
+material Rasberry/Whycon_123
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture 123.jpg
+        rotate 90
+        filtering trilinear
+      }
+    }
+  }
+}

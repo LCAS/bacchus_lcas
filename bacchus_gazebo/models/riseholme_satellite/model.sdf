@@ -1,0 +1,255 @@
+<sdf version='1.6'>
+<model name='riseholme_satellite'>
+  <static>true</static>
+  <link name='link'>
+    <collision name='collision'>
+      <pose>0 0 -0.5 0 0 0</pose>
+      <geometry>
+        <box>
+          <size>114.286 114.286 1</size>
+        </box>
+      </geometry>
+    </collision>
+    <visual name='visual0_0'>
+      <pose>-42.8571 42.8571 -0.5 0 0 1.5708</pose>
+      <geometry>
+        <box>
+          <size>28.5714 28.5714 1</size>
+        </box>
+      </geometry>
+      <material>
+        <script>
+          <uri>model://riseholme_satellite/materials/scripts</uri>
+          <uri>model://riseholme_satellite/materials/textures</uri>
+          <name>riseholme_satellite/0_0</name>
+        </script>
+      </material>
+    </visual>
+    <visual name='visual0_1'>
+      <pose>-14.2857 42.8571 -0.5 0 0 1.5708</pose>
+      <geometry>
+        <box>
+          <size>28.5714 28.5714 1</size>
+        </box>
+      </geometry>
+      <material>
+        <script>
+          <uri>model://riseholme_satellite/materials/scripts</uri>
+          <uri>model://riseholme_satellite/materials/textures</uri>
+          <name>riseholme_satellite/0_1</name>
+        </script>
+      </material>
+    </visual>
+    <visual name='visual0_2'>
+      <pose>14.2857 42.8571 -0.5 0 0 1.5708</pose>
+      <geometry>
+        <box>
+          <size>28.5714 28.5714 1</size>
+        </box>
+      </geometry>
+      <material>
+        <script>
+          <uri>model://riseholme_satellite/materials/scripts</uri>
+          <uri>model://riseholme_satellite/materials/textures</uri>
+          <name>riseholme_satellite/0_2</name>
+        </script>
+      </material>
+    </visual>
+    <visual name='visual0_3'>
+      <pose>42.8571 42.8571 -0.5 0 0 1.5708</pose>
+      <geometry>
+        <box>
+          <size>28.5714 28.5714 1</size>
+        </box>
+      </geometry>
+      <material>
+        <script>
+          <uri>model://riseholme_satellite/materials/scripts</uri>
+          <uri>model://riseholme_satellite/materials/textures</uri>
+          <name>riseholme_satellite/0_3</name>
+        </script>
+      </material>
+    </visual>
+    <visual name='visual1_0'>
+      <pose>-42.8571 14.2857 -0.5 0 0 1.5708</pose>
+      <geometry>
+        <box>
+          <size>28.5714 28.5714 1</size>
+        </box>
+      </geometry>
+      <material>
+        <script>
+          <uri>model://riseholme_satellite/materials/scripts</uri>
+          <uri>model://riseholme_satellite/materials/textures</uri>
+          <name>riseholme_satellite/1_0</name>
+        </script>
+      </material>
+    </visual>
+    <visual name='visual1_1'>
+      <pose>-14.2857 14.2857 -0.5 0 0 1.5708</pose>
+      <geometry>
+        <box>
+          <size>28.5714 28.5714 1</size>
+        </box>
+      </geometry>
+      <material>
+        <script>
+          <uri>model://riseholme_satellite/materials/scripts</uri>
+          <uri>model://riseholme_satellite/materials/textures</uri>
+          <name>riseholme_satellite/1_1</name>
+        </script>
+      </material>
+    </visual>
+    <visual name='visual1_2'>
+      <pose>14.2857 14.2857 -0.5 0 0 1.5708</pose>
+      <geometry>
+        <box>
+          <size>28.5714 28.5714 1</size>
+        </box>
+      </geometry>
+      <material>
+        <script>
+          <uri>model://riseholme_satellite/materials/scripts</uri>
+          <uri>model://riseholme_satellite/materials/textures</uri>
+          <name>riseholme_satellite/1_2</name>
+        </script>
+      </material>
+    </visual>
+    <visual name='visual1_3'>
+      <pose>42.8571 14.2857 -0.5 0 0 1.5708</pose>
+      <geometry>
+        <box>
+          <size>28.5714 28.5714 1</size>
+        </box>
+      </geometry>
+      <material>
+        <script>
+          <uri>model://riseholme_satellite/materials/scripts</uri>
+          <uri>model://riseholme_satellite/materials/textures</uri>
+          <name>riseholme_satellite/1_3</name>
+        </script>
+      </material>
+    </visual>
+    <visual name='visual2_0'>
+      <pose>-42.8571 -14.2857 -0.5 0 0 1.5708</pose>
+      <geometry>
+        <box>
+          <size>28.5714 28.5714 1</size>
+        </box>
+      </geometry>
+      <material>
+        <script>
+          <uri>model://riseholme_satellite/materials/scripts</uri>
+          <uri>model://riseholme_satellite/materials/textures</uri>
+          <name>riseholme_satellite/2_0</name>
+        </script>
+      </material>
+    </visual>
+    <visual name='visual2_1'>
+      <pose>-14.2857 -14.2857 -0.5 0 0 1.5708</pose>
+      <geometry>
+        <box>
+          <size>28.5714 28.5714 1</size>
+        </box>
+      </geometry>
+      <material>
+        <script>
+          <uri>model://riseholme_satellite/materials/scripts</uri>
+          <uri>model://riseholme_satellite/materials/textures</uri>
+          <name>riseholme_satellite/2_1</name>
+        </script>
+      </material>
+    </visual>
+    <visual name='visual2_2'>
+      <pose>14.2857 -14.2857 -0.5 0 0 1.5708</pose>
+      <geometry>
+        <box>
+          <size>28.5714 28.5714 1</size>
+        </box>
+      </geometry>
+      <material>
+        <script>
+          <uri>model://riseholme_satellite/materials/scripts</uri>
+          <uri>model://riseholme_satellite/materials/textures</uri>
+          <name>riseholme_satellite/2_2</name>
+        </script>
+      </material>
+    </visual>
+    <visual name='visual2_3'>
+      <pose>42.8571 -14.2857 -0.5 0 0 1.5708</pose>
+      <geometry>
+        <box>
+          <size>28.5714 28.5714 1</size>
+        </box>
+      </geometry>
+      <material>
+        <script>
+          <uri>model://riseholme_satellite/materials/scripts</uri>
+          <uri>model://riseholme_satellite/materials/textures</uri>
+          <name>riseholme_satellite/2_3</name>
+        </script>
+      </material>
+    </visual>
+    <visual name='visual3_0'>
+      <pose>-42.8571 -42.8571 -0.5 0 0 1.5708</pose>
+      <geometry>
+        <box>
+          <size>28.5714 28.5714 1</size>
+        </box>
+      </geometry>
+      <material>
+        <script>
+          <uri>model://riseholme_satellite/materials/scripts</uri>
+          <uri>model://riseholme_satellite/materials/textures</uri>
+          <name>riseholme_satellite/3_0</name>
+        </script>
+      </material>
+    </visual>
+    <visual name='visual3_1'>
+      <pose>-14.2857 -42.8571 -0.5 0 0 1.5708</pose>
+      <geometry>
+        <box>
+          <size>28.5714 28.5714 1</size>
+        </box>
+      </geometry>
+      <material>
+        <script>
+          <uri>model://riseholme_satellite/materials/scripts</uri>
+          <uri>model://riseholme_satellite/materials/textures</uri>
+          <name>riseholme_satellite/3_1</name>
+        </script>
+      </material>
+    </visual>
+    <visual name='visual3_2'>
+      <pose>14.2857 -42.8571 -0.5 0 0 1.5708</pose>
+      <geometry>
+        <box>
+          <size>28.5714 28.5714 1</size>
+        </box>
+      </geometry>
+      <material>
+        <script>
+          <uri>model://riseholme_satellite/materials/scripts</uri>
+          <uri>model://riseholme_satellite/materials/textures</uri>
+          <name>riseholme_satellite/3_2</name>
+        </script>
+      </material>
+    </visual>
+    <visual name='visual3_3'>
+      <pose>42.8571 -42.8571 -0.5 0 0 1.5708</pose>
+      <geometry>
+        <box>
+          <size>28.5714 28.5714 1</size>
+        </box>
+      </geometry>
+      <material>
+        <script>
+          <uri>model://riseholme_satellite/materials/scripts</uri>
+          <uri>model://riseholme_satellite/materials/textures</uri>
+          <name>riseholme_satellite/3_3</name>
+        </script>
+      </material>
+    </visual>
+  </link>
+</model>
+</sdf>

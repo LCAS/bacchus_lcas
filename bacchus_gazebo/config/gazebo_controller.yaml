@@ -1,0 +1,174 @@
+# the following gains are used by the gazebo_mimic_joint plugin
+gazebo_ros_control:
+  pid_gains:
+    right_front_arm_inner_finger_1_joint:
+      p: 0.01
+      i: 0.001
+      d: 0.0001
+      i_clamp: 0.0
+      antiwindup: false
+      publish_state: true
+    right_front_arm_inner_finger_2_joint:
+      p: 0.01
+      i: 0.001
+      d: 0.0001
+      i_clamp: 0.0
+      antiwindup: false
+      publish_state: true
+    right_front_arm_outer_finger_1_joint:
+      p: 0.01
+      i: 0.001
+      d: 0.0001
+      i_clamp: 0.0
+      antiwindup: false
+      publish_state: true
+    right_front_arm_outer_finger_2_joint:
+      p: 0.01
+      i: 0.001
+      d: 0.0001
+      i_clamp: 0.0
+      antiwindup: false
+      publish_state: true
+    right_front_arm_outer_finger_3_joint:
+      p: 0.01
+      i: 0.001
+      d: 0.0001
+      i_clamp: 0.0
+      antiwindup: false
+      publish_state: true
+    right_front_arm_left_cutter_joint:
+      p: 0.001
+      i: 1.0
+      d: 0.00001
+      i_clamp: 0.0
+      antiwindup: false
+      publish_state: true
+
+    left_front_arm_inner_finger_1_joint:
+      p: 0.01
+      i: 0.001
+      d: 0.0001
+      i_clamp: 0.0
+      antiwindup: false
+      publish_state: true
+    left_front_arm_inner_finger_2_joint:
+      p: 0.01
+      i: 0.001
+      d: 0.0001
+      i_clamp: 0.0
+      antiwindup: false
+      publish_state: true
+    left_front_arm_outer_finger_1_joint:
+      p: 0.01
+      i: 0.001
+      d: 0.0001
+      i_clamp: 0.0
+      antiwindup: false
+      publish_state: true
+    left_front_arm_outer_finger_2_joint:
+      p: 0.01
+      i: 0.001
+      d: 0.0001
+      i_clamp: 0.0
+      antiwindup: false
+      publish_state: true
+    left_front_arm_outer_finger_3_joint:
+      p: 0.01
+      i: 0.001
+      d: 0.0001
+      i_clamp: 0.0
+      antiwindup: false
+      publish_state: true
+    left_front_arm_left_cutter_joint:
+      p: 0.001
+      i: 1.0
+      d: 0.00001
+      i_clamp: 0.0
+      antiwindup: false
+      publish_state: true
+
+    right_rear_arm_inner_finger_1_joint:
+      p: 0.01
+      i: 0.001
+      d: 0.0001
+      i_clamp: 0.0
+      antiwindup: false
+      publish_state: true
+    right_rear_arm_inner_finger_2_joint:
+      p: 0.01
+      i: 0.001
+      d: 0.0001
+      i_clamp: 0.0
+      antiwindup: false
+      publish_state: true
+    right_rear_arm_outer_finger_1_joint:
+      p: 0.01
+      i: 0.001
+      d: 0.0001
+      i_clamp: 0.0
+      antiwindup: false
+      publish_state: true
+    right_rear_arm_outer_finger_2_joint:
+      p: 0.01
+      i: 0.001
+      d: 0.0001
+      i_clamp: 0.0
+      antiwindup: false
+      publish_state: true
+    right_rear_arm_outer_finger_3_joint:
+      p: 0.01
+      i: 0.001
+      d: 0.0001
+      i_clamp: 0.0
+      antiwindup: false
+      publish_state: true
+    right_rear_arm_left_cutter_joint:
+      p: 0.001
+      i: 1.0
+      d: 0.00001
+      i_clamp: 0.0
+      antiwindup: false
+      publish_state: true
+
+    left_rear_arm_inner_finger_1_joint:
+      p: 0.01
+      i: 0.001
+      d: 0.0001
+      i_clamp: 0.0
+      antiwindup: false
+      publish_state: true
+    left_rear_arm_inner_finger_2_joint:
+      p: 0.01
+      i: 0.001
+      d: 0.0001
+      i_clamp: 0.0
+      antiwindup: false
+      publish_state: true
+    left_rear_arm_outer_finger_1_joint:
+      p: 0.01
+      i: 0.001
+      d: 0.0001
+      i_clamp: 0.0
+      antiwindup: false
+      publish_state: true
+    left_rear_arm_outer_finger_2_joint:
+      p: 0.01
+      i: 0.001
+      d: 0.0001
+      i_clamp: 0.0
+      antiwindup: false
+      publish_state: true
+    left_rear_arm_outer_finger_3_joint:
+      p: 0.01
+      i: 0.001
+      d: 0.0001
+      i_clamp: 0.0
+      antiwindup: false
+      publish_state: true
+    left_rear_arm_left_cutter_joint:
+      p: 0.001
+      i: 1.0
+      d: 0.00001
+      i_clamp: 0.0
+      antiwindup: false
+      publish_state: true

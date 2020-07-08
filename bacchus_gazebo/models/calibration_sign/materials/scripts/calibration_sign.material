@@ -1,0 +1,14 @@
+material calibration_sign/image
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture image.jpg
+        filtering trilinear
+      }
+    }
+  }
+}

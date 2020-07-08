@@ -1,0 +1,18 @@
+material a4_plane/image
+{
+  technique
+  {
+    pass
+    {
+      scene_blend alpha_blend
+      depth_write off
+
+
+      texture_unit
+      {
+        texture a4_img.jpg
+        filtering trilinear
+      }
+    }
+  }
+}

@@ -1,0 +1,60 @@
+#see http://ros.org/wiki/dwa_local_planner?distro=groovy for param description
+DWAPlannerROS:
+  #default 2.5 -> with this value the robot sometimes gets to close to the wall when leaving a goal position in narrow corridors, causing dwa planner to have problems
+
+
+  acc_lim_x: 1.0
+  acc_lim_trans: 0.5
+  acc_lim_y: 1.0
+  acc_lim_theta: 2.0 #default: 2.0
+  
+  
+  min_vel_x: -0.5
+  max_vel_x: 0.5
+  min_vel_trans: 0.05
+  max_vel_trans: 0.5
+  min_vel_y: -0.0
+  max_vel_y: 0.0 #default:0.35
+  max_vel_theta: 0.5
+  min_vel_theta: 0.1
+  
+  
+  theta_stopped_vel: 0.01 #Below what maximum velocity we consider the robot to be stopped in translation", 0.1)
+  trans_stopped_vel: 0.01 #"Below what maximum rotation velocity we consider the robot to be stopped in rotation", 0.1)
+
+  
+  vx_samples: 35
+  vy_samples: 1
+  vth_samples: 67
+
+  
+  yaw_goal_tolerance: 0.3
+  #default:0.1 -> with this value the robot sometimes has troubles achieving the goal, due to low tolerance
+  xy_goal_tolerance: 0.30
+  # if the robot ever reaches the goal xy location it will simply rotate in place, even if it ends up outside the goal tolerance while it is doing so.
+  latch_xy_goal_tolerance: true
+ 
+
+  sim_time: 2.56592652857
+  
+#cost =  path_distance_bias * (distance to path from the endpoint of the trajectory in meters)  + goal_distance_bias * (distance to local goal from the endpoint of the trajectory in meters)  + occdist_scale * (maximum obstacle cost along the trajectory in obstacle cost (0-254))
+  path_distance_bias: 29.0 #default:32, previous:5
+  goal_distance_bias: 37.0 #default:24, previous:9
+  occdist_scale: 0.17095456476 #default:0.01
+  
+  oscillation_reset_dist: 0.0157790647928
+  oscillation_timeout: 2.0
+  forward_point_distance: 0.48297542552
+
+  prune_plan: true
+  holonomic_robot: true
+
+  sim_granularity: 0.0440361042626
+  stop_time_buffer: 0.182291625765
+  scaling_speed: 0.0139109910856
+  max_scaling_factor: 0.572649261744
+
+
+
+
+

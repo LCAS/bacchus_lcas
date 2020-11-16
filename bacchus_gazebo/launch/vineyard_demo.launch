@@ -7,14 +7,14 @@
   <arg name="robot_no" default="001"/>
 
   <!-- navigation arguments -->
-  <arg name="launch_move_base" default="True"/>
+  <arg name="launch_move_base" default="true"/>
   <arg name="tf_prefix" default="$(arg robot_name)/"/>
   <arg name="use_carrot_planner" default="false"/>
   <arg name="use_omni" default="false"/>
 
 
   <!-- Gazebo arguments -->
-  <arg name="world_name" default="cmp9767m_2"/> <!-- Note: the world_name is with respect to GAZEBO_RESOURCE_PATH environmental variable -->
+  <arg name="world_name" default="vineyard_stage0"/> <!-- Note: the world_name is with respect to GAZEBO_RESOURCE_PATH environmental variable -->
   <arg name="world" default="$(find bacchus_gazebo)/worlds/$(arg world_name).world"/> <!-- Note: the world_name is with respect to GAZEBO_RESOURCE_PATH environmental variable -->
   <arg name="paused" default="false"/>
   <arg name="use_sim_time" default="true"/>
@@ -43,7 +43,7 @@
 
   <include file="$(find bacchus_gazebo)/launch/thorvald.launch">
     <arg name="robot_name" value="thorvald_001" />
-    <arg name="x" value="5.0" />
+    <arg name="x" value="11.0" />
   </include>
 
   <group if="$(arg fake_localisation)">
@@ -70,7 +70,18 @@
     <include file="$(find bacchus_move_base)/launch/move_base_dwa_multisim.launch" />
   </group>
 
+  <group if="$(arg launch_rviz)">
+    <node 
+      name="rviz"
+      pkg="rviz"
+      type= "rviz"
+      args="$(arg rviz_config_file)" />
+  </group>
+
 </launch>
+
+
+
 
 
 

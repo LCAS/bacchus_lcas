@@ -33,14 +33,7 @@
           <!--rosparam param="DWAPlannerROS/odom_topic" subst_value="True">$(arg robot_name)/odometry/base_raw</rosparam-->
 
           <rosparam file="$(find bacchus_move_base)/config/costmap_common_params.yaml" command="load" ns="global_costmap"/>
-          <rosparam param="global_costmap/global_obstacle_layer/laser_scan_sensor/sensor_frame" subst_value="True">$(arg tf_prefix)base_link</rosparam>
-          <rosparam param="global_costmap/global_obstacle_layer/laser_scan_sensor/topic" subst_value="True">scan</rosparam>
-          <rosparam param="global_costmap/robot_base_frame" subst_value="True">$(arg tf_prefix)base_link</rosparam>
-
           <rosparam file="$(find bacchus_move_base)/config/costmap_common_params.yaml" command="load" ns="local_costmap"/>
-          <rosparam param="local_costmap/obstacle_layer/laser_scan_sensor/sensor_frame" subst_value="True">$(arg tf_prefix)base_link</rosparam>
-          <rosparam param="local_costmap/obstacle_layer/laser_scan_sensor/topic" subst_value="True">scan</rosparam>
-          <rosparam param="local_costmap/robot_base_frame" subst_value="True">$(arg tf_prefix)base_link</rosparam>
 
           <rosparam file="$(find bacchus_move_base)/config/footprints/robot_$(arg robot_no)_footprint.yaml" command="load" ns="global_costmap"/>
           <rosparam file="$(find bacchus_move_base)/config/footprints/robot_$(arg robot_no)_footprint.yaml" command="load" ns="local_costmap"/>
@@ -48,10 +41,11 @@
           <rosparam file="$(find bacchus_move_base)/config/local_costmap_params.yaml" command="load"/>
           <rosparam file="$(find bacchus_move_base)/config/global_costmap_params.yaml" command="load"/>
 
-	      <rosparam file="$(find bacchus_move_base)/config/nav_fn_ros.yaml" command="load" unless="$(arg use_carrot_planner)" />
+	        <rosparam file="$(find bacchus_move_base)/config/nav_fn_ros.yaml" command="load" unless="$(arg use_carrot_planner)" />
           <rosparam file="$(find bacchus_move_base)/config/carrot_planner.yaml" command="load" if="$(arg use_carrot_planner)" />
 
       </node>
     </group>
     
 </launch>
+

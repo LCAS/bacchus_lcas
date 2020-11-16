@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<launch>
+    <arg name="use_carrot_planner" default="false"/>
+    <arg name="use_omni" default="false"/>
+    <arg name="robot_no" default="001"/>
+    <arg name="robot_footprint" default="$(find bacchus_move_base)/config/footprints/robot_$(arg robot_no)_footprint.yaml"/>
+
+
+    <!-- launch robot_pose_publisher -->
+    <node pkg="robot_pose_publisher" type="robot_pose_publisher" name="robot_pose_publisher" respawn="true">
+      <param name="~map_frame" value="map"/>
+      <param name="~base_frame" value="base_link"/>
+    </node>
+
+    <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen" clear_params="true">
+        <remap from="/cmd_vel" to="/nav_vel"/>
+        <remap from="odom" to="odometry/base_raw"/>
+
+        <!--Parameters-->
+
+        <!--Local planner-->
+        <!--param name="controller_frequency" value="10.0"/>
+        <param name="controller_patience" value="15.0"/>
+        <param name="planner_frequency" value="0.5"/-->
+        <rosparam file="$(find bacchus_move_base)/config/dwa/dwa_planner_ros.yaml" command="load" unless="$(arg use_omni)"/>
+        <rosparam file="$(find bacchus_move_base)/config/dwa/dwa_planner_ros_omni.yaml" command="load" if="$(arg use_omni)"/>
+
+        <rosparam file="$(find bacchus_move_base)/config/dwa/dwa_move_base_params.yaml" command="load"/>
+        
+        <rosparam file="$(find bacchus_move_base)/config/costmap_common_params.yaml" command="load" ns="global_costmap"/>
+        <rosparam file="$(find bacchus_move_base)/config/costmap_common_params.yaml" command="load" ns="local_costmap"/>
+        <rosparam file="$(arg robot_footprint)" command="load" ns="global_costmap"/>
+        <rosparam file="$(arg robot_footprint)" command="load" ns="local_costmap"/>
+        <rosparam file="$(find bacchus_move_base)/config/local_costmap_params.yaml" command="load"/>
+        <rosparam file="$(find bacchus_move_base)/config/global_costmap_params.yaml" command="load"/>
+	<rosparam file="$(find bacchus_move_base)/config/carrot_planner.yaml" command="load" if="$(arg use_carrot_planner)" />
+	<rosparam file="$(find bacchus_move_base)/config/nav_fn_ros.yaml" command="load" unless="$(arg use_carrot_planner)" />
+
+    </node>
+    
+</launch>

@@ -237,7 +237,7 @@ endif()
 
 set(TIMEOUT 10)
 set(FILE_NAME vine_t.zip)
-set(DOWNLOAD_DIR ../src/bacchus_gazebo/models)
+set(DOWNLOAD_DIR ../src/bacchus_lcas/bacchus_gazebo/models)
 set(URL https://lcas.lincoln.ac.uk/nextcloud/index.php/s/XG8yLcQPfXe5kk8/download)
 
 set(file ${DOWNLOAD_DIR}/${FILE_NAME})

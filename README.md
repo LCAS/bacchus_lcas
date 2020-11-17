@@ -13,7 +13,7 @@ A repository for contributions to the BACCHUS H2020 project
 
 To change the world you can modify the "world_name" parameter inside the launch file.
 
-## (optional)  Manual teleoperation of thorvald
+### (optional)  Manual teleoperation of thorvald
 At this stage, you should be able to control manually the robot with the keyboard.
 To do so run:
 `rosrun teleop_twist_keyboard teleop_twist_keyboard.py cmd_vel:=/thorvald_001/nav_vel`

@@ -1,8 +1,11 @@
 <launch>
-  <include file="$(find bacchus_gazebo)/launch/thorvald-sim.launch">
+  <include file="$(find bacchus_gazebo)/launch/vineyard_demo.launch">
     <env name="DISPLAY" value="" />
     <arg name="gui" value="false" />
     <arg name="fake_localisation" value="true" />
+    <arg name="launch_move_base" value="false" />
+    <arg name="launch_rviz" value="false" />
+    <arg name="world_name" value="cmp9767m_1"/>
   </include>
 
   <!-- a very basic Python unittest -->

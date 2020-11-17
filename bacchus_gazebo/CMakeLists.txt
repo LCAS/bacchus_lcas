@@ -234,3 +234,35 @@ if(CATKIN_ENABLE_TESTING)
   find_package(rostest REQUIRED)
   add_rostest(tests/testme.test)
 endif()
+
+set(TIMEOUT 10)
+set(FILE_NAME vine_t.zip)
+set(DOWNLOAD_DIR ../src/bacchus_lcas/bacchus_gazebo/models)
+set(URL https://lcas.lincoln.ac.uk/nextcloud/index.php/s/XG8yLcQPfXe5kk8/download)
+
+set(file ${DOWNLOAD_DIR}/${FILE_NAME})
+message(STATUS "file: ${file}")
+
+if(NOT EXISTS ${file})
+	message(STATUS "downloading ...
+	    src='${URL}'
+	    dst='${file}'
+	    timeout= ${TIMEOUT} seconds")
+
+	file(DOWNLOAD
+		${URL}
+		${file}
+		SHOW_PROGRESS
+		STATUS st
+		INACTIVITY_TIMEOUT ${TIMEOUT}
+		LOG log
+		)
+
+	list(GET status 0 status_code)
+	list(GET status 1 status_string)
+
+	message( STATUS ${status_code})
+	execute_process(COMMAND bash -c "unzip ${file} -d ${DOWNLOAD_DIR}")
+endif()
+
+

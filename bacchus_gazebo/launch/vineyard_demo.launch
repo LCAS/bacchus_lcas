@@ -1,0 +1,87 @@
+<?xml version="1.0" ?>
+<launch>
+
+  <!-- Robot arguments -->
+  <arg name="fake_localisation" default="true" doc="fake the localisation, sets map_server and world_tf to true."/>
+  <arg name="robot_name" default="thorvald_001"/>
+  <arg name="robot_no" default="001"/>
+
+  <!-- navigation arguments -->
+  <arg name="launch_move_base" default="true"/>
+  <arg name="tf_prefix" default="$(arg robot_name)/"/>
+  <arg name="use_carrot_planner" default="false"/>
+  <arg name="use_omni" default="false"/>
+
+
+  <!-- Gazebo arguments -->
+  <arg name="world_name" default="vineyard_stage0"/> <!-- Note: the world_name is with respect to GAZEBO_RESOURCE_PATH environmental variable -->
+  <arg name="world" default="$(find bacchus_gazebo)/worlds/$(arg world_name).world"/> <!-- Note: the world_name is with respect to GAZEBO_RESOURCE_PATH environmental variable -->
+  <arg name="paused" default="false"/>
+  <arg name="use_sim_time" default="true"/>
+  <arg name="gui" default="true"/>
+  <arg name="headless" default="false"/>
+  <arg name="debug" default="false"/>
+  <arg name="verbose" default="false"/>
+
+  <!-- RVIZ arguments -->
+  <arg name="launch_rviz" default="True"/>
+  <arg name="rviz_config_file" default="$(find bacchus_gazebo)/rviz/vineyard_demo.rviz"/>
+
+
+<!-- ############################################################ -->
+
+  <!-- Start gazebo and load the world -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="paused" value="$(arg paused)"/>
+    <arg name="use_sim_time" value="$(arg use_sim_time)"/>
+    <arg name="gui" value="$(arg gui)"/>
+    <arg name="headless" value="$(arg headless)"/>
+    <arg name="debug" value="$(arg debug)"/>
+    <arg name="verbose" value="$(arg verbose)"/>
+    <arg name="world_name" value="$(arg world)"/>
+  </include>
+
+  <include file="$(find bacchus_gazebo)/launch/thorvald.launch">
+    <arg name="robot_name" value="thorvald_001" />
+    <arg name="x" value="11.0" />
+  </include>
+
+  <group if="$(arg fake_localisation)">
+    <node 
+      name="map_server"
+      pkg="map_server"
+      type= "map_server"
+      args="$(find bacchus_gazebo)/maps/cropped.yaml" />
+
+    <node 
+      name="world_tf_map"
+      pkg="tf"
+      type= "static_transform_publisher"
+      args="0 0 0 0 0 0 /world /map 100" />
+
+    <node 
+      name="world_tf_thorvald"
+      pkg="tf"
+      type= "static_transform_publisher"
+      args="0 0 0 0 0 0 /map /thorvald_001/odom 100" />
+  </group> 
+
+  <group if="$(arg launch_move_base)">
+    <include file="$(find bacchus_move_base)/launch/move_base_dwa_multisim.launch" />
+  </group>
+
+  <group if="$(arg launch_rviz)">
+    <node 
+      name="rviz"
+      pkg="rviz"
+      type= "rviz"
+      args="$(arg rviz_config_file)" />
+  </group>
+
+</launch>
+
+
+
+
+
+

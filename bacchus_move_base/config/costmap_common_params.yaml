@@ -1,0 +1,51 @@
+global_frame: map
+robot_base_frame: thorvald_001/base_link
+
+#footprint parameter has been moved to footprints/robot_xxx_footprint.yaml.
+
+map_layer:
+  map_topic: /map
+
+#no_go_layer:
+#  map_topic: /no_go_map
+
+global_inflation_layer:
+  inflation_radius: 1.75
+  cost_scaling_factor: 2.58
+#  inflation_radius: 0.66
+#  cost_scaling_factor: 0.97
+
+local_inflation_layer:
+  inflation_radius: 1.5
+  cost_scaling_factor: 5.0
+# inflation_radius: 1.75
+# cost_scaling_factor: 2.58
+#  inflation_radius: 0.66
+#  cost_scaling_factor: 0.97
+
+obstacle_layer:
+  max_obstacle_height: 2.0
+  obstacle_range: 3.5
+  raytrace_range: 4.0
+
+  unknown_threshold: 6
+  mark_threshold: 0
+  
+  track_unknown_space: true
+  
+  observation_sources: merged_laser_scan
+  merged_laser_scan: {sensor_frame: thorvald_001/base_link, data_type: LaserScan, topic: /thorvald_001/scan, marking: true, clearing: true}
+
+global_obstacle_layer:
+  max_obstacle_height: 2.0
+  obstacle_range: 2.5
+  raytrace_range: 3.0
+
+  unknown_threshold: 6
+  mark_threshold: 0
+
+  track_unknown_space: true
+
+  observation_sources: merged_laser_scan
+  merged_laser_scan: {sensor_frame: thorvald_001base_link, data_type: LaserScan, topic: /thorvald_001/scan, marking: false, clearing: false}
+

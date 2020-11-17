@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<launch>
+    <arg name="robot_no"/>
+
+    <!-- launch robot_pose_publisher -->
+    <node pkg="robot_pose_publisher" type="robot_pose_publisher" name="robot_pose_publisher" respawn="true">
+      <param name="~map_frame" value="/map"/>
+      <param name="~base_frame" value="/base_link"/>
+    </node>
+
+    <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen" clear_params="true">
+        <remap from="/cmd_vel" to="/nav_vel"/>
+
+        <!--Parameters-->
+
+        <!--Local planner-->
+        <!--param name="controller_frequency" value="10.0"/>
+        <param name="controller_patience" value="15.0"/>
+        <param name="planner_frequency" value="0.5"/-->
+        <rosparam file="$(find rasberry_move_base)/config/eband/eband_planner_ros.yaml" command="load"/>
+        <rosparam file="$(find rasberry_move_base)/config/eband/eband_move_base_params.yaml" command="load"/>
+
+        <rosparam file="$(find rasberry_move_base)/config/costmap_common_params.yaml" command="load" ns="global_costmap"/>
+        <rosparam file="$(find rasberry_move_base)/config/costmap_common_params.yaml" command="load" ns="local_costmap"/>
+        <rosparam file="$(find rasberry_move_base)/config/footprints/robot_$(arg robot_no)_footprint.yaml" command="load" ns="global_costmap"/>
+        <rosparam file="$(find rasberry_move_base)/config/footprints/robot_$(arg robot_no)_footprint.yaml" command="load" ns="local_costmap"/>
+        <rosparam file="$(find rasberry_move_base)/config/local_costmap_params.yaml" command="load"/>
+        <rosparam file="$(find rasberry_move_base)/config/global_costmap_params.yaml" command="load"/>
+	<rosparam file="$(find rasberry_move_base)/config/nav_fn_ros.yaml" command="load" />
+        
+    </node>
+    
+</launch>

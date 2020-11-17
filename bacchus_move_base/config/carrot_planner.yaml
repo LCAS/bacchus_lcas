@@ -1,0 +1,6 @@
+#see http://wiki.ros.org/navfn for param description
+
+base_global_planner: carrot_planner/CarrotPlanner
+#CarrotPlanner:
+#  allow_unknown: false
+#  default_tolerance: 0.0

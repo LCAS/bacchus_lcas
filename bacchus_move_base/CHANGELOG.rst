@@ -278,6 +278,11 @@ Changelog for package rasberry_move_base
 
 Forthcoming
 -----------
+* Merge pull request `#6 <https://github.com/LCAS/bacchus_lcas/issues/6>`_ from LCAS/better_download_models
+  Better build and demo
+* improved the download build and also allow rviz navigation
+* Contributors: Marc Hanheide
+
 * Merge branch 'master' into vine_stages
 * Update costmap_common_params.yaml
 * Update move_base_dwa_multisim.launch

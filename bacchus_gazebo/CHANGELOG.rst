@@ -2,6 +2,13 @@
 Changelog for package bacchus_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge pull request `#6 <https://github.com/LCAS/bacchus_lcas/issues/6>`_ from LCAS/better_download_models
+  Better build and demo
+* improved the download build and also allow rviz navigation
+* Contributors: Marc Hanheide
+
 0.1.0 (2020-11-18)
 ------------------
 * Merge pull request `#5 <https://github.com/LCAS/bacchus_lcas/issues/5>`_ from LCAS/vine_stages

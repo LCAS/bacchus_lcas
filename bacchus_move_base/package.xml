@@ -22,8 +22,6 @@
   <build_depend>move_base</build_depend>
   <build_depend>robot_pose_publisher</build_depend>
   <build_depend>teb_local_planner</build_depend>
-  <build_depend>unzip</build_depend>
-  <build_depend>curl</build_depend>
   <build_depend>tf</build_depend>
 
   <exec_depend>dwa_local_planner</exec_depend>

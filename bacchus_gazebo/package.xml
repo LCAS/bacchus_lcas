@@ -60,6 +60,8 @@
   <build_depend>velodyne_description</build_depend>
   <build_depend>velodyne_gazebo_plugins</build_depend>
   <build_depend>kinect2_description</build_depend>
+  <build_depend>unzip</build_depend>
+  <build_depend>curl</build_depend>
 
   <build_export_depend>nav_msgs</build_export_depend>
   <build_export_depend>rospy</build_export_depend>

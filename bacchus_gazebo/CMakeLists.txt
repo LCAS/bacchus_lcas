@@ -235,34 +235,28 @@ if(CATKIN_ENABLE_TESTING)
   add_rostest(tests/testme.test)
 endif()
 
-set(TIMEOUT 10)
-set(FILE_NAME vine_t.zip)
-set(DOWNLOAD_DIR ../src/bacchus_lcas/bacchus_gazebo/models)
-set(URL https://lcas.lincoln.ac.uk/nextcloud/index.php/s/XG8yLcQPfXe5kk8/download)
+set(MODELS_ZIPFILE vine_t.zip)
+set(MODELS_DEST_DIR ${CMAKE_CURRENT_SOURCE_DIR}/models)
+set(MODELS_DOWNLOAD_URL https://lcas.lincoln.ac.uk/nextcloud/index.php/s/XG8yLcQPfXe5kk8/download)
 
-set(file ${DOWNLOAD_DIR}/${FILE_NAME})
-message(STATUS "file: ${file}")
+add_custom_command(OUTPUT ${MODELS_ZIPFILE}
+  COMMAND curl --progress-bar -o "${MODELS_ZIPFILE}" "${MODELS_DOWNLOAD_URL}"
+  COMMENT "downloading additional models"
+  VERBATIM
+)
 
-if(NOT EXISTS ${file})
-	message(STATUS "downloading ...
-	    src='${URL}'
-	    dst='${file}'
-	    timeout= ${TIMEOUT} seconds")
+add_custom_command(
+  OUTPUT .models-extracted
+  DEPENDS ${MODELS_ZIPFILE}
+  COMMAND unzip -q -o -d "${MODELS_DEST_DIR}" "${MODELS_ZIPFILE}"
+  COMMAND touch .models-extracted
+  COMMENT "extracting additional models"
+  VERBATIM
+)
 
-	file(DOWNLOAD
-		${URL}
-		${file}
-		SHOW_PROGRESS
-		STATUS st
-		INACTIVITY_TIMEOUT ${TIMEOUT}
-		LOG log
-		)
+add_custom_target(get_models ALL
+  DEPENDS 
+  .models-extracted
+)
 
-	list(GET status 0 status_code)
-	list(GET status 1 status_string)
-
-	message( STATUS ${status_code})
-	execute_process(COMMAND bash -c "unzip ${file} -d ${DOWNLOAD_DIR}")
-endif()
-
-
+add_dependencies(get_models preinstall)

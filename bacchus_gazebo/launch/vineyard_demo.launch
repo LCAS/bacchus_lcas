@@ -75,7 +75,7 @@
       name="rviz"
       pkg="rviz"
       type= "rviz"
-      args="$(arg rviz_config_file)" />
+      args="-d $(arg rviz_config_file)" />
   </group>
 
 </launch>

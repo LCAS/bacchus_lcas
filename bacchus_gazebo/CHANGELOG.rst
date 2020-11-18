@@ -2,8 +2,8 @@
 Changelog for package bacchus_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.2.1 (2020-11-18)
+------------------
 * fix deps
 * Contributors: Marc Hanheide
 

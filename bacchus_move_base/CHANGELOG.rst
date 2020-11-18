@@ -276,8 +276,8 @@ Changelog for package rasberry_move_base
 0.0.2 (2018-05-21)
 ------------------
 
-Forthcoming
------------
+0.2.1 (2020-11-18)
+------------------
 * fix deps
 * Contributors: Marc Hanheide
 

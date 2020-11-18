@@ -276,5 +276,16 @@ Changelog for package rasberry_move_base
 0.0.2 (2018-05-21)
 ------------------
 
+Forthcoming
+-----------
+* Merge branch 'master' into vine_stages
+* Update costmap_common_params.yaml
+* Update move_base_dwa_multisim.launch
+* Update vineyard_demo_goals.txt
+* Merge pull request `#3 <https://github.com/LCAS/bacchus_lcas/issues/3>`_ from LCAS/new_sim_sergi
+  adding move base and main launch file
+* adding move base and main launch file
+* Contributors: Ibrahim Hroob, Sergi Molina, sergimolina
+
 0.0.1 (2018-03-05)
 ------------------

@@ -276,6 +276,11 @@ Changelog for package rasberry_move_base
 0.0.2 (2018-05-21)
 ------------------
 
+Forthcoming
+-----------
+* fix deps
+* Contributors: Marc Hanheide
+
 0.2.0 (2020-11-18)
 ------------------
 * Merge pull request `#6 <https://github.com/LCAS/bacchus_lcas/issues/6>`_ from LCAS/better_download_models

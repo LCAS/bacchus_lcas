@@ -2,8 +2,8 @@
 Changelog for package bacchus_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.1.0 (2020-11-18)
+------------------
 * Merge pull request `#5 <https://github.com/LCAS/bacchus_lcas/issues/5>`_ from LCAS/vine_stages
   Vine stages
 * deleted vine_t0 model

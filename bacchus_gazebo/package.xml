@@ -84,6 +84,10 @@
   <exec_depend>velodyne_gazebo_plugins</exec_depend>
   <exec_depend>kinect2_description</exec_depend>
   <exec_depend>thorvald_base</exec_depend>
+  <exec_depend>gazebo_ros</exec_depend>
+  <exec_depend>bacchus_move_base</exec_depend>
+  <exec_depend>tf</exec_depend>
+  <exec_depend>rviz</exec_depend>
   <exec_depend>thorvald_description</exec_depend>
   
   <exec_depend>map_server</exec_depend>

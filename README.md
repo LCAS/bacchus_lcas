@@ -3,10 +3,15 @@ A repository for contributions to the BACCHUS H2020 project
 
 =======
 ## 1 - Getting the system
+
+### From source
 1. Go to ~/catkin_ws/src and clone the repo: `git clone https://github.com/LCAS/bacchus_lcas.git`
 1. While inside ~/catkin_ws/src , install all dependencies for the packages with: `rosdep install --from-paths . -i`
 1. Go to ~/catkin_ws and compile: `catkin_make` or `catkin build`
 
+### From installed packages
+1. Enable ROS and L-CAS Ubuntu repositories: https://github.com/LCAS/rosdistro/wiki#using-the-l-cas-repository
+1. install `sudo apt-get install ros-melodic-bacchus-gazebo`
 
 ## 2 - Launch the system with:
 `roslaunch bacchus_gazebo vineyard_demo.launch`

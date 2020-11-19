@@ -5,8 +5,8 @@ A repository for contributions to the BACCHUS H2020 project
 ## 1 - Getting the system
 
 ### From source
-1. Go to ~/catkin_ws/src and clone the repo: `git clone https://github.com/LCAS/bacchus_lcas.git`
-1. While inside ~/catkin_ws/src , install all dependencies for the packages with: `rosdep install --from-paths . -i`
+1. Go to `~/catkin_ws/src` and clone the repo: `git clone https://github.com/LCAS/bacchus_lcas.git`
+1. While inside `~/catkin_ws/src` , install all dependencies for the packages with: `rosdep install --from-paths . -i`
 1. Go to ~/catkin_ws and compile: `catkin_make` or `catkin build`
 
 ### From installed packages
@@ -25,8 +25,10 @@ To do so run:
 
 
 ## 3 - To send a sequence of goals:
-Go to ~/catkin_ws/src/bacchus_lcas/bacchus_move_base/scripts and run:
+Go to `~/catkin_ws/src/bacchus_lcas/bacchus_move_base/scripts` and run:
 
 `python send_goals.py _goals_seq_file:=../config/goals/vineyard_demo_goals.txt`
 
-The `goals_seq_file` has to be a txt containing 3 columns [x,y,yaw]. They define the sequence of goals to be send to the robot.
+The `goals_seq_file` has to be a txt containing 3 columns `[x,y,yaw]`. They define the sequence of goals to be send to the robot.
+
+Or simply send a navigation goal via `rviz`.

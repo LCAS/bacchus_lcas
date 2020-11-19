@@ -5,7 +5,7 @@ A repository for contributions to the BACCHUS H2020 project
 ## 1 - Getting the system
 1. Go to ~/catkin_ws/src and clone the repo: `git clone https://github.com/LCAS/bacchus_lcas.git`
 1. While inside ~/catkin_ws/src , install all dependencies for the packages with: `rosdep install --from-paths . -i`
-1. Go to ~/catkin_make and compile: `catkin_make`
+1. Go to ~/catkin_ws and compile: `catkin_make` or `catkin build`
 
 
 ## 2 - Launch the system with:

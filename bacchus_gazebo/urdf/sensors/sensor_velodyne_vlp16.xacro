@@ -1,0 +1,164 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="sensor_frames">
+
+  <xacro:arg name="robot_name" default=""/>
+  <xacro:arg name="tf_prefix" default=""/>
+
+  <!-- Velodyne VLP16 -->
+  <xacro:property name="velodyne_origin">
+    <origin xyz="0 0 1.56" rpy="0 0 0" />
+  </xacro:property>
+  <xacro:property name="M_PI" value="3.1415926535897931" />
+  <xacro:property name="velodyne_parent" value="base_link" />
+  <xacro:property name="velodyne_name" value="velodyne" />
+  <xacro:property name="velodyne_topic" value="velodyne_points" />
+  <xacro:property name="velodyne_hz" value="10" />
+  <xacro:property name="velodyne_lasers" value="16" />
+  <xacro:property name="velodyne_samples" value="440" />
+  <xacro:property name="velodyne_collision_range" value="0.3" />
+  <xacro:property name="velodyne_min_range" value="0.9" />
+  <xacro:property name="velodyne_max_range" value="130.0" />
+  <xacro:property name="velodyne_noise" value="0.008" />
+  <xacro:property name="velodyne_min_angle" value="-${M_PI}" />
+  <xacro:property name="velodyne_max_angle" value="${M_PI}" />
+  <xacro:property name="velodyne_gpu" value="false"/>
+
+  <joint name="$(arg robot_name)_${velodyne_name}_base_mount_joint" type="fixed">
+    <xacro:insert_block name="velodyne_origin" /> 
+    <parent link="$(arg tf_prefix)${velodyne_parent}"/>
+    <child link="$(arg tf_prefix)${velodyne_name}_link"/>
+  </joint>
+
+  <link name="$(arg tf_prefix)${velodyne_name}_link">
+    <inertial>
+      <mass value="0.83"/>
+      <origin xyz="0 0 0.03585"/>
+      <inertia ixx="${(0.83 * (3.0*0.0516*0.0516 + 0.0717*0.0717)) / 12.0}" ixy="0" ixz="0"
+        iyy="${(0.83 * (3.0*0.0516*0.0516 + 0.0717*0.0717)) / 12.0}" iyz="0"
+        izz="${0.5 * 0.83 * (0.0516*0.0516)}"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://velodyne_description/meshes/VLP16_base_1.dae" />
+      </geometry>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="package://velodyne_description/meshes/VLP16_base_2.dae" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0.03585"/>
+      <geometry>
+        <cylinder radius="0.0516" length="0.0717"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="$(arg robot_name)_${velodyne_name}_base_scan_joint" type="fixed" >
+    <origin xyz="0 0 0.0377" rpy="0 0 0" />
+    <parent link="$(arg tf_prefix)${velodyne_name}_link" />
+    <child link="$(arg tf_prefix)${velodyne_name}"/>
+  </joint>
+
+  <link name="$(arg tf_prefix)${velodyne_name}">
+    <inertial>
+      <mass value="0.01"/>
+      <origin xyz="0 0 0"/>
+      <inertia ixx="1e-7" ixy="0" ixz="0" iyy="1e-7" iyz="0" izz="1e-7"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 -0.0377" />
+      <geometry>
+        <mesh filename="package://velodyne_description/meshes/VLP16_scan.dae" />
+      </geometry>
+    </visual>
+  </link>
+
+  <!-- Gazebo requires the velodyne_gazebo_plugins package -->
+  <gazebo reference="$(arg tf_prefix)${velodyne_name}">
+    <xacro:if value="${velodyne_gpu}">
+      <sensor type="gpu_ray" name="$(arg robot_name)_${velodyne_name}-VLP16">
+        <pose>0 0 0 0 0 0</pose>
+        <visualize>false</visualize>
+        <update_rate>${velodyne_hz}</update_rate>
+        <ray>
+          <scan>
+            <horizontal>
+              <samples>${velodyne_samples}</samples>
+              <resolution>1</resolution>
+              <min_angle>${velodyne_min_angle}</min_angle>
+              <max_angle>${velodyne_max_angle}</max_angle>
+            </horizontal>
+            <vertical>
+              <samples>${velodyne_lasers}</samples>
+              <resolution>1</resolution>
+              <min_angle>-${15.0*M_PI/180.0}</min_angle>
+              <max_angle> ${15.0*M_PI/180.0}</max_angle>
+            </vertical>
+          </scan>
+          <range>
+            <min>${velodyne_collision_range}</min>
+            <max>${velodyne_max_range+1}</max>
+            <resolution>0.001</resolution>
+          </range>
+          <noise>
+            <type>gaussian</type>
+            <mean>0.0</mean>
+            <stddev>0.0</stddev>
+          </noise>
+        </ray>
+        <plugin name="gazebo_ros_laser_controller"  filename="libgazebo_ros_velodyne_gpu_laser.so">
+          <topicName>${velodyne_topic}</topicName>
+          <frameName>${velodyne_name}</frameName>
+          <min_range>${velodyne_min_range}</min_range>
+          <max_range>${velodyne_max_range}</max_range>
+          <gaussianNoise>${velodyne_noise}</gaussianNoise>
+        </plugin>
+      </sensor>
+    </xacro:if>
+
+    <xacro:unless value="${velodyne_gpu}">
+      <sensor type="ray" name="$(arg robot_name)_${velodyne_name}-VLP16">
+        <pose>0 0 0 0 0 0</pose>
+        <visualize>false</visualize>
+        <update_rate>${velodyne_hz}</update_rate>
+        <ray>
+          <scan>
+            <horizontal>
+              <samples>${velodyne_samples}</samples>
+              <resolution>1</resolution>
+              <min_angle>${velodyne_min_angle}</min_angle>
+              <max_angle>${velodyne_max_angle}</max_angle>
+            </horizontal>
+            <vertical>
+              <samples>${velodyne_lasers}</samples>
+              <resolution>1</resolution>
+              <min_angle>-${15.0*M_PI/180.0}</min_angle>
+              <max_angle> ${15.0*M_PI/180.0}</max_angle>
+            </vertical>
+          </scan>
+          <range>
+            <min>${velodyne_collision_range}</min>
+            <max>${velodyne_max_range+1}</max>
+            <resolution>0.001</resolution>
+          </range>
+          <noise>
+            <type>gaussian</type>
+            <mean>0.0</mean>
+            <stddev>0.0</stddev>
+          </noise>
+        </ray>
+        <plugin name="gazebo_ros_laser_controller"  filename="libgazebo_ros_velodyne_laser.so">
+          <topicName>${velodyne_topic}</topicName>
+          <frameName>${velodyne_name}</frameName>
+          <min_range>${velodyne_min_range}</min_range>
+          <max_range>${velodyne_max_range}</max_range>
+          <gaussianNoise>${velodyne_noise}</gaussianNoise>
+        </plugin>
+      </sensor>
+    </xacro:unless>
+  </gazebo>
+
+</robot>
+

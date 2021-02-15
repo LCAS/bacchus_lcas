@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="sensor_frames">
+
+  <xacro:arg name="robot_name" default=""/>
+  <xacro:arg name="tf_prefix" default=""/>
+
+	<!-- IMU -->
+  <link name="$(arg tf_prefix)imu_sensor_link">
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.01 0.01 0.01"/>
+      </geometry>
+    </collision>
+
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.01 0.01 0.01"/>
+      </geometry>
+    </visual>
+
+    <inertial>
+      <mass value="0.01" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6" />
+    </inertial>
+  </link>
+
+  <joint name="$(arg robot_name)imu_sensor_joint" type="fixed">
+    <parent link="$(arg tf_prefix)base_link"/>
+    <child link="$(arg tf_prefix)imu_sensor_link"/>
+    <axis xyz="0 1 0" />
+    <origin xyz="0 0 1.56" rpy="0 0 0"/>
+  </joint>
+
+  <gazebo reference="$(arg tf_prefix)imu_sensor_link">
+		<gravity>true</gravity>
+		<sensor name="$(arg robot_name)imu_sensor" type="imu">
+			<always_on>true</always_on>
+			<update_rate>500</update_rate>
+			<visualize>true</visualize>
+			<topic>__default_topic__</topic>
+			<plugin filename="libgazebo_ros_imu_sensor.so" name="(arg robot_name)imu_plugin">
+				<topicName>imu_raw</topicName>
+				<bodyName>imu_sensor_link</bodyName>
+				<updateRateHZ>10.0</updateRateHZ>
+				<gaussianNoise>0.0</gaussianNoise>
+				<xyzOffset>0 0 0</xyzOffset>
+				<rpyOffset>0 0 0</rpyOffset>
+				<frameName>$(arg tf_prefix)imu_sensor_link</frameName>
+				<initialOrientationAsReference>false</initialOrientationAsReference>
+			</plugin>
+			<pose>0 0 0 0 0 0</pose>
+			<material>Gazebo/Orange</material>
+		</sensor>
+	</gazebo>			
+
+</robot>
+

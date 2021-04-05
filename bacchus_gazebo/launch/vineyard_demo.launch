@@ -43,7 +43,7 @@
 
   <include file="$(find bacchus_gazebo)/launch/thorvald.launch">
     <arg name="robot_name" value="thorvald_001" />
-    <arg name="x" value="11.0" />
+    <arg name="x" value="-11.0" />
   </include>
 
   <group if="$(arg fake_localisation)">

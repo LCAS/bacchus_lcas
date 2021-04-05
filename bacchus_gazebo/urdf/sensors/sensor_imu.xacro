@@ -31,20 +31,20 @@
     <parent link="$(arg tf_prefix)base_link"/>
     <child link="$(arg tf_prefix)imu_sensor_link"/>
     <axis xyz="0 1 0" />
-    <origin xyz="0 0 1.56" rpy="0 0 0"/>
+    <origin xyz="0 0 1.65" rpy="0 0 0"/>
   </joint>
 
   <gazebo reference="$(arg tf_prefix)imu_sensor_link">
 		<gravity>true</gravity>
 		<sensor name="$(arg robot_name)imu_sensor" type="imu">
 			<always_on>true</always_on>
-			<update_rate>500</update_rate>
+			<update_rate>1000</update_rate>
 			<visualize>true</visualize>
 			<topic>__default_topic__</topic>
 			<plugin filename="libgazebo_ros_imu_sensor.so" name="(arg robot_name)imu_plugin">
 				<topicName>imu_raw</topicName>
 				<bodyName>imu_sensor_link</bodyName>
-				<updateRateHZ>10.0</updateRateHZ>
+				<updateRateHZ>500.0</updateRateHZ>
 				<gaussianNoise>0.0</gaussianNoise>
 				<xyzOffset>0 0 0</xyzOffset>
 				<rpyOffset>0 0 0</rpyOffset>
@@ -53,6 +53,60 @@
 			</plugin>
 			<pose>0 0 0 0 0 0</pose>
 			<material>Gazebo/Orange</material>
+        <imu_sensor>
+          <angular_velocity>
+            <x>
+              <noise type="gaussian">
+                <mean>0.0</mean>
+                <stddev>2e-4</stddev>
+                <bias_mean>0.0000075</bias_mean>
+                <bias_stddev>0.0000008</bias_stddev>
+              </noise>
+            </x>
+            <y>
+              <noise type="gaussian">
+                <mean>0.0</mean>
+                <stddev>2e-4</stddev>
+                <bias_mean>0.0000075</bias_mean>
+                <bias_stddev>0.0000008</bias_stddev>
+              </noise>
+            </y>
+            <z>
+              <noise type="gaussian">
+                <mean>0.0</mean>
+                <stddev>2e-4</stddev>
+                <bias_mean>0.0000075</bias_mean>
+                <bias_stddev>0.0000008</bias_stddev>
+              </noise>
+            </z>
+          </angular_velocity>
+          <linear_acceleration>
+            <x>
+              <noise type="gaussian">
+                <mean>0.0</mean>
+                <stddev>1.7e-2</stddev>
+                <bias_mean>0.1</bias_mean>
+                <bias_stddev>0.001</bias_stddev>
+              </noise>
+            </x>
+            <y>
+              <noise type="gaussian">
+                <mean>0.0</mean>
+                <stddev>1.7e-2</stddev>
+                <bias_mean>0.1</bias_mean>
+                <bias_stddev>0.001</bias_stddev>
+              </noise>
+            </y>
+            <z>
+              <noise type="gaussian">
+                <mean>0.0</mean>
+                <stddev>1.7e-2</stddev>
+                <bias_mean>0.1</bias_mean>
+                <bias_stddev>0.001</bias_stddev>
+              </noise>
+            </z>
+          </linear_acceleration>
+        </imu_sensor>
 		</sensor>
 	</gazebo>			
 

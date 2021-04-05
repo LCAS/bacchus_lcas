@@ -4,8 +4,12 @@
   <xacro:arg name="robot_name" default=""/>
   <xacro:arg name="tf_prefix" default=""/>
 
+  <xacro:property name="xyz" value="-0.7025 0.60 0.66"/>
+  <xacro:property name="rpy" value="0 0 -3.141592"/>
+  <xacro:property name="sensor_name" value="hokuyo_bottom_left"/>
+
   <!-- Hokuyo Laser -->
-  <link name="$(arg tf_prefix)hokuyo">
+  <link name="$(arg tf_prefix)${sensor_name}">
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
@@ -27,16 +31,16 @@
     </inertial>
   </link>
 
-  <joint name="$(arg robot_name)_base_link_hokuyo" type="fixed">
+  <joint name="$(arg robot_name)_base_link_${sensor_name}" type="fixed">
     <parent link="$(arg tf_prefix)base_link"/>
-    <child link="$(arg tf_prefix)hokuyo"/>
+    <child link="$(arg tf_prefix)${sensor_name}"/>
     <axis xyz="0 1 0" />
-    <origin xyz="0.7025 0.005 0.66" rpy="0 0 0"/>
+    <origin xyz="${xyz}" rpy="${rpy}"/>
   </joint>
 
   <!--hokuyo-->
-  <gazebo reference="$(arg tf_prefix)hokuyo">
-    <sensor name="$(arg robot_name)hokuyo_sensor" type="ray">
+  <gazebo reference="$(arg tf_prefix)${sensor_name}">
+    <sensor name="$(arg robot_name)${sensor_name}_sensor" type="ray">
       <pose>0 0 0 0 0 0</pose>
       <visualize>false</visualize>
       <update_rate>40</update_rate>
@@ -46,7 +50,7 @@
           <horizontal>
             <samples>720</samples>
             <resolution>1</resolution>
-            <min_angle>-1.570796</min_angle>
+            <min_angle>-3.141592</min_angle>
             <max_angle>1.570796</max_angle>
           </horizontal>
         </scan>
@@ -65,9 +69,9 @@
           <stddev>0.01</stddev>
         </noise>
       </ray>
-      <plugin name="$(arg robot_name)hokuyo_node" filename="libgazebo_ros_laser.so">
-        <topicName>scan</topicName>
-        <frameName>hokuyo</frameName>
+      <plugin name="$(arg robot_name)${sensor_name}_node" filename="libgazebo_ros_laser.so">
+        <topicName>${sensor_name}_scan</topicName>
+        <frameName>${sensor_name}</frameName>
       </plugin>
     </sensor>
   </gazebo>

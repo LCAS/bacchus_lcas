@@ -1,13 +1,15 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="sensor_frames">
 
-	<!-- Import all sensors from sensors sub-folder -->
-	<xacro:include filename="$(find bacchus_gazebo)/urdf/sensors/sensor_fake_sprayer.xacro" />
-	<xacro:include filename="$(find bacchus_gazebo)/urdf/sensors/sensor_hokuyo_laser.xacro" />
-	<xacro:include filename="$(find bacchus_gazebo)/urdf/sensors/sensor_velodyne_vlp16.xacro" />
-	<xacro:include filename="$(find bacchus_gazebo)/urdf/sensors/sensor_kinect_v2_num1.xacro" />
-	<xacro:include filename="$(find bacchus_gazebo)/urdf/sensors/sensor_kinect_v2_num2.xacro" />
-	<xacro:include filename="$(find bacchus_gazebo)/urdf/sensors/sensor_imu.xacro" />
+  <!-- Import all sensors from sensors sub-folder -->
+  <!--xacro:include filename="$(find bacchus_gazebo)/urdf/sensors/sensor_fake_sprayer.xacro" /-->
+  <xacro:include filename="$(find bacchus_gazebo)/urdf/sensors/sensor_hokuyo_laser_top_right.xacro" />
+  <xacro:include filename="$(find bacchus_gazebo)/urdf/sensors/sensor_hokuyo_laser_bottom_left.xacro" />
+  <xacro:include filename="$(find bacchus_gazebo)/urdf/sensors/sensor_velodyne_vlp16.xacro" />
+  <xacro:include filename="$(find bacchus_gazebo)/urdf/sensors/sensor_kinect_v2_front.xacro" />
+  <xacro:include filename="$(find bacchus_gazebo)/urdf/sensors/sensor_kinect_v2_left.xacro" />
+  <xacro:include filename="$(find bacchus_gazebo)/urdf/sensors/sensor_kinect_v2_right.xacro" />
+  <xacro:include filename="$(find bacchus_gazebo)/urdf/sensors/sensor_imu.xacro" />
 
 </robot>
 

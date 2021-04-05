@@ -4,17 +4,17 @@
   <xacro:arg name="robot_name" default=""/>
   <xacro:arg name="tf_prefix" default=""/>
 
-  <!-- Kinect v2 num 1-->
-  <xacro:property name="kinect2_1_parent" value="base_link" />
-  <xacro:property name="kinect2_1_name" value="kinect2_1" />
-  <xacro:property name="kinect2_1_cam_px" value="0" />
-  <xacro:property name="kinect2_1_cam_py" value="-0.2" />
-  <xacro:property name="kinect2_1_cam_pz" value="1.2" />
-  <xacro:property name="kinect2_1_cam_or" value="-${M_PI/2}" />
-  <xacro:property name="kinect2_1_cam_op" value="0" />
-  <xacro:property name="kinect2_1_cam_oy" value="-${M_PI/2}" />
+  <!-- Kinect v2 -->
+  <xacro:property name="kinect2_parent" value="base_link" />
+  <xacro:property name="kinect2_name"   value="kinect2_right" />
+  <xacro:property name="kinect2_cam_px" value="0.0 " />
+  <xacro:property name="kinect2_cam_py" value="-0.34" />
+  <xacro:property name="kinect2_cam_pz" value="0.80" />
+  <xacro:property name="kinect2_cam_or" value="0" />
+  <xacro:property name="kinect2_cam_op" value="0" />
+  <xacro:property name="kinect2_cam_oy" value="${270*M_PI/180}" />
 
-  <link name="$(arg tf_prefix)${kinect2_1_name}_link">
+  <link name="$(arg tf_prefix)${kinect2_name}_link">
     <visual>
       <geometry>
         <mesh filename="package://kinect2_description/meshes/sensors/kinect2.dae"/>
@@ -36,30 +36,30 @@
     </inertial>
   </link>
 
-  <joint name="$(arg robot_name)_${kinect2_1_name}_joint" type="fixed">
-    <parent link="$(arg tf_prefix)${kinect2_1_parent}"/>
-    <child link="$(arg tf_prefix)${kinect2_1_name}_link"/>
-    <origin xyz="${kinect2_1_cam_px} ${kinect2_1_cam_py} ${kinect2_1_cam_pz}" rpy="${kinect2_1_cam_or} ${kinect2_1_cam_op} ${kinect2_1_cam_oy}"/>
+  <joint name="$(arg robot_name)_${kinect2_name}_joint" type="fixed">
+    <parent link="$(arg tf_prefix)${kinect2_parent}"/>
+    <child link="$(arg tf_prefix)${kinect2_name}_link"/>
+    <origin xyz="${kinect2_cam_px} ${kinect2_cam_py} ${kinect2_cam_pz}" rpy="${kinect2_cam_or} ${kinect2_cam_op} ${kinect2_cam_oy}"/>
   </joint>
 
-  <link name="$(arg tf_prefix)${kinect2_1_name}_rgb_optical_frame"/>
+  <link name="$(arg tf_prefix)${kinect2_name}_rgb_optical_frame"/>
 
-  <joint name="$(arg robot_name)_${kinect2_1_name}_rgb_joint" type="fixed">
-    <parent link="$(arg tf_prefix)${kinect2_1_name}_link"/>
-    <child link="$(arg tf_prefix)${kinect2_1_name}_rgb_optical_frame"/>
+  <joint name="$(arg robot_name)_${kinect2_name}_rgb_joint" type="fixed">
+    <parent link="$(arg tf_prefix)${kinect2_name}_link"/>
+    <child link="$(arg tf_prefix)${kinect2_name}_rgb_optical_frame"/>
     <origin xyz="0 0.0125 0.016" rpy="-1.57 0 -1.57"/>
   </joint>
 
-  <link name="$(arg tf_prefix)${kinect2_1_name}_depth_optical_frame"/>
+  <link name="$(arg tf_prefix)${kinect2_name}_depth_optical_frame"/>
 
-  <joint name="$(arg robot_name)_${kinect2_1_name}_depth_joint" type="fixed">
-    <parent link="$(arg tf_prefix)${kinect2_1_name}_link"/>
-    <child link="$(arg tf_prefix)${kinect2_1_name}_depth_optical_frame"/>
+  <joint name="$(arg robot_name)_${kinect2_name}_depth_joint" type="fixed">
+    <parent link="$(arg tf_prefix)${kinect2_name}_link"/>
+    <child link="$(arg tf_prefix)${kinect2_name}_depth_optical_frame"/>
     <origin xyz="0 -0.0125 0.016" rpy="-1.57 0 -1.57"/>
   </joint>
 
-  <gazebo reference="$(arg tf_prefix)${kinect2_1_name}_link">
-    <sensor name="$(arg robot_name)_${kinect2_1_name}_sensor" type="depth">
+  <gazebo reference="$(arg tf_prefix)${kinect2_name}_link">
+    <sensor name="$(arg robot_name)_${kinect2_name}_sensor" type="depth">
       <always_on>true</always_on>
       <update_rate>30.0</update_rate>
       <camera>
@@ -82,8 +82,8 @@
           <stddev>0.001</stddev>
         </noise>
       </camera>
-      <plugin name="$(arg robot_name)_${kinect2_1_name}_sensor_controller" filename="libgazebo_ros_openni_kinect.so">
-        <cameraName>${kinect2_1_name}_sensor</cameraName>
+      <plugin name="$(arg robot_name)_${kinect2_name}_sensor_controller" filename="libgazebo_ros_openni_kinect.so">
+        <cameraName>${kinect2_name}_sensor</cameraName>
         <alwaysOn>true</alwaysOn>
         <updateRate>30.0</updateRate>
         <imageTopicName>sd/image_ir_rect</imageTopicName>
@@ -91,7 +91,7 @@
         <pointCloudTopicName>sd/points</pointCloudTopicName>
         <cameraInfoTopicName>sd/camera_info</cameraInfoTopicName>
         <!--<depthImageCameraInfoTopicName>depth/camera_info</depthImageCameraInfoTopicName>-->
-        <frameName>${kinect2_1_name}_depth_optical_frame</frameName>
+        <frameName>${kinect2_name}_depth_optical_frame</frameName>
         <pointCloudCutoff>0.5</pointCloudCutoff>
         <pointCloudCutoffMax>8.0</pointCloudCutoffMax>
         <baseline>0.1</baseline>
@@ -105,11 +105,11 @@
     </sensor>
   </gazebo>
 
-  <gazebo reference="$(arg tf_prefix)${kinect2_1_name}_link">
-    <sensor name="$(arg robot_name)_${kinect2_1_name}_camera" type="camera">
+  <gazebo reference="$(arg tf_prefix)${kinect2_name}_link">
+    <sensor name="$(arg robot_name)_${kinect2_name}_camera" type="camera">
       <always_on>true</always_on>
       <update_rate>30.0</update_rate>
-      <camera name="${kinect2_1_name}_camera">
+      <camera name="${kinect2_name}_camera">
         <horizontal_fov>${84.1*3.14/180.0}</horizontal_fov>
         <image>
           <width>1920</width>
@@ -129,13 +129,13 @@
           <stddev>0.007</stddev>
         </noise>
       </camera>
-      <plugin name="$(arg robot_name)_${kinect2_1_name}_camera_controller" filename="libgazebo_ros_camera.so">
+      <plugin name="$(arg robot_name)_${kinect2_name}_camera_controller" filename="libgazebo_ros_camera.so">
         <alwaysOn>true</alwaysOn>
         <updateRate>30.0</updateRate>
-        <cameraName>${kinect2_1_name}_camera</cameraName>
+        <cameraName>${kinect2_name}_camera</cameraName>
         <imageTopicName>hd/image_color_rect</imageTopicName>
         <cameraInfoTopicName>hd/camera_info</cameraInfoTopicName>
-        <frameName>${kinect2_1_name}_rgb_optical_frame</frameName>
+        <frameName>${kinect2_name}_rgb_optical_frame</frameName>
         <baseline>0.1</baseline>
         <distortionK1>0.0</distortionK1>
         <distortionK2>0.0</distortionK2>

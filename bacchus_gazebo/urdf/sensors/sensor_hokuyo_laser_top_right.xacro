@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="sensor_frames">
+
+  <xacro:arg name="robot_name" default=""/>
+  <xacro:arg name="tf_prefix" default=""/>
+
+  <xacro:property name="xyz" value="0.7025 -0.6 0.66"/>
+  <xacro:property name="rpy" value="0 0 0"/>
+  <xacro:property name="sensor_name" value="hokuyo_top_right"/>
+
+  <!-- Hokuyo Laser -->
+  <link name="$(arg tf_prefix)${sensor_name}">
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.1 0.1 0.1"/>
+      </geometry>
+    </collision>
+
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://thorvald_description/meshes/hokuyo/hokuyo.dae"/>
+      </geometry>
+    </visual>
+
+    <inertial>
+      <mass value="1e-5" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6" />
+    </inertial>
+  </link>
+
+  <joint name="$(arg robot_name)_base_link_${sensor_name}" type="fixed">
+    <parent link="$(arg tf_prefix)base_link"/>
+    <child link="$(arg tf_prefix)${sensor_name}"/>
+    <axis xyz="0 1 0" />
+    <origin xyz="${xyz}" rpy="${rpy}"/>
+  </joint>
+
+  <!--hokuyo-->
+  <gazebo reference="$(arg tf_prefix)${sensor_name}">
+    <sensor name="$(arg robot_name)${sensor_name}_sensor" type="ray">
+      <pose>0 0 0 0 0 0</pose>
+      <visualize>false</visualize>
+      <update_rate>40</update_rate>
+      <always_on>1</always_on>
+      <ray>
+        <scan>
+          <horizontal>
+            <samples>720</samples>
+            <resolution>1</resolution>
+            <min_angle>-3.141592</min_angle>
+            <max_angle>1.570796</max_angle>
+          </horizontal>
+        </scan>
+        <range>
+          <min>0.10</min>
+          <max>30.0</max>
+          <resolution>0.01</resolution>
+        </range>
+        <noise>
+          <type>gaussian</type>
+          <!-- Noise parameters based on published spec for Hokuyo laser
+               achieving "+-30mm" accuracy at range < 10m.  A mean of 0.0m and
+               stddev of 0.01m will put 99.7% of samples within 0.03m of the true
+               reading. -->
+          <mean>0.0</mean>
+          <stddev>0.01</stddev>
+        </noise>
+      </ray>
+      <plugin name="$(arg robot_name)${sensor_name}_node" filename="libgazebo_ros_laser.so">
+        <topicName>${sensor_name}_scan</topicName>
+        <frameName>${sensor_name}</frameName>
+      </plugin>
+    </sensor>
+  </gazebo>
+
+</robot>
+

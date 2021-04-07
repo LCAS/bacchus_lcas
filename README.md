@@ -1,4 +1,3 @@
-
 <!-- ![BACCHUS Logo](./etc/images/bacchus_logo.png =250x250)  -->
 <img src="./etc/images/bacchus_logo.png" align="left" width="150" />
 

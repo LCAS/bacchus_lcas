@@ -14,6 +14,7 @@ find_package(catkin REQUIRED COMPONENTS
   robot_pose_publisher
   teb_local_planner
   tf
+  ira_laser_tools
 )
 
 ## System dependencies are found with CMake's conventions

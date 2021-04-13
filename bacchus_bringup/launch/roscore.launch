@@ -1,0 +1,6 @@
+<?xml version="1.0" ?>
+<launch>
+    <arg name="use_sim" default="true" />
+
+    <param name="enable_statistics" value="true" unless="$(arg use_sim)"/>
+</launch>

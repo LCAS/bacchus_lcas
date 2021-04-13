@@ -1,0 +1,31 @@
+---
+session: bacchus_robot
+init_cmd: |
+  #exec /bin/bash
+  cd @TMULE_CONFIG_DIR@ || true
+  set -o pipefail
+  function export_default () {
+    var_name="$1"
+    var_default="$2"
+    eval $var_name="${!var_name:-$var_default}"
+    export $var_name
+    echo "  $0 -> $var_name=${!var_name}"
+  }
+  
+# tags: core, nav
+windows:
+- name: roscore
+  panes:
+  - roslaunch bacchus_bringup roscore.launch use_sim:=$USE_SIM
+  check: "rostopic list"
+  tags: [core, nav]
+- name: robot
+  panes:
+  - roslaunch bacchus_gazebo vineyard_demo.launch robot_name:=thorvald_001 bacchus_suite:=true
+  check: "rostopic list | grep -q -e thorvald_001/scan "
+  tags: [core, nav]
+- name: localisation
+  panes:
+  - roslaunch bacchus_move_base corner_lasers_merger.launch
+  check: "rostopic list | grep -q thorvald_001/scan"
+  tags: [nav]

@@ -12,8 +12,8 @@
     - rb_sherpa_xl_two_arms
     -->
   <!-- <arg name="robot_no" default="001"/> -->  <!-- unused-->
+  <arg name="bacchus_suite" default="false"/>
   <arg name="robot_model" default="$(find bacchus_gazebo)/config/robot.yaml"/>
-  <arg name="model_extras" default="$(find bacchus_gazebo)/urdf/simple_sensors.xacro"/> 
   <!-- sensor suites:
     - simple_sensors
     - bacchus_sensors (2 hokuyo, 3 kinect v2, 1 velodyne)
@@ -54,11 +54,18 @@
       <arg name="world_name" value="$(arg world)"/>
     </include>
 
-    <include file="$(find bacchus_gazebo)/launch/thorvald.launch" >
+    <include file="$(find bacchus_gazebo)/launch/thorvald.launch" unless="$(arg bacchus_suite)" >
       <arg name="robot_name" value="$(arg robot_name)" />
       <arg name="x" value="11.0" />
       <arg name="robot_model" value="$(arg robot_model)"/>
-      <arg name="model_extras" value="$(arg model_extras)"/>
+      <arg name="model_extras" value="$(find bacchus_gazebo)/urdf/simple_sensors.xacro"/>
+    </include>
+
+    <include file="$(find bacchus_gazebo)/launch/thorvald.launch" if="$(arg bacchus_suite)" >
+      <arg name="robot_name" value="$(arg robot_name)" />
+      <arg name="x" value="11.0" />
+      <arg name="robot_model" value="$(arg robot_model)"/>
+      <arg name="model_extras" value="$(find bacchus_gazebo)/urdf/bacchus_sensors.xacro"/>
     </include>
 
     <group if="$(arg fake_localisation)">

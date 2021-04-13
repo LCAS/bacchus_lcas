@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="sensor_frames">
+
+  <!-- Import all sensors from sensors sub-folder -->
+  <xacro:include filename="$(find bacchus_gazebo)/urdf/sensors/sensor_velodyne_vlp16.xacro" />
+  <!-- <xacro:include filename="$(find bacchus_gazebo)/urdf/sensors/sensor_imu.xacro" />   -->
+  <xacro:include filename="$(find bacchus_gazebo)/urdf/sensors/sensor_hokuyo_laser.xacro"/> 
+  <!-- <xacro:include filename="$(find bacchus_gazebo)/urdf/sensors/sensor_kinect_v2.xacro"/>  -->
+
+  <xacro:hokuyo sensor_name="hokuyo"
+          xyz="00.7025 0.0 0.66"
+          rpy="0 0 0"
+          min_angle="-1.57"
+          max_angle="1.57"
+          hokuyo_parent="base_link"
+          topic="scan"/>
+
+  <xacro:VLP-16 velodyne_name="velodyne"
+          xyz="0 0 1.56"
+          rpy="0 0 0"/>
+  
+
+</robot>
+

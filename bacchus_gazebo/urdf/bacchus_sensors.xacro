@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="sensor_frames">
+
+  <!-- Import all sensors from sensors sub-folder -->
+  <xacro:include filename="$(find bacchus_gazebo)/urdf/sensors/sensor_velodyne_vlp16.xacro" />
+  <xacro:include filename="$(find bacchus_gazebo)/urdf/sensors/sensor_imu.xacro" />  
+  <xacro:include filename="$(find bacchus_gazebo)/urdf/sensors/sensor_hokuyo_laser.xacro"/> 
+  <xacro:include filename="$(find bacchus_gazebo)/urdf/sensors/sensor_kinect_v2.xacro"/> 
+
+  <xacro:VLP-16 velodyne_name="velodyne"
+          xyz="0 0 1.56"
+          rpy="0 0 0"/>
+
+  <xacro:imu sensor_name="imu"
+          xyz="0 0 1.5"
+          rpy="0 0 0"/>
+
+  <xacro:hokuyo sensor_name="hokuyo_back"
+          xyz="0.172 -0.152 -0.034"
+          rpy="0 0 -0.79"
+          min_angle="-2.18"
+          max_angle="2.36"
+          hokuyo_parent="top3"
+          topic="back_scan"/>
+
+  <xacro:hokuyo sensor_name="hokuyo_front"
+          xyz="0.172 -0.152 -0.034"
+          rpy="0 0 -0.79"
+          min_angle="-2.18"
+          max_angle="2.36"
+          hokuyo_parent="top1"
+          topic="front_scan"/>
+
+  <xacro:kinect kinect2_name="kinect2_front" 
+          kinect2_cam_px="0.5025" 
+          kinect2_cam_py="0.0" 
+          kinect2_cam_pz="0.66" 
+          kinect2_cam_or="0" 
+          kinect2_cam_op="0" 
+          kinect2_cam_oy="0.0"/>
+
+  <xacro:kinect kinect2_name="kinect2_left" 
+          kinect2_cam_px="0.0" 
+          kinect2_cam_py="0.34" 
+          kinect2_cam_pz="0.80" 
+          kinect2_cam_or="0" 
+          kinect2_cam_op="0" 
+          kinect2_cam_oy="${90*M_PI/180}"/>
+
+  <xacro:kinect kinect2_name="kinect2_right" 
+          kinect2_cam_px="0.0" 
+          kinect2_cam_py="-0.34" 
+          kinect2_cam_pz="0.80" 
+          kinect2_cam_or="0" 
+          kinect2_cam_op="0" 
+          kinect2_cam_oy="${270*M_PI/180}"/>
+  
+
+</robot>
+

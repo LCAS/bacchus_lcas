@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<launch>
+  <!-- topic_tools/relay to merge two scans to scan topic for amcl and move_base -->
+  <!-- ira laser tools seems better option for amcl localisation -->
+  <!--node pkg="topic_tools" type="relay" name="scan_front_scan" args="scan_front scan" />
+  <node pkg="topic_tools" type="relay" name="scan_back_scan" args="scan_back scan" /-->
+
+  
+  <arg name="robot_name" default="thorvald_001"/>
+  <arg name="laserscan_topics" default="/thorvald_001/back_scan /thorvald_001/front_scan" />
+
+  <node pkg="ira_laser_tools" name="laserscan_multi_merger" type="laserscan_multi_merger" output="screen">
+    <param name="destination_frame" value="$(arg robot_name)/base_link"/>
+    <param name="cloud_destination_topic" value="/merged_cloud"/>
+    <param name="scan_destination_topic" value="/$(arg robot_name)/scan"/>
+    <param name="laserscan_topics" value ="$(arg laserscan_topics)" /> <!-- LIST OF THE LASER SCAN TOPICS TO SUBSCRIBE -->
+
+    <param name="angle_min" value="-3.14"/>
+    <param name="angle_max" value="3.14"/>
+    <param name="angle_increment" value="0.0058"/>
+    <param name="scan_time" value="0.0333333"/>
+    <param name="range_min" value="0.30"/>
+    <param name="range_max" value="50.0"/>
+  </node>
+</launch>

@@ -129,3 +129,10 @@ dmypy.json
 .pyre/
 
 bacchus_gazebo/models/vine_*
+bacchus_gazebo/models/heightmap*
+/ih_move_base/
+/pole_detector/
+/simple_navigation_goals/
+/bacchus_gazebo/cmake-build-debug/
+/bacchus_gazebo/.vscode/
+/bacchus_gazebo/.idea/

@@ -235,9 +235,12 @@ if(CATKIN_ENABLE_TESTING)
   add_rostest(tests/testme.test)
 endif()
 
-set(MODELS_ZIPFILE vine_t.zip)
+set(MODELS_ZIPFILE '3D models.zip')
+set(VINEYARD_MODELS_ZIPFILE vine_t.zip)
+set(HEIGHTMAP_MODELS_ZIPFILE heightmap.zip)
+
 set(MODELS_DEST_DIR ${CMAKE_CURRENT_SOURCE_DIR}/models)
-set(MODELS_DOWNLOAD_URL https://lcas.lincoln.ac.uk/nextcloud/index.php/s/XG8yLcQPfXe5kk8/download)
+set(MODELS_DOWNLOAD_URL https://lcas.lincoln.ac.uk/nextcloud/index.php/s/7zi4gfE7c2naE7A/download)
 
 add_custom_command(OUTPUT ${MODELS_ZIPFILE}
   COMMAND curl --progress-bar -o "${MODELS_ZIPFILE}" "${MODELS_DOWNLOAD_URL}"
@@ -251,6 +254,9 @@ add_custom_command(
   COMMAND unzip -q -o -d "${MODELS_DEST_DIR}" "${MODELS_ZIPFILE}"
   COMMAND touch .models-extracted
   COMMENT "extracting additional models"
+  COMMAND unzip -q -o -d "${MODELS_DEST_DIR}" "${MODELS_DEST_DIR}/3D\ models/${VINEYARD_MODELS_ZIPFILE}"
+  COMMAND unzip -q -o -d "${MODELS_DEST_DIR}" "${MODELS_DEST_DIR}/3D\ models/${HEIGHTMAP_MODELS_ZIPFILE}"
+  COMMAND rm -r "${MODELS_DEST_DIR}/3D\ models"
   VERBATIM
 )
 

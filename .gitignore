@@ -128,7 +128,8 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-bacchus_gazebo/models/*
+bacchus_gazebo/models/vine_*
+bacchus_gazebo/models/heightmap*
 /ih_move_base/
 /pole_detector/
 /simple_navigation_goals/

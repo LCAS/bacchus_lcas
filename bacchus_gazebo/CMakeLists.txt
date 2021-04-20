@@ -16,6 +16,9 @@ find_package(catkin REQUIRED COMPONENTS
   velodyne_description
   #velodyne_gazebo_plugins
   kinect2_description
+  hector_gazebo_plugins
+  gazebo_plugins
+  dynamic_reconfigure
 )
 
 find_package (gazebo REQUIRED)

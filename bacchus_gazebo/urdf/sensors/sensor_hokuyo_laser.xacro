@@ -78,6 +78,23 @@
         </plugin>
       </sensor>
     </gazebo>
+    <gazebo>
+    <plugin name="gps_controller" filename="libhector_gazebo_ros_gps.so">
+      <alwayson>true</alwayson>
+       <frameId>thorvald_001/base_link</frameId>
+      <updaterate>1.0</updaterate>
+      <topicname>/gps_fix</topicname>
+        <velocitytopicname>/gps_fix_velocity</velocitytopicname>
+        <robotNamespace>$(arg tf_prefix)</robotNamespace>
+        <drift>5.0 5.0 5.0</drift>
+        <gaussiannoise>0.1 0.1 0.1</gaussiannoise>
+        <velocitydrift>0 0 0</velocitydrift>
+        <velocitygaussiannoise>0.1 0.1 0.1</velocitygaussiannoise>
+        <referenceHeading>0</referenceHeading>
+        <referenceAltitude>0</referenceAltitude>
+      </plugin>
+    </gazebo>
+    
   </xacro:macro>
 
 </robot>

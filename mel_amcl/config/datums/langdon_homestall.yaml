@@ -1,0 +1,48 @@
+
+datum_latitude: &datum_latitude 51.3147771111
+datum_longitude: &datum_longitude 0.9271781111
+
+
+# Define GNSS Fence coordinates [lat, lon]
+gnss_fence:
+  gnss_fence_coords: [[51.315092, 0.924963], [51.313977, 0.924668], [51.313867, 0.924901], [51.314497, 0.928560], [51.315095, 0.928827], [51.315684, 0.928871]]
+
+
+# Define map size (x east, y north) in meters from the datum
+gmapping:
+  xmin: -200
+  xmax:  160
+  ymin: -110
+  ymax:  110
+
+
+# gmapping:
+#   xmin: -165
+#   xmax:  135
+#   ymin: -130
+#   ymax:  110  
+
+
+mapviz_initialize_origin:
+  local_xy_origins: 
+    - {
+    name: dont_change_this,
+    latitude: *datum_latitude,
+    longitude: *datum_longitude,
+    altitude: 100.0,
+    heading: 0.0
+    }
+
+navsat_transform_node:
+  magnetic_declination_radians: 0.0
+  yaw_offset: 0.0
+  zero_altitude: true
+  broadcast_utm_transform: false
+  broadcast_utm_transform_as_parent_frame: false
+  publish_filtered_gps: true
+  use_odometry_yaw: false
+  wait_for_datum: true
+  datum: [ *datum_latitude, *datum_longitude, 0.0]
+
+
+

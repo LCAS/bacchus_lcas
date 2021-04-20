@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="ISO-8859-15"?>
+<launch>
+
+  <param name="/use_sim_time" value="true"/>
+
+  <arg name="site_name" default="clockhouse"/>
+  <arg name="datum_file" default="$(find mel_amcl)/config/datums/$(arg site_name).yaml"/>
+
+
+  <!-- Play rosbag -->
+  <arg name="path" default="/media/$(env USER)/DATA/map_frame/clockhouse/" />
+  <arg name="file_name" default="clockhouse_mid.bag" />
+
+  <node pkg="rosbag" type="play" name="player" output="screen" args="--clock $(arg path)$(arg file_name)
+        -r 20 --topics /odometry/base_raw /tf_static /gps/fix /yaw /twist_mux/cmd_vel /scan"/>
+  
+
+  <!-- Load rtk map -->
+  <arg name="map_file" default="$(find rasberry_navigation)/maps/clockhouse/clockhouse_vanity.yaml"/>
+
+  <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)" />
+
+
+  <!-- Load params from datum file which contains site details -->
+  <rosparam command="load" file="$(arg datum_file)" />
+
+
+  <node pkg="robot_localization" type="navsat_transform_node" name="navsat_transform_node" clear_params="true">
+    <!-- Input remapping -->
+    <remap from="imu/data" to="yaw"/> 
+    <remap from="odometry/filtered" to="odometry/gps"/>
+    <remap from="gps/fix" to="gps/fix"/>
+    <!-- Output remapping -->
+    <remap from="odometry/gps" to="odometry/gps/unfiltered"/>
+  </node>
+
+
+  <!-- load parameters for eKFs: odom, and map -->
+  <rosparam command="load" file="$(find mel_amcl)/config/rasberry_localisation.yaml" />
+
+  <!-- eKF for the odom frame -->
+  <node pkg="robot_localization" type="ekf_localization_node" name="ekf_odom_2d" clear_params="true"/>
+
+  <!-- eKF for the map frame - includes GPS data - can publish the map tf (instead of mel_amcl) if use_gps_only is true  --> 
+  <node pkg="robot_localization" type="ekf_localization_node" name="ekf_map_2d" clear_params="true">
+    <param name="publish_tf" value="true"/>
+    <remap from="odometry/filtered" to="odometry/gps"/>  
+  </node> 
+
+
+  <!-- rviz -->
+  <node pkg="rviz" type="rviz" name="rviz"
+        args="-d $(find rasberry_bringup)/resources/row_traversal_action.rviz"/>
+
+</launch>

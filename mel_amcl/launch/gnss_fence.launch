@@ -1,0 +1,12 @@
+<?xml version="1.0" ?>
+<launch>
+
+  <arg name="site_name" default="riseholme"/>
+  <arg name="datum_file" default="$(find mel_amcl)/config/datums/$(arg site_name).yaml"/>
+
+  <rosparam command="load" file="$(arg datum_file)" />  
+  
+  <node pkg="mel_amcl" type="gnss_fence.py" name="gnss_fence" output="screen">  
+  </node>
+
+</launch>

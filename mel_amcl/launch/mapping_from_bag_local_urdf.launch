@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="ISO-8859-15"?>
+<launch>
+
+  <arg name="site_name" default="clockhouse"/>
+  <arg name="datum_file" default="$(find thorvald_uv_bringup)/config/site_files/hughlowe/field_name_south/datum.yaml"/>
+
+  <arg name="robot_model" default="$(find thorvald_uv_bringup)/config/robots/robot_019/robot_019.yaml" />
+  <arg name="model_extras" default="$(find thorvald_uv_bringup)/config/robots/robot_019/robot_019_extras.xacro"/>
+
+  <param name="/use_sim_time" value="true"/>
+
+  <!-- Rosbag args -->
+  <arg name="path" default="/media/michael/DATA1/mapping_bags/hughlowe/" />
+  <!-- First 2 did not have separate scans -->
+  <!-- <arg name="file_name" default="mapping_hughlowe_field_name_south_2021-02-11-10-20-09.bag" /> -->
+  <!-- <arg name="file_name" default="mapping_hughlowe_field_name_south_2021-02-11-11-40-43.bag" /> -->
+  <!-- <arg name="file_name" default="mapping_hughlowe_field_name_south_2021-02-11-11-57-03.bag" /> -->
+  <!-- <arg name="file_name" default="mapping_hughlowe_field_name_south_2021-02-11-12-10-21.bag" /> -->
+
+  
+  <!-- <arg name="file_name" default="mapping_hughlowe_field_name_south_2021-02-11-12-21-54.bag" /> -->
+  <!-- <arg name="file_name" default="mapping_hughlowe_field_name_south_2021-02-11-12-34-34.bag" /> -->
+  <!-- <arg name="file_name" default="mapping_hughlowe_field_name_south_2021-02-11-12-47-54.bag" /> -->
+  <arg name="file_name" default="mapping_hughlowe_field_name_south_2021-02-11-13-38-05.bag" />
+  <!-- <arg name="file_name" default="mapping_hughlowe_field_name_south_2021-02-11-13-54-08.bag" /> -->
+  <!-- <arg name="file_name" default="mapping_hughlowe_field_name_south_2021-02-11-14-00-53.bag" /> -->
+  <!-- <arg name="file_name" default="mapping_hughlowe_field_name_south_2021-02-11-14-16-07.bag" /> -->
+  <!-- <arg name="file_name" default="mapping_hughlowe_field_name_south_2021-02-11-14-20-22.bag" /> -->
+
+  <!-- This one is baaaaaad - lost gps corrections - might be cos of me scp'ing a bag -->
+  <!-- <arg name="file_name" default="mapping_hughlowe_field_name_south_2021-02-11-12-10-21.bag" /> -->
+
+
+  <!-- Play rosbag - if skipping some start time - play start of bag for tf_static -->
+
+  <node pkg="rosbag" type="play" name="player2" output="screen" args="--clock $(arg path)$(arg file_name)
+        --rate=1 --start=720 --duration=3600 --topics /odometry/base_raw /gps/fix /yaw /twist_mux/cmd_vel /scanner_front/scan /scanner_back/scan /nmea/main_GGA /imu/data"/>
+
+
+
+  <!-- model bringup -->
+  <include file="$(find thorvald_description)/launch/model.launch">
+    <arg name="robot_name" value="" />
+    <arg name="tf_prefix" value="" />
+    <arg name="robot_model" value="$(arg robot_model)" />
+    <arg name="model_extras" value="$(arg model_extras)" />
+    <arg name="datum_file" value="$(arg datum_file)" />
+  </include>
+
+
+  <!-- Mapping localisation -->
+  <include file="$(find mel_amcl)/launch/mapping_localisation.launch">
+    <arg name="datum_file" value="$(arg datum_file)" />
+  </include>
+
+  <!-- Gmapping -->
+  <include file="$(find mel_amcl)/launch/gmapping.launch">
+    <arg name="datum_file" value="$(arg datum_file)" />
+  </include>
+
+  <!-- rviz -->
+  <node pkg="rviz" type="rviz" name="rviz"
+        args="-d $(find rasberry_bringup)/resources/row_traversal_action.rviz"/>
+
+  <!-- mapviz -->
+  <!-- <include file="$(find mel_amcl)/launch/mapviz.launch">
+    <arg name="datum_file" value="$(arg datum_file)" />
+  </include>
+ -->
+
+    <!-- scan merger -->
+  <include file="$(find rasberry_bringup)/launch/corner_lasers_merger.launch">
+    <arg name="laserscan_topics" value="/scanner_front/scan /scanner_back/scan" />
+  </include>
+
+
+</launch>

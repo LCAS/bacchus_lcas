@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="ISO-8859-15"?>
+<launch>
+
+  <arg name="site_name" default="riseholme"/>
+  <arg name="datum_file" default="$(find mel_amcl)/config/datums/$(arg site_name).yaml"/>
+
+  <arg name="node_start_delay" default="3.0" />  
+
+  <node pkg="mel_amcl" type="run_mapproxy.sh" name="mapproxy"></node>
+
+
+  <node pkg="mapviz" type="mapviz" name="mapviz" launch-prefix="bash -c 'sleep $(arg node_start_delay); $0 $@'">
+    <param name="config" value="$(find mel_amcl)/config/mapviz_config"/>
+  </node>
+
+
+  <rosparam command="load" file="$(arg datum_file)" />  
+
+  <node pkg="swri_transform_util" type="initialize_origin.py" name="mapviz_initialize_origin" >
+    <param name="local_xy_frame" value="/map"/>
+    <param name="local_xy_origin" value="dont_change_this"/>
+  </node>
+
+  <node pkg="tf" type="static_transform_publisher" name="swri_transform" args="0 0 0 0 0 0 /map /origin 100" launch-prefix="bash -c 'sleep $(arg node_start_delay); $0 $@'" />
+
+</launch>

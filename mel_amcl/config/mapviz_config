@@ -1,0 +1,96 @@
+capture_directory: /home/michael/Documents/Saga/Localisation documents/Figures
+fixed_frame: map
+target_frame: <none>
+fix_orientation: false
+rotate_90: false
+enable_antialiasing: true
+show_displays: true
+show_status_bar: true
+show_capture_tools: true
+window_width: 1855
+window_height: 1056
+view_scale: 0.04559077
+offset_x: -20.94866
+offset_y: -83.31189
+use_latest_transforms: true
+background: "#a0a0a4"
+displays:
+  - type: mapviz_plugins/tile_map
+    name: new display
+    config:
+      visible: true
+      collapsed: false
+      custom_sources:
+        - base_url: http://localhost:8080/wmts/gm_layer/gm_grid/{level}/{x}/{y}.png
+          max_zoom: 19
+          name: m
+          type: wmts
+      bing_api_key: ""
+      source: m
+  - type: mapviz_plugins/occupancy_grid
+    name: new display
+    config:
+      visible: true
+      collapsed: false
+      alpha: 0.4
+      topic: /map
+      update: true
+      scheme: map
+  - type: mapviz_plugins/odometry
+    name: new display
+    config:
+      visible: true
+      collapsed: false
+      topic: /odometry/gps
+      color: "#0000ff"
+      draw_style: arrows
+      position_tolerance: 0
+      buffer_size: 1
+      show_laps: false
+      show_covariance: true
+      static_arrow_sizes: true
+      arrow_size: 79
+      show_timestamps: 0
+  - type: mapviz_plugins/navsat
+    name: new display
+    config:
+      visible: true
+      collapsed: false
+      topic: /gps/fix
+      color: "#00ffff"
+      draw_style: lines
+      position_tolerance: 0
+      buffer_size: 0
+  - type: mapviz_plugins/tf_frame
+    name: new display
+    config:
+      visible: true
+      collapsed: false
+      frame: base_link
+      color: "#ff0000"
+      draw_style: arrows
+      position_tolerance: 0
+      buffer_size: 1
+      static_arrow_sizes: true
+      arrow_size: 69
+  - type: mapviz_plugins/laserscan
+    name: new display
+    config:
+      visible: true
+      collapsed: false
+      topic: /scan
+      size: 6
+      buffer_size: 1
+      alpha: 1
+      color_transformer: Flat Color
+      min_color: "#ff5500"
+      max_color: "#000000"
+      value_min: 0
+      value_max: 100
+      use_rainbow: true
+  - type: mapviz_plugins/marker
+    name: new display
+    config:
+      visible: true
+      collapsed: false
+      topic: /topological_map_visualisation

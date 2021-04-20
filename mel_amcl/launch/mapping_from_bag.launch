@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="ISO-8859-15"?>
+<launch>
+
+  <arg name="site_name" default="clockhouse"/>
+  <arg name="datum_file" default="$(find mel_amcl)/config/datums/$(arg site_name).yaml"/>
+
+  <param name="/use_sim_time" value="true"/>
+
+  <!-- Rosbag args -->
+  <arg name="path" default="/media/$(env USER)/DATA/map_frame/clockhouse/" />
+  <arg name="file_name" default="clockhouse_mid.bag" />
+
+
+  <!-- Play rosbag - if skipping some start time - play start of bag for tf_static -->
+  <node pkg="rosbag" type="play" name="player1" output="screen" args="$(arg path)$(arg file_name)
+        --rate=1 --duration=2 --keep-alive --topics /tf_static"/>
+  <node pkg="rosbag" type="play" name="player2" output="screen" args="--clock $(arg path)$(arg file_name)
+        --rate=1 --start=1500 --duration=3600 --topics /odometry/base_raw /tf_static /gps/fix /yaw /twist_mux/cmd_vel /scan /nmea/main_GGA /imu/data"/>
+  
+
+  <!-- Mapping localisation -->
+  <include file="$(find mel_amcl)/launch/mapping_localisation.launch">
+    <arg name="datum_file" value="$(arg datum_file)" />
+  </include>
+
+  <!-- Gmapping -->
+  <include file="$(find mel_amcl)/launch/gmapping.launch">
+    <arg name="datum_file" value="$(arg datum_file)" />
+  </include>
+
+  <!-- rviz -->
+  <node pkg="rviz" type="rviz" name="rviz"
+        args="-d $(find rasberry_bringup)/resources/row_traversal_action.rviz"/>
+
+  <!-- mapviz -->
+  <include file="$(find mel_amcl)/launch/mapviz.launch">
+    <arg name="datum_file" value="$(arg datum_file)" />
+  </include>
+
+</launch>

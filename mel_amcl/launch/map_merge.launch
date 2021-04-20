@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="ISO-8859-15"?>
+<launch>
+
+  <arg name="map1" default="/home/michael/thorvald_ws/src/RASberry/rasberry_navigation/maps/riseholme/riseholme_rtk_fix.yaml"/>
+  <arg name="map2" default="/home/michael/thorvald_ws/src/RASberry/rasberry_navigation/maps/clockhouse/clockhouse_rtk.yaml"/>
+  <arg name="rviz" default="false"/>
+
+  <param name="1/map_merge/init_pose_x" value="0.0"/>
+  <param name="1/map_merge/init_pose_y" value="0.0"/>
+  <param name="1/map_merge/init_pose_z" value="0.0"/>
+  <param name="1/map_merge/init_pose_yaw" value="0.0"/>
+  <param name="2/map_merge/init_pose_x" value="0.0"/>
+  <param name="2/map_merge/init_pose_y" value="0.0"/>
+  <param name="2/map_merge/init_pose_z" value="0.0"/>
+  <param name="2/map_merge/init_pose_yaw" value="0.0"/>
+
+
+  <node pkg="map_server" type="map_server" name="map1_publisher" args="$(arg map1)" output="screen">
+    <param name="frame_id" value="1"/>
+    <remap from="map" to="/1/map"/>
+    <remap from="map_metadata" to="/1/map_metadata"/>
+  </node>
+  <node pkg="map_server" type="map_server" name="map2_publisher" args="$(arg map2)" output="screen">
+    <param name="frame_id" value="2"/>
+    <remap from="map" to="/2/map"/>
+    <remap from="map_metadata" to="/2/map_metadata"/>
+  </node>
+
+
+<node pkg="multirobot_map_merge" type="map_merge" respawn="false" name="map_merge" output="screen">
+    <param name="robot_map_topic" value="map"/>
+    <param name="robot_namespace" value=""/>
+    <param name="merged_map_topic" value="map"/>
+    <param name="world_frame" value="map"/>
+    <param name="known_init_poses" value="true"/>
+    <param name="merging_rate" value="0.5"/>
+    <param name="discovery_rate" value="0.05"/>
+    <param name="estimation_rate" value="0.1"/>
+    <param name="estimation_confidence" value="1.0"/>
+</node>
+
+
+</launch>

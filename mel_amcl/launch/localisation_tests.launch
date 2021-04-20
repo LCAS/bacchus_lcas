@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="ISO-8859-15"?>
+<launch>
+
+  <arg name="site_name" default="riseholme"/>
+  <arg name="datum_file" default="$(find mel_amcl)/config/datums/$(arg site_name).yaml"/>
+
+
+  <arg name="three_d" default="false" />
+
+
+  <!-- Load params from datum file which contains site details -->
+  <rosparam command="load" file="$(arg datum_file)" />
+
+  <node pkg="robot_localization" type="navsat_transform_node" name="um7_navsat_transform_node" clear_params="true" respawn="true">
+    <!-- Input remapping -->
+    <remap from="imu/data" to="yaw" unless="$(arg three_d)"/>
+    <remap from="imu/data" to="attitude" if="$(arg three_d)"/>
+    <remap from="odometry/filtered" to="um7/odometry/gps"/>
+    <remap from="gps/fix" to="gps/fix"/>
+    <!-- Output remapping -->
+    <remap from="odometry/gps" to="um7/odometry/gps/unfiltered"/>
+  </node>
+
+  <node pkg="robot_localization" type="navsat_transform_node" name="xsens_navsat_transform_node" clear_params="true" respawn="true">
+    <!-- Input remapping -->
+    <remap from="imu/data" to="xsens/imu/data"/>
+    <remap from="odometry/filtered" to="xsens/odometry/gps"/>
+    <remap from="gps/fix" to="xsens/gps/fix"/>
+    <!-- Output remapping -->
+    <remap from="odometry/gps" to="xsens/odometry/gps/unfiltered"/>
+  </node>
+
+
+  <!-- load parameters for eKFs: odom, and map -->
+  <rosparam command="load" file="$(find mel_amcl)/config/three_d_tests.yaml" />
+
+
+
+  <!-- eKF for the map frame - includes GPS data - can publish the map tf (instead of mel_amcl) if use_gps_only is true  -->
+  <node pkg="robot_localization" type="ekf_localization_node" name="um7_test" clear_params="true" respawn="true">
+    <param name="publish_tf" value="false"/>
+    <!-- Output remapping -->
+    <remap from="odometry/filtered" to="um7/odometry/gps"/>
+  </node>
+
+  <!-- 3D map ekf - includes GNSS data - can publish the map tf (instead of mel_amcl) if use_gps_only is true  -->
+  <node pkg="robot_localization" type="ekf_localization_node" name="xsens_test" clear_params="true" respawn="true">
+    <param name="publish_tf" value="false"/>
+    <!-- Output remapping -->
+    <remap from="odometry/filtered" to="xsense/odometry/gps"/>
+  </node>
+
+</launch>

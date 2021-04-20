@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ISO-8859-15"?>
+<launch>
+
+  <arg name="bag_prefix" default="data"/>
+  <arg name="bag_folder" default="$(env HOME)/mapping_data"/>
+
+  <!-- bagging data -->
+  <node pkg="rosbag" type="record" name="rosbag_record_standard_data" respawn="true" output="screen" 
+  args="-o $(arg bag_folder)/$(arg bag_prefix) /tf_static /odometry/base_raw /twist_mux/cmd_vel /nmea/main_GGA /yaw /vel /gps/fix /scan /imu/data" />
+
+</launch>

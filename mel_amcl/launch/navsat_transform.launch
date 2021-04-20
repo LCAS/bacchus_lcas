@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ISO-8859-15"?>
+<launch>
+
+  <arg name="site_name" default="riseholme"/>
+  <arg name="datum_file" default="$(find mel_amcl)/config/datums/$(arg site_name).yaml"/>
+
+
+  <!-- Load params from datum file which contains site details -->
+  <rosparam command="load" file="$(arg datum_file)" />
+
+
+  <!-- Launch navsat transform to expose the /fromLL service to transform gps lat/lon to map -->
+  <node pkg="robot_localization" type="navsat_transform_node" name="navsat_transform_node" clear_params="true" output="screen">
+    <!-- Input remapping -->
+    <remap from="gps/fix" to="gps/fix"/>
+    <!-- Output remapping -->
+    <remap from="odometry/gps" to="gps/map"/>
+  </node>
+
+</launch>

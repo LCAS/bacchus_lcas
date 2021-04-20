@@ -1,0 +1,19 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "",
+        "limitSymbolsToIncludedHeaders": true
+      },
+      "includePath": [
+        "/opt/ros/melodic/include/**",
+        "/home/harry/bacchus_ws/devel/include/**",
+        "/home/harry/bacchus_ws/src/bacchus_lcas/bacchus_gazebo/include/**",
+        "/home/harry/bacchus_ws/src/bacchus_lcas/mel_amcl/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS"
+    }
+  ],
+  "version": 4
+}

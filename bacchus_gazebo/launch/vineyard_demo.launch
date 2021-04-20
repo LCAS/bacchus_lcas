@@ -1,8 +1,17 @@
 <?xml version="1.0" ?>
 <launch>
 
+  <!-- Current error/warning
+    Caused by mel_pack remapping incorrectly.
+
+    [WARN] [1618876149.612477, 149.805000]: GPS error too high (x=5.0, y=5.0), masking. 
+    [ WARN] [1618876149.879592003, 150.005000000]: Transform from thorvald_001/base_link to thorvald_001/odom was unavailable for the time requested. Using latest instead.
+  
+  -->
+
   <!-- Robot arguments -->
-  <arg name="fake_localisation" default="true" doc="fake the localisation, sets map_server and world_tf to true."/>
+  <!-- Turn fake localisation off to see how robot would actually do-->
+  <arg name="fake_localisation" default="false" doc="fake the localisation, sets map_server and world_tf to true."/>
   <arg name="robot_name" default="thorvald_001"/>
   <!-- robot supported:
     - thorvald_001
@@ -37,6 +46,7 @@
   <arg name="verbose" default="false"/>
 
   <!-- ############################### RVIZ ############################### -->
+  <!-- Broken when fake localisation is false-->
   <arg name="launch_rviz" default="True"/>
   <arg name="rviz_config_file" default="$(find bacchus_gazebo)/rviz/vineyard_demo.rviz"/>
 
@@ -92,6 +102,12 @@
         type= "rviz"
         args="-d $(arg rviz_config_file)" />
     </group>
+
+    <!-- Call mel_pack gmapping-->
+  <include file="$(find mel_amcl)/launch/gmapping.launch"/>
+
+  <!-- Call Mel_pack mapping localisation-->
+  <include file="$(find mel_amcl)/launch/mapping_localisation.launch"/>
   </group>
 
     
@@ -136,9 +152,3 @@
   </group>
 
 </launch>
-
-
-
-
-
-

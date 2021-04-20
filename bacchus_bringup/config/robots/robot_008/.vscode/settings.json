@@ -1,8 +1,0 @@
-{
-    "python.autoComplete.extraPaths": [
-        "/home/michael/rasberry_ws/devel/lib/python2.7/dist-packages",
-        "/opt/ros/melodic/lib/python2.7/dist-packages",
-        "/opt/morse-blender-2.65-py-3.3/lib/python3.3/dist-packages",
-        "/opt/morse-blender-2.65-py-3.3/lib/python3.3/dist-packages"
-    ]
-}

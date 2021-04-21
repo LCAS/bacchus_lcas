@@ -54,7 +54,7 @@
       <arg name="world_name" value="$(arg world)"/>
     </include>
 
-    <!-- <include file="$(find bacchus_gazebo)/launch/thorvald.launch" >
+    <include file="$(find bacchus_gazebo)/launch/thorvald.launch" >
       <arg name="robot_name" value="$(arg robot_name)" />
       <arg name="x" value="11.0" />
       <arg name="robot_model" value="$(arg robot_model)"/>
@@ -91,7 +91,7 @@
         pkg="rviz"
         type= "rviz"
         args="-d $(arg rviz_config_file)" />
-    </group> -->
+    </group>
   </group>
 
     

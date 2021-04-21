@@ -7,6 +7,8 @@ export SITE_PATH="`readlink -f ../config/site_files/${FARM_NAME}/${FIELD_NAME}`"
 export TMAP_FILE="${SITE_PATH}/tmap.tmap"
 export DATUM_FILE="${SITE_PATH}/datum.yaml"
 
+export WAYPOINTS_FILE_PATH="${SITE_PATH}"
+
 export STARTUP_SENTOR=false
 
 export USE_GPS_ONLY=true

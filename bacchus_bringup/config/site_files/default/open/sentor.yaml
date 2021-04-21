@@ -1,0 +1,281 @@
+
+# Following organisation set out in the health monitoring doc
+# https://docs.google.com/document/d/1bQCYcOKg9koDmQlGDNZwg2KUxLw6KKLm-u2bujYvqQo/edit?usp=sharing
+# Parameters and tuning should be kept well documented
+
+
+
+############ TF ############
+
+# check that the map and odom frames exist and that they are being published
+
+- name: "/tf_throttled"
+  signal_lambdas:
+    - expression: "lambda msg : 'odom' not in [transform.header.frame_id for transform in msg.transforms]"
+      safety_critical: False
+      timeout: 5.0
+  execute:
+  - log:
+      message: "odom frame unavailable for 3 seconds!"
+      level: info
+  default_notifications: False
+  include: True
+
+
+
+############ GNSS Fence ############
+
+# Are we within the specified GNSS fence - if it is being published
+- name: "/gnss_fence/status_within"
+  signal_lambdas:
+    - expression: "lambda msg : not msg.data"
+      safety_critical: False
+  execute:
+  - log:
+# Note: There is still the unlikely problem of if we cross a utm boundary!
+      message: "We are not in the GNSS fence, has the robot left or is it in the wrong field?"
+      level: info
+  timeout: 5.0
+  default_notifications: False
+  include: True
+
+
+
+############ GPS ############
+
+# Check that we are receiving RTK data
+- name: "/gps/fix"
+  signal_when:
+    condition: "not published"
+    safety_critical: True
+    process_indices: [0]
+  signal_lambdas:
+    - expression: "lambda msg : msg.status.status < 2"
+      safety_critical: True
+      process_indices: [1]
+  execute:
+  - log:
+      message: "GPS data not seen for at least 3 seconds!"
+      level: warn
+  - log:
+      message: "GPS status too low, statis is {}"
+      level: warn
+      msg_args:
+      - "msg.status.status"
+  timeout: 3.0
+  default_notifications: False
+  include: True
+
+
+# Check that we are getting yaw from receiver
+- name: "/yaw"
+  signal_when:
+    condition: "not published"
+    safety_critical: True
+  execute:
+  - log:
+      message: "GPS yaw data not seen for 10 seconds!"
+      level: warn
+  timeout: 10.0
+  default_notifications: False
+  include: True
+
+
+# Error reported by the RTK Receiver
+- name: "/health/gps/error_std"
+  signal_lambdas:
+    - expression: "lambda msg : msg.data > 0.25"
+      safety_critical: True
+  execute:
+  - log:
+      message: "Error reported from GPS is too high, error was {}"
+      level: warn
+      msg_args:
+      - "msg.data"
+  timeout: 3.0
+  default_notifications: False
+  include: True
+
+
+
+############ LOCALISATION ############
+
+# # Check if scan is being published
+# - name: "/scan"
+#   signal_when:
+#     condition: "not published"
+#     safety_critical: True
+#   execute:
+#   - log:
+#       message: "No laserscan received for 1 second!"
+#       level: warn
+#   timeout: 1.0
+#   default_notifications: False
+#   include: True
+
+
+
+############ ROW TRAVERSAL ############
+
+
+
+- name: "/row_traversal/health"
+  signal_lambdas:
+    - expression: "lambda msg : msg.status.data == 'FOLLOW' and msg.paused.data"
+      safety_critical: True
+      when_published: True
+      process_indices: [0]
+      tags: ["RowTraversal", "432"]
+    - expression: "lambda msg : (msg.status.data == 'ALIGN' and abs(msg.y_err_path.data) > 1.5) or (msg.status.data == 'FOLLOW' and (abs(msg.y_err_path.data) > 1.0 or abs(msg.y_err_row_detector.data) > 1.0))"
+      safety_critical: True
+      when_published: True
+      process_indices: [1]
+      tags: ["RowTraversal", "431"]
+    - expression: "lambda msg : (msg.status.data is not 'OFF') and (msg.collision.data)"
+      safety_critical: True
+      when_published: True
+      process_indices: [2]
+      tags: ["RowTraversal", "430"]
+    - expression: "lambda msg : (msg.status.data is not 'OFF') and (msg.cancelled.data)"
+      safety_critical: True
+      when_published: True
+      process_indices: [3]
+      tags: ["RowTraversal", "433"]
+  execute:
+  - log:
+      message: "Row traversal paused due to deviation from line! 
+      y_path={}
+      y_detector={}
+      ang_path={}
+      ang_detector={}"
+      level: error
+      msg_args:
+      - "msg.y_err_path.data"
+      - "msg.y_err_row_detector.data"
+      - "msg.ang_err_path.data"
+      - "msg.ang_err_row_detector.data"
+  - log:
+      message: "Row traversal error - too far from line!"
+      level: error
+  - log:
+      message: "Row traversal collision detected!"
+      level: error
+  - log:
+      message: "Row traversal cancelled! Get to the next waypoint manually and run continue"
+      level: error
+  timeout: 2.0
+  default_notifications: False
+  include: True
+
+############ ROW CHANGE ############
+
+- name: "/row_change/health"
+  signal_lambdas:
+    - expression: "lambda msg : (msg.status.data is not 'OFF') and (msg.collision.data)"
+      safety_critical: False
+      when_published: True
+      process_indices: [0]
+    - expression: "lambda msg : (msg.status.data is not 'OFF') and (msg.cancelled.data)"
+      safety_critical: False
+      when_published: True
+      process_indices: [1]
+  execute:
+  - log:
+      message: "Row traversal collision detected!"
+      level: error
+  - log:
+      message: "Row traversal cancelled! Get to the next waypoint manually and run continue"
+      level: error
+  timeout: 2.0
+  default_notifications: False
+  include: True
+
+
+
+
+############ MOVE BASE ############
+
+
+# Need crash detection or info if robot stopped
+
+
+
+############ TRANSMISSION ############
+
+
+# Monitor if we think wheels are working correctly based on desired vs reported (from gps/fusion etc) speeds
+
+
+
+############ SYSTEM ############
+
+
+# Monitor CPU usage and virtual memory availability
+
+- name: "/rasberry_system_monitors/cpu_info"
+  signal_lambdas:
+    - expression: "lambda msg : msg.cpu_average > 60"
+      timeout: 20.0
+      process_indices: [0]
+    - expression: "lambda msg : msg.cpu_average > 90"
+      timeout: 5.0
+      safety_critical: True
+      process_indices: [1]
+  execute:
+  - log:
+      message: "Average CPU usage > 60% for 20 seconds! Current value is {}%"
+      level: info
+      msg_args:
+      - "msg.cpu_average"
+  - log:
+      message: "Average CPU usage > 90% for 5 seconds! Current value is {}%"
+      level: warn
+      msg_args:
+      - "msg.cpu_average"
+  default_notifications: False
+  include: True
+
+
+- name: "/rasberry_system_monitors/mem_info"
+  signal_lambdas:
+    - expression: "lambda msg : msg.virtual.percent > 90"
+      timeout: 20.0
+  execute:
+  - log:
+      message: "More than 90% of memory used for 20 seconds! Current value is {}%"
+      level: info
+      msg_args:
+      - "msg.virtual.percent"
+  default_notifications: False
+  include: True
+
+
+############ AUTO-MODE LOCK-OUT ############
+
+
+- name: "/safe_operation"
+  signal_lambdas:
+    - expression: "lambda msg : msg.data == False"
+      process_indices: [0,1]
+    - expression: "lambda msg : msg.data == True"
+      process_indices: [2,3]
+  execute:
+  - call:
+      verbose: False
+      service_name: "/block_auto_mode"
+      service_args:
+      -  "req.data = True"
+  - log:
+      message: "Stopped robot. Autonomous mode blocked. Robot is in manual mode."
+      level: warn
+  - call:
+      verbose: False
+      service_name: "/block_auto_mode"
+      service_args:
+      -  "req.data = False"
+  - log:
+      message: "Autonomous mode un-blocked."
+      level: info
+  timeout: 0.1
+  default_notifications: False
+  include: True

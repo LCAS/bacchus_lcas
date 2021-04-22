@@ -131,6 +131,7 @@ init_cmd: |
   # Start position for sim
   export_default ROBOT_POS_X_1 0.0
   export_default ROBOT_POS_Y_1 0.0
+  export_default ROBOT_POS_Z_1 0.0
   export_default ROBOT_POS_A_1 0.0
 
   #Home GUI

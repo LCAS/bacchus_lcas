@@ -1,0 +1,611 @@
+- meta:
+    map: riseholme_vines
+    node: 'WayPoint0'
+    pointset: riseholme_vines
+  node:
+    edges:
+    - action: row_traversal
+      edge_id: 'WayPoint0_WayPoint7'
+      inflation_radius: 0.0
+      map_2d: metric_map
+      node: 'WayPoint7'
+      recovery_behaviours_config: ''
+      top_vel: 0.55
+    - action: row_change
+      edge_id: 'WayPoint0_WayPoint1'
+      inflation_radius: 0.0
+      map_2d: metric_map
+      node: 'WayPoint1'
+      recovery_behaviours_config: ''
+      top_vel: 0.55
+    - action: move_base
+      edge_id: 'WayPoint0_WayPoint10'
+      inflation_radius: 0.0
+      map_2d: metric_map
+      node: 'WayPoint10'
+      recovery_behaviours_config: ''
+      top_vel: 0.55
+    localise_by_topic: ''
+    map: riseholme_vines
+    name: 'WayPoint0'
+    pointset: riseholme_vines
+    pose:
+      orientation:
+        w: 0.9998252246930508
+        x: 0.0
+        y: 0.0
+        z: 0.01869545579788363
+      position:
+        x: 40.80908096303912
+        y: -41.713262109548424
+        z: 0.0
+    verts:
+    - x: 0.6787883438260226
+      y: 0.31259459571432663
+    - x: 0.2684810310734113
+      y: 0.5003867959626993
+    - x: -0.30511772084244254
+      y: 0.4789281637656856
+    - x: -0.7002469760230362
+      y: 0.2610041562015272
+    - x: -0.6787883438260226
+      y: -0.31259459571432663
+    - x: -0.2684810310734113
+      y: -0.5003867959626993
+    - x: 0.30511772084244254
+      y: -0.4789281637656856
+    - x: 0.7002469760230362
+      y: -0.2610041562015272
+    xy_goal_tolerance: 0.3
+    yaw_goal_tolerance: 0.3
+- meta:
+    map: riseholme_vines
+    node: 'WayPoint1'
+    pointset: riseholme_vines
+  node:
+    edges:
+    - action: row_traversal
+      edge_id: 'WayPoint1_WayPoint6'
+      inflation_radius: 0.0
+      map_2d: metric_map
+      node: 'WayPoint6'
+      recovery_behaviours_config: ''
+      top_vel: 0.55
+    - action: row_change
+      edge_id: 'WayPoint1_WayPoint2'
+      inflation_radius: 0.0
+      map_2d: metric_map
+      node: 'WayPoint2'
+      recovery_behaviours_config: ''
+      top_vel: 0.55
+    - action: row_change
+      edge_id: 'WayPoint1_WayPoint0'
+      inflation_radius: 0.0
+      map_2d: metric_map
+      node: 'WayPoint0'
+      recovery_behaviours_config: ''
+      top_vel: 0.55
+    localise_by_topic: ''
+    map: riseholme_vines
+    name: 'WayPoint1'
+    pointset: riseholme_vines
+    pose:
+      orientation:
+        w: 0.9994350146225227
+        x: 0.0
+        y: 0.0
+        z: 0.033610289294763694
+      position:
+        x: 41.21306432240598
+        y: -45.01435136155595
+        z: 0.0
+    verts:
+    - x: 0.6691596722708254
+      y: 0.33270757429051634
+    - x: 0.25343210587419984
+      y: 0.5081743572163263
+    - x: -0.31927105510228837
+      y: 0.46961154478348344
+    - x: -0.7077224847036684
+      y: 0.23999558668597187
+    - x: -0.6691596722708254
+      y: -0.33270757429051634
+    - x: -0.25343210587419984
+      y: -0.5081743572163263
+    - x: 0.31927105510228837
+      y: -0.46961154478348344
+    - x: 0.7077224847036684
+      y: -0.23999558668597187
+    xy_goal_tolerance: 0.3
+    yaw_goal_tolerance: 0.3
+- meta:
+    map: riseholme_vines
+    node: 'WayPoint2'
+    pointset: riseholme_vines
+  node:
+    edges:
+    - action: row_traversal
+      edge_id: 'WayPoint2_WayPoint5'
+      inflation_radius: 0.0
+      map_2d: metric_map
+      node: 'WayPoint5'
+      recovery_behaviours_config: ''
+      top_vel: 0.55
+    - action: row_change
+      edge_id: 'WayPoint2_WayPoint3'
+      inflation_radius: 0.0
+      map_2d: metric_map
+      node: 'WayPoint3'
+      recovery_behaviours_config: ''
+      top_vel: 0.55
+    - action: row_change
+      edge_id: 'WayPoint2_WayPoint1'
+      inflation_radius: 0.0
+      map_2d: metric_map
+      node: 'WayPoint1'
+      recovery_behaviours_config: ''
+      top_vel: 0.55
+    localise_by_topic: ''
+    map: riseholme_vines
+    name: 'WayPoint2'
+    pointset: riseholme_vines
+    pose:
+      orientation:
+        w: 0.9986589617819147
+        x: 0.0
+        y: 0.0
+        z: 0.05177140188046102
+      position:
+        x: 41.96126610525405
+        y: -48.25526181741033
+        z: 0.0
+    verts:
+    - x: 0.6566242805313628
+      y: 0.35681024536936734
+    - x: 0.23479358492315122
+      y: 0.5170502703789962
+    - x: -0.33612945682127165
+      y: 0.4576964036095269
+    - x: -0.7159781473008321
+      y: 0.2141127963750555
+    - x: -0.6566242805313628
+      y: -0.35681024536936734
+    - x: -0.23479358492315122
+      y: -0.5170502703789962
+    - x: 0.33612945682127165
+      y: -0.4576964036095269
+    - x: 0.7159781473008321
+      y: -0.2141127963750555
+    xy_goal_tolerance: 0.3
+    yaw_goal_tolerance: 0.3
+- meta:
+    map: riseholme_vines
+    node: 'WayPoint3'
+    pointset: riseholme_vines
+  node:
+    edges:
+    - action: row_traversal
+      edge_id: 'WayPoint3_WayPoint4'
+      inflation_radius: 0.0
+      map_2d: metric_map
+      node: 'WayPoint4'
+      recovery_behaviours_config: ''
+      top_vel: 0.55
+    - action: row_change
+      edge_id: 'WayPoint3_WayPoint2'
+      inflation_radius: 0.0
+      map_2d: metric_map
+      node: 'WayPoint2'
+      recovery_behaviours_config: ''
+      top_vel: 0.55
+    - action: move_base
+      edge_id: 'WayPoint3_WayPoint9'
+      inflation_radius: 0.0
+      map_2d: metric_map
+      node: 'WayPoint9'
+      recovery_behaviours_config: ''
+      top_vel: 0.55
+    localise_by_topic: ''
+    map: riseholme_vines
+    name: 'WayPoint3'
+    pointset: riseholme_vines
+    pose:
+      orientation:
+        w: 0.9986315785290322
+        x: 0.0
+        y: 0.0
+        z: 0.0522969441230879
+      position:
+        x: 42.73893287409486
+        y: -51.449139009958344
+        z: 0.0
+    verts:
+    - x: 0.6562483704353295
+      y: 0.3575011514454918
+    - x: 0.23424925422430964
+      y: 0.5172971066180564
+    - x: -0.3366110007458958
+      y: 0.4573423704369677
+    - x: -0.7162031066164181
+      y: 0.2133591035247136
+    - x: -0.6562483704353295
+      y: -0.3575011514454918
+    - x: -0.23424925422430964
+      y: -0.5172971066180564
+    - x: 0.3366110007458958
+      y: -0.4573423704369677
+    - x: 0.7162031066164181
+      y: -0.2133591035247136
+    xy_goal_tolerance: 0.3
+    yaw_goal_tolerance: 0.3
+- meta:
+    map: riseholme_vines
+    node: 'WayPoint4'
+    pointset: riseholme_vines
+  node:
+    edges:
+    - action: row_traversal
+      edge_id: 'WayPoint4_WayPoint3'
+      inflation_radius: 0.0
+      map_2d: metric_map
+      node: 'WayPoint3'
+      recovery_behaviours_config: ''
+      top_vel: 0.55
+    - action: row_change
+      edge_id: 'WayPoint4_WayPoint5'
+      inflation_radius: 0.0
+      map_2d: metric_map
+      node: 'WayPoint5'
+      recovery_behaviours_config: ''
+      top_vel: 0.55
+    - action: move_base
+      edge_id: 'WayPoint4_WayPoint8'
+      inflation_radius: 0.0
+      map_2d: metric_map
+      node: 'WayPoint8'
+      recovery_behaviours_config: ''
+      top_vel: 0.55
+    localise_by_topic: ''
+    map: riseholme_vines
+    name: 'WayPoint4'
+    pointset: riseholme_vines
+    pose:
+      orientation:
+        w: 0.9999569007325039
+        x: 0.0
+        y: 0.0
+        z: 0.009284216576831771
+      position:
+        x: 65.24831879741764
+        y: -48.91018865998295
+        z: 0.0
+    verts:
+    - x: 0.6845521355596219
+      y: 0.2997621902185781
+    - x: 0.2778523833017644
+      y: 0.4952444474333735
+    - x: -0.29604866386636364
+      y: 0.48458662614954506
+    - x: -0.6952099568434503
+      y: 0.27413885694955
+    - x: -0.6845521355596219
+      y: -0.2997621902185781
+    - x: -0.2778523833017644
+      y: -0.4952444474333735
+    - x: 0.29604866386636364
+      y: -0.48458662614954506
+    - x: 0.6952099568434503
+      y: -0.27413885694955
+    xy_goal_tolerance: 0.3
+    yaw_goal_tolerance: 0.3
+- meta:
+    map: riseholme_vines
+    node: 'WayPoint5'
+    pointset: riseholme_vines
+  node:
+    edges:
+    - action: row_traversal
+      edge_id: 'WayPoint5_WayPoint2'
+      inflation_radius: 0.0
+      map_2d: metric_map
+      node: 'WayPoint2'
+      recovery_behaviours_config: ''
+      top_vel: 0.55
+    - action: row_change
+      edge_id: 'WayPoint5_WayPoint6'
+      inflation_radius: 0.0
+      map_2d: metric_map
+      node: 'WayPoint6'
+      recovery_behaviours_config: ''
+      top_vel: 0.55
+    - action: row_change
+      edge_id: 'WayPoint5_WayPoint4'
+      inflation_radius: 0.0
+      map_2d: metric_map
+      node: 'WayPoint4'
+      recovery_behaviours_config: ''
+      top_vel: 0.55
+    localise_by_topic: ''
+    map: riseholme_vines
+    name: 'WayPoint5'
+    pointset: riseholme_vines
+    pose:
+      orientation:
+        w: 0.03208838875268742
+        x: 0.0
+        y: 0.0
+        z: 0.9994850350591831
+      position:
+        x: 65.47373685258863
+        y: -44.81247051397952
+        z: 0.0
+    verts:
+    - x: -0.706988310516709
+      y: -0.24214980028198957
+    - x: -0.3178394006244446
+      y: -0.47058168794668576
+    - x: 0.25497854526032115
+      y: -0.5074001882902572
+    - x: 0.6701698101731375
+      y: -0.3306681456027762
+    - x: 0.706988310516709
+      y: 0.24214980028198957
+    - x: 0.3178394006244446
+      y: 0.47058168794668576
+    - x: -0.25497854526032115
+      y: 0.5074001882902572
+    - x: -0.6701698101731375
+      y: 0.3306681456027762
+    xy_goal_tolerance: 0.3
+    yaw_goal_tolerance: 0.3
+- meta:
+    map: riseholme_vines
+    node: 'WayPoint6'
+    pointset: riseholme_vines
+  node:
+    edges:
+    - action: row_traversal
+      edge_id: 'WayPoint6_WayPoint1'
+      inflation_radius: 0.0
+      map_2d: metric_map
+      node: 'WayPoint1'
+      recovery_behaviours_config: ''
+      top_vel: 0.55
+    - action: row_change
+      edge_id: 'WayPoint6_WayPoint7'
+      inflation_radius: 0.0
+      map_2d: metric_map
+      node: 'WayPoint7'
+      recovery_behaviours_config: ''
+      top_vel: 0.55
+    - action: row_change
+      edge_id: 'WayPoint6_WayPoint5'
+      inflation_radius: 0.0
+      map_2d: metric_map
+      node: 'WayPoint5'
+      recovery_behaviours_config: ''
+      top_vel: 0.55
+    localise_by_topic: ''
+    map: riseholme_vines
+    name: 'WayPoint6'
+    pointset: riseholme_vines
+    pose:
+      orientation:
+        w: 0.9989166149933117
+        x: 0.0
+        y: 0.0
+        z: -0.0465359677056757
+      position:
+        x: 65.01387785444808
+        y: -41.61133362866781
+        z: 0.0
+    verts:
+    - x: 0.7136941812569128
+      y: 0.22160688758227426
+    - x: 0.3313127894002369
+      y: 0.46119501861998935
+    - x: -0.24020110700836242
+      y: 0.5145604316424022
+    - x: -0.6603287682344999
+      y: 0.34990700882632503
+    - x: -0.7136941812569128
+      y: -0.22160688758227426
+    - x: -0.3313127894002369
+      y: -0.46119501861998935
+    - x: 0.24020110700836242
+      y: -0.5145604316424022
+    - x: 0.6603287682344999
+      y: -0.34990700882632503
+    xy_goal_tolerance: 0.3
+    yaw_goal_tolerance: 0.3
+- meta:
+    map: riseholme_vines
+    node: 'WayPoint7'
+    pointset: riseholme_vines
+  node:
+    edges:
+    - action: row_traversal
+      edge_id: 'WayPoint7_WayPoint0'
+      inflation_radius: 0.0
+      map_2d: metric_map
+      node: 'WayPoint0'
+      recovery_behaviours_config: ''
+      top_vel: 0.55
+    - action: row_change
+      edge_id: 'WayPoint7_WayPoint6'
+      inflation_radius: 0.0
+      map_2d: metric_map
+      node: 'WayPoint6'
+      recovery_behaviours_config: ''
+      top_vel: 0.55
+    localise_by_topic: ''
+    map: riseholme_vines
+    name: 'WayPoint7'
+    pointset: riseholme_vines
+    pose:
+      orientation:
+        w: 0.02311330505770128
+        x: 0.0
+        y: 0.0
+        z: 0.999732851880596
+      position:
+        x: 63.97593750896286
+        y: -38.58377146259785
+        z: 0.0
+    verts:
+    - x: -0.702526260158147
+      y: -0.25480551558411263
+    - x: -0.3093383436155469
+      y: -0.4762129762923811
+    - x: 0.2640483671858812
+      y: -0.5027399620146862
+    - x: 0.6759992744358418
+      y: -0.3185811952173155
+    - x: 0.702526260158147
+      y: 0.25480551558411263
+    - x: 0.3093383436155469
+      y: 0.4762129762923811
+    - x: -0.2640483671858812
+      y: 0.5027399620146862
+    - x: -0.6759992744358418
+      y: 0.3185811952173155
+    xy_goal_tolerance: 0.3
+    yaw_goal_tolerance: 0.3
+- meta:
+    map: riseholme_vines
+    node: 'WayPoint8'
+    pointset: riseholme_vines
+  node:
+    edges:
+    - action: move_base
+      edge_id: 'WayPoint8_WayPoint4'
+      inflation_radius: 0.0
+      map_2d: metric_map
+      node: 'WayPoint4'
+      recovery_behaviours_config: ''
+      top_vel: 0.55
+    localise_by_topic: ''
+    map: riseholme_vines
+    name: 'WayPoint8'
+    pointset: riseholme_vines
+    pose:
+      orientation:
+        w: 0.9122734016061981
+        x: 0.0
+        y: 0.0
+        z: -0.40958178758564984
+      position:
+        x: 66.95073294450692
+        y: -51.04954486614611
+        z: 0.0
+    verts:
+    - x: 0.6729704340986777
+      y: -0.3249304414992771
+    - x: 0.5568849104543989
+      y: 0.11112248255080612
+    - x: 0.17547022216917088
+      y: 0.5400733383087521
+    - x: -0.24401957834073165
+      y: 0.7063451297845051
+    - x: -0.6729704340986777
+      y: 0.3249304414992771
+    - x: -0.5568849104543989
+      y: -0.11112248255080612
+    - x: -0.17547022216917088
+      y: -0.5400733383087521
+    - x: 0.24401957834073165
+      y: -0.7063451297845051
+    xy_goal_tolerance: 0.3
+    yaw_goal_tolerance: 0.3
+- meta:
+    map: riseholme_vines
+    node: 'WayPoint9'
+    pointset: riseholme_vines
+  node:
+    edges:
+    - action: move_base
+      edge_id: 'WayPoint9_WayPoint3'
+      inflation_radius: 0.0
+      map_2d: metric_map
+      node: 'WayPoint3'
+      recovery_behaviours_config: ''
+      top_vel: 0.55
+    localise_by_topic: ''
+    map: riseholme_vines
+    name: 'WayPoint9'
+    pointset: riseholme_vines
+    pose:
+      orientation:
+        w: 0.9991121187749656
+        x: 0.0
+        y: 0.0
+        z: -0.042130441690052374
+      position:
+        x: 42.742447512948246
+        y: -54.97919114166568
+        z: 0.0
+    verts:
+    - x: 0.7117119353938766
+      y: 0.22789277742346362
+    - x: 0.32723234029966775
+      y: 0.46409913281761317
+    - x: -0.24472999036463083
+      y: 0.5124219369193573
+    - x: -0.6633891312921325
+      y: 0.34406955324083494
+    - x: -0.7117119353938766
+      y: -0.22789277742346362
+    - x: -0.32723234029966775
+      y: -0.46409913281761317
+    - x: 0.24472999036463083
+      y: -0.5124219369193573
+    - x: 0.6633891312921325
+      y: -0.34406955324083494
+    xy_goal_tolerance: 0.3
+    yaw_goal_tolerance: 0.3
+- meta:
+    map: riseholme_vines
+    node: 'WayPoint10'
+    pointset: riseholme_vines
+  node:
+    edges:
+    - action: move_base
+      edge_id: 'WayPoint10_WayPoint0'
+      inflation_radius: 0.0
+      map_2d: metric_map
+      node: 'WayPoint0'
+      recovery_behaviours_config: ''
+      top_vel: 0.55
+    localise_by_topic: ''
+    map: riseholme_vines
+    name: 'WayPoint10'
+    pointset: riseholme_vines
+    pose:
+      orientation:
+        w: 0.7562673274171807
+        x: 0.0
+        y: 0.0
+        z: -0.6542627373473707
+      position:
+        x: 39.620629084151
+        y: -37.46948787949753
+        z: 0.0
+    verts:
+    - x: 0.3832913566994126
+      y: -0.641526876181662
+    - x: 0.5261953059504456
+      y: -0.21351231724604325
+    - x: 0.44360787525768686
+      y: 0.3545152502071224
+    - x: 0.18473621075375302
+      y: 0.7241143068744208
+    - x: -0.3832913566994126
+      y: 0.641526876181662
+    - x: -0.5261953059504456
+      y: 0.21351231724604325
+    - x: -0.44360787525768686
+      y: -0.3545152502071224
+    - x: -0.18473621075375302
+      y: -0.7241143068744208
+    xy_goal_tolerance: 0.3
+    yaw_goal_tolerance: 0.3

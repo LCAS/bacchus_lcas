@@ -1,0 +1,17 @@
+kp_x: 0.6                         # Proportional gain for x velocity command
+kp_y: 1.0                         # Proportional gain for y velocity command
+kp_ang: 0.5                       # Proportional gain for angular velocity command
+turning_speed_limit: 0.2          # Limit on angular velocity [rad/s]
+minimum_turning_speed: 0.01       # Minimum turning speed [rad/s]
+x_speed_limit: 0.3                # Limit on x velocity [m/s]
+y_speed_limit: 0.3                # Limit on y velocity [m/s]
+goal_tolerance_radius: 0.05       # Distance from goal before completed [m]
+goal_tolerance_heading: 0.04      # Heading offset from goal before completed [rad]
+emergency_clearance_x: 0.3        # Clearance from corner frames to trigger emergency stop in x
+emergency_clearance_y: 0.3        # Clearance from corner frames to trigger emergency stop in y
+quit_on_timeout: True             # Should the robot cancel when it meets an obstacle?
+time_to_quit: 10.0                # Time until the action is cancelled because collision detected
+node_distance_limit: 8.0          # Maximum distance between 2 nodes to avoid error
+maximum_dist_from_line: 1.0       # Maximum distance from line between 2 nodes
+enable_laser_safety_zone: False   # Enable laser safety zone
+

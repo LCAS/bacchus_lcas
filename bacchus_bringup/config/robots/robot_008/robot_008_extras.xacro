@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="sensor_frames">
+
+  <xacro:arg name="tf_prefix" default=""/>
+  <xacro:arg name="robot_name" default=""/>
+  <xacro:arg name="datum_file" default=""/>
+
+  <!-- Other Sensors -->
+  <xacro:include filename="$(find rasberry_bringup)/urdf/extras.xacro">
+    <xacro:arg name="tf_prefix" value="$(arg tf_prefix)" />
+    <xacro:arg name="robot_name" value="$(arg robot_name)" />
+    <xacro:arg name="datum_file" value="$(arg datum_file)" />
+  </xacro:include>
+
+</robot>
+

@@ -1,0 +1,37 @@
+enable_laser_safety_zone: False   # Enable laser safety zone
+use_row_detector: False
+forward_speed: 0.5                # Constant forward velocity
+constant_forward_speed: True      # Stop when obstacle in safety area (no slowdown)
+min_obj_size: 0.15                # Minimum object radius for slow down
+min_dist_to_obj: 1.5              # Distance to object at which the robot should stop
+approach_dist_to_obj: 4.0         # Distance to object at which the robot starts to slow down
+minimum_turning_speed: 0.01       # Minimum turning speed
+kp_ang_ro: 0.7                    # Proportional gain for initial orientation target
+initial_heading_tolerance: 0.04   # Initial heading tolerance in radians
+kp_ang: 0.5                       # Proportional gain for heading correction
+kp_y: 0.75                        # Proportional gain for sideways correction
+granularity: 0.5                  # Distance between local goals along path (carrots)
+y_row_detection_bias: 1.00        # Weight given to the reference given by row detection
+y_path_following_bias: 0.15       # Weight given to the original path following
+ang_row_detection_bias: 1.06      # Weight given to the angular reference given by row detection
+ang_path_following_bias: 0.14     # Weight given to the angular refernce given by path following
+emergency_clearance_x: 0.7        # Clearance from corner frames to trigger emergency stop in x
+emergency_clearance_y: 0.2        # Clearance from corner frames to trigger emergency stop in y
+quit_on_timeout: False            # Wether the robot should cancel row traversal after collision detected
+time_to_quit: 10.0                # Time until the action is cancelled since collision detected
+goal_tolerance_radius: 0.35       # Goal tolerance Radius in metres
+prealign_y_axis: True             # Align laterally before going forwards
+force_forwards_facing: False      # Force Robot to face forwards during traversal
+force_backwards_facing: False     # Force Robot to face backwards during traversal
+initial_alignment_tolerance: 0.05 # Initial alingment tolerance [m], how far to the side it is acceptable for the robot to be before moving forwards
+simultaneous_alignment: False     # Wether to align heading and Y axis simultaneusly or not
+y_speed_limit: 0.1                # Maximum speed on the Y axis
+turning_speed_limit: 0.1          # Maximum turning speed
+maximum_dev_dist: 6.0             # Maximum distance the robot can drift away from the line before cancelling goal
+maximum_dev_dist_y: 0.20          # Maximum distance the robot can drift away from the line before cancelling goal
+maximum_dev_dist_theta: 0.17      # Maximum distance the robot can drift away from the line before cancelling goal
+use_row_entry_function: True      # Enter the row using row_entry function or just go forwards
+row_entry_distance: 1.5           # Distance in meters to use row entry function
+row_entry_min_speed: 0.15         # Minimum row entry speed
+row_entry_kp: 0.3                 # Row entry forward speed gain based on distance travelled
+tf_buffer_size: 1.0               # tf buffer size in seconds

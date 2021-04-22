@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<launch>
+
+  <arg name="loop" default="False"/>
+  <arg name="waypoints_id" default="waypoints"/>
+  <arg name="waypoints_file_path" default="$(find bacchus_bringup)/config/site_files/riseholme/vines"/>
+  <arg name="use_homing" default="False"/>
+  <arg name="continue" default="False"/>
+
+  <node pkg="bacchus_bringup" type="follow_waypoints.py" name="follow_waypoints" output="screen">
+     <param name="loop" type="bool" value="$(arg loop)"/>
+     <param name="use_homing" type="bool" value="$(arg use_homing)"/>
+     <param name="waypoints_file" type="str" value="$(arg waypoints_file_path)/$(arg waypoints_id).yaml"/>
+     <param name="continue" type="bool" value="$(arg continue)"/>
+  </node>
+
+</launch>

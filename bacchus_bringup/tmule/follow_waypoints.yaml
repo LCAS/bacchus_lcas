@@ -1,0 +1,92 @@
+---
+session: waypoints
+init_cmd: |
+  #exec /bin/bash
+  cd @TMULE_CONFIG_DIR@ || true
+  set -o pipefail
+  function export_default () {
+    var_name="$1"
+    var_default="$2"
+    eval $var_name="${!var_name:-$var_default}"
+    export $var_name
+    echo "  $0 -> $var_name=${!var_name}"
+  }
+
+  # source ROS
+  source "/opt/ros/$(rosversion -d)/setup.bash"
+
+  # load robot-specific config file
+  if [ -r "$HOME/.rasberryrc" ]; then echo "*** loading $HOME/.rasberryrc" ; source "$HOME/.rasberryrc"; fi
+
+  # load waypoints-specific config file
+  if [ -r "$HOME/.garfordrc" ]; then echo "*** loading $HOME/.garfordrc" ; source "$HOME/.garfordrc"; fi
+
+
+  export_default BASE_CONFIG_DIR `readlink -f . || echo .`
+  export_default ROBOT_NAME `hostname | tr "-" "_" | tr "." "_"`
+  export_default SCENARIO_NAME "default"
+  # load robot-specific config file
+  if [ -r "$BASE_CONFIG_DIR/robots/$ROBOT_NAME.sh" ]; then echo "*** loading $BASE_CONFIG_DIR/robots/$ROBOT_NAME.sh" ; source "$BASE_CONFIG_DIR/robots/$ROBOT_NAME.sh"; fi
+  # load scenario-specific config file
+  if [ -r "$BASE_CONFIG_DIR/scenarios/$SCENARIO_NAME.sh" ]; then echo "*** loading $BASE_CONFIG_DIR/scenarios/$SCENARIO_NAME.sh" ; source "$BASE_CONFIG_DIR/scenarios/$SCENARIO_NAME.sh"; fi  # configure the development workspace (assuming we are in rasberry_bringup/tmule)
+  export_default CATKIN_WORKSPACE "`readlink -f ../../../.. || echo $HOME/rasberry_ws`"
+  source "$CATKIN_WORKSPACE/devel/setup.bash"
+
+  export_default VPN_BASE_ADDR "172.24.0.0"
+
+  # search for VPN tun device:
+  default_iface=`route -n | grep "^$VPN_BASE_ADDR" | tr -s " " |  cut -f8 -d" " || echo lo`
+  default_ip=`ip addr show dev "$default_iface" | grep "inet " | sed 's@ *inet \([0-9\.]*\).*@\1@' || echo 127.0.0.1`
+
+
+  # set ROS_MASTER to the correct IP
+  export_default ROS_MASTER $default_ip
+  # set ROS_IP not to the IP that we will connect to remotely
+  export_default ROS_IP `ip route get $ROS_MASTER | grep "src" | sed 's/.*src \([0-9\.]*\).*/\1/' || echo $ROS_MASTER`
+  # set ROS_HOSTNAME to the ROS_IP to avoid configuring /etc/hosts for anyone who connects
+  export_default ROS_HOSTNAME "$ROS_IP"
+
+  export_default FARM_NAME ""
+  export_default FIELD_NAME ""
+
+  export_default STARTUP_SENTOR true
+  export_default SENTOR_CONFIG "$(rospack find bacchus_bringup)/config/site_files/default/default/sentor.yaml"
+
+  export_default RECORD_SENTOR_BAG false
+
+  export_default DATA_FOLDER "$(env HOME)/data"
+  export_default RECORD_NAV_BAG true
+  export_default RECORD_FULL_NAV_BAG true
+  export_default MAX_NAV_BAGS "-1"
+
+  # Waypoint specific variables
+  export_default WAYPOINTS_FILE_PATH "$(rospack find bacchus_bringup)/config/site_files/$FARM_NAME/$FIELD_NAME"
+  export_default WAYPOINTS_ID "waypoints"
+  export CONTINUE_WAYPOINTS false
+  export_default LOOP false
+  export_default HOMING_ENABLED false
+
+  # Garford specific variables
+  export_default USE_HOE false
+
+
+# tags: core, nav, waypoints
+windows:
+- name: waypoints
+  panes:
+  - roslaunch bacchus_bringup follow_waypoints.launch waypoints_file_path:=$WAYPOINTS_FILE_PATH waypoints_id:=$WAYPOINTS_ID loop:=$LOOP use_homing:=$HOMING_ENABLED continue:=$CONTINUE_WAYPOINTS
+  check: "rostopic list"
+  tags: [waypoints]
+- name: monitoring
+  panes:
+  - if $STARTUP_SENTOR; then roslaunch rasberry_uv sentor.launch config_file:=$SENTOR_CONFIG auto_safety_tagging:=true ; fi
+  tags: [waypoints, monitoring]
+- name: bag_creation
+  panes:
+  - if $RECORD_SENTOR_BAG; then roslaunch rasberry_uv record_sentor_data.launch bag_folder:=$DATA_FOLDER; fi
+  - if $RECORD_NAV_BAG; then roslaunch rasberry_uv record_nav_data.launch bag_folder:=$DATA_FOLDER full_bag:=$RECORD_FULL_NAV_BAG max_bags:=$MAX_NAV_BAGS; fi
+  tags: [recording]
+- name: debug
+  panes:
+  - ls
+  skip: true

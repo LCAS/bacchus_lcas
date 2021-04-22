@@ -82,7 +82,7 @@ init_cmd: |
 
   # SIMULATION ENVIRONMENT VARIABLES
   export_default USE_SIM false
-  export_default USE_GUI false
+  export_default USE_GUI true
 
   # ROBOT DEPENDANT ENVIRONMENT VARIABLES
 
@@ -131,6 +131,7 @@ init_cmd: |
   # Start position for sim
   export_default ROBOT_POS_X_1 0.0
   export_default ROBOT_POS_Y_1 0.0
+  export_default ROBOT_POS_Z_1 0.0
   export_default ROBOT_POS_A_1 0.0
 
   #Home GUI
@@ -150,7 +151,7 @@ init_cmd: |
   # Site config defaults
   export_default METRIC_MAP "$(rospack find bacchus_bringup)/config/site_files/default/open/map.yaml"
   export_default NOGO_MAP "$(rospack find bacchus_bringup)/config/site_files/default/open/map.yaml"
-  export_default GAZEBO_WORLD_PATH "$(rospack find bacchus_bringup)/config/site_files/default/open/empty_grass.world"
+  export_default GAZEBO_WORLD_PATH "$(rospack find bacchus_gazebo)/worlds/riseholme_digital_twin.world"
   export_default ROW_TRAVERSAL_CONFIG "$(rospack find bacchus_bringup)/config/site_files/default/open/row_traversal_cfg.yaml"
   export_default ROW_CHANGE_CONFIG "$(rospack find bacchus_bringup)/config/site_files/default/open/row_change_cfg.yaml"
 
@@ -172,7 +173,7 @@ windows:
 - name: robot
   tags: [base]
   panes:
-  - roslaunch rasberry_bringup robot_bringup.launch robot_model:=${ROBOT_CONFIG_PATH}/robot_$ROBOT_NO.yaml model_extras:=${ROBOT_CONFIG_PATH}/robot_${ROBOT_NO}_extras.xacro datum_file:="$DATUM_FILE" ekf_publish_tf:="$EKF_PUBLISH_TF" simple_sim:=$USE_SIM with_teleoperation:=true world:=$GAZEBO_WORLD_PATH with_gui:=$USE_GUI teleop_controller_type:=$TELEOP_CONTROLLER teleop_controller:=$(rospack find thorvald_teleop)/config/$TELEOP_CONTROLLER.yaml start_pose_x:=$ROBOT_POS_X_1 start_pose_y:=$ROBOT_POS_Y_1 start_pose_Y:=$ROBOT_POS_A_1 joy_dev:=$JOY_DEV can_interface_type:=$CAN_INTERFACE_TYPE can_interface_name:=$CAN_INTERFACE_NAME
+  - roslaunch rasberry_bringup robot_bringup.launch robot_model:=${ROBOT_CONFIG_PATH}/robot_$ROBOT_NO.yaml model_extras:=${ROBOT_CONFIG_PATH}/robot_${ROBOT_NO}_extras.xacro datum_file:="$DATUM_FILE" ekf_publish_tf:="$EKF_PUBLISH_TF" simple_sim:=$USE_SIM with_teleoperation:=true world:=$GAZEBO_WORLD_PATH with_gui:=$USE_GUI teleop_controller_type:=$TELEOP_CONTROLLER teleop_controller:=$(rospack find thorvald_teleop)/config/$TELEOP_CONTROLLER.yaml start_pose_x:=$ROBOT_POS_X_1 start_pose_y:=$ROBOT_POS_Y_1 start_pose_z:=$ROBOT_POS_Z_1 start_pose_Y:=$ROBOT_POS_A_1 joy_dev:=$JOY_DEV can_interface_type:=$CAN_INTERFACE_TYPE can_interface_name:=$CAN_INTERFACE_NAME
   check: "rostopic list | grep -q -e base_state"
 - name: sensors_bringup
   tags: [base]

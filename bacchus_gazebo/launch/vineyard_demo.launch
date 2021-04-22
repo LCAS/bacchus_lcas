@@ -27,7 +27,7 @@
 
 
   <!-- ############################## GAZEBO ############################## -->
-  <arg name="world_name" default="vineyard_stage0_heightmap"/> <!-- Note: the world_name is with respect to GAZEBO_RESOURCE_PATH environmental variable -->
+  <arg name="world_name" default="riseholme"/> <!-- Note: the world_name is with respect to GAZEBO_RESOURCE_PATH environmental variable -->
   <arg name="world" default="$(find bacchus_gazebo)/worlds/$(arg world_name).world"/> <!-- Note: the world_name is with respect to GAZEBO_RESOURCE_PATH environmental variable -->
   <arg name="paused" default="false"/>
   <arg name="use_sim_time" default="true"/>
@@ -37,7 +37,7 @@
   <arg name="verbose" default="false"/>
 
   <!-- ############################### RVIZ ############################### -->
-  <arg name="launch_rviz" default="True"/>
+  <arg name="launch_rviz" default="False"/>
   <arg name="rviz_config_file" default="$(find bacchus_gazebo)/rviz/vineyard_demo.rviz"/>
 
 

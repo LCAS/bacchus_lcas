@@ -13,7 +13,7 @@
     -->
   <!-- <arg name="robot_no" default="001"/> -->  <!-- unused-->
   <arg name="robot_model" default="$(find bacchus_gazebo)/config/robot.yaml"/>
-  <arg name="model_extras" default="$(find bacchus_gazebo)/urdf/simple_sensors.xacro"/> 
+  <arg name="model_extras" default="$(find bacchus_gazebo)/urdf/bacchus_sensors.xacro"/> 
   <!-- sensor suites:
     - simple_sensors
     - bacchus_sensors (2 hokuyo, 3 kinect v2, 1 velodyne)
@@ -40,6 +40,8 @@
   <arg name="launch_rviz" default="True"/>
   <arg name="rviz_config_file" default="$(find bacchus_gazebo)/rviz/vineyard_demo.rviz"/>
 
+  <remap from="$(arg robot_name)/imu_raw" to="/imu_raw"/>
+  <remap from="$(arg robot_name)/velodyne_points" to="/points_raw"/>
 
   <!-- ############################### ROBOT ############################## -->
   <group if="$(eval robot_name == 'thorvald_001')">

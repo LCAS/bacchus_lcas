@@ -215,7 +215,7 @@ windows:
 - name: rviz
   tags: [site]
   panes:
-  - if ! USE_HOME_GUI; then DISPLAY=:0 rviz -d $(rospack find rasberry_bringup)/resources/row_traversal_action.rviz; fi
+  - if ! USE_HOME_GUI; then DISPLAY=:0 rviz -d $(rospack find bacchus_bringup)/resources/rviz_conf.rviz; fi
 - name: monitoring
   tags: [site]
   panes:

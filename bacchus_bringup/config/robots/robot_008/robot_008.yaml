@@ -94,6 +94,18 @@ lidar_back: {make: "sick",
              x: 0.31, y: -0.154, z: -0.034,
              roll: 0.0, pitch: 0.0, yaw: -0.79}
 
+# Lidars
+lidars: {lidar1: {make: "ouster",
+             model: "os1",
+             type: "3d",
+             parent_link: "base_link",
+             topic_prefix: "os_cloud_node",
+             suffix: "sensor",
+             output_sim: "true",
+             x: 0.0, y: -0.3, z: 1.3,
+             roll: 0.0, pitch: 0.0, yaw: 0.0}}
+
+
 
 # GNSS antennas - main antenna should be at the back
 gnss_antenna_main: {x: -0.365, y: 0.307, z: 1.226,

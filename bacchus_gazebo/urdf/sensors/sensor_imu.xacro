@@ -46,7 +46,7 @@
         <plugin filename="libgazebo_ros_imu_sensor.so" name="(arg robot_name)imu_plugin">
           <topicName>imu_raw</topicName>
           <bodyName>${sensor_name}</bodyName>
-          <updateRateHZ>500.0</updateRateHZ>
+          <updateRateHZ>1000.0</updateRateHZ>
           <gaussianNoise>0.0</gaussianNoise>
           <xyzOffset>0 0 0</xyzOffset>
           <rpyOffset>0 0 0</rpyOffset>
@@ -55,7 +55,7 @@
         </plugin>
         <pose>0 0 0 0 0 0</pose>
         <material>Gazebo/Orange</material>
-        <imu_sensor>
+        <!--imu_sensor>
           <angular_velocity>
             <x>
               <noise type="gaussian">
@@ -108,7 +108,7 @@
               </noise>
             </z>
           </linear_acceleration>
-        </imu_sensor>
+        </imu_sensor-->
       </sensor>
     </gazebo>
     </xacro:macro>

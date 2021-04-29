@@ -27,7 +27,7 @@
 
 
   <!-- ############################## GAZEBO ############################## -->
-  <arg name="world_name" default="riseholme"/> <!-- Note: the world_name is with respect to GAZEBO_RESOURCE_PATH environmental variable -->
+  <arg name="world_name" default="vineyard_stage0_heightmap"/> <!-- Note: the world_name is with respect to GAZEBO_RESOURCE_PATH environmental variable -->
   <arg name="world" default="$(find bacchus_gazebo)/worlds/$(arg world_name).world"/> <!-- Note: the world_name is with respect to GAZEBO_RESOURCE_PATH environmental variable -->
   <arg name="paused" default="false"/>
   <arg name="use_sim_time" default="true"/>
@@ -56,7 +56,9 @@
 
     <include file="$(find bacchus_gazebo)/launch/thorvald.launch" >
       <arg name="robot_name" value="$(arg robot_name)" />
-      <arg name="x" value="11.0" />
+      <arg name="x" value="-11.0" />
+      <arg name="y" value="0.0" />
+      <arg name="z" value="0.0" />
       <arg name="robot_model" value="$(arg robot_model)"/>
       <arg name="model_extras" value="$(arg model_extras)"/>
     </include>

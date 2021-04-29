@@ -14,7 +14,8 @@
     </include>
 
     <include>
-      <uri>model://heightmap_realistic</uri>
+      <uri>model://heightmap_riseholme</uri>
+      <!--uri>model://heightmap_realistic</uri-->
       <pose>0 0 -0.1 0 0 0</pose>
     </include>
 

@@ -1,0 +1,3063 @@
+<sdf version='1.6'>
+  <world name='default'>
+    <gui fullscreen='0'>
+      <camera name='user_camera'>
+        <pose frame=''>49.7845 18.8317 18.7735 -0 0.310686 3.10134</pose>
+        <view_controller>orbit</view_controller>
+        <projection_type>perspective</projection_type>
+      </camera>
+    </gui>
+    <light name='sun' type='directional'>
+      <cast_shadows>1</cast_shadows>
+      <pose frame=''>0 0 10 0 -0 0</pose>
+      <diffuse>0.8 0.8 0.8 1</diffuse>
+      <specular>0.2 0.2 0.2 1</specular>
+      <attenuation>
+        <range>1000</range>
+        <constant>0.9</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <direction>-0.5 0.1 -0.9</direction>
+    </light>
+    <model name='heightmap'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://heightmap_riseholme/meshes/Riseholme.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://heightmap_riseholme/meshes/Riseholme.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>0 0 -0.1 0.0349066 -0 0</pose>
+    </model>
+    <model name='vine_t0_0'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://vine_t0/meshes/vine_t0.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://vine_t0/meshes/vine_t0.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>-0 -7.5 0 0 -0 0</pose>
+    </model>
+    <model name='vine_t0_1'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://vine_t0/meshes/vine_t0.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://vine_t0/meshes/vine_t0.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>-6 -7.5 0 0 -0 0</pose>
+    </model>
+    <model name='vine_t0_2'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://vine_t0/meshes/vine_t0.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://vine_t0/meshes/vine_t0.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>6 -7.5 0 0 -0 0</pose>
+    </model>
+    <model name='vine_t1_0'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://vine_t0/meshes/vine_t0.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://vine_t0/meshes/vine_t0.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>0 -4.5 0 0 -0 0</pose>
+    </model>
+    <model name='vine_t1_1'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://vine_t0/meshes/vine_t0.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://vine_t0/meshes/vine_t0.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>-6 -4.5 0 0 -0 0</pose>
+    </model>
+    <model name='vine_t1_2'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://vine_t0/meshes/vine_t0.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://vine_t0/meshes/vine_t0.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>6 -4.5 0 0 -0 0</pose>
+    </model>
+    <model name='vine_t2_0'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://vine_t0/meshes/vine_t0.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://vine_t0/meshes/vine_t0.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>0 -1.5 -0.1 0 -0 0</pose>
+    </model>
+    <model name='vine_t2_1'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://vine_t0/meshes/vine_t0.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://vine_t0/meshes/vine_t0.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>-6 -1.5 -0.1 0 -0 0</pose>
+    </model>
+    <model name='vine_t2_2'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://vine_t0/meshes/vine_t0.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://vine_t0/meshes/vine_t0.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>6 -1.5 -0.1 0 -0 0</pose>
+    </model>
+    <model name='vine_t3_0'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://vine_t0/meshes/vine_t0.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://vine_t0/meshes/vine_t0.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>0 1.5 -0.1 0 -0 0</pose>
+    </model>
+    <model name='vine_t3_1'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://vine_t0/meshes/vine_t0.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://vine_t0/meshes/vine_t0.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>-6 1.5 -0.1 0 -0 0</pose>
+    </model>
+    <model name='vine_t3_2'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://vine_t0/meshes/vine_t0.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://vine_t0/meshes/vine_t0.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>6 1.5 -0.1 0 -0 0</pose>
+    </model>
+    <model name='vine_t4_0'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://vine_t0/meshes/vine_t0.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://vine_t0/meshes/vine_t0.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>0 4.5 0 0 -0 0</pose>
+    </model>
+    <model name='vine_t4_1'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://vine_t0/meshes/vine_t0.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://vine_t0/meshes/vine_t0.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>-6 4.5 0 0 -0 0</pose>
+    </model>
+    <model name='vine_t4_2'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://vine_t0/meshes/vine_t0.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://vine_t0/meshes/vine_t0.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>6 4.5 0 0 -0 0</pose>
+    </model>
+    <model name='vine_t5_0'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://vine_t0/meshes/vine_t0.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://vine_t0/meshes/vine_t0.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>0 7.5 0 0 -0 0</pose>
+    </model>
+    <model name='vine_t5_1'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://vine_t0/meshes/vine_t0.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://vine_t0/meshes/vine_t0.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>-6 7.5 0 0 -0 0</pose>
+    </model>
+    <model name='vine_t5_2'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://vine_t0/meshes/vine_t0.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://vine_t0/meshes/vine_t0.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>6 7.5 0 0 -0 0</pose>
+    </model>
+    <physics name='default_physics' default='0' type='ode'>
+      <real_time_update_rate>200</real_time_update_rate>
+      <real_time_factor>1</real_time_factor>
+      <max_step_size>0.005</max_step_size>
+    </physics>
+    <gravity>0 0 -9.8</gravity>
+    <magnetic_field>6e-06 2.3e-05 -4.2e-05</magnetic_field>
+    <atmosphere type='adiabatic'/>
+    <scene>
+      <ambient>0.4 0.4 0.4 1</ambient>
+      <background>0.7 0.7 0.7 1</background>
+      <shadows>1</shadows>
+    </scene>
+    <wind/>
+    <spherical_coordinates>
+      <surface_model>EARTH_WGS84</surface_model>
+      <latitude_deg>0</latitude_deg>
+      <longitude_deg>0</longitude_deg>
+      <elevation>0</elevation>
+      <heading_deg>0</heading_deg>
+    </spherical_coordinates>
+    <model name='thorvald_001'>
+      <link name='thorvald_001/base_link'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose frame=''>0 0 0.605643 0 -0 0</pose>
+          <mass>86.4301</mass>
+          <inertia>
+            <ixx>19.5281</ixx>
+            <ixy>8.66642e-06</ixy>
+            <ixz>-2.73143e-07</ixz>
+            <iyy>18.6217</iyy>
+            <iyz>-1.46518e-15</iyz>
+            <izz>33.3659</izz>
+          </inertia>
+        </inertial>
+        <collision name='thorvald_001/base_link_fixed_joint_lump__thorvald_001/top0_collision'>
+          <pose frame=''>-0.549 -0.449 0.65 0 -0 -3.14159</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/opt/ros/melodic/share/thorvald_description/meshes/tower_modules/DUMMY-TOWER-M.stl</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='thorvald_001/base_link_fixed_joint_lump__thorvald_001/top1_collision_1'>
+          <pose frame=''>0.549 -0.449 0.65 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/opt/ros/melodic/share/thorvald_description/meshes/tower_modules/DUMMY-TOWER-MIRROR-M.stl</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='thorvald_001/base_link_fixed_joint_lump__thorvald_001/hokuyo_front_collision_2'>
+          <pose frame=''>0.721 -0.601 0.616 0 0 -0.79</pose>
+          <geometry>
+            <box>
+              <size>0.1 0.1 0.1</size>
+            </box>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode/>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <collision name='thorvald_001/base_link_fixed_joint_lump__thorvald_001/top2_collision_3'>
+          <pose frame=''>0.549 0.449 0.65 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/opt/ros/melodic/share/thorvald_description/meshes/tower_modules/DUMMY-TOWER-M.stl</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='thorvald_001/base_link_fixed_joint_lump__thorvald_001/top3_collision_4'>
+          <pose frame=''>-0.549 0.449 0.65 0 -0 -3.14159</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/opt/ros/melodic/share/thorvald_description/meshes/tower_modules/DUMMY-TOWER-MIRROR-M.stl</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='thorvald_001/base_link_fixed_joint_lump__thorvald_001/hokuyo_back_collision_5'>
+          <pose frame=''>-0.721 0.601 0.616 0 -0 2.35159</pose>
+          <geometry>
+            <box>
+              <size>0.1 0.1 0.1</size>
+            </box>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode/>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <collision name='thorvald_001/base_link_fixed_joint_lump__thorvald_001/bat0_collision_6'>
+          <pose frame=''>0 0.445 0.72 0 -0 -3.14159</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/opt/ros/melodic/share/thorvald_description/meshes/bat_enc_modules/836586-1-DUMMY-RevA.stl</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='thorvald_001/base_link_fixed_joint_lump__thorvald_001/bat1_collision_7'>
+          <pose frame=''>0 -0.445 0.72 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/opt/ros/melodic/share/thorvald_description/meshes/bat_enc_modules/836586-1-DUMMY-RevA.stl</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='thorvald_001/base_link_fixed_joint_lump__thorvald_001/corner0_collision_8'>
+          <pose frame=''>-0.368 -0.445 0.65 0 -0 3.14159</pose>
+          <geometry>
+            <cylinder>
+              <length>0.15</length>
+              <radius>0.02</radius>
+            </cylinder>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='thorvald_001/base_link_fixed_joint_lump__thorvald_001/corner0_1_collision_9'>
+          <pose frame=''>-0.425 -0.445 0.575 0 -0 3.14159</pose>
+          <geometry>
+            <box>
+              <size>0.14 0.116 0.058</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='thorvald_001/base_link_fixed_joint_lump__thorvald_001/corner0_2_collision_10'>
+          <pose frame=''>-0.425 -0.445 0.725 0 -0 3.14159</pose>
+          <geometry>
+            <box>
+              <size>0.14 0.116 0.058</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='thorvald_001/base_link_fixed_joint_lump__thorvald_001/corner1_collision_11'>
+          <pose frame=''>0.368 -0.445 0.65 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <length>0.15</length>
+              <radius>0.02</radius>
+            </cylinder>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='thorvald_001/base_link_fixed_joint_lump__thorvald_001/corner1_1_collision_12'>
+          <pose frame=''>0.425 -0.445 0.575 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.14 0.116 0.058</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='thorvald_001/base_link_fixed_joint_lump__thorvald_001/corner1_2_collision_13'>
+          <pose frame=''>0.425 -0.445 0.725 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.14 0.116 0.058</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='thorvald_001/base_link_fixed_joint_lump__thorvald_001/corner2_collision_14'>
+          <pose frame=''>0.368 0.445 0.65 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <length>0.15</length>
+              <radius>0.02</radius>
+            </cylinder>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='thorvald_001/base_link_fixed_joint_lump__thorvald_001/corner2_1_collision_15'>
+          <pose frame=''>0.425 0.445 0.575 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.14 0.116 0.058</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='thorvald_001/base_link_fixed_joint_lump__thorvald_001/corner2_2_collision_16'>
+          <pose frame=''>0.425 0.445 0.725 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.14 0.116 0.058</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='thorvald_001/base_link_fixed_joint_lump__thorvald_001/corner3_collision_17'>
+          <pose frame=''>-0.368 0.445 0.65 0 -0 3.14159</pose>
+          <geometry>
+            <cylinder>
+              <length>0.15</length>
+              <radius>0.02</radius>
+            </cylinder>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='thorvald_001/base_link_fixed_joint_lump__thorvald_001/corner3_1_collision_18'>
+          <pose frame=''>-0.425 0.445 0.575 0 -0 3.14159</pose>
+          <geometry>
+            <box>
+              <size>0.14 0.116 0.058</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='thorvald_001/base_link_fixed_joint_lump__thorvald_001/corner3_2_collision_19'>
+          <pose frame=''>-0.425 0.445 0.725 0 -0 3.14159</pose>
+          <geometry>
+            <box>
+              <size>0.14 0.116 0.058</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='thorvald_001/base_link_fixed_joint_lump__thorvald_001/pipe0_1_collision_20'>
+          <pose frame=''>0 -0.445 0.575 1.5708 0 -1.5708</pose>
+          <geometry>
+            <cylinder>
+              <length>0.85</length>
+              <radius>0.02</radius>
+            </cylinder>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='thorvald_001/base_link_fixed_joint_lump__thorvald_001/pipe0_2_collision_21'>
+          <pose frame=''>0 -0.445 0.725 1.5708 0 -1.5708</pose>
+          <geometry>
+            <cylinder>
+              <length>0.85</length>
+              <radius>0.02</radius>
+            </cylinder>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='thorvald_001/base_link_fixed_joint_lump__thorvald_001/pipe1_1_collision_22'>
+          <pose frame=''>0.425 0 0.575 1.5708 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <length>0.89</length>
+              <radius>0.02</radius>
+            </cylinder>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='thorvald_001/base_link_fixed_joint_lump__thorvald_001/pipe1_2_collision_23'>
+          <pose frame=''>0.425 0 0.725 1.5708 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <length>0.89</length>
+              <radius>0.02</radius>
+            </cylinder>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='thorvald_001/base_link_fixed_joint_lump__thorvald_001/pipe2_1_collision_24'>
+          <pose frame=''>0 0.445 0.575 1.5708 -0 1.5708</pose>
+          <geometry>
+            <cylinder>
+              <length>0.85</length>
+              <radius>0.02</radius>
+            </cylinder>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='thorvald_001/base_link_fixed_joint_lump__thorvald_001/pipe2_2_collision_25'>
+          <pose frame=''>0 0.445 0.725 1.5708 -0 1.5708</pose>
+          <geometry>
+            <cylinder>
+              <length>0.85</length>
+              <radius>0.02</radius>
+            </cylinder>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='thorvald_001/base_link_fixed_joint_lump__thorvald_001/pipe3_1_collision_26'>
+          <pose frame=''>-0.425 0 0.575 1.5708 -0 3.14159</pose>
+          <geometry>
+            <cylinder>
+              <length>0.89</length>
+              <radius>0.02</radius>
+            </cylinder>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='thorvald_001/base_link_fixed_joint_lump__thorvald_001/pipe3_2_collision_27'>
+          <pose frame=''>-0.425 0 0.725 1.5708 -0 3.14159</pose>
+          <geometry>
+            <cylinder>
+              <length>0.89</length>
+              <radius>0.02</radius>
+            </cylinder>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='thorvald_001/base_link_fixed_joint_lump__thorvald_001/kinect2_front_link_collision_28'>
+          <pose frame=''>0.5025 0 0.66 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.1 0.25 0.06</size>
+            </box>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode/>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <collision name='thorvald_001/base_link_fixed_joint_lump__thorvald_001/kinect2_left_link_collision_29'>
+          <pose frame=''>0 0.34 0.8 0 -0 1.5708</pose>
+          <geometry>
+            <box>
+              <size>0.1 0.25 0.06</size>
+            </box>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode/>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <collision name='thorvald_001/base_link_fixed_joint_lump__thorvald_001/kinect2_right_link_collision_30'>
+          <pose frame=''>0 -0.34 0.8 0 -0 -1.5708</pose>
+          <geometry>
+            <box>
+              <size>0.1 0.25 0.06</size>
+            </box>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode/>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <collision name='thorvald_001/base_link_fixed_joint_lump__thorvald_001/velodyne_link_collision_31'>
+          <pose frame=''>0 0 1.59585 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <length>0.0717</length>
+              <radius>0.0516</radius>
+            </cylinder>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='thorvald_001/base_link_fixed_joint_lump__thorvald_001/imu_collision_32'>
+          <pose frame=''>0 0 1.5 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.01 0.01 0.01</size>
+            </box>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode/>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='thorvald_001/base_link_fixed_joint_lump__thorvald_001/top0_visual'>
+          <pose frame=''>-0.549 -0.449 0.65 0 -0 -3.14159</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/opt/ros/melodic/share/thorvald_description/meshes/tower_modules/DUMMY-TOWER-M.stl</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <visual name='thorvald_001/base_link_fixed_joint_lump__thorvald_001/top1_visual_1'>
+          <pose frame=''>0.549 -0.449 0.65 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/opt/ros/melodic/share/thorvald_description/meshes/tower_modules/DUMMY-TOWER-MIRROR-M.stl</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <visual name='thorvald_001/base_link_fixed_joint_lump__thorvald_001/hokuyo_front_visual_2'>
+          <pose frame=''>0.721 -0.601 0.616 0 0 -0.79</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/opt/ros/melodic/share/thorvald_description/meshes/hokuyo/hokuyo.dae</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <uri>__default__</uri>
+              <name>__default__</name>
+            </script>
+          </material>
+        </visual>
+        <visual name='thorvald_001/base_link_fixed_joint_lump__thorvald_001/top2_visual_3'>
+          <pose frame=''>0.549 0.449 0.65 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/opt/ros/melodic/share/thorvald_description/meshes/tower_modules/DUMMY-TOWER-M.stl</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <visual name='thorvald_001/base_link_fixed_joint_lump__thorvald_001/top3_visual_4'>
+          <pose frame=''>-0.549 0.449 0.65 0 -0 -3.14159</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/opt/ros/melodic/share/thorvald_description/meshes/tower_modules/DUMMY-TOWER-MIRROR-M.stl</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <visual name='thorvald_001/base_link_fixed_joint_lump__thorvald_001/hokuyo_back_visual_5'>
+          <pose frame=''>-0.721 0.601 0.616 0 -0 2.35159</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/opt/ros/melodic/share/thorvald_description/meshes/hokuyo/hokuyo.dae</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <uri>__default__</uri>
+              <name>__default__</name>
+            </script>
+          </material>
+        </visual>
+        <visual name='thorvald_001/base_link_fixed_joint_lump__thorvald_001/bat0_visual_6'>
+          <pose frame=''>0 0.445 0.72 0 -0 -3.14159</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/opt/ros/melodic/share/thorvald_description/meshes/bat_enc_modules/836586-1-DUMMY-RevA.stl</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <visual name='thorvald_001/base_link_fixed_joint_lump__thorvald_001/bat1_visual_7'>
+          <pose frame=''>0 -0.445 0.72 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/opt/ros/melodic/share/thorvald_description/meshes/bat_enc_modules/836586-1-DUMMY-RevA.stl</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <visual name='thorvald_001/base_link_fixed_joint_lump__thorvald_001/corner0_visual_8'>
+          <pose frame=''>-0.368 -0.445 0.65 0 -0 3.14159</pose>
+          <geometry>
+            <cylinder>
+              <length>0.15</length>
+              <radius>0.02</radius>
+            </cylinder>
+          </geometry>
+        </visual>
+        <visual name='thorvald_001/base_link_fixed_joint_lump__thorvald_001/corner0_1_visual_9'>
+          <pose frame=''>-0.425 -0.445 0.575 0 -0 3.14159</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/opt/ros/melodic/share/thorvald_description/meshes/clamps/DUMMY-T-BRACKET.stl</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <visual name='thorvald_001/base_link_fixed_joint_lump__thorvald_001/corner0_2_visual_10'>
+          <pose frame=''>-0.425 -0.445 0.725 0 -0 3.14159</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/opt/ros/melodic/share/thorvald_description/meshes/clamps/DUMMY-T-BRACKET.stl</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <visual name='thorvald_001/base_link_fixed_joint_lump__thorvald_001/corner1_visual_11'>
+          <pose frame=''>0.368 -0.445 0.65 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <length>0.15</length>
+              <radius>0.02</radius>
+            </cylinder>
+          </geometry>
+        </visual>
+        <visual name='thorvald_001/base_link_fixed_joint_lump__thorvald_001/corner1_1_visual_12'>
+          <pose frame=''>0.425 -0.445 0.575 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/opt/ros/melodic/share/thorvald_description/meshes/clamps/DUMMY-T-BRACKET.stl</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <visual name='thorvald_001/base_link_fixed_joint_lump__thorvald_001/corner1_2_visual_13'>
+          <pose frame=''>0.425 -0.445 0.725 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/opt/ros/melodic/share/thorvald_description/meshes/clamps/DUMMY-T-BRACKET.stl</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <visual name='thorvald_001/base_link_fixed_joint_lump__thorvald_001/corner2_visual_14'>
+          <pose frame=''>0.368 0.445 0.65 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <length>0.15</length>
+              <radius>0.02</radius>
+            </cylinder>
+          </geometry>
+        </visual>
+        <visual name='thorvald_001/base_link_fixed_joint_lump__thorvald_001/corner2_1_visual_15'>
+          <pose frame=''>0.425 0.445 0.575 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/opt/ros/melodic/share/thorvald_description/meshes/clamps/DUMMY-T-BRACKET.stl</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <visual name='thorvald_001/base_link_fixed_joint_lump__thorvald_001/corner2_2_visual_16'>
+          <pose frame=''>0.425 0.445 0.725 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/opt/ros/melodic/share/thorvald_description/meshes/clamps/DUMMY-T-BRACKET.stl</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <visual name='thorvald_001/base_link_fixed_joint_lump__thorvald_001/corner3_visual_17'>
+          <pose frame=''>-0.368 0.445 0.65 0 -0 3.14159</pose>
+          <geometry>
+            <cylinder>
+              <length>0.15</length>
+              <radius>0.02</radius>
+            </cylinder>
+          </geometry>
+        </visual>
+        <visual name='thorvald_001/base_link_fixed_joint_lump__thorvald_001/corner3_1_visual_18'>
+          <pose frame=''>-0.425 0.445 0.575 0 -0 3.14159</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/opt/ros/melodic/share/thorvald_description/meshes/clamps/DUMMY-T-BRACKET.stl</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <visual name='thorvald_001/base_link_fixed_joint_lump__thorvald_001/corner3_2_visual_19'>
+          <pose frame=''>-0.425 0.445 0.725 0 -0 3.14159</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/opt/ros/melodic/share/thorvald_description/meshes/clamps/DUMMY-T-BRACKET.stl</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <visual name='thorvald_001/base_link_fixed_joint_lump__thorvald_001/pipe0_1_visual_20'>
+          <pose frame=''>0 -0.445 0.575 1.5708 0 -1.5708</pose>
+          <geometry>
+            <cylinder>
+              <length>0.85</length>
+              <radius>0.02</radius>
+            </cylinder>
+          </geometry>
+        </visual>
+        <visual name='thorvald_001/base_link_fixed_joint_lump__thorvald_001/pipe0_2_visual_21'>
+          <pose frame=''>0 -0.445 0.725 1.5708 0 -1.5708</pose>
+          <geometry>
+            <cylinder>
+              <length>0.85</length>
+              <radius>0.02</radius>
+            </cylinder>
+          </geometry>
+        </visual>
+        <visual name='thorvald_001/base_link_fixed_joint_lump__thorvald_001/pipe1_1_visual_22'>
+          <pose frame=''>0.425 0 0.575 1.5708 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <length>0.89</length>
+              <radius>0.02</radius>
+            </cylinder>
+          </geometry>
+        </visual>
+        <visual name='thorvald_001/base_link_fixed_joint_lump__thorvald_001/pipe1_2_visual_23'>
+          <pose frame=''>0.425 0 0.725 1.5708 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <length>0.89</length>
+              <radius>0.02</radius>
+            </cylinder>
+          </geometry>
+        </visual>
+        <visual name='thorvald_001/base_link_fixed_joint_lump__thorvald_001/pipe2_1_visual_24'>
+          <pose frame=''>0 0.445 0.575 1.5708 -0 1.5708</pose>
+          <geometry>
+            <cylinder>
+              <length>0.85</length>
+              <radius>0.02</radius>
+            </cylinder>
+          </geometry>
+        </visual>
+        <visual name='thorvald_001/base_link_fixed_joint_lump__thorvald_001/pipe2_2_visual_25'>
+          <pose frame=''>0 0.445 0.725 1.5708 -0 1.5708</pose>
+          <geometry>
+            <cylinder>
+              <length>0.85</length>
+              <radius>0.02</radius>
+            </cylinder>
+          </geometry>
+        </visual>
+        <visual name='thorvald_001/base_link_fixed_joint_lump__thorvald_001/pipe3_1_visual_26'>
+          <pose frame=''>-0.425 0 0.575 1.5708 -0 3.14159</pose>
+          <geometry>
+            <cylinder>
+              <length>0.89</length>
+              <radius>0.02</radius>
+            </cylinder>
+          </geometry>
+        </visual>
+        <visual name='thorvald_001/base_link_fixed_joint_lump__thorvald_001/pipe3_2_visual_27'>
+          <pose frame=''>-0.425 0 0.725 1.5708 -0 3.14159</pose>
+          <geometry>
+            <cylinder>
+              <length>0.89</length>
+              <radius>0.02</radius>
+            </cylinder>
+          </geometry>
+        </visual>
+        <visual name='thorvald_001/base_link_fixed_joint_lump__thorvald_001/kinect2_front_link_visual_28'>
+          <pose frame=''>0.5225 0 0.66 0 -0 3.14159</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/opt/ros/melodic/share/kinect2_description/meshes/sensors/kinect2.dae</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <uri>__default__</uri>
+              <name>__default__</name>
+            </script>
+          </material>
+        </visual>
+        <visual name='thorvald_001/base_link_fixed_joint_lump__thorvald_001/kinect2_left_link_visual_29'>
+          <pose frame=''>0 0.36 0.8 0 -0 -1.5708</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/opt/ros/melodic/share/kinect2_description/meshes/sensors/kinect2.dae</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <uri>__default__</uri>
+              <name>__default__</name>
+            </script>
+          </material>
+        </visual>
+        <visual name='thorvald_001/base_link_fixed_joint_lump__thorvald_001/kinect2_right_link_visual_30'>
+          <pose frame=''>-0 -0.36 0.8 0 -0 1.5708</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/opt/ros/melodic/share/kinect2_description/meshes/sensors/kinect2.dae</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <uri>__default__</uri>
+              <name>__default__</name>
+            </script>
+          </material>
+        </visual>
+        <visual name='thorvald_001/base_link_fixed_joint_lump__thorvald_001/velodyne_link_visual_31'>
+          <pose frame=''>0 0 1.56 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/ibrahim/Documents/catkin_ws_bacchus/src/velodyne_simulator/velodyne_description/meshes/VLP16_base_1.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <visual name='thorvald_001/base_link_fixed_joint_lump__thorvald_001/velodyne_link_visual_32'>
+          <pose frame=''>0 0 1.56 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/ibrahim/Documents/catkin_ws_bacchus/src/velodyne_simulator/velodyne_description/meshes/VLP16_base_2.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <visual name='thorvald_001/base_link_fixed_joint_lump__thorvald_001/velodyne_visual_33'>
+          <pose frame=''>0 0 1.56 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/ibrahim/Documents/catkin_ws_bacchus/src/velodyne_simulator/velodyne_description/meshes/VLP16_scan.dae</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <uri>__default__</uri>
+              <name>__default__</name>
+            </script>
+          </material>
+        </visual>
+        <visual name='thorvald_001/base_link_fixed_joint_lump__thorvald_001/imu_visual_34'>
+          <pose frame=''>0 0 1.5 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.01 0.01 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>__default__</uri>
+              <name>__default__</name>
+            </script>
+          </material>
+        </visual>
+        <velocity_decay/>
+        <sensor name='thorvald_001hokuyo_front_sensor' type='ray'>
+          <visualize>0</visualize>
+          <update_rate>40</update_rate>
+          <always_on>1</always_on>
+          <ray>
+            <scan>
+              <horizontal>
+                <samples>720</samples>
+                <resolution>1</resolution>
+                <min_angle>-2.18</min_angle>
+                <max_angle>2.36</max_angle>
+              </horizontal>
+              <vertical>
+                <samples>1</samples>
+                <min_angle>0</min_angle>
+                <max_angle>0</max_angle>
+              </vertical>
+            </scan>
+            <range>
+              <min>0.1</min>
+              <max>30</max>
+              <resolution>0.01</resolution>
+            </range>
+            <noise>
+              <type>gaussian</type>
+              <mean>0</mean>
+              <stddev>0.01</stddev>
+            </noise>
+          </ray>
+          <plugin name='thorvald_001hokuyo_front_node' filename='libgazebo_ros_laser.so'>
+            <topicName>front_scan</topicName>
+            <frameName>hokuyo_front</frameName>
+            <robotNamespace>/thorvald_001/</robotNamespace>
+          </plugin>
+          <pose frame=''>0.721 -0.601 0.616 0 0 -0.79</pose>
+        </sensor>
+        <velocity_decay/>
+        <sensor name='thorvald_001hokuyo_back_sensor' type='ray'>
+          <visualize>0</visualize>
+          <update_rate>40</update_rate>
+          <always_on>1</always_on>
+          <ray>
+            <scan>
+              <horizontal>
+                <samples>720</samples>
+                <resolution>1</resolution>
+                <min_angle>-2.18</min_angle>
+                <max_angle>2.36</max_angle>
+              </horizontal>
+              <vertical>
+                <samples>1</samples>
+                <min_angle>0</min_angle>
+                <max_angle>0</max_angle>
+              </vertical>
+            </scan>
+            <range>
+              <min>0.1</min>
+              <max>30</max>
+              <resolution>0.01</resolution>
+            </range>
+            <noise>
+              <type>gaussian</type>
+              <mean>0</mean>
+              <stddev>0.01</stddev>
+            </noise>
+          </ray>
+          <plugin name='thorvald_001hokuyo_back_node' filename='libgazebo_ros_laser.so'>
+            <topicName>back_scan</topicName>
+            <frameName>hokuyo_back</frameName>
+            <robotNamespace>/thorvald_001/</robotNamespace>
+          </plugin>
+          <pose frame=''>-0.721 0.601 0.616 0 -0 2.35159</pose>
+        </sensor>
+        <velocity_decay/>
+        <sensor name='thorvald_001_kinect2_front_sensor' type='depth'>
+          <always_on>1</always_on>
+          <update_rate>30</update_rate>
+          <camera name='__default__'>
+            <horizontal_fov>1.22111</horizontal_fov>
+            <image>
+              <width>640</width>
+              <height>480</height>
+              <format>L8</format>
+            </image>
+            <clip>
+              <near>0.1</near>
+              <far>8</far>
+            </clip>
+            <noise>
+              <type>gaussian</type>
+              <mean>0</mean>
+              <stddev>0.001</stddev>
+            </noise>
+          </camera>
+          <plugin name='thorvald_001_kinect2_front_sensor_controller' filename='libgazebo_ros_openni_kinect.so'>
+            <cameraName>kinect2_front_sensor</cameraName>
+            <alwaysOn>1</alwaysOn>
+            <updateRate>30.0</updateRate>
+            <imageTopicName>ir/image_ir_rect</imageTopicName>
+            <depthImageTopicName>ir/depth/image_raw</depthImageTopicName>
+            <pointCloudTopicName>ir/points</pointCloudTopicName>
+            <cameraInfoTopicName>ir/camera_info</cameraInfoTopicName>
+            <frameName>kinect2_front_depth_optical_frame</frameName>
+            <pointCloudCutoff>0.5</pointCloudCutoff>
+            <pointCloudCutoffMax>8.0</pointCloudCutoffMax>
+            <baseline>0.1</baseline>
+            <distortionK1>0.0</distortionK1>
+            <distortionK2>0.0</distortionK2>
+            <distortionK3>0.0</distortionK3>
+            <distortionT1>0.0</distortionT1>
+            <distortionT2>0.0</distortionT2>
+            <robotNamespace>thorvald_001/</robotNamespace>
+          </plugin>
+          <pose frame=''>0.5025 0 0.66 0 -0 0</pose>
+        </sensor>
+        <velocity_decay/>
+        <sensor name='thorvald_001_kinect2_front_camera' type='camera'>
+          <always_on>1</always_on>
+          <update_rate>30</update_rate>
+          <camera name='kinect2_front_camera'>
+            <horizontal_fov>1.46708</horizontal_fov>
+            <image>
+              <width>640</width>
+              <height>480</height>
+              <format>R8G8B8</format>
+            </image>
+            <clip>
+              <near>0.02</near>
+              <far>10</far>
+            </clip>
+            <noise>
+              <type>gaussian</type>
+              <mean>0</mean>
+              <stddev>0.007</stddev>
+            </noise>
+          </camera>
+          <plugin name='thorvald_001_kinect2_front_camera_controller' filename='libgazebo_ros_camera.so'>
+            <alwaysOn>1</alwaysOn>
+            <updateRate>30.0</updateRate>
+            <cameraName>kinect2_front_camera</cameraName>
+            <imageTopicName>rgb/image_raw</imageTopicName>
+            <cameraInfoTopicName>rgb/camera_info</cameraInfoTopicName>
+            <frameName>kinect2_front_rgb_optical_frame</frameName>
+            <baseline>0.1</baseline>
+            <distortionK1>0.0</distortionK1>
+            <distortionK2>0.0</distortionK2>
+            <distortionK3>0.0</distortionK3>
+            <distortionT1>0.0</distortionT1>
+            <distortionT2>0.0</distortionT2>
+            <robotNamespace>thorvald_001/</robotNamespace>
+          </plugin>
+          <pose frame=''>0.5025 0 0.66 0 -0 0</pose>
+        </sensor>
+        <velocity_decay/>
+        <sensor name='thorvald_001_kinect2_left_sensor' type='depth'>
+          <always_on>1</always_on>
+          <update_rate>30</update_rate>
+          <camera name='__default__'>
+            <horizontal_fov>1.22111</horizontal_fov>
+            <image>
+              <width>640</width>
+              <height>480</height>
+              <format>L8</format>
+            </image>
+            <clip>
+              <near>0.1</near>
+              <far>8</far>
+            </clip>
+            <noise>
+              <type>gaussian</type>
+              <mean>0</mean>
+              <stddev>0.001</stddev>
+            </noise>
+          </camera>
+          <plugin name='thorvald_001_kinect2_left_sensor_controller' filename='libgazebo_ros_openni_kinect.so'>
+            <cameraName>kinect2_left_sensor</cameraName>
+            <alwaysOn>1</alwaysOn>
+            <updateRate>30.0</updateRate>
+            <imageTopicName>ir/image_ir_rect</imageTopicName>
+            <depthImageTopicName>ir/depth/image_raw</depthImageTopicName>
+            <pointCloudTopicName>ir/points</pointCloudTopicName>
+            <cameraInfoTopicName>ir/camera_info</cameraInfoTopicName>
+            <frameName>kinect2_left_depth_optical_frame</frameName>
+            <pointCloudCutoff>0.5</pointCloudCutoff>
+            <pointCloudCutoffMax>8.0</pointCloudCutoffMax>
+            <baseline>0.1</baseline>
+            <distortionK1>0.0</distortionK1>
+            <distortionK2>0.0</distortionK2>
+            <distortionK3>0.0</distortionK3>
+            <distortionT1>0.0</distortionT1>
+            <distortionT2>0.0</distortionT2>
+            <robotNamespace>thorvald_001/</robotNamespace>
+          </plugin>
+          <pose frame=''>0 0.34 0.8 0 -0 1.5708</pose>
+        </sensor>
+        <velocity_decay/>
+        <sensor name='thorvald_001_kinect2_left_camera' type='camera'>
+          <always_on>1</always_on>
+          <update_rate>30</update_rate>
+          <camera name='kinect2_left_camera'>
+            <horizontal_fov>1.46708</horizontal_fov>
+            <image>
+              <width>640</width>
+              <height>480</height>
+              <format>R8G8B8</format>
+            </image>
+            <clip>
+              <near>0.02</near>
+              <far>10</far>
+            </clip>
+            <noise>
+              <type>gaussian</type>
+              <mean>0</mean>
+              <stddev>0.007</stddev>
+            </noise>
+          </camera>
+          <plugin name='thorvald_001_kinect2_left_camera_controller' filename='libgazebo_ros_camera.so'>
+            <alwaysOn>1</alwaysOn>
+            <updateRate>30.0</updateRate>
+            <cameraName>kinect2_left_camera</cameraName>
+            <imageTopicName>rgb/image_raw</imageTopicName>
+            <cameraInfoTopicName>rgb/camera_info</cameraInfoTopicName>
+            <frameName>kinect2_left_rgb_optical_frame</frameName>
+            <baseline>0.1</baseline>
+            <distortionK1>0.0</distortionK1>
+            <distortionK2>0.0</distortionK2>
+            <distortionK3>0.0</distortionK3>
+            <distortionT1>0.0</distortionT1>
+            <distortionT2>0.0</distortionT2>
+            <robotNamespace>thorvald_001/</robotNamespace>
+          </plugin>
+          <pose frame=''>0 0.34 0.8 0 -0 1.5708</pose>
+        </sensor>
+        <velocity_decay/>
+        <sensor name='thorvald_001_kinect2_right_sensor' type='depth'>
+          <always_on>1</always_on>
+          <update_rate>30</update_rate>
+          <camera name='__default__'>
+            <horizontal_fov>1.22111</horizontal_fov>
+            <image>
+              <width>640</width>
+              <height>480</height>
+              <format>L8</format>
+            </image>
+            <clip>
+              <near>0.1</near>
+              <far>8</far>
+            </clip>
+            <noise>
+              <type>gaussian</type>
+              <mean>0</mean>
+              <stddev>0.001</stddev>
+            </noise>
+          </camera>
+          <plugin name='thorvald_001_kinect2_right_sensor_controller' filename='libgazebo_ros_openni_kinect.so'>
+            <cameraName>kinect2_right_sensor</cameraName>
+            <alwaysOn>1</alwaysOn>
+            <updateRate>30.0</updateRate>
+            <imageTopicName>ir/image_ir_rect</imageTopicName>
+            <depthImageTopicName>ir/depth/image_raw</depthImageTopicName>
+            <pointCloudTopicName>ir/points</pointCloudTopicName>
+            <cameraInfoTopicName>ir/camera_info</cameraInfoTopicName>
+            <frameName>kinect2_right_depth_optical_frame</frameName>
+            <pointCloudCutoff>0.5</pointCloudCutoff>
+            <pointCloudCutoffMax>8.0</pointCloudCutoffMax>
+            <baseline>0.1</baseline>
+            <distortionK1>0.0</distortionK1>
+            <distortionK2>0.0</distortionK2>
+            <distortionK3>0.0</distortionK3>
+            <distortionT1>0.0</distortionT1>
+            <distortionT2>0.0</distortionT2>
+            <robotNamespace>thorvald_001/</robotNamespace>
+          </plugin>
+          <pose frame=''>0 -0.34 0.8 0 -0 -1.5708</pose>
+        </sensor>
+        <velocity_decay/>
+        <sensor name='thorvald_001_kinect2_right_camera' type='camera'>
+          <always_on>1</always_on>
+          <update_rate>30</update_rate>
+          <camera name='kinect2_right_camera'>
+            <horizontal_fov>1.46708</horizontal_fov>
+            <image>
+              <width>640</width>
+              <height>480</height>
+              <format>R8G8B8</format>
+            </image>
+            <clip>
+              <near>0.02</near>
+              <far>10</far>
+            </clip>
+            <noise>
+              <type>gaussian</type>
+              <mean>0</mean>
+              <stddev>0.007</stddev>
+            </noise>
+          </camera>
+          <plugin name='thorvald_001_kinect2_right_camera_controller' filename='libgazebo_ros_camera.so'>
+            <alwaysOn>1</alwaysOn>
+            <updateRate>30.0</updateRate>
+            <cameraName>kinect2_right_camera</cameraName>
+            <imageTopicName>rgb/image_raw</imageTopicName>
+            <cameraInfoTopicName>rgb/camera_info</cameraInfoTopicName>
+            <frameName>kinect2_right_rgb_optical_frame</frameName>
+            <baseline>0.1</baseline>
+            <distortionK1>0.0</distortionK1>
+            <distortionK2>0.0</distortionK2>
+            <distortionK3>0.0</distortionK3>
+            <distortionT1>0.0</distortionT1>
+            <distortionT2>0.0</distortionT2>
+            <robotNamespace>thorvald_001/</robotNamespace>
+          </plugin>
+          <pose frame=''>0 -0.34 0.8 0 -0 -1.5708</pose>
+        </sensor>
+        <velocity_decay/>
+        <sensor name='thorvald_001_velodyne-VLP16' type='gpu_ray'>
+          <visualize>0</visualize>
+          <update_rate>10</update_rate>
+          <ray>
+            <scan>
+              <horizontal>
+                <samples>1800</samples>
+                <resolution>1</resolution>
+                <min_angle>-3.14159</min_angle>
+                <max_angle>3.14159</max_angle>
+              </horizontal>
+              <vertical>
+                <samples>16</samples>
+                <resolution>1</resolution>
+                <min_angle>-0.261799</min_angle>
+                <max_angle>0.261799</max_angle>
+              </vertical>
+            </scan>
+            <range>
+              <min>0.3</min>
+              <max>131</max>
+              <resolution>0.001</resolution>
+            </range>
+            <noise>
+              <type>gaussian</type>
+              <mean>0</mean>
+              <stddev>0</stddev>
+            </noise>
+          </ray>
+          <plugin name='gazebo_ros_laser_controller' filename='libgazebo_ros_velodyne_gpu_laser.so'>
+            <topicName>velodyne_points</topicName>
+            <frameName>velodyne</frameName>
+            <min_range>0.9</min_range>
+            <max_range>130.0</max_range>
+            <gaussianNoise>0.008</gaussianNoise>
+            <robotNamespace>/thorvald_001/</robotNamespace>
+          </plugin>
+          <pose frame=''>0 0 1.5977 0 -0 0</pose>
+        </sensor>
+        <gravity>1</gravity>
+        <velocity_decay/>
+        <gravity>1</gravity>
+        <sensor name='thorvald_001imu_sensor' type='imu'>
+          <always_on>1</always_on>
+          <update_rate>1000</update_rate>
+          <visualize>1</visualize>
+          <topic>__default_topic__</topic>
+          <plugin name='(arg robot_name)imu_plugin' filename='libgazebo_ros_imu_sensor.so'>
+            <topicName>imu_raw</topicName>
+            <bodyName>imu</bodyName>
+            <updateRateHZ>1000.0</updateRateHZ>
+            <gaussianNoise>0.0</gaussianNoise>
+            <xyzOffset>0 0 0</xyzOffset>
+            <rpyOffset>0 0 0</rpyOffset>
+            <frameName>thorvald_001/imu</frameName>
+            <initialOrientationAsReference>0</initialOrientationAsReference>
+            <robotNamespace>/thorvald_001/</robotNamespace>
+          </plugin>
+          <pose frame=''>0 0 1.5 0 -0 0</pose>
+          <imu/>
+        </sensor>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='thorvald_001/leg0'>
+        <pose frame=''>-0.549 -0.449 0.2 0 -0 0</pose>
+        <inertial>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <mass>15.64</mass>
+          <inertia>
+            <ixx>0.035581</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.035581</iyy>
+            <iyz>0</iyz>
+            <izz>0.012512</izz>
+          </inertia>
+        </inertial>
+        <collision name='thorvald_001/leg0_collision'>
+          <pose frame=''>0 0 0 0 -0 -3.14159</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/opt/ros/melodic/share/thorvald_description/meshes/drive_modules/836745-5-DUMMY-RevA.stl</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='thorvald_001/leg0_visual'>
+          <pose frame=''>0 0 0 0 -0 -3.14159</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/opt/ros/melodic/share/thorvald_description/meshes/drive_modules/836745-5-DUMMY-RevA.stl</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='thorvald_001/steering0' type='revolute'>
+        <child>thorvald_001/leg0</child>
+        <parent>thorvald_001/base_link</parent>
+        <axis>
+          <xyz>0 0 1</xyz>
+          <limit>
+            <lower>-1e+16</lower>
+            <upper>1e+16</upper>
+          </limit>
+          <dynamics>
+            <damping>100</damping>
+            <friction>10000</friction>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+          <use_parent_model_frame>1</use_parent_model_frame>
+        </axis>
+      </joint>
+      <link name='thorvald_001/wheel0_link'>
+        <pose frame=''>-0.549 -0.449 0.2 -1.5708 0 0</pose>
+        <inertial>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <mass>6</mass>
+          <inertia>
+            <ixx>0.0728</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.0728</iyy>
+            <iyz>0</iyz>
+            <izz>0.12</izz>
+          </inertia>
+        </inertial>
+        <collision name='thorvald_001/wheel0_link_collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <length>0.16</length>
+              <radius>0.2</radius>
+            </cylinder>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode>
+                <mu>2</mu>
+                <mu2>2</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='thorvald_001/wheel0_link_visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <length>0.16</length>
+              <radius>0.2</radius>
+            </cylinder>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Black</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <gravity>1</gravity>
+        <velocity_decay/>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='thorvald_001/wheel0' type='revolute'>
+        <child>thorvald_001/wheel0_link</child>
+        <parent>thorvald_001/leg0</parent>
+        <axis>
+          <xyz>0 1 0</xyz>
+          <limit>
+            <lower>-1e+16</lower>
+            <upper>1e+16</upper>
+          </limit>
+          <dynamics>
+            <damping>100</damping>
+            <friction>1000</friction>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+          <use_parent_model_frame>1</use_parent_model_frame>
+        </axis>
+      </joint>
+      <link name='thorvald_001/leg1'>
+        <pose frame=''>0.549 -0.449 0.2 0 -0 0</pose>
+        <inertial>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <mass>15.64</mass>
+          <inertia>
+            <ixx>0.035581</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.035581</iyy>
+            <iyz>0</iyz>
+            <izz>0.012512</izz>
+          </inertia>
+        </inertial>
+        <collision name='thorvald_001/leg1_collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/opt/ros/melodic/share/thorvald_description/meshes/drive_modules/836745-5-DUMMY-MIRROR-RevA.stl</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='thorvald_001/leg1_visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/opt/ros/melodic/share/thorvald_description/meshes/drive_modules/836745-5-DUMMY-MIRROR-RevA.stl</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='thorvald_001/steering1' type='revolute'>
+        <child>thorvald_001/leg1</child>
+        <parent>thorvald_001/base_link</parent>
+        <axis>
+          <xyz>0 0 1</xyz>
+          <limit>
+            <lower>-1e+16</lower>
+            <upper>1e+16</upper>
+          </limit>
+          <dynamics>
+            <damping>100</damping>
+            <friction>10000</friction>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+          <use_parent_model_frame>1</use_parent_model_frame>
+        </axis>
+      </joint>
+      <link name='thorvald_001/wheel1_link'>
+        <pose frame=''>0.549 -0.449 0.2 -1.5708 0 0</pose>
+        <inertial>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <mass>6</mass>
+          <inertia>
+            <ixx>0.0728</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.0728</iyy>
+            <iyz>0</iyz>
+            <izz>0.12</izz>
+          </inertia>
+        </inertial>
+        <collision name='thorvald_001/wheel1_link_collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <length>0.16</length>
+              <radius>0.2</radius>
+            </cylinder>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode>
+                <mu>2</mu>
+                <mu2>2</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='thorvald_001/wheel1_link_visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <length>0.16</length>
+              <radius>0.2</radius>
+            </cylinder>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Black</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <gravity>1</gravity>
+        <velocity_decay/>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='thorvald_001/wheel1' type='revolute'>
+        <child>thorvald_001/wheel1_link</child>
+        <parent>thorvald_001/leg1</parent>
+        <axis>
+          <xyz>0 1 0</xyz>
+          <limit>
+            <lower>-1e+16</lower>
+            <upper>1e+16</upper>
+          </limit>
+          <dynamics>
+            <damping>100</damping>
+            <friction>1000</friction>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+          <use_parent_model_frame>1</use_parent_model_frame>
+        </axis>
+      </joint>
+      <link name='thorvald_001/leg2'>
+        <pose frame=''>0.549 0.449 0.2 0 -0 0</pose>
+        <inertial>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <mass>15.64</mass>
+          <inertia>
+            <ixx>0.035581</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.035581</iyy>
+            <iyz>0</iyz>
+            <izz>0.012512</izz>
+          </inertia>
+        </inertial>
+        <collision name='thorvald_001/leg2_collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/opt/ros/melodic/share/thorvald_description/meshes/drive_modules/836745-5-DUMMY-RevA.stl</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='thorvald_001/leg2_visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/opt/ros/melodic/share/thorvald_description/meshes/drive_modules/836745-5-DUMMY-RevA.stl</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='thorvald_001/steering2' type='revolute'>
+        <child>thorvald_001/leg2</child>
+        <parent>thorvald_001/base_link</parent>
+        <axis>
+          <xyz>0 0 1</xyz>
+          <limit>
+            <lower>-1e+16</lower>
+            <upper>1e+16</upper>
+          </limit>
+          <dynamics>
+            <damping>100</damping>
+            <friction>10000</friction>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+          <use_parent_model_frame>1</use_parent_model_frame>
+        </axis>
+      </joint>
+      <link name='thorvald_001/wheel2_link'>
+        <pose frame=''>0.549 0.449 0.2 -1.5708 0 0</pose>
+        <inertial>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <mass>6</mass>
+          <inertia>
+            <ixx>0.0728</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.0728</iyy>
+            <iyz>0</iyz>
+            <izz>0.12</izz>
+          </inertia>
+        </inertial>
+        <collision name='thorvald_001/wheel2_link_collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <length>0.16</length>
+              <radius>0.2</radius>
+            </cylinder>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode>
+                <mu>2</mu>
+                <mu2>2</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='thorvald_001/wheel2_link_visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <length>0.16</length>
+              <radius>0.2</radius>
+            </cylinder>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Black</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <gravity>1</gravity>
+        <velocity_decay/>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='thorvald_001/wheel2' type='revolute'>
+        <child>thorvald_001/wheel2_link</child>
+        <parent>thorvald_001/leg2</parent>
+        <axis>
+          <xyz>0 1 0</xyz>
+          <limit>
+            <lower>-1e+16</lower>
+            <upper>1e+16</upper>
+          </limit>
+          <dynamics>
+            <damping>100</damping>
+            <friction>1000</friction>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+          <use_parent_model_frame>1</use_parent_model_frame>
+        </axis>
+      </joint>
+      <link name='thorvald_001/leg3'>
+        <pose frame=''>-0.549 0.449 0.2 0 -0 0</pose>
+        <inertial>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <mass>15.64</mass>
+          <inertia>
+            <ixx>0.035581</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.035581</iyy>
+            <iyz>0</iyz>
+            <izz>0.012512</izz>
+          </inertia>
+        </inertial>
+        <collision name='thorvald_001/leg3_collision'>
+          <pose frame=''>0 0 0 0 -0 -3.14159</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/opt/ros/melodic/share/thorvald_description/meshes/drive_modules/836745-5-DUMMY-MIRROR-RevA.stl</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='thorvald_001/leg3_visual'>
+          <pose frame=''>0 0 0 0 -0 -3.14159</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/opt/ros/melodic/share/thorvald_description/meshes/drive_modules/836745-5-DUMMY-MIRROR-RevA.stl</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='thorvald_001/steering3' type='revolute'>
+        <child>thorvald_001/leg3</child>
+        <parent>thorvald_001/base_link</parent>
+        <axis>
+          <xyz>0 0 1</xyz>
+          <limit>
+            <lower>-1e+16</lower>
+            <upper>1e+16</upper>
+          </limit>
+          <dynamics>
+            <damping>100</damping>
+            <friction>10000</friction>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+          <use_parent_model_frame>1</use_parent_model_frame>
+        </axis>
+      </joint>
+      <link name='thorvald_001/wheel3_link'>
+        <pose frame=''>-0.549 0.449 0.2 -1.5708 0 0</pose>
+        <inertial>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <mass>6</mass>
+          <inertia>
+            <ixx>0.0728</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.0728</iyy>
+            <iyz>0</iyz>
+            <izz>0.12</izz>
+          </inertia>
+        </inertial>
+        <collision name='thorvald_001/wheel3_link_collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <length>0.16</length>
+              <radius>0.2</radius>
+            </cylinder>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode>
+                <mu>2</mu>
+                <mu2>2</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='thorvald_001/wheel3_link_visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <length>0.16</length>
+              <radius>0.2</radius>
+            </cylinder>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Black</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <gravity>1</gravity>
+        <velocity_decay/>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='thorvald_001/wheel3' type='revolute'>
+        <child>thorvald_001/wheel3_link</child>
+        <parent>thorvald_001/leg3</parent>
+        <axis>
+          <xyz>0 1 0</xyz>
+          <limit>
+            <lower>-1e+16</lower>
+            <upper>1e+16</upper>
+          </limit>
+          <dynamics>
+            <damping>100</damping>
+            <friction>1000</friction>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+          <use_parent_model_frame>1</use_parent_model_frame>
+        </axis>
+      </joint>
+      <static>0</static>
+      <plugin name='thorvald_001_thorvald_gazebo_plugins' filename='libthorvald_gazebo_plugins_synch.so'>
+        <alwaysOn>1</alwaysOn>
+        <updateRate>20</updateRate>
+        <robotNamespace>thorvald_001</robotNamespace>
+        <commandTopic>base_state</commandTopic>
+        <odometryTopic>odometry/gazebo</odometryTopic>
+        <odometryFrame>thorvald_001/odom</odometryFrame>
+        <robotBaseFrame>thorvald_001/base_link</robotBaseFrame>
+        <steering0>thorvald_001/steering0</steering0>
+        <steering1>thorvald_001/steering1</steering1>
+        <steering2>thorvald_001/steering2</steering2>
+        <steering3>thorvald_001/steering3</steering3>
+        <steering4>thorvald_001/steering4</steering4>
+        <steering5>thorvald_001/steering5</steering5>
+        <steering6>thorvald_001/steering6</steering6>
+        <steering7>thorvald_001/steering7</steering7>
+        <steering8>thorvald_001/steering8</steering8>
+        <steering9>thorvald_001/steering9</steering9>
+        <steering10>sthorvald_001/steering10</steering10>
+        <wheel0>thorvald_001/wheel0</wheel0>
+        <wheel1>thorvald_001/wheel1</wheel1>
+        <wheel2>thorvald_001/wheel2</wheel2>
+        <wheel3>thorvald_001/wheel3</wheel3>
+        <wheel4>thorvald_001/wheel4</wheel4>
+        <wheel5>thorvald_001/wheel5</wheel5>
+        <wheel6>thorvald_001/wheel6</wheel6>
+        <wheel7>thorvald_001/wheel7</wheel7>
+        <wheel8>thorvald_001/wheel8</wheel8>
+        <wheel9>thorvald_001/wheel9</wheel9>
+        <wheel10>thorvald_001/wheel10</wheel10>
+      </plugin>
+      <pose frame=''>11 0 0 0 -0 0</pose>
+    </model>
+    <state world_name='default'>
+      <sim_time>1096 265000000</sim_time>
+      <real_time>1206 5308396</real_time>
+      <wall_time>1619714969 266533297</wall_time>
+      <iterations>219253</iterations>
+      <model name='heightmap'>
+        <pose frame=''>0 0 -0.1 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>0 0 -0.1 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='thorvald_001'>
+        <pose frame=''>10.943 -0.178201 0.003974 -0.005711 0.00077 0.039915</pose>
+        <scale>1 1 1</scale>
+        <link name='thorvald_001/base_link'>
+          <pose frame=''>10.943 -0.178201 0.003974 -0.005711 0.00077 0.039915</pose>
+          <velocity>0.018952 0.014143 -0.026782 0.019923 -0.018861 -0.002166</velocity>
+          <acceleration>0.003677 0.065911 -9.76966 -0.148611 0.069775 -0.020229</acceleration>
+          <wrench>0.317816 5.69672 -844.392 0 -0 0</wrench>
+        </link>
+        <link name='thorvald_001/leg0'>
+          <pose frame=''>10.4125 -0.647592 0.206919 -0.005823 0.000895 0.048265</pose>
+          <velocity>0.003518 -0.001007 -0.044152 0.025979 -0.022439 -0.002195</velocity>
+          <acceleration>-0.014788 0.03077 -9.68573 0.071932 0.164861 -0.07616</acceleration>
+          <wrench>-0.231292 0.481248 -151.485 0 -0 0</wrench>
+        </link>
+        <link name='thorvald_001/leg1'>
+          <pose frame=''>11.5096 -0.603772 0.206136 -0.006112 0.000807 0.046966</pose>
+          <velocity>0.003862 -0.003643 -0.025652 0.040164 -0.017733 -0.002231</velocity>
+          <acceleration>0.06943 -0.049544 -9.98972 -1.31885 -1.44 0.992325</acceleration>
+          <wrench>1.08589 -0.774868 -156.239 0 -0 0</wrench>
+        </link>
+        <link name='thorvald_001/leg2'>
+          <pose frame=''>11.4738 0.293504 0.200954 -0.006122 0.000934 0.04897</pose>
+          <velocity>0.004924 -0.003869 -0.005584 0.038369 -0.002981 0.016456</velocity>
+          <acceleration>0.004934 -0.113187 -9.56309 2.44839 1.12022 -2.26179</acceleration>
+          <wrench>0.077162 -1.77025 -149.567 0 -0 0</wrench>
+        </link>
+        <link name='thorvald_001/leg3'>
+          <pose frame=''>10.3766 0.249685 0.201845 -0.005568 0.000778 0.033481</pose>
+          <velocity>0.004691 -0.001158 -0.029721 0.012614 -0.021416 -0.002154</velocity>
+          <acceleration>-0.015755 0.004127 -9.83974 -2.93495 -1.56527 -2.35842</acceleration>
+          <wrench>-0.246409 0.064549 -153.893 0 -0 0</wrench>
+        </link>
+        <link name='thorvald_001/wheel0_link'>
+          <pose frame=''>10.4125 -0.647604 0.206872 1.57639 -0.350928 -3.09507</pose>
+          <velocity>0.00256 -0.000433 -0.041802 -0.002335 -0.023873 -0.011172</velocity>
+          <acceleration>-0.002019 0.031448 -9.74592 0.31909 0.001034 -0.044235</acceleration>
+          <wrench>-0.012114 0.18869 -58.4755 0 -0 0</wrench>
+        </link>
+        <link name='thorvald_001/wheel1_link'>
+          <pose frame=''>11.5096 -0.60376 0.206208 -1.57693 0.121637 0.046227</pose>
+          <velocity>0.003791 -0.004228 -0.029286 0.039045 -0.017797 -0.002224</velocity>
+          <acceleration>0.202244 -0.072581 -10.6432 2.35842 1.05943 -0.698935</acceleration>
+          <wrench>1.21347 -0.435489 -63.8595 0 -0 0</wrench>
+        </link>
+        <link name='thorvald_001/wheel2_link'>
+          <pose frame=''>11.4737 0.293514 0.200906 1.57723 -0.305129 -3.0945</pose>
+          <velocity>0.003654 -0.005312 -0.002666 0.028849 0.009239 0.022236</velocity>
+          <acceleration>-0.124045 -0.246662 -9.00301 2.02932 -1.05862 0.087801</acceleration>
+          <wrench>-0.744272 -1.47997 -54.0181 0 -0 0</wrench>
+        </link>
+        <link name='thorvald_001/wheel3_link'>
+          <pose frame=''>10.3766 0.249723 0.201962 1.57728 0.376631 -3.10579</pose>
+          <velocity>0.004629 -0.003055 -0.035603 0.035932 -0.020569 0.001198</velocity>
+          <acceleration>-0.243374 -0.328439 -10.5622 0.357519 0.195308 0.721431</acceleration>
+          <wrench>-1.46024 -1.97063 -63.3732 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='vine_t0_0'>
+        <pose frame=''>0 -7.5 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>0 -7.5 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='vine_t0_1'>
+        <pose frame=''>-6.2054 -7.5 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>-6.2054 -7.5 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='vine_t0_2'>
+        <pose frame=''>6.19598 -7.5 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>6.19598 -7.5 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='vine_t1_0'>
+        <pose frame=''>0 -4.5 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>0 -4.5 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='vine_t1_1'>
+        <pose frame=''>-6.19653 -4.5 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>-6.19653 -4.5 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='vine_t1_2'>
+        <pose frame=''>6.20382 -4.5 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>6.20382 -4.5 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='vine_t2_0'>
+        <pose frame=''>0 -1.5 -0.1 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>0 -1.5 -0.1 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='vine_t2_1'>
+        <pose frame=''>-6.19537 -1.5 -0.1 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>-6.19537 -1.5 -0.1 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='vine_t2_2'>
+        <pose frame=''>6.19384 -1.5 -0.1 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>6.19384 -1.5 -0.1 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='vine_t3_0'>
+        <pose frame=''>0 1.5 -0.1 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>0 1.5 -0.1 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='vine_t3_1'>
+        <pose frame=''>-6.199 1.5 -0.1 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>-6.199 1.5 -0.1 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='vine_t3_2'>
+        <pose frame=''>6.21578 1.49866 -0.1 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>6.21578 1.49866 -0.1 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='vine_t4_0'>
+        <pose frame=''>0 4.5 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>0 4.5 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='vine_t4_1'>
+        <pose frame=''>-6.16912 4.5 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>-6.16912 4.5 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='vine_t4_2'>
+        <pose frame=''>6.19561 4.5 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>6.19561 4.5 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='vine_t5_0'>
+        <pose frame=''>0 7.5 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>0 7.5 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='vine_t5_1'>
+        <pose frame=''>-6.21399 7.5 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>-6.21399 7.5 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='vine_t5_2'>
+        <pose frame=''>6.22536 7.5 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>6.22536 7.5 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <light name='sun'>
+        <pose frame=''>0 0 10 0 -0 0</pose>
+      </light>
+    </state>
+  </world>
+</sdf>

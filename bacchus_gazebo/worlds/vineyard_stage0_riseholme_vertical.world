@@ -2,7 +2,7 @@
   <world name='default'>
     <gui fullscreen='0'>
       <camera name='user_camera'>
-        <pose frame=''>9.01861 33.4885 31.2898 0 0.793799 -1.87608</pose>
+        <pose frame=''>13.1218 -4.05763 15.9124 -0 1.2778 -1.67608</pose>
         <view_controller>orbit</view_controller>
         <projection_type>perspective</projection_type>
       </camera>
@@ -56,78 +56,6 @@
       </link>
       <pose frame=''>0 0 -0.1 0.034907 -0 0</pose>
     </model>
-    <model name='vine_t0_0'>
-      <static>1</static>
-      <link name='link'>
-        <collision name='collision'>
-          <geometry>
-            <mesh>
-              <uri>model://vine_t0/meshes/vine_t0.dae</uri>
-            </mesh>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <visual name='visual'>
-          <geometry>
-            <mesh>
-              <uri>model://vine_t0/meshes/vine_t0.dae</uri>
-            </mesh>
-          </geometry>
-        </visual>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <pose frame=''>-0 -7.5 0 0 -0 0</pose>
-    </model>
-    <model name='vine_t0_1'>
-      <static>1</static>
-      <link name='link'>
-        <collision name='collision'>
-          <geometry>
-            <mesh>
-              <uri>model://vine_t0/meshes/vine_t0.dae</uri>
-            </mesh>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <visual name='visual'>
-          <geometry>
-            <mesh>
-              <uri>model://vine_t0/meshes/vine_t0.dae</uri>
-            </mesh>
-          </geometry>
-        </visual>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <pose frame=''>-6 -7.5 0 0 -0 0</pose>
-    </model>
     <model name='vine_t0_2'>
       <static>1</static>
       <link name='link'>
@@ -163,546 +91,6 @@
         <kinematic>0</kinematic>
       </link>
       <pose frame=''>6 -7.5 0 0 -0 0</pose>
-    </model>
-    <model name='vine_t1_0'>
-      <static>1</static>
-      <link name='link'>
-        <collision name='collision'>
-          <geometry>
-            <mesh>
-              <uri>model://vine_t0/meshes/vine_t0.dae</uri>
-            </mesh>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <visual name='visual'>
-          <geometry>
-            <mesh>
-              <uri>model://vine_t0/meshes/vine_t0.dae</uri>
-            </mesh>
-          </geometry>
-        </visual>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <pose frame=''>0 -4.5 0 0 -0 0</pose>
-    </model>
-    <model name='vine_t1_1'>
-      <static>1</static>
-      <link name='link'>
-        <collision name='collision'>
-          <geometry>
-            <mesh>
-              <uri>model://vine_t0/meshes/vine_t0.dae</uri>
-            </mesh>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <visual name='visual'>
-          <geometry>
-            <mesh>
-              <uri>model://vine_t0/meshes/vine_t0.dae</uri>
-            </mesh>
-          </geometry>
-        </visual>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <pose frame=''>-6 -4.5 0 0 -0 0</pose>
-    </model>
-    <model name='vine_t1_2'>
-      <static>1</static>
-      <link name='link'>
-        <collision name='collision'>
-          <geometry>
-            <mesh>
-              <uri>model://vine_t0/meshes/vine_t0.dae</uri>
-            </mesh>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <visual name='visual'>
-          <geometry>
-            <mesh>
-              <uri>model://vine_t0/meshes/vine_t0.dae</uri>
-            </mesh>
-          </geometry>
-        </visual>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <pose frame=''>6 -4.5 0 0 -0 0</pose>
-    </model>
-    <model name='vine_t2_0'>
-      <static>1</static>
-      <link name='link'>
-        <collision name='collision'>
-          <geometry>
-            <mesh>
-              <uri>model://vine_t0/meshes/vine_t0.dae</uri>
-            </mesh>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <visual name='visual'>
-          <geometry>
-            <mesh>
-              <uri>model://vine_t0/meshes/vine_t0.dae</uri>
-            </mesh>
-          </geometry>
-        </visual>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <pose frame=''>0 -1.5 -0.1 0 -0 0</pose>
-    </model>
-    <model name='vine_t2_1'>
-      <static>1</static>
-      <link name='link'>
-        <collision name='collision'>
-          <geometry>
-            <mesh>
-              <uri>model://vine_t0/meshes/vine_t0.dae</uri>
-            </mesh>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <visual name='visual'>
-          <geometry>
-            <mesh>
-              <uri>model://vine_t0/meshes/vine_t0.dae</uri>
-            </mesh>
-          </geometry>
-        </visual>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <pose frame=''>-6 -1.5 -0.1 0 -0 0</pose>
-    </model>
-    <model name='vine_t2_2'>
-      <static>1</static>
-      <link name='link'>
-        <collision name='collision'>
-          <geometry>
-            <mesh>
-              <uri>model://vine_t0/meshes/vine_t0.dae</uri>
-            </mesh>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <visual name='visual'>
-          <geometry>
-            <mesh>
-              <uri>model://vine_t0/meshes/vine_t0.dae</uri>
-            </mesh>
-          </geometry>
-        </visual>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <pose frame=''>6 -1.5 -0.1 0 -0 0</pose>
-    </model>
-    <model name='vine_t3_0'>
-      <static>1</static>
-      <link name='link'>
-        <collision name='collision'>
-          <geometry>
-            <mesh>
-              <uri>model://vine_t0/meshes/vine_t0.dae</uri>
-            </mesh>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <visual name='visual'>
-          <geometry>
-            <mesh>
-              <uri>model://vine_t0/meshes/vine_t0.dae</uri>
-            </mesh>
-          </geometry>
-        </visual>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <pose frame=''>0 1.5 -0.1 0 -0 0</pose>
-    </model>
-    <model name='vine_t3_1'>
-      <static>1</static>
-      <link name='link'>
-        <collision name='collision'>
-          <geometry>
-            <mesh>
-              <uri>model://vine_t0/meshes/vine_t0.dae</uri>
-            </mesh>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <visual name='visual'>
-          <geometry>
-            <mesh>
-              <uri>model://vine_t0/meshes/vine_t0.dae</uri>
-            </mesh>
-          </geometry>
-        </visual>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <pose frame=''>-6 1.5 -0.1 0 -0 0</pose>
-    </model>
-    <model name='vine_t3_2'>
-      <static>1</static>
-      <link name='link'>
-        <collision name='collision'>
-          <geometry>
-            <mesh>
-              <uri>model://vine_t0/meshes/vine_t0.dae</uri>
-            </mesh>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <visual name='visual'>
-          <geometry>
-            <mesh>
-              <uri>model://vine_t0/meshes/vine_t0.dae</uri>
-            </mesh>
-          </geometry>
-        </visual>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <pose frame=''>6 1.5 -0.1 0 -0 0</pose>
-    </model>
-    <model name='vine_t4_0'>
-      <static>1</static>
-      <link name='link'>
-        <collision name='collision'>
-          <geometry>
-            <mesh>
-              <uri>model://vine_t0/meshes/vine_t0.dae</uri>
-            </mesh>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <visual name='visual'>
-          <geometry>
-            <mesh>
-              <uri>model://vine_t0/meshes/vine_t0.dae</uri>
-            </mesh>
-          </geometry>
-        </visual>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <pose frame=''>0 4.5 0 0 -0 0</pose>
-    </model>
-    <model name='vine_t4_1'>
-      <static>1</static>
-      <link name='link'>
-        <collision name='collision'>
-          <geometry>
-            <mesh>
-              <uri>model://vine_t0/meshes/vine_t0.dae</uri>
-            </mesh>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <visual name='visual'>
-          <geometry>
-            <mesh>
-              <uri>model://vine_t0/meshes/vine_t0.dae</uri>
-            </mesh>
-          </geometry>
-        </visual>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <pose frame=''>-6 4.5 0 0 -0 0</pose>
-    </model>
-    <model name='vine_t4_2'>
-      <static>1</static>
-      <link name='link'>
-        <collision name='collision'>
-          <geometry>
-            <mesh>
-              <uri>model://vine_t0/meshes/vine_t0.dae</uri>
-            </mesh>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <visual name='visual'>
-          <geometry>
-            <mesh>
-              <uri>model://vine_t0/meshes/vine_t0.dae</uri>
-            </mesh>
-          </geometry>
-        </visual>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <pose frame=''>6 4.5 0 0 -0 0</pose>
-    </model>
-    <model name='vine_t5_0'>
-      <static>1</static>
-      <link name='link'>
-        <collision name='collision'>
-          <geometry>
-            <mesh>
-              <uri>model://vine_t0/meshes/vine_t0.dae</uri>
-            </mesh>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <visual name='visual'>
-          <geometry>
-            <mesh>
-              <uri>model://vine_t0/meshes/vine_t0.dae</uri>
-            </mesh>
-          </geometry>
-        </visual>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <pose frame=''>0 7.5 0 0 -0 0</pose>
-    </model>
-    <model name='vine_t5_1'>
-      <static>1</static>
-      <link name='link'>
-        <collision name='collision'>
-          <geometry>
-            <mesh>
-              <uri>model://vine_t0/meshes/vine_t0.dae</uri>
-            </mesh>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <visual name='visual'>
-          <geometry>
-            <mesh>
-              <uri>model://vine_t0/meshes/vine_t0.dae</uri>
-            </mesh>
-          </geometry>
-        </visual>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <pose frame=''>-6 7.5 0 0 -0 0</pose>
-    </model>
-    <model name='vine_t5_2'>
-      <static>1</static>
-      <link name='link'>
-        <collision name='collision'>
-          <geometry>
-            <mesh>
-              <uri>model://vine_t0/meshes/vine_t0.dae</uri>
-            </mesh>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <visual name='visual'>
-          <geometry>
-            <mesh>
-              <uri>model://vine_t0/meshes/vine_t0.dae</uri>
-            </mesh>
-          </geometry>
-        </visual>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <pose frame=''>6 7.5 0 0 -0 0</pose>
     </model>
     <physics name='default_physics' default='0' type='ode'>
       <real_time_update_rate>200</real_time_update_rate>
@@ -2803,10 +2191,10 @@
       <pose frame=''>11 0 0 0 -0 0</pose>
     </model>
     <state world_name='default'>
-      <sim_time>2542 920000000</sim_time>
-      <real_time>75 644268590</real_time>
-      <wall_time>1619728543 286608997</wall_time>
-      <iterations>15117</iterations>
+      <sim_time>3337 350000000</sim_time>
+      <real_time>123 250292336</real_time>
+      <wall_time>1619735476 665899451</wall_time>
+      <iterations>22559</iterations>
       <model name='grass_ground_plane'>
         <pose frame=''>0.159401 -0.058745 -0.07 0 -0 0</pose>
         <scale>1 1 1</scale>
@@ -2828,238 +2216,318 @@
         </link>
       </model>
       <model name='thorvald_001'>
-        <pose frame=''>11.0472 -0.188313 0.006235 0.000841 0.008785 -0.043564</pose>
+        <pose frame=''>14.8718 -10.1477 0.011058 -0.005417 -0.004709 -3.04411</pose>
         <scale>1 1 1</scale>
         <link name='thorvald_001/base_link'>
-          <pose frame=''>11.0472 -0.188313 0.006235 0.000841 0.008785 -0.043564</pose>
-          <velocity>-0.0035 0.000343 -0.025691 -0.023652 0.021887 -0.005217</velocity>
-          <acceleration>1.54094 1.86507 -7.06794 -0.477328 -1.54187 2.34106</acceleration>
-          <wrench>133.184 161.198 -610.883 0 -0 0</wrench>
+          <pose frame=''>14.8718 -10.1477 0.011058 -0.005417 -0.004709 -3.04411</pose>
+          <velocity>-0.001471 0.000314 0.002356 -0.003493 0.000305 -0.001543</velocity>
+          <acceleration>-0.520864 -0.946046 -1.57133 -0.083505 0.01383 0.001804</acceleration>
+          <wrench>-45.0184 -81.7669 -135.81 0 -0 0</wrench>
         </link>
         <link name='thorvald_001/leg0'>
-          <pose frame=''>10.4809 -0.613226 0.210664 0.001247 0.008661 -0.033902</pose>
-          <velocity>-0.00085 0.008434 -0.002704 -0.029888 0.012951 0.004608</velocity>
-          <acceleration>-0.670477 0.854417 -2.8375 3.12892 0.406745 -1.40055</acceleration>
-          <wrench>-10.4863 13.3631 -44.3784 0 -0 0</wrench>
+          <pose frame=''>15.3755 -9.64837 0.2109 -0.005461 -0.00466 -3.03485</pose>
+          <velocity>-0.00063 0.000261 0.000473 -0.003442 0.000525 -0.001696</velocity>
+          <acceleration>-0.526171 -0.97266 -1.61731 -0.082621 0.074645 -0.032559</acceleration>
+          <wrench>-8.22932 -15.2124 -25.2947 0 -0 0</wrench>
         </link>
         <link name='thorvald_001/leg1'>
-          <pose frame=''>11.5778 -0.661033 0.201043 0.001457 0.008645 -0.037139</pose>
-          <velocity>-0.001823 0.001769 -0.02699 -0.05139 0.029725 -0.004967</velocity>
-          <acceleration>-0.844417 -0.13182 -7.86275 1.33681 -1.50269 1.13011</acceleration>
-          <wrench>-13.2067 -2.06166 -122.973 0 -0 0</wrench>
+          <pose frame=''>14.2827 -9.75525 0.216076 -0.004785 -0.004402 -3.0367</pose>
+          <velocity>-0.000886 0.001916 0.001285 0.008002 0.005264 -0.008006</velocity>
+          <acceleration>-0.554152 -0.93165 -1.61101 1.55455 -0.062101 -3.06393</acceleration>
+          <wrench>-8.66693 -14.571 -25.1962 0 -0 0</wrench>
         </link>
         <link name='thorvald_001/leg2'>
-          <pose frame=''>11.6169 0.236109 0.201767 0.000797 0.008954 -0.046971</pose>
-          <velocity>0.003184 0.001876 -0.047541 -0.023389 0.0136 -0.005219</velocity>
-          <acceleration>0.000201 -0.055545 -11.313 -2.76221 1.12754 -1.39985</acceleration>
-          <wrench>0.00315 -0.868718 -176.935 0 -0 0</wrench>
+          <pose frame=''>14.3701 -10.649 0.211203 -0.005396 -0.004734 -3.049</pose>
+          <velocity>-0.002088 0.00179 0.004165 -0.003431 0.000321 -0.001747</velocity>
+          <acceleration>-0.506838 -0.994938 -1.51896 -0.092128 0.066141 -0.019416</acceleration>
+          <wrench>-7.92694 -15.5608 -23.7566 0 -0 0</wrench>
         </link>
         <link name='thorvald_001/leg3'>
-          <pose frame=''>10.52 0.283924 0.211429 0.000772 0.008795 -0.044597</pose>
-          <velocity>0.003381 0.007916 -0.025426 -0.02068 0.0213 -0.005234</velocity>
-          <acceleration>0.037479 0.853144 -6.27571 2.00897 -1.02261 -0.647501</acceleration>
-          <wrench>0.586174 13.3432 -98.1521 0 -0 0</wrench>
+          <pose frame=''>15.4629 -10.5421 0.206034 -0.004999 -0.004652 -3.04469</pose>
+          <velocity>-0.002063 6.4e-05 0.003478 0.003027 0.00342 -0.005326</velocity>
+          <acceleration>-0.533376 -0.989944 -1.56675 1.12608 0.356208 0.733596</acceleration>
+          <wrench>-8.342 -15.4827 -24.504 0 -0 0</wrench>
         </link>
         <link name='thorvald_001/wheel0_link'>
-          <pose frame=''>10.4809 -0.613207 0.21063 -1.56905 -0.226221 -0.034311</pose>
-          <velocity>0.000389 0.008458 -0.001209 -0.037879 0.003916 0.00867</velocity>
-          <acceleration>-0.427178 0.728507 -2.83175 -1.2152 1.23263 -1.73832</acceleration>
-          <wrench>-2.56307 4.37104 -16.9905 0 -0 0</wrench>
+          <pose frame=''>15.3755 -9.64838 0.2109 1.58802 -1.2483 0.090376</pose>
+          <velocity>-0.000639 0.000284 0.000503 -0.00347 0.000431 -0.001573</velocity>
+          <acceleration>-0.526915 -0.964953 -1.61067 -0.080617 0.019538 -0.024643</acceleration>
+          <wrench>-3.16149 -5.78972 -9.66404 0 -0 0</wrench>
         </link>
         <link name='thorvald_001/wheel1_link'>
-          <pose frame=''>11.5778 -0.661039 0.201078 -1.56943 0.228596 -0.036788</pose>
-          <velocity>0.000255 0.002102 -0.028736 -0.045533 0.029513 -0.007574</velocity>
-          <acceleration>-0.364116 -0.075408 -7.88049 -0.414897 1.52224 2.38492</acceleration>
-          <wrench>-2.1847 -0.452445 -47.283 0 -0 0</wrench>
+          <pose frame=''>14.2828 -9.75528 0.21608 -1.58765 1.31236 -3.0528</pose>
+          <velocity>-0.000975 0.001087 0.002067 -0.003626 -0.001466 -0.021073</velocity>
+          <acceleration>-0.443063 -0.999942 -1.5016 -1.03188 -0.624602 2.10551</acceleration>
+          <wrench>-2.65838 -5.99965 -9.00962 0 -0 0</wrench>
         </link>
         <link name='thorvald_001/wheel2_link'>
-          <pose frame=''>11.6169 0.236105 0.201751 1.5677 1.32415 3.09166</pose>
-          <velocity>0.003725 0.002102 -0.046711 -0.02125 0.013502 -0.007184</velocity>
-          <acceleration>0.230726 0.017693 -11.4372 0.966516 -1.44144 0.767449</acceleration>
-          <wrench>1.38436 0.106157 -68.6231 0 -0 0</wrench>
+          <pose frame=''>14.3701 -10.649 0.211204 -1.86372 1.55211 2.94129</pose>
+          <velocity>-0.002072 0.001788 0.004182 -0.003461 0.000247 -0.00162</velocity>
+          <acceleration>-0.504267 -0.990757 -1.5197 -0.087849 0.006087 -0.002209</acceleration>
+          <wrench>-3.0256 -5.94454 -9.11818 0 -0 0</wrench>
         </link>
         <link name='thorvald_001/wheel3_link'>
-          <pose frame=''>10.52 0.283899 0.211478 1.53951 -1.54385 3.12829</pose>
-          <velocity>0.003459 0.009174 -0.027845 -0.024248 0.021458 -0.006315</velocity>
-          <acceleration>0.217682 0.921793 -6.07985 2.81785 -0.930355 -2.23379</acceleration>
-          <wrench>1.30609 5.53076 -36.4791 0 -0 0</wrench>
-        </link>
-      </model>
-      <model name='vine_t0_0'>
-        <pose frame=''>0 -7.5 0 0 -0 0</pose>
-        <scale>1 1 1</scale>
-        <link name='link'>
-          <pose frame=''>0 -7.5 0 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
-        </link>
-      </model>
-      <model name='vine_t0_1'>
-        <pose frame=''>-6.2054 -7.5 0 0 -0 0</pose>
-        <scale>1 1 1</scale>
-        <link name='link'>
-          <pose frame=''>-6.2054 -7.5 0 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
+          <pose frame=''>15.4629 -10.5421 0.206055 -1.57897 0.522613 -3.04802</pose>
+          <velocity>-0.001496 0.002574 0.005192 -0.012235 0.00396 -0.023477</velocity>
+          <acceleration>-0.547896 -0.224953 -1.22568 -2.19056 0.19559 2.22316</acceleration>
+          <wrench>-3.28738 -1.34972 -7.3541 0 -0 0</wrench>
         </link>
       </model>
       <model name='vine_t0_2'>
-        <pose frame=''>6.19598 -7.5 0 0 -0 0</pose>
+        <pose frame=''>12.4357 -5.91622 0 0 0 -1.5673</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose frame=''>6.19598 -7.5 0 0 -0 0</pose>
+          <pose frame=''>12.4357 -5.91622 -0 0 0 -1.5673</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
-      <model name='vine_t1_0'>
-        <pose frame=''>0 -4.5 0 0 -0 0</pose>
+      <model name='vine_t0_2_clone'>
+        <pose frame=''>12.4329 -0.080954 0 0 0 -1.5673</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose frame=''>0 -4.5 0 0 -0 0</pose>
+          <pose frame=''>12.4329 -0.080954 0 0 0 -1.5673</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
-      <model name='vine_t1_1'>
-        <pose frame=''>-6.19653 -4.5 0 0 -0 0</pose>
+      <model name='vine_t0_2_clone_0'>
+        <pose frame=''>12.4295 5.65354 0 0 0 -1.5673</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose frame=''>-6.19653 -4.5 0 0 -0 0</pose>
+          <pose frame=''>12.4295 5.65354 0 0 0 -1.5673</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
-      <model name='vine_t1_2'>
-        <pose frame=''>6.20382 -4.5 0 0 -0 0</pose>
+      <model name='vine_t0_2_clone_1'>
+        <pose frame=''>9.47092 -5.94379 0 0 0 -1.5673</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose frame=''>6.20382 -4.5 0 0 -0 0</pose>
+          <pose frame=''>9.47092 -5.94379 0 0 0 -1.5673</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
-      <model name='vine_t2_0'>
-        <pose frame=''>0 -1.5 -0.1 0 -0 0</pose>
+      <model name='vine_t0_2_clone_10'>
+        <pose frame=''>0.470059 -5.90057 0 0 0 -1.5673</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose frame=''>0 -1.5 -0.1 0 -0 0</pose>
+          <pose frame=''>0.470059 -5.90057 0 0 0 -1.5673</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
-      <model name='vine_t2_1'>
-        <pose frame=''>-6.19537 -1.5 -0.1 0 -0 0</pose>
+      <model name='vine_t0_2_clone_11'>
+        <pose frame=''>0.464025 -0.036506 0 0 0 -1.5673</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose frame=''>-6.19537 -1.5 -0.1 0 -0 0</pose>
+          <pose frame=''>0.464025 -0.036506 0 0 0 -1.5673</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
-      <model name='vine_t2_2'>
-        <pose frame=''>6.19384 -1.5 -0.1 0 -0 0</pose>
+      <model name='vine_t0_2_clone_12'>
+        <pose frame=''>0.406777 5.66915 0 0 0 -1.5673</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose frame=''>6.19384 -1.5 -0.1 0 -0 0</pose>
+          <pose frame=''>0.406777 5.66915 0 0 0 -1.5673</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
-      <model name='vine_t3_0'>
-        <pose frame=''>0 1.5 -0.1 0 -0 0</pose>
+      <model name='vine_t0_2_clone_13'>
+        <pose frame=''>-2.54387 -5.9319 0 0 0 -1.5673</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose frame=''>0 1.5 -0.1 0 -0 0</pose>
+          <pose frame=''>-2.54387 -5.9319 0 0 0 -1.5673</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
-      <model name='vine_t3_1'>
-        <pose frame=''>-6.199 1.5 -0.1 0 -0 0</pose>
+      <model name='vine_t0_2_clone_14'>
+        <pose frame=''>-2.56185 -0.092341 0 0 0 -1.5673</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose frame=''>-6.199 1.5 -0.1 0 -0 0</pose>
+          <pose frame=''>-2.56185 -0.092341 0 0 0 -1.5673</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
-      <model name='vine_t3_2'>
-        <pose frame=''>6.21578 1.49866 -0.1 0 -0 0</pose>
+      <model name='vine_t0_2_clone_15'>
+        <pose frame=''>-2.63689 5.61997 0 0 0 -1.5673</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose frame=''>6.21578 1.49866 -0.1 0 -0 0</pose>
+          <pose frame=''>-2.63689 5.61997 0 0 0 -1.5673</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
-      <model name='vine_t4_0'>
-        <pose frame=''>0 4.5 0 0 -0 0</pose>
+      <model name='vine_t0_2_clone_16'>
+        <pose frame=''>-5.55101 -5.90977 0 0 0 -1.5673</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose frame=''>0 4.5 0 0 -0 0</pose>
+          <pose frame=''>-5.55101 -5.90977 0 0 0 -1.5673</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
-      <model name='vine_t4_1'>
-        <pose frame=''>-6.16912 4.5 0 0 -0 0</pose>
+      <model name='vine_t0_2_clone_17'>
+        <pose frame=''>-5.5745 -0.115599 0 0 0 -1.5673</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose frame=''>-6.16912 4.5 0 0 -0 0</pose>
+          <pose frame=''>-5.5745 -0.115599 0 0 0 -1.5673</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
-      <model name='vine_t4_2'>
-        <pose frame=''>6.19561 4.5 0 0 -0 0</pose>
+      <model name='vine_t0_2_clone_18'>
+        <pose frame=''>-5.65304 5.61599 0 0 0 -1.5673</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose frame=''>6.19561 4.5 0 0 -0 0</pose>
+          <pose frame=''>-5.65304 5.61599 0 0 0 -1.5673</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
-      <model name='vine_t5_0'>
-        <pose frame=''>0 7.5 0 0 -0 0</pose>
+      <model name='vine_t0_2_clone_19'>
+        <pose frame=''>-8.61362 -5.97521 0 0 0 -1.5673</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose frame=''>0 7.5 0 0 -0 0</pose>
+          <pose frame=''>-8.61362 -5.97521 0 0 0 -1.5673</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
-      <model name='vine_t5_1'>
-        <pose frame=''>-6.21399 7.5 0 0 -0 0</pose>
+      <model name='vine_t0_2_clone_2'>
+        <pose frame=''>9.45898 -0.163149 0 0 0 -1.5673</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose frame=''>-6.21399 7.5 0 0 -0 0</pose>
+          <pose frame=''>9.45898 -0.163149 0 0 0 -1.5673</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
-      <model name='vine_t5_2'>
-        <pose frame=''>6.22536 7.5 0 0 -0 0</pose>
+      <model name='vine_t0_2_clone_20'>
+        <pose frame=''>-8.61306 -0.175572 0 0 0 -1.5673</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose frame=''>6.22536 7.5 0 0 -0 0</pose>
+          <pose frame=''>-8.61306 -0.175572 0 0 0 -1.5673</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='vine_t0_2_clone_21'>
+        <pose frame=''>-8.52339 5.68888 0 0 0 -1.5673</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>-8.52339 5.68888 0 0 0 -1.5673</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='vine_t0_2_clone_22'>
+        <pose frame=''>-11.5196 -5.92668 0 0 0 -1.5673</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>-11.5196 -5.92668 0 0 0 -1.5673</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='vine_t0_2_clone_23'>
+        <pose frame=''>-11.5121 -0.675742 0 0 0 -1.5673</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>-11.5121 -0.675742 0 0 0 -1.5673</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='vine_t0_2_clone_3'>
+        <pose frame=''>9.39953 5.56469 0 0 0 -1.5673</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>9.39953 5.56469 0 0 0 -1.5673</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='vine_t0_2_clone_4'>
+        <pose frame=''>6.39579 -5.91818 0 0 0 -1.5673</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>6.39579 -5.91818 0 0 0 -1.5673</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='vine_t0_2_clone_5'>
+        <pose frame=''>6.37803 -0.126557 0 0 0 -1.5673</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>6.37803 -0.126557 0 0 0 -1.5673</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='vine_t0_2_clone_6'>
+        <pose frame=''>6.34584 5.59724 0 0 0 -1.5673</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>6.34584 5.59724 0 0 0 -1.5673</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='vine_t0_2_clone_7'>
+        <pose frame=''>3.46223 -5.92753 0 0 0 -1.5673</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>3.46223 -5.92753 0 0 0 -1.5673</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='vine_t0_2_clone_8'>
+        <pose frame=''>3.4638 -0.136507 0 0 0 -1.5673</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>3.4638 -0.136507 0 0 0 -1.5673</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='vine_t0_2_clone_9'>
+        <pose frame=''>3.44117 5.61676 0 0 0 -1.5673</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>3.44117 5.61676 0 0 0 -1.5673</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
@@ -6588,6 +6056,906 @@
         <kinematic>0</kinematic>
       </link>
       <pose frame=''>0.159401 -0.058745 0 0 -0 0</pose>
+    </model>
+    <model name='vine_t0_2_clone'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://vine_t0/meshes/vine_t0.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://vine_t0/meshes/vine_t0.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>12.4322 0.109662 -0 0 0 -1.5673</pose>
+    </model>
+    <model name='vine_t0_2_clone_0'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://vine_t0/meshes/vine_t0.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://vine_t0/meshes/vine_t0.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>12.4279 6.12289 -0 0 0 -1.5673</pose>
+    </model>
+    <model name='vine_t0_2_clone_1'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://vine_t0/meshes/vine_t0.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://vine_t0/meshes/vine_t0.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>9.47092 -5.94379 -0 0 0 -1.5673</pose>
+    </model>
+    <model name='vine_t0_2_clone_2'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://vine_t0/meshes/vine_t0.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://vine_t0/meshes/vine_t0.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>9.45898 -0.163149 -0 0 0 -1.5673</pose>
+    </model>
+    <model name='vine_t0_2_clone_3'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://vine_t0/meshes/vine_t0.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://vine_t0/meshes/vine_t0.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>9.39953 5.56469 -0 0 0 -1.5673</pose>
+    </model>
+    <model name='vine_t0_2_clone_4'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://vine_t0/meshes/vine_t0.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://vine_t0/meshes/vine_t0.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>6.39579 -5.91818 -0 0 0 -1.5673</pose>
+    </model>
+    <model name='vine_t0_2_clone_5'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://vine_t0/meshes/vine_t0.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://vine_t0/meshes/vine_t0.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>6.37803 -0.126557 -0 0 0 -1.5673</pose>
+    </model>
+    <model name='vine_t0_2_clone_6'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://vine_t0/meshes/vine_t0.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://vine_t0/meshes/vine_t0.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>6.34584 5.59724 -0 0 0 -1.5673</pose>
+    </model>
+    <model name='vine_t0_2_clone_7'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://vine_t0/meshes/vine_t0.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://vine_t0/meshes/vine_t0.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>3.46223 -5.92753 -0 0 0 -1.5673</pose>
+    </model>
+    <model name='vine_t0_2_clone_8'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://vine_t0/meshes/vine_t0.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://vine_t0/meshes/vine_t0.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>3.4638 -0.136507 -0 0 0 -1.5673</pose>
+    </model>
+    <model name='vine_t0_2_clone_9'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://vine_t0/meshes/vine_t0.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://vine_t0/meshes/vine_t0.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>3.44117 5.61676 -0 0 0 -1.5673</pose>
+    </model>
+    <model name='vine_t0_2_clone_10'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://vine_t0/meshes/vine_t0.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://vine_t0/meshes/vine_t0.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>0.470059 -5.90057 -0 0 0 -1.5673</pose>
+    </model>
+    <model name='vine_t0_2_clone_11'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://vine_t0/meshes/vine_t0.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://vine_t0/meshes/vine_t0.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>0.464025 -0.036506 -0 0 0 -1.5673</pose>
+    </model>
+    <model name='vine_t0_2_clone_12'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://vine_t0/meshes/vine_t0.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://vine_t0/meshes/vine_t0.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>0.406777 5.66915 -0 0 0 -1.5673</pose>
+    </model>
+    <model name='vine_t0_2_clone_13'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://vine_t0/meshes/vine_t0.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://vine_t0/meshes/vine_t0.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>-2.54387 -5.9319 -0 0 0 -1.5673</pose>
+    </model>
+    <model name='vine_t0_2_clone_14'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://vine_t0/meshes/vine_t0.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://vine_t0/meshes/vine_t0.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>-2.56185 -0.092341 -0 0 0 -1.5673</pose>
+    </model>
+    <model name='vine_t0_2_clone_15'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://vine_t0/meshes/vine_t0.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://vine_t0/meshes/vine_t0.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>-2.63689 5.61997 -0 0 0 -1.5673</pose>
+    </model>
+    <model name='vine_t0_2_clone_16'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://vine_t0/meshes/vine_t0.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://vine_t0/meshes/vine_t0.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>-5.55101 -5.90977 -0 0 0 -1.5673</pose>
+    </model>
+    <model name='vine_t0_2_clone_17'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://vine_t0/meshes/vine_t0.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://vine_t0/meshes/vine_t0.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>-5.5745 -0.115599 -0 0 0 -1.5673</pose>
+    </model>
+    <model name='vine_t0_2_clone_18'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://vine_t0/meshes/vine_t0.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://vine_t0/meshes/vine_t0.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>-5.65304 5.61599 -0 0 0 -1.5673</pose>
+    </model>
+    <model name='vine_t0_2_clone_19'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://vine_t0/meshes/vine_t0.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://vine_t0/meshes/vine_t0.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>-8.61362 -5.97521 -0 0 0 -1.5673</pose>
+    </model>
+    <model name='vine_t0_2_clone_20'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://vine_t0/meshes/vine_t0.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://vine_t0/meshes/vine_t0.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>-8.61306 -0.175572 -0 0 0 -1.5673</pose>
+    </model>
+    <model name='vine_t0_2_clone_21'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://vine_t0/meshes/vine_t0.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://vine_t0/meshes/vine_t0.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>-8.52339 5.68888 -0 0 0 -1.5673</pose>
+    </model>
+    <model name='vine_t0_2_clone_22'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://vine_t0/meshes/vine_t0.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://vine_t0/meshes/vine_t0.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>-11.5196 -5.92668 -0 0 0 -1.5673</pose>
+    </model>
+    <model name='vine_t0_2_clone_23'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://vine_t0/meshes/vine_t0.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://vine_t0/meshes/vine_t0.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>-11.5121 -0.675742 -0 0 0 -1.5673</pose>
     </model>
   </world>
 </sdf>

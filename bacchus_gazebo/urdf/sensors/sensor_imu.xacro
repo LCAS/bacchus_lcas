@@ -53,8 +53,29 @@
           <frameName>$(arg tf_prefix)${sensor_name}</frameName>
           <initialOrientationAsReference>false</initialOrientationAsReference>
         </plugin>
-        <pose>0 0 0 0 0 0</pose>
-        <material>Gazebo/Orange</material>
+
+        <!--plugin name="$(arg robot_name)imu_sensor" filename="libhector_gazebo_ros_imu.so">
+          <serviceName>/imu/calibrate</serviceName>
+          <alwaysOn>true</alwaysOn>
+          <robotNamespace>/$(arg robot_name)</robotNamespace>
+          <updateRate>1000</updateRate>
+          <bodyName>${sensor_name}</bodyName>
+          <frameId>$(arg tf_prefix)${sensor_name}</frameId>
+          <topicName>imu_raw</topicName>
+          <rpyOffset>0 0 0</rpyOffset>
+          <xyzOffset>0 0 0</xyzOffset>
+          <gaussianNoise>0.00000001</gaussianNoise>
+          <accelDrift>0.00000001 0.00000001 0.00000001</accelDrift>
+          <accelDriftFrequency>0.00000001 0.00000001 0.00000001</accelDriftFrequency>
+          <accelGaussianNoise>0.00000001 0.00000001 0.00000001</accelGaussianNoise>
+          <rateDrift>0.0 0.0 0.0</rateDrift>
+          <rateDriftFrequency>0.0 0.0 0.0</rateDriftFrequency>
+          <rateGaussianNoise>0.0 0.0 0.0</rateGaussianNoise>
+          <headingDrift>0.0 0.0 0.0</headingDrift>
+          <headingDriftFrequency>0.0 0.0 0.0</headingDriftFrequency>
+          <headingGaussianNoise>0.0 0.0 0.0</headingGaussianNoise>        
+        </plugin-->  
+
         <!--imu_sensor>
           <angular_velocity>
             <x>
@@ -111,5 +132,7 @@
         </imu_sensor-->
       </sensor>
     </gazebo>
-    </xacro:macro>
+
+  </xacro:macro>
+
 </robot>

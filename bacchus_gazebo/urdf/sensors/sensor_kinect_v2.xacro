@@ -43,7 +43,7 @@
     <joint name="$(arg robot_name)_${kinect2_name}_rgb_joint" type="fixed">
       <parent link="$(arg tf_prefix)${kinect2_name}_link" />
       <child link="$(arg tf_prefix)${kinect2_name}_rgb_optical_frame" />
-      <origin xyz="0 0.0125 0.016" rpy="-1.57 0 -1.57" />
+      <origin xyz="0 0.05 0.016" rpy="-1.57 0 -1.57" />
     </joint>
 
     <link name="$(arg tf_prefix)${kinect2_name}_depth_optical_frame" />
@@ -51,7 +51,7 @@
     <joint name="$(arg robot_name)_${kinect2_name}_depth_joint" type="fixed">
       <parent link="$(arg tf_prefix)${kinect2_name}_link" />
       <child link="$(arg tf_prefix)${kinect2_name}_depth_optical_frame" />
-      <origin xyz="0 -0.0125 0.016" rpy="-1.57 0 -1.57" />
+      <origin xyz="0 -0.05 0.016" rpy="-1.57 0 -1.57" />
     </joint>
 
     <gazebo reference="$(arg tf_prefix)${kinect2_name}_link">

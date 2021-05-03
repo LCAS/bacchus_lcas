@@ -39,7 +39,7 @@
           kinect2_cam_op="0" 
           kinect2_cam_oy="0.0"/>
 
-  <xacro:kinect kinect2_name="kinect2_left" 
+  <!--xacro:kinect kinect2_name="kinect2_left" 
           kinect2_cam_px="0.0" 
           kinect2_cam_py="0.34" 
           kinect2_cam_pz="0.80" 
@@ -53,7 +53,7 @@
           kinect2_cam_pz="0.80" 
           kinect2_cam_or="0" 
           kinect2_cam_op="0" 
-          kinect2_cam_oy="${270*M_PI/180}"/>
+          kinect2_cam_oy="${270*M_PI/180}"/-->
   
 
 </robot>

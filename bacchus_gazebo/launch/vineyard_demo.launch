@@ -13,7 +13,7 @@
     -->
   <!-- <arg name="robot_no" default="001"/> -->  <!-- unused-->
   <arg name="robot_model" default="$(find bacchus_gazebo)/config/robot.yaml"/>
-  <arg name="model_extras" default="$(find bacchus_gazebo)/urdf/simple_sensors.xacro"/> 
+  <arg name="model_extras" default="$(find bacchus_gazebo)/urdf/bacchus_sensors.xacro"/> 
   <!-- sensor suites:
     - simple_sensors
     - bacchus_sensors (2 hokuyo, 3 kinect v2, 1 velodyne)

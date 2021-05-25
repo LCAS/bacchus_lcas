@@ -92,10 +92,10 @@
       </link>
       <pose frame=''>6 -7.5 0 0 -0 0</pose>
     </model>
-    <physics name='default_physics' default='0' type='ode'>
-      <real_time_update_rate>200</real_time_update_rate>
+    <physics name='default_physics' default="true" type='ode'>
+      <real_time_update_rate>2000</real_time_update_rate>
       <real_time_factor>1</real_time_factor>
-      <max_step_size>0.005</max_step_size>
+      <max_step_size>0.0005</max_step_size>
     </physics>
     <gravity>0 0 -9.8</gravity>
     <magnetic_field>6e-06 2.3e-05 -4.2e-05</magnetic_field>

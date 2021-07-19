@@ -2,7 +2,7 @@
 <launch>
 
   <!-- Robot arguments -->
-  <arg name="fake_localisation" default="true" doc="fake the localisation, sets map_server and world_tf to true."/>
+  <arg name="fake_localisation" default="false" doc="fake the localisation, sets map_server and world_tf to true."/>
   <arg name="robot_name" default="thorvald_001"/>
   <!-- robot supported:
     - thorvald_001
@@ -13,7 +13,7 @@
     -->
   <!-- <arg name="robot_no" default="001"/> -->  <!-- unused-->
   <arg name="robot_model" default="$(find bacchus_gazebo)/config/robot.yaml"/>
-  <arg name="model_extras" default="$(find bacchus_gazebo)/urdf/bacchus_sensors.xacro"/> 
+  <arg name="model_extras" default="$(find bacchus_gazebo)/urdf/bacchus_sensors.xacro"/>
   <!-- sensor suites:
     - simple_sensors
     - bacchus_sensors (2 hokuyo, 3 kinect v2, 1 velodyne)
@@ -24,11 +24,19 @@
   <arg name="tf_prefix" default="$(arg robot_name)/"/>
   <arg name="use_carrot_planner" default="false"/>
   <arg name="use_omni" default="false"/>
+  <arg name="X_INIT" default="-11.0"/>
+  <arg name="Y_INIT" default="0.0"/>
+  <arg name="Z_INIT" default="0.0"/>
+  <arg name="loc_map_yaml" default="$(find bacchus_gazebo)/maps/cropped.yaml" />
+  <arg name="nav_map_yaml" default="$(find bacchus_gazebo)/maps/cropped.yaml" />
+  <arg name="map_2_loc_map_pose" default="0.0 0.0 0.0 0.0 0.0 0.0 1.0" />
 
 
   <!-- ############################## GAZEBO ############################## -->
-  <arg name="world_name" default="riseholme_digital_twin"/> <!-- Note: the world_name is with respect to GAZEBO_RESOURCE_PATH environmental variable -->
-  <arg name="world" default="$(find bacchus_gazebo)/worlds/$(arg world_name).world"/> <!-- Note: the world_name is with respect to GAZEBO_RESOURCE_PATH environmental variable -->
+  <arg name="world_name" default="vineyard_stage0_heightmap"/>
+  <!-- Note: the world_name is with respect to GAZEBO_RESOURCE_PATH environmental variable -->
+  <arg name="world" default="$(find bacchus_gazebo)/worlds/$(arg world_name).world"/>
+  <!-- Note: the world_name is with respect to GAZEBO_RESOURCE_PATH environmental variable -->
   <arg name="paused" default="false"/>
   <arg name="use_sim_time" default="true"/>
   <arg name="gui" default="true"/>
@@ -54,49 +62,58 @@
       <arg name="world_name" value="$(arg world)"/>
     </include>
 
-    <include file="$(find bacchus_gazebo)/launch/thorvald.launch" >
+    <include file="$(find bacchus_gazebo)/launch/thorvald.launch">
       <arg name="robot_name" value="$(arg robot_name)" />
-      <arg name="x" value="40.0" />
-      <arg name="y" value="-40.0" />
-      <arg name="z" value="0.8" />
+      <!-- <arg name="tf_prefix" value="" /> -->
+      <arg name="x" value="$(arg X_INIT)" />
+      <arg name="y" value="$(arg Y_INIT)" />
+      <arg name="z" value="$(arg Z_INIT)" />
       <arg name="robot_model" value="$(arg robot_model)"/>
       <arg name="model_extras" value="$(arg model_extras)"/>
     </include>
 
     <group if="$(arg fake_localisation)">
-      <node 
-        name="map_server"
-        pkg="map_server"
-        type= "map_server"
-        args="$(find bacchus_gazebo)/maps/riseholme.yaml" />
+      <!-- 
+        <node name="map_server" pkg="map_server" type= "map_server" args="$(find bacchus_gazebo)/maps/cropped.yaml" />
 
-      <node 
-        name="world_tf_map"
-        pkg="tf"
-        type= "static_transform_publisher"
-        args="0 0 0 0 0 0 /world /map 100" />
+        <node name="world_tf_map" pkg="tf" type= "static_transform_publisher" args="0 0 0 0 0 0 /world /map 100" />
 
-      <node 
-        name="world_tf_thorvald"
-        pkg="tf"
-        type= "static_transform_publisher"
-        args="0 0 0 0 0 0 /map /thorvald_001/odom 100" />
-    </group> 
+        <node name="world_tf_thorvald" pkg="tf" type= "static_transform_publisher" args="0 0 0 0 0 0 /map /thorvald_001/odom 100" />
+      
+      -->
+
+      <!-- .......................... Localization ........................... -->
+      <node name="loc_map_server" pkg="map_server" type="map_server" args="$(arg loc_map_yaml)" output="screen">
+        <remap from="map" to="loc_map" />
+        <param name="frame_id" value="loc_map" />
+      </node>
+
+      <node pkg="tf" type="static_transform_publisher" name="world_2_loc_map_tfb" args="$(arg map_2_loc_map_pose) world loc_map 1000" />
+
+      <node pkg="fake_localization" type="fake_localization" respawn="false" name="fake_loc">
+        <remap from="base_pose_ground_truth" to="/thorvald_001/odometry/gazebo" />
+        <param name="~odom_frame_id" type="string" value="thorvald_001/odom" />
+        <param name="~base_frame_id" type="string" value="thorvald_001/base_link" />
+        <param name="~global_frame_id" type="string" value="loc_map" />
+      </node>
+
+      <!-- ............................ Navigation ........................... -->
+      <node name="nav_map_server" pkg="map_server" type="map_server" args="$(arg nav_map_yaml)" output="screen">
+        <remap from="map" to="map" />
+        <param name="frame_id" value="world" />
+      </node>
+    </group>
 
     <group if="$(arg launch_move_base)">
       <include file="$(find bacchus_move_base)/launch/move_base_dwa_multisim.launch" />
     </group>
 
     <group if="$(arg launch_rviz)">
-      <node 
-        name="rviz"
-        pkg="rviz"
-        type= "rviz"
-        args="-d $(arg rviz_config_file)" />
+      <node name="rviz" pkg="rviz" type= "rviz" args="-d $(arg rviz_config_file)" />
     </group>
   </group>
 
-    
+
   <group if="$(eval robot_name == 'rb_sherpa')">
     <include file="$(find rbsherpa_sim_bringup)/launch/rbsherpa_complete.launch">
       <arg name="kinematics" value="omni" />
@@ -111,8 +128,18 @@
       <arg name="launch_arm_control" value="true" />
       <arg name="arm_controllers" value="arm_controller"/>
       <arg name="world_file" value="$(arg world)"/>
+      <arg name="x_init_pose" value="$(arg X_INIT)" />
+      <arg name="y_init_pose" value="$(arg Y_INIT)" />
+      <arg name="z_init_pose" value="$(arg Z_INIT)" />
+      <arg name="run_navigation" value="true"/>
     </include>
-    
+
+    <node name="map_server" pkg="map_server" type= "map_server" args="$(find bacchus_gazebo)/maps/cropped.yaml" />
+
+    <node name="world_tf_map" pkg="tf" type= "static_transform_publisher" args="0 0 0 0 0 0 /world /map 100" />
+
+    <node name="world_tf_thorvald" pkg="tf" type= "static_transform_publisher" args="0 0 0 0 0 0 /map /robot_odom 100" />
+
     <!-- TODO: it doesn't work if left here in this launch file -->
     <!-- $ ROS_NAMESPACE=robot roslaunch rbsherpa_moveit_ur10 demo.launch -->
     <!-- $ ROS_NAMESPACE=robot rosrun rqt_joint_trajectory_controller rqt_joint_trajectory_controller -->

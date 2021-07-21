@@ -1,5 +1,5 @@
 global_frame: map
-robot_base_frame: thorvald_001/base_link
+robot_base_frame: base_link
 
 #footprint parameter has been moved to footprints/robot_xxx_footprint.yaml.
 
@@ -34,7 +34,7 @@ obstacle_layer:
   track_unknown_space: true
   
   observation_sources: merged_laser_scan
-  merged_laser_scan: {sensor_frame: thorvald_001/base_link, data_type: LaserScan, topic: /thorvald_001/scan, marking: true, clearing: true}
+  merged_laser_scan: {sensor_frame: base_link, data_type: LaserScan, topic: /thorvald_001/scan, marking: true, clearing: true}
 
 global_obstacle_layer:
   max_obstacle_height: 2.0
@@ -47,5 +47,5 @@ global_obstacle_layer:
   track_unknown_space: true
 
   observation_sources: merged_laser_scan
-  merged_laser_scan: {sensor_frame: thorvald_001base_link, data_type: LaserScan, topic: /thorvald_001/scan, marking: false, clearing: false}
+  merged_laser_scan: {sensor_frame: base_link, data_type: LaserScan, topic: /thorvald_001/scan, marking: false, clearing: false}
 

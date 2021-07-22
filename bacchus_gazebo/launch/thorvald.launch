@@ -84,6 +84,10 @@
     <include file="$(find bacchus_move_base)/launch/move_base_dwa.launch" />
   </group>
 
+  <include file="$(find bacchus_move_base)/launch/corner_lasers_merger.launch">
+    <arg name="node_start_delay"  value="20.0"/>
+  </include>
+
   <group if="$(arg launch_rviz)">
     <node name="rviz" pkg="rviz" type= "rviz" args="-d $(arg rviz_config_file)" />
   </group>

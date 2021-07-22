@@ -52,16 +52,6 @@
   <!-- ############################### ROBOT ############################## -->
   <group if="$(eval robot_name == 'thorvald_001')">
 
-    <!-- <include file="$(find gazebo_ros)/launch/empty_world.launch">
-      <arg name="paused" value="$(arg paused)"/>
-      <arg name="use_sim_time" value="$(arg use_sim_time)"/>
-      <arg name="gui" value="$(arg gui)"/>
-      <arg name="headless" value="$(arg headless)"/>
-      <arg name="debug" value="$(arg debug)"/>
-      <arg name="verbose" value="$(arg verbose)"/>
-      <arg name="world_name" value="$(arg world)"/>
-    </include> -->
-
     <include file="$(find bacchus_gazebo)/launch/thorvald.launch">
       <arg name="robot_name"        value="$(arg robot_name)" />
       <arg name="tf_prefix"         value="" />
@@ -76,78 +66,20 @@
       <arg name="rviz_config_file"  value="$(arg rviz_config_file)"/>
     </include>
 
-    <!-- <group if="$(arg fake_localisation)">
-      
-      <node pkg="tf" type="static_transform_publisher" name="world_2_map_tfb" args="$(arg world_2_map_pose) world map 1000" />
-
-      <node name="nav_map_server" pkg="map_server" type="map_server" args="$(arg nav_map_yaml)" output="screen"/>
-      
-      <node pkg="fake_localization" type="fake_localization" respawn="false" name="fake_loc">
-        <remap from="base_pose_ground_truth" to="/thorvald_001/odometry/gazebo" />
-        <param name="~odom_frame_id" type="string" value="odom" />
-        <param name="~base_frame_id" type="string" value="base_link" />
-        <param name="~global_frame_id" type="string" value="map" />
-      </node>
-      
-    </group>
-
-    <group if="$(arg launch_move_base)">
-      <include file="$(find bacchus_move_base)/launch/move_base_dwa.launch" />
-    </group>
-
-    <group if="$(arg launch_rviz)">
-      <node name="rviz" pkg="rviz" type= "rviz" args="-d $(arg rviz_config_file)" />
-    </group> -->
   </group>
 
 
   <group unless="$(eval robot_name == 'thorvald_001')">
     <include file="$(find bacchus_gazebo)/launch/rbsherpa.launch">
-      <arg name="robot_name" value="$(arg robot_name)" />
+      <arg name="robot_name"        value="$(arg robot_name)" />
+      <arg name="world_file"        value="$(arg world)"/>
+      <arg name="x_init_pose"       value="$(arg X_INIT)" />
+      <arg name="y_init_pose"       value="$(arg Y_INIT)" />
+      <arg name="z_init_pose"       value="$(arg Z_INIT)" />
+      <arg name="run_navigation"    value="true"/>
     </include>
   </group>
 
-  <!-- <group if="$(eval robot_name == 'rb_sherpa_one_arm')">
-    <include file="$(find rbsherpa_sim_bringup)/launch/rbsherpa_complete.launch">
-      <arg name="robot_xacro" value="rbsherpa_std_ur10.urdf.xacro" />
-      <arg name="launch_arm_control" value="true" />
-      <arg name="arm_controllers" value="arm_controller"/>
-      <arg name="world_file" value="$(arg world)"/>
-      <arg name="x_init_pose" value="$(arg X_INIT)" />
-      <arg name="y_init_pose" value="$(arg Y_INIT)" />
-      <arg name="z_init_pose" value="$(arg Z_INIT)" />
-      <arg name="run_navigation" value="true"/>
-    </include> -->
-
-    <!-- <node name="map_server" pkg="map_server" type= "map_server" args="$(find bacchus_gazebo)/maps/cropped.yaml" />
-
-    <node name="world_tf_map" pkg="tf" type= "static_transform_publisher" args="0 0 0 0 0 0 /world /map 100" />
-
-    <node name="world_tf_thorvald" pkg="tf" type= "static_transform_publisher" args="0 0 0 0 0 0 /map /robot_odom 100" /> -->
-
-    <!-- TODO: it doesn't work if left here in this launch file -->
-    <!-- $ ROS_NAMESPACE=robot roslaunch rbsherpa_moveit_ur10 demo.launch -->
-    <!-- $ ROS_NAMESPACE=robot rosrun rqt_joint_trajectory_controller rqt_joint_trajectory_controller -->
-  <!-- </group> -->
-
-  <!-- <group if="$(eval robot_name == 'rb_sherpa_xl')">
-    <include file="$(find rbsherpa_sim_bringup)/launch/rbsherpa_complete.launch">
-      <arg name="robot_xacro" value="rbsherpa_xl.urdf.xacro" />
-      <arg name="kinematics" value="omni" />
-      <arg name="twist2ackermann" value="false" />
-      <arg name="world_file" value="$(arg world)"/>
-    </include>
-  </group>
-
-  <group if="$(eval robot_name == 'rb_sherpa_xl_two_arms')">
-    <include file="$(find rbsherpa_sim_bringup)/launch/rbsherpa_complete.launch">
-      <arg name="robot_xacro" value="rbsherpa_xl.urdf.xacro" />
-      <arg name="launch_arm_control" value="true" />
-      <arg name="world_file" value="$(arg world)"/>
-    </include>
-
-    <include file="$(find rbsherpa_xl_2ur10_e_moveit)/launch/rbsherpa_xl_moveit_config.launch"/>
-  </group> -->
 
 </launch>
 

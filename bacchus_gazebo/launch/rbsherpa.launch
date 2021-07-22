@@ -1,12 +1,21 @@
 <?xml version="1.0"?>
 <launch>
   <arg name="robot_name"/>
+  <arg name="x_init_pose"     default="0.0"/>
+  <arg name="y_init_pose"     default="0.0"/>
+  <arg name="z_init_pose"     default="0.0"/>
+  <arg name="world_file"      default=""/>
+  <arg name="run_navigation"  default="true"/>
 
   <group if="$(eval robot_name == 'rb_sherpa')">
     <include file="$(find rbsherpa_sim_bringup)/launch/rbsherpa_complete.launch">
-      <arg name="kinematics" value="omni" />
+      <arg name="kinematics"      value="omni" />
       <arg name="twist2ackermann" value="false" />
-      <arg name="world_file" value="$(arg world)"/>
+      <arg name="world_file"      value="$(arg world_file)"/>
+      <arg name="x_init_pose"     value="$(arg x_init_pose)" />
+      <arg name="y_init_pose"     value="$(arg y_init_pose)" />
+      <arg name="z_init_pose"     value="$(arg z_init_pose)" />
+      <arg name="run_navigation"  value="$(arg run_navigation)"/>
     </include>
   </group>
 

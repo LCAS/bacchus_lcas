@@ -24,16 +24,16 @@
   <arg name="tf_prefix" default="$(arg robot_name)/"/>
   <arg name="use_carrot_planner" default="false"/>
   <arg name="use_omni" default="false"/>
-  <arg name="X_INIT" default="-11.0"/>
-  <arg name="Y_INIT" default="0.0"/>
-  <arg name="Z_INIT" default="0.0"/>
-  <arg name="loc_map_yaml" default="$(find bacchus_gazebo)/maps/cropped.yaml" />
-  <arg name="nav_map_yaml" default="$(find bacchus_gazebo)/maps/cropped.yaml" />
+  <arg name="X_INIT" default="40.0"/>
+  <arg name="Y_INIT" default="-40.0"/>
+  <arg name="Z_INIT" default="0.8"/>
+  <arg name="loc_map_yaml" default="$(find bacchus_gazebo)/maps/riseholme.yaml" />
+  <arg name="nav_map_yaml" default="$(find bacchus_gazebo)/maps/riseholme.yaml" />
   <arg name="world_2_map_pose" default="0.0 0.0 0.0 0.0 0.0 0.0 1.0" />
 
 
   <!-- ############################## GAZEBO ############################## -->
-  <arg name="world_name" default="vineyard_stage0_heightmap"/>
+  <arg name="world_name" default="riseholme_digital_twin"/>
   <!-- Note: the world_name is with respect to GAZEBO_RESOURCE_PATH environmental variable -->
   <arg name="world" default="$(find bacchus_gazebo)/worlds/$(arg world_name).world"/>
   <!-- Note: the world_name is with respect to GAZEBO_RESOURCE_PATH environmental variable -->

@@ -16,6 +16,7 @@ find_package(catkin REQUIRED COMPONENTS
   velodyne_description
   #velodyne_gazebo_plugins
   kinect2_description
+  fake_localization
 )
 
 find_package (gazebo REQUIRED)

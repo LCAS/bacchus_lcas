@@ -84,7 +84,7 @@
     <include file="$(find bacchus_move_base)/launch/move_base_dwa.launch" />
   </group>
 
-  <group if="$(arg launch_rviz)" ns="$(arg robot_name)">
+  <group if="$(arg launch_rviz)">
     <node name="rviz" pkg="rviz" type= "rviz" args="-d $(arg rviz_config_file)" />
   </group>
 </launch>

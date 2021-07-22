@@ -13,7 +13,7 @@
   </node>
 
   <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen" clear_params="true">
-    <remap from="/cmd_vel" to="/nav_vel"/>
+    <remap from="/cmd_vel" to="/thorvald_001/nav_vel"/>
     <remap from="odom" to="/thorvald_001/odometry/gazebo"/>
 
     <!--Parameters-->

@@ -1,6 +1,15 @@
 <?xml version="1.0"?>
 
 <launch>
+  <!-- Simulation params -->
+  <arg name="paused" default="false"/>
+  <arg name="use_sim_time" default="true"/>
+  <arg name="gui" default="true"/>
+  <arg name="headless" default="false"/>
+  <arg name="debug" default="false"/>
+  <arg name="verbose" default="false"/>
+  <arg name="world_name" default=""/>
+  <!-- Robot params -->
   <arg name="robot_name" />
   <arg name="x" default="0.0"/>
   <arg name="y" default="0.0"/>
@@ -8,6 +17,25 @@
   <arg name="tf_prefix" default="$(arg robot_name)/" />
   <arg name="robot_model" default="$(find bacchus_gazebo)/config/robot.yaml"/>
   <arg name="model_extras" default="$(find bacchus_gazebo)/urdf/sensors.xacro"/>
+  <arg name="fake_localisation" default="true"/>
+  <arg name="world_2_map_pose" default="0.0 0.0 0.0 0.0 0.0 0.0 1.0" />
+  <arg name="nav_map_yaml" default="" />
+  <arg name="launch_move_base" default="true"/>
+  <arg name="launch_rviz" default="true"/>
+  <arg name="rviz_config_file" default=""/>
+
+  <!-- Launch Gazebo simulatiion -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="paused" value="$(arg paused)"/>
+    <arg name="use_sim_time" value="$(arg use_sim_time)"/>
+    <arg name="gui" value="$(arg gui)"/>
+    <arg name="headless" value="$(arg headless)"/>
+    <arg name="debug" value="$(arg debug)"/>
+    <arg name="verbose" value="$(arg verbose)"/>
+    <arg name="world_name" value="$(arg world_name)"/>
+  </include>
+
+  <!-- Lauch robot model -->
   <group ns="$(arg robot_name)">
 
     <!-- model bringup -->
@@ -33,5 +61,30 @@
     <!-- spawn robot in gazebo -->
     <node pkg="gazebo_ros" type="spawn_model" name="spawner" args="-urdf -x $(arg x) -y $(arg y) -z $(arg z) -param robot_description -model $(arg robot_name)" />
     <node pkg="bacchus_gazebo" type="sprayer.py" name="sprayer" />
+  </group>
+
+  <!-- Localisation -->
+  <group if="$(arg fake_localisation)">
+      
+    <node pkg="tf" type="static_transform_publisher" name="world_2_map_tfb" args="$(arg world_2_map_pose) world map 1000" />
+
+    <node name="nav_map_server" pkg="map_server" type="map_server" args="$(arg nav_map_yaml)" output="screen"/>
+    
+    <node pkg="fake_localization" type="fake_localization" respawn="false" name="fake_loc">
+      <remap from="base_pose_ground_truth" to="/thorvald_001/odometry/gazebo" />
+      <param name="~odom_frame_id" type="string" value="odom" />
+      <param name="~base_frame_id" type="string" value="base_link" />
+      <param name="~global_frame_id" type="string" value="map" />
+    </node>
+    
+  </group>
+
+  <!-- Navigation -->
+  <group if="$(arg launch_move_base)">
+    <include file="$(find bacchus_move_base)/launch/move_base_dwa.launch" />
+  </group>
+
+  <group if="$(arg launch_rviz)" ns="$(arg robot_name)">
+    <node name="rviz" pkg="rviz" type= "rviz" args="-d $(arg rviz_config_file)" />
   </group>
 </launch>

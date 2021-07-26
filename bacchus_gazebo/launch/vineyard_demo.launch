@@ -3,7 +3,7 @@
 
   <!-- Robot arguments -->
   <arg name="fake_localisation" default="true" doc="fake the localisation, sets map_server and world_tf to true."/>
-  <arg name="robot_name" default="thorvald_001"/>
+  <arg name="robot_name" default="rb_sherpa_xl"/>
   <!-- robot supported:
     - thorvald_001
     - rb_sherpa
@@ -26,7 +26,7 @@
   <arg name="use_omni" default="false"/>
   <arg name="X_INIT" default="40.0"/>
   <arg name="Y_INIT" default="-40.0"/>
-  <arg name="Z_INIT" default="0.8"/>
+  <arg name="Z_INIT" default="1.2"/>
   <arg name="loc_map_yaml" default="$(find bacchus_gazebo)/maps/riseholme.yaml" />
   <arg name="nav_map_yaml" default="$(find bacchus_gazebo)/maps/riseholme.yaml" />
   <arg name="world_2_map_pose" default="0.0 0.0 0.0 0.0 0.0 0.0 1.0" />
@@ -36,7 +36,6 @@
   <arg name="world_name" default="riseholme_digital_twin"/>
   <!-- Note: the world_name is with respect to GAZEBO_RESOURCE_PATH environmental variable -->
   <arg name="world" default="$(find bacchus_gazebo)/worlds/$(arg world_name).world"/>
-  <!-- Note: the world_name is with respect to GAZEBO_RESOURCE_PATH environmental variable -->
   <arg name="paused" default="false"/>
   <arg name="use_sim_time" default="true"/>
   <arg name="gui" default="true"/>
@@ -77,6 +76,8 @@
       <arg name="y_init_pose"       value="$(arg Y_INIT)" />
       <arg name="z_init_pose"       value="$(arg Z_INIT)" />
       <arg name="run_navigation"    value="true"/>
+      <!-- <arg name="fake_localisation" value="$(arg fake_localisation)"/> -->
+      <arg name="nav_map_yaml"      value="$(arg nav_map_yaml)"/>
     </include>
   </group>
 

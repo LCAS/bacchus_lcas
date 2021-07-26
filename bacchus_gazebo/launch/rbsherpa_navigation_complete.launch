@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<launch>
+
+  <!-- - - - - - --> 
+  <!--   ROBOT   -->
+  <!-- - - - - - --> 
+  <arg name="robot_id" default="$(optenv ROBOT_ID robot)"/>
+  <arg name="prefix" default="$(arg robot_id)_"/>
+  <arg name="has_safety_controller" default="$(optenv HAS_SAFETY_CONTROLLER false)"/>
+  <arg name="has_rear_laser" default="$(optenv ROBOT_HAS_REAR_LASER true)"/>
+  <arg name="run_move_base" default="$(optenv ROBOT_RUN_MOVE_BASE true)"/>
+  <arg name="run_move" default="$(optenv ROBOT_RUN_MOVE false)"/>
+
+
+  <!-- - - - - - --> 
+  <!--   FILES   -->
+  <!-- - - - - - --> 
+  <arg name="navigation_package" default="$(optenv NAVIGATION_PACKAGE rbsherpa_navigation)"/>
+  <arg name="move_base_file" default="$(eval find(navigation_package) + '/launch/move_base.launch')"/>
+  <arg name="move_file" default="$(eval find(navigation_package) + '/launch/move.launch')"/>
+  <arg name="scan_filter_file" default="$(eval find(navigation_package) + '/launch/scan_filter.launch')"/>
+  <arg name="rgbd_to_laserscan_file" default="$(eval find(navigation_package) + '/launch/rgbd_to_laserscan.launch')"/>
+  <arg name="run_laser_filters" default="true"/>
+  <arg name="map_server_file" default=""/>
+   
+  <!-- - - - - - --> 
+  <!--  FRAMES   -->
+  <!-- - - - - - --> 
+  <arg name="publish_tf" default="false" />
+  <!-- Camera frames -->
+  <arg name="camera_dock_frame" default="$(arg prefix)docking_station_marker"/>
+  <arg name="camera_contact_dock_frame" default="$(arg prefix)docking_station_marker_contact"/>
+  <arg name="camera_contact_dock_frame_for_base" default="$(arg prefix)docking_station_marker_for_base_frame"/>
+  <!-- Laser frames -->
+  <arg name="laser_dock_frame" default="$(arg prefix)docking_station_laser_filtered"/>
+  <arg name="laser_contact_dock_frame" default="$(arg prefix)docking_station_laser_contact"/>
+  <arg name="laser_contact_dock_frame_for_base" default="$(arg prefix)docking_station_laser_for_base_frame"/>
+  <!-- Overwrite frames, should not be used unless reasonable exception -->
+  <arg name="overwrite_frames" default="false" />
+  <arg name="odom_frame" default="$(arg prefix)odom"/>
+  <arg name="base_frame" default="$(arg prefix)base_footprint"/>
+  <arg name="odom_frame_param_name" default="fixed_frame" />
+  <arg name="base_frame_param_name" default="robot_base_frame" />
+
+
+  <!-- - - - - - --> 
+  <!--   NODES   -->
+  <!-- - - - - - --> 
+  <group ns="$(arg robot_id)">
+
+    <include if="$(arg run_move_base)" file="$(arg move_base_file)">
+    <arg name="has_safety_controller"       value="$(arg has_safety_controller)"/>
+      <arg name="front_scan_topic"          value="/robot/front_laser/scan_filtered"/>
+      <arg name="rear_scan_topic"           value="/robot/rear_laser/scan_filtered"/>
+    </include>
+
+    <include if="$(arg run_move)" file="$(arg move_file)">
+      <arg name="has_safety_controller" value="$(arg has_safety_controller)"/>
+    </include>
+
+    <include if="$(arg run_laser_filters)" file="$(arg scan_filter_file)">
+      <arg name="front_laser_scan" value="front_laser"/>
+      <arg name="rear_laser_scan" value="rear_laser"/>
+      <arg name="has_rear_laser" value="$(arg has_rear_laser)"/>
+    </include>
+
+  </group>
+
+</launch>

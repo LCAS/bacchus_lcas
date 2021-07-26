@@ -8,6 +8,7 @@
   <!-- Example:  -->
   <!-- <maintainer email="jane.doe@example.com">Jane Doe</maintainer> -->
   <maintainer email="marc@hanheide.net">mhanheide</maintainer>
+  <maintainer email="rpolvara@lincoln.ac.uk">Riccardo Polvara</maintainer>
 
 
   <!-- One license tag required, multiple allowed, one license per tag -->
@@ -62,6 +63,7 @@
   <build_depend>kinect2_description</build_depend>
   <build_depend>unzip</build_depend>
   <build_depend>curl</build_depend>
+  <build_depend>fake_localization</build_depend>
 
   <build_export_depend>nav_msgs</build_export_depend>
   <build_export_depend>rospy</build_export_depend>
@@ -72,6 +74,7 @@
   <build_export_depend>velodyne_description</build_export_depend>
   <build_export_depend>velodyne_gazebo_plugins</build_export_depend>
   <build_export_depend>kinect2_description</build_export_depend>
+  <build_export_depend>fake_localization</build_export_depend>
 
   <exec_depend>nav_msgs</exec_depend>
   <exec_depend>rospy</exec_depend>
@@ -89,8 +92,8 @@
   <exec_depend>tf</exec_depend>
   <exec_depend>rviz</exec_depend>
   <exec_depend>thorvald_description</exec_depend>
-  
   <exec_depend>map_server</exec_depend>
+  <exec_depend>fake_localization</exec_depend>
 
 
   <!-- The export tag contains other, unspecified, tags -->

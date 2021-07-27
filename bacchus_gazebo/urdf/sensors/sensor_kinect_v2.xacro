@@ -43,7 +43,7 @@
     <joint name="$(arg robot_name)_${kinect2_name}_rgb_joint" type="fixed">
       <parent link="$(arg tf_prefix)${kinect2_name}_link" />
       <child link="$(arg tf_prefix)${kinect2_name}_rgb_optical_frame" />
-      <origin xyz="0 0.0125 0.016" rpy="-1.57 0 -1.57" />
+      <origin xyz="0 0.05 0.016" rpy="-1.57 0 -1.57" />
     </joint>
 
     <link name="$(arg tf_prefix)${kinect2_name}_depth_optical_frame" />
@@ -51,7 +51,7 @@
     <joint name="$(arg robot_name)_${kinect2_name}_depth_joint" type="fixed">
       <parent link="$(arg tf_prefix)${kinect2_name}_link" />
       <child link="$(arg tf_prefix)${kinect2_name}_depth_optical_frame" />
-      <origin xyz="0 -0.0125 0.016" rpy="-1.57 0 -1.57" />
+      <origin xyz="0 -0.05 0.016" rpy="-1.57 0 -1.57" />
     </joint>
 
     <gazebo reference="$(arg tf_prefix)${kinect2_name}_link">
@@ -61,8 +61,8 @@
         <camera>
           <horizontal_fov>${70.0*3.14/180.0}</horizontal_fov>
           <image>
-            <width>512</width>
-            <height>424</height>
+            <width>640</width>
+            <height>480</height>
             <format>L8</format>
           </image>
           <clip>
@@ -82,10 +82,10 @@
           <cameraName>${kinect2_name}_sensor</cameraName>
           <alwaysOn>true</alwaysOn>
           <updateRate>30.0</updateRate>
-          <imageTopicName>sd/image_ir_rect</imageTopicName>
-          <depthImageTopicName>sd/image_depth_rect</depthImageTopicName>
-          <pointCloudTopicName>sd/points</pointCloudTopicName>
-          <cameraInfoTopicName>sd/camera_info</cameraInfoTopicName>
+          <imageTopicName>ir/image_ir_rect</imageTopicName>
+          <depthImageTopicName>ir/depth/image_raw</depthImageTopicName>
+          <pointCloudTopicName>ir/points</pointCloudTopicName>
+          <cameraInfoTopicName>ir/camera_info</cameraInfoTopicName>
           <!--<depthImageCameraInfoTopicName>depth/camera_info</depthImageCameraInfoTopicName>-->
           <frameName>/${kinect2_name}_depth_optical_frame</frameName>
           <pointCloudCutoff>0.5</pointCloudCutoff>
@@ -108,8 +108,8 @@
         <camera name="${kinect2_name}_camera">
           <horizontal_fov>${84.1*3.14/180.0}</horizontal_fov>
           <image>
-            <width>1920</width>
-            <height>1080</height>
+            <width>640</width>
+            <height>480</height>
             <format>R8G8B8</format>
           </image>
           <clip>
@@ -129,8 +129,8 @@
           <alwaysOn>true</alwaysOn>
           <updateRate>30.0</updateRate>
           <cameraName>${kinect2_name}_camera</cameraName>
-          <imageTopicName>hd/image_color_rect</imageTopicName>
-          <cameraInfoTopicName>hd/camera_info</cameraInfoTopicName>
+          <imageTopicName>rgb/image_raw</imageTopicName>
+          <cameraInfoTopicName>rgb/camera_info</cameraInfoTopicName>
           <frameName>/${kinect2_name}_rgb_optical_frame</frameName>
           <baseline>0.1</baseline>
           <distortionK1>0.0</distortionK1>

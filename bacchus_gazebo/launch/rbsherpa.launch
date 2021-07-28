@@ -87,8 +87,8 @@
       <param name="~odom_frame_id" type="string" value="robot_odom" />
       <param name="~base_frame_id" type="string" value="robot_base_link" />
       <param name="~global_frame_id" type="string" value="robot_map" />
-      <param name="~delta_x" value="-40.0" />
-      <param name="~delta_y" value="40.0" />
+      <param name="~delta_x" value="$(eval -1. * arg('x_init_pose'))"/>
+      <param name="~delta_y" value="$(eval -1. * arg('y_init_pose'))"/>
     </node>
     
   </group>

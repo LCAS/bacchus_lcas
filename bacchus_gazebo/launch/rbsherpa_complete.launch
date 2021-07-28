@@ -34,7 +34,6 @@
   <arg name="y_init_pose" default="0"/>
   <arg name="z_init_pose" default="0"/>
   <arg name="launch_base_hw_sim" default="false"/>
-  <arg name="node_start_delay" default="20.0" />
 
   <!-- Arm configuration-->
   <arg name="launch_arm_control" default="false"/>
@@ -63,7 +62,7 @@
   </include>
 
   <!-- launch robot -->
-  <include if="$(arg run_robot)" file="$(eval find(sim_bringup_package) + '/launch/run_robot.launch')" launch-prefix="bash -c 'sleep $(arg node_start_delay); $0 $@' " >
+  <include if="$(arg run_robot)" file="$(eval find(sim_bringup_package) + '/launch/run_robot.launch')" >
     <arg name="simulation_package" value="$(arg simulation_package)"/>
     <arg name="config_package" value="$(arg config_package)"/>
     <arg name="robot_id" value="$(arg robot_id)"/>
@@ -102,7 +101,7 @@
   </group> -->
 
   <!-- navigation launch file -->
-  <include if="$(arg run_navigation)" file="$(find rbsherpa_navigation)/launch/navigation_complete.launch">
+  <include if="$(arg run_navigation)" file="$(find bacchus_gazebo)/launch/rbsherpa_navigation_complete.launch">
 		<arg name="prefix" value="$(arg prefix)"/>
 	</include>
 

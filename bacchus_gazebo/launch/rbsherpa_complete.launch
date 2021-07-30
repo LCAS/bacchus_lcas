@@ -89,16 +89,15 @@
   </include>
 
   <!-- gps_localization launch file -->
-  <!-- <group if="$(arg run_localization)" ns="$(arg robot_id)">   -->
-  	<!-- <include file="$(find rbsherpa_localization)/launch/robot_localization_world.launch"> -->
-    <!-- <include file="$(find rbsherpa_localization)/launch/localization_complete.launch">
+  <group if="$(arg run_localization)" ns="$(arg robot_id)">  
+    <include file="$(find bacchus_gazebo)/launch/rbsherpa_localization_complete.launch">
       <arg name="prefix" value="$(arg prefix)"/>
       <arg name="map_file" value="$(arg map_file)"/>
       <arg name="x_init_pose" value="$(arg x_init_pose)"/>
       <arg name="y_init_pose" value="$(arg y_init_pose)"/>
       <arg name="z_init_pose" value="$(arg z_init_pose)"/>
     </include>
-  </group> -->
+  </group>
 
   <!-- navigation launch file -->
   <include if="$(arg run_navigation)" file="$(find bacchus_gazebo)/launch/rbsherpa_navigation_complete.launch">

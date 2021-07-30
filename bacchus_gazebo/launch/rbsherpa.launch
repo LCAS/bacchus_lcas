@@ -7,9 +7,8 @@
   <arg name="world_file"        default=""/>
   <arg name="run_navigation"    default="true"/>
   <arg name="fake_localisation" default="true"/>
-  <!-- <arg name="run_localization"  if="$(arg fake_localisation)" default="false"/>
-  <arg name="run_localization"  unless="$(arg fake_localisation)" default="true"/> -->
-  <!-- <arg name="run_localization"  default="false"/> -->
+  <arg name="run_localization"  if="$(arg fake_localisation)" default="false"/>
+  <arg name="run_localization"  unless="$(arg fake_localisation)" default="true"/>
   <arg name="world_2_map_pose"  default="0.0 0.0 0.0 0.0 0.0 0.0 1.0" />
   <arg name="nav_map_yaml"      default="" />
   <arg name="rviz_config_path"  default="$(find bacchus_gazebo)/rviz/rbsherpa.rviz"/>
@@ -24,8 +23,8 @@
       <arg name="y_init_pose"       value="$(arg y_init_pose)" />
       <arg name="z_init_pose"       value="$(arg z_init_pose)" />
       <arg name="run_navigation"    value="$(arg run_navigation)"/>
-      <!-- <arg name="run_localization"  value="$(arg run_localization)"/> -->
-      <!-- <arg name="map_file"          value="$(arg nav_map_yaml)"/> -->
+      <arg name="run_localization"  value="$(arg run_localization)"/>
+      <arg name="map_file"          value="$(arg nav_map_yaml)"/>
       <arg name="rviz_config_path"  value="$(find bacchus_gazebo)/rviz/rbsherpa.rviz"/>
       <arg name="paused"            value="$(arg paused)"/>
     </include>
@@ -60,7 +59,7 @@
       <arg name="y_init_pose"         value="$(arg y_init_pose)" />
       <arg name="z_init_pose"         value="$(arg z_init_pose)" />
       <arg name="run_navigation"      value="$(arg run_navigation)"/>
-      <!-- <arg name="run_localization"   value="$(arg run_localization)"/> -->
+      <arg name="run_localization"   value="$(arg run_localization)"/>
       <arg name="map_file"            value="$(arg nav_map_yaml)"/>
       <arg name="rviz_config_path"    value="$(find bacchus_gazebo)/rviz/rbsherpa.rviz"/>
       <arg name="paused"              value="$(arg paused)"/>

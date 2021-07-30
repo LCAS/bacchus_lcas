@@ -21,7 +21,6 @@
   <arg name="scan_filter_file" default="$(eval find(navigation_package) + '/launch/scan_filter.launch')"/>
   <arg name="rgbd_to_laserscan_file" default="$(eval find(navigation_package) + '/launch/rgbd_to_laserscan.launch')"/>
   <arg name="run_laser_filters" default="true"/>
-  <arg name="map_server_file" default=""/>
    
   <!-- - - - - - --> 
   <!--  FRAMES   -->

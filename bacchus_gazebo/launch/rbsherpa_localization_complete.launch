@@ -9,14 +9,14 @@
   <arg name="y_init_pose" default="0.0"/>
   <arg name="z_init_pose" default="0.0"/>
   <!-- What localization config package to use -->
-  <arg name="localization_package" default="$(optenv LOCALIZATION_PACKAGE rbsherpa_localization)"/>
+  <arg name="localization_package" default="$(optenv LOCALIZATION_PACKAGE bacchus_move_base)"/>
   
   <arg name="map" default="empty/map_empty.yaml"/>
   <arg name="map_file" default="$(eval find(localization_package)+'/maps/' + map)" />
 
   <!-- Files -->
-  <arg name="localization_system_file" default="$(eval find(localization_package) + '/launch/amcl.launch')"/>
-  <arg name="map_server_file" default="$(eval find(localization_package) + '/launch/map_server.launch')"/>
+  <arg name="localization_system_file" default="$(eval find(localization_package) + '/launch/rbsherpa_amcl.launch')"/>
+  <arg name="map_server_file" default="$(eval find(localization_package) + '/launch/rbsherpa_map_server.launch')"/>
 
   <group ns="$(arg robot_id)">
 
@@ -25,7 +25,7 @@
       <arg name="y_init_pose"   value="$(arg y_init_pose)"/>
       <arg name="z_init_pose"   value="$(arg z_init_pose)"/>
       <!-- <arg name="global_frame"  value="map"/> -->
-      <arg name="map_topic"     value="/robot/robot/map"/>
+      <arg name="map_topic"     value="/map"/>
       <arg name="scan_topic"    value="/robot/front_laser/scan"/>
     </include>
 

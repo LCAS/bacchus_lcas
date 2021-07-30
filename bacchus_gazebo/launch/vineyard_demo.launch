@@ -3,7 +3,7 @@
 
   <!-- Robot arguments -->
   <arg name="fake_localisation" default="true" doc="fake the localisation, sets map_server and world_tf to true."/>
-  <arg name="riseholme_dt" default="true"/>
+  <arg name="riseholme_dt" default="false"/>
   <arg name="robot_name" default="rb_sherpa_xl"/>
   <!-- robot supported:
     - thorvald_001
@@ -45,7 +45,7 @@
   <arg name="world_name" value="riseholme_digital_twin" if="$(arg riseholme_dt)"/>
   <!-- Note: the world_name is with respect to GAZEBO_RESOURCE_PATH environmental variable -->
   <arg name="world" default="$(find bacchus_gazebo)/worlds/$(arg world_name).world"/>
-  <arg name="paused" default="false"/>
+  <arg name="paused" default="true"/>
   <arg name="use_sim_time" default="true"/>
   <arg name="gui" default="true"/>
   <arg name="debug" default="false"/>
@@ -91,6 +91,7 @@
       <arg name="run_navigation"    value="true"/>
       <arg name="fake_localisation" value="$(arg fake_localisation)"/>
       <arg name="nav_map_yaml"      value="$(arg nav_map_yaml)"/>
+      <arg name="paused"            value="$(arg paused)"/>
     </include>
   </group>
 

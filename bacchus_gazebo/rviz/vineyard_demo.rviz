@@ -5,6 +5,7 @@ Panels:
     Property Tree Widget:
       Expanded:
         - /Status1
+        - /Maps1
       Splitter Ratio: 0.5602241158485413
     Tree Height: 684
   - Class: rviz/Selection
@@ -428,12 +429,12 @@ Visualization Manager:
           Class: rviz/Map
           Color Scheme: costmap
           Draw Behind: false
-          Enabled: false
+          Enabled: true
           Name: GlobalCostMap
-          Topic: /thorvald_001/move_base/global_costmap/costmap
+          Topic: /move_base/global_costmap/costmap
           Unreliable: false
           Use Timestamp: false
-          Value: false
+          Value: true
       Enabled: true
       Name: Maps
   Enabled: true
@@ -464,25 +465,25 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/XYOrbit
-      Distance: 43.40023422241211
+      Distance: 27.037574768066406
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 4.368442535400391
-        Y: -8.24934196472168
+        X: 50.24753189086914
+        Y: -44.66743087768555
         Z: 4.0084050851874053e-5
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 1.4353967905044556
+      Pitch: 1.0097968578338623
       Target Frame: <Fixed Frame>
       Value: XYOrbit (rviz)
-      Yaw: 4.705442428588867
+      Yaw: 4.325432777404785
     Saved: ~
 Window Geometry:
   Displays:

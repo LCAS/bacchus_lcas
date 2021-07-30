@@ -13,6 +13,7 @@
   <arg name="world_2_map_pose"  default="0.0 0.0 0.0 0.0 0.0 0.0 1.0" />
   <arg name="nav_map_yaml"      default="" />
   <arg name="rviz_config_path"  default="$(find bacchus_gazebo)/rviz/rbsherpa.rviz"/>
+  <arg name="paused"            default="false"/>
 
   <group if="$(eval robot_name == 'rb_sherpa')">
     <include file="$(find rbsherpa_sim_bringup)/launch/rbsherpa_complete.launch">
@@ -24,8 +25,9 @@
       <arg name="z_init_pose"       value="$(arg z_init_pose)" />
       <arg name="run_navigation"    value="$(arg run_navigation)"/>
       <!-- <arg name="run_localization"  value="$(arg run_localization)"/> -->
-      <arg name="map_file"          value="$(arg nav_map_yaml)"/>
+      <!-- <arg name="map_file"          value="$(arg nav_map_yaml)"/> -->
       <arg name="rviz_config_path"  value="$(find bacchus_gazebo)/rviz/rbsherpa.rviz"/>
+      <arg name="paused"            value="$(arg paused)"/>
     </include>
   </group>
 
@@ -49,17 +51,19 @@
 
   <group if="$(eval robot_name == 'rb_sherpa_xl')">
     <include file="$(find bacchus_gazebo)/launch/rbsherpa_complete.launch">
-      <arg name="robot_xacro"       value="rbsherpa_xl.urdf.xacro" />
-      <arg name="kinematics"        value="omni" />
-      <arg name="twist2ackermann"   value="false" />
-      <arg name="world_file"        value="$(arg world_file)"/>
-      <arg name="x_init_pose"       value="$(arg x_init_pose)" />
-      <arg name="y_init_pose"       value="$(arg y_init_pose)" />
-      <arg name="z_init_pose"       value="$(arg z_init_pose)" />
-      <arg name="run_navigation"    value="$(arg run_navigation)"/>
-      <!-- <arg name="run_localization"  value="$(arg run_localization)"/> -->
-      <arg name="map_file"          value="$(arg nav_map_yaml)"/>
-      <arg name="rviz_config_path"  value="$(find bacchus_gazebo)/rviz/rbsherpa.rviz"/>
+      <arg name="robot_xacro"         value="rbsherpa_xl.urdf.xacro" />
+      <arg name="launch_arm_control"  value="false" />
+      <arg name="kinematics"          value="omni" />
+      <arg name="twist2ackermann"     value="false" />
+      <arg name="world_file"          value="$(arg world_file)"/>
+      <arg name="x_init_pose"         value="$(arg x_init_pose)" />
+      <arg name="y_init_pose"         value="$(arg y_init_pose)" />
+      <arg name="z_init_pose"         value="$(arg z_init_pose)" />
+      <arg name="run_navigation"      value="$(arg run_navigation)"/>
+      <!-- <arg name="run_localization"   value="$(arg run_localization)"/> -->
+      <arg name="map_file"            value="$(arg nav_map_yaml)"/>
+      <arg name="rviz_config_path"    value="$(find bacchus_gazebo)/rviz/rbsherpa.rviz"/>
+      <arg name="paused"              value="$(arg paused)"/>
     </include>
   </group>
 

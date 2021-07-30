@@ -14,7 +14,7 @@
   <arg name="Vis_MinInliers"            default="15"/>   <!-- 3D visual words minimum inliers to accept loop closure -->
   <arg name="Vis_InlierDistance"        default="0.1"/>  <!-- 3D visual words correspondence distance -->
   <arg name="GridGlobal_MinSize"        default="20"/>
-  <arg name="Reg_Force3DoF"             default="true"/>
+  <arg name="Reg_Force3DoF"             default="true"/> <!--force the visual odometry to track the vehicle in only 3DOF (x,y,theta)-->
 
 
   <!-- ======================= -->
@@ -98,9 +98,10 @@
         <param name="database_path" type="string" value="~/.ros/rtabmap.db"/>
         <param name="frame_id"      type="string" value="base_link"/>
         <param name="wait_for_transform_duration" type="double"   value="0.2"/>
-        <param name="subscribe_depth"             type="bool" value="true"/>
-        <param name="subscribe_scan"              type="bool" value="true"/>
-        <param name="map_negative_poses_ignored"  type="bool" value="true"/>
+        <param name="subscribe_depth"             type="bool"     value="true"/>
+        <param name="subscribe_scan"              type="bool"     value="true"/>
+        <param name="map_negative_poses_ignored"  type="bool"     value="true"/>
+        <param name="publish_tf"                  type="bool"     value="false"/>
 
         <!-- inputs -->
         <remap from="scan"            to="/thorvald_001/scan"/>
@@ -109,7 +110,7 @@
   	    <remap from="rgb/camera_info" to="$(arg camera_info_topic)"/>
 
         <!-- Fix odom covariance as in simulation the covariance in /odom topic is high (0.1 for linear and 0.05 for angular) -->
-        <param unless="$(arg rgbd_odometry)" name="odom_frame_id" value="odom_tt"/>
+        <param unless="$(arg rgbd_odometry)" name="odom_frame_id" value="odom"/>
         <param unless="$(arg rgbd_odometry)" name="odom_tf_linear_variance" value="0.001"/>
         <param unless="$(arg rgbd_odometry)" name="odom_tf_angular_variance" value="0.001"/>
     
@@ -133,6 +134,7 @@
         <param name="GridGlobal/MinSize"           type="string" value="$(arg GridGlobal_MinSize)"/>
         <param name="Grid/FromDepth"               type="string" value="true"/>
 
+
         <!-- localization mode -->
         <param     if="$(arg localization)" name="Mem/IncrementalMemory" type="string" value="false"/>
         <param unless="$(arg localization)" name="Mem/IncrementalMemory" type="string" value="true"/> 
@@ -147,6 +149,7 @@
         <param name="Reg/Force3DoF"               type="string" value="true"/>
         <param name="Vis/InlierDistance"          type="string" value="0.05"/>
         <param name="Grid/FromDepth"              type="string" value="true"/>
+        <param name="publish_tf"                  type="bool"     value="false"/>
         
         <remap from="rgb/image"       to="$(arg rgb_topic)"/>
         <remap from="depth/image"     to="$(arg depth_topic)"/>
@@ -159,6 +162,7 @@
         <param name="subscribe_scan"              type="bool" value="true"/>
         <param name="frame_id"                    type="string" value="base_link"/>
         <param name="wait_for_transform_duration" type="double" value="0.7"/>
+        <param name="publish_tf"                  type="bool"     value="false"/>
       
         <remap from="rgb/image"       to="$(arg rgb_topic)"/>
         <remap from="depth/image"     to="$(arg depth_topic)"/>

@@ -1,16 +1,16 @@
 lio_sam:
 
   # Topics
-  pointCloudTopic: "/thorvald_001/velodyne_points" #"/velodyne_points" #"/os_cloud_node/points" #"/velodyne_points"               # Point cloud data
-  imuTopic: "/thorvald_001/imu_raw" #"/zed2/zed_node/imu/data_raw" #"/imu_um6/data" #"/imu/data"                        # IMU data
+  pointCloudTopic: "/thorvald_001/velodyne_points"   # Point cloud data
+  imuTopic: "/thorvald_001/imu_raw"                  # IMU data
   odomTopic: "odometry/imu"                   # IMU pre-preintegration odometry, same frequency as IMU
   gpsTopic: "odometry/gpsz"                   # GPS odometry topic from navsat, see module_navsat.launch file
 
   # Frames
-  lidarFrame: "base_link_"
-  baselinkFrame: "base_link_"
-  odometryFrame: "odom_"
-  mapFrame: "map_"
+  lidarFrame: "base_link"
+  baselinkFrame: "base_link"
+  odometryFrame: "odom"
+  mapFrame: "map"
 
   # GPS Settings
   useImuHeadingInitialization: false           # if using GPS data, set to "true"
@@ -40,12 +40,6 @@ lio_sam:
 
   # Extrinsics (lidar -> IMU)
   extrinsicTrans: [0.0, 0.0, 0.0]
-  #extrinsicRot: [-1, 0, 0,
-  #                0, 1, 0,
-  #                0, 0, -1]
-  #extrinsicRPY: [0,  1, 0,
-  #               -1, 0, 0,
-  #                0, 0, 1]
   extrinsicRot: [1, 0, 0,
                   0, 1, 0,
                   0, 0, 1]

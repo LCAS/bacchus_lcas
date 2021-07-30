@@ -1,5 +1,79 @@
-<?xml version="1.0"?>
-
+<?xml version="1.0" ?>
 <launch>
-    <node pkg="lio_sam" type="lio_sam" name="lio_sam"/>
+
+  <!--MAIN PARAMETERS -->
+  <arg name="world_name" default="vineyard_stage0"/>
+  <arg name="gui" default="true"/>
+
+  <!-- LIO-SAM SLAM PARAMETERS -->
+  <!-- Please find LIO-SAM params in LIO-SAM/config/params.yaml-->
+
+
+  <!-- ======================= -->
+  <!-- DO NOT TOUCH UNDER THIS -->
+  <!-- ======================= -->
+
+  <!-- Robot arguments -->
+  <arg name="fake_localisation" default="false" doc="fake the localisation, sets map_server and world_tf to true."/>
+  <arg name="robot_name" default="thorvald_001"/>
+
+  <arg name="robot_model" default="$(find bacchus_gazebo)/config/robot.yaml"/>
+  <arg name="model_extras" default="$(find bacchus_gazebo)/urdf/PhenoRob_sensors.xacro"/>
+
+  <!-- navigation arguments -->
+  <arg name="launch_move_base" default="true"/>
+  <arg name="tf_prefix" default="$(arg robot_name)/"/>
+  <arg name="use_carrot_planner" default="false"/>
+  <arg name="use_omni" default="false"/>
+  <arg name="X_INIT" default="0.0"/>
+  <arg name="Y_INIT" default="0.0"/>
+  <arg name="Z_INIT" default="0"/>
+  <arg name="world_2_map_pose" default="0.0 0.0 0.0 0.0 0.0 0.0 1.0" />
+
+
+  <!-- ############################## GAZEBO ############################## -->
+  <!-- Note: the world_name is with respect to GAZEBO_RESOURCE_PATH environmental variable -->
+  <arg name="world" default="$(find bacchus_gazebo)/worlds/$(arg world_name).world"/>
+  <!-- Note: the world_name is with respect to GAZEBO_RESOURCE_PATH environmental variable -->
+  <arg name="paused" default="false"/>
+  <arg name="use_sim_time" default="true"/>
+  <arg name="debug" default="false"/>
+  <arg name="verbose" default="false"/>
+
+  <!-- ############################### RVIZ ############################### -->
+  <arg name="launch_rviz" default="false"/>
+  <arg name="rviz_config_file" default="$(find bacchus_slam)/rviz/hector_mapping.rviz"/>
+
+
+  <!-- ############################### ROBOT ############################## -->
+  <group if="$(eval robot_name == 'thorvald_001')">
+
+    <include file="$(find bacchus_gazebo)/launch/thorvald.launch">
+      <arg name="robot_name"        value="$(arg robot_name)" />
+      <arg name="tf_prefix"         value="" />
+      <arg name="x"                 value="$(arg X_INIT)" />
+      <arg name="y"                 value="$(arg Y_INIT)" />
+      <arg name="z"                 value="$(arg Z_INIT)" />
+      <arg name="robot_model"       value="$(arg robot_model)"/>
+      <arg name="model_extras"      value="$(arg model_extras)"/>
+      <arg name="world_name"        value="$(arg world)"/>
+      <arg name="fake_localisation" value="$(arg fake_localisation)"/>
+      <arg name="launch_rviz"       value="$(arg launch_rviz)"/>
+      <arg name="rviz_config_file"  value="$(arg rviz_config_file)"/>
+      <arg name="gui"               value="$(arg gui)"/>
+    </include>
+
+  </group>
+
+
+  <!-- ################## LIO-SAM ############################## -->
+  <include file="$(find lio_sam)/launch/run.launch" />
+
+  <node pkg="teleop_twist_keyboard" type="teleop_twist_keyboard.py" name="teleop_twist_keyboard">
+    <remap from="cmd_vel" to="/thorvald_001/nav_vel" />
+  </node>
+
+
+
+
 </launch>

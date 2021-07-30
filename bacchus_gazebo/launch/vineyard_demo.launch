@@ -3,7 +3,7 @@
 
   <!-- Robot arguments -->
   <arg name="fake_localisation" default="true" doc="fake the localisation, sets map_server and world_tf to true."/>
-  <arg name="riseholme_dt" default="false"/>
+  <arg name="riseholme_dt" default="true"/>
   <arg name="robot_name" default="rb_sherpa_xl"/>
   <!-- robot supported:
     - thorvald_001

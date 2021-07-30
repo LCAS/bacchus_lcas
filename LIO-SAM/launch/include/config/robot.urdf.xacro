@@ -4,9 +4,9 @@
 
   <link name="chassis_link"></link>
 
-  <link name="base_link"></link>
-  <joint name="base_link_joint" type="fixed">
-    <parent link="base_link"/>
+  <link name="base_link_lio"></link>
+  <joint name="base_link_lio_joint" type="fixed">
+    <parent link="base_link_lio"/>
     <child link="chassis_link" />
     <origin xyz="0 0 0" rpy="0 0 0" />
   </joint>

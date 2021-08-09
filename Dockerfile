@@ -64,5 +64,10 @@ RUN apt-get update; . /opt/ros/melodic/setup.sh; rosdep install --from-paths /ho
 RUN ls -l /home/lcas/workspace/bacchus_ws; cd /home/lcas/workspace/bacchus_ws; . /opt/ros/melodic/setup.sh; catkin build
 RUN chown -vR lcas:lcas /home/lcas/workspace
 
+# mod sergi
+RUN echo "source /opt/ros/melodic/setup.bash" >> ~/.bashrc
+RUN echo "source /home/lcas/workspace/bacchus_ws/devel/setup.bash" >> ~/.bashrc
+# end sergi
+
 CMD bash -c "source /home/lcas/workspace/bacchus_ws/devel/setup.bash;  (/usr/local/lib/remote_manager/vnc_runner/noVNC/utils/launch.sh --vnc localhost:5901 --listen 6080 &);  rm -f /tmp/.X1-lock /tmp/.X11-unix/X1; vncserver -localhost yes -depth 24 -geometry 1280x720 -SecurityTypes None -fg :1"
 

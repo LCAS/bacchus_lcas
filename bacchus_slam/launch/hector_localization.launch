@@ -2,9 +2,9 @@
 <launch>
 
   <!--MAIN PARAMETERS -->
-  <arg name="world_name" default="vineyard_stage3"/>
-  <arg name="gui" default="true"/>
-  <arg name="nav_map_yaml" default="$(find bacchus_slam)/maps/stage0_occupancy_map.yaml" />
+  <arg name="world_name" default="summer_school_stage0"/>
+  <arg name="gui" default="false"/>
+  <arg name="nav_map_yaml" default="$(find bacchus_slam)/maps/summer_school_stage0_map.yaml" />
 
 
   <!-- ======================= -->
@@ -37,6 +37,7 @@
   <arg name="use_sim_time" default="true"/>
   <arg name="debug" default="false"/>
   <arg name="verbose" default="false"/>
+  <arg name="remap_gazebo_odom_tf" default="true"/>
 
   <!-- ############################### RVIZ ############################### -->
   <arg name="launch_rviz" default="true"/>
@@ -45,24 +46,22 @@
 
   <!-- ############################### ROBOT ############################## -->
   <group if="$(eval robot_name == 'thorvald_001')">
-
     <include file="$(find bacchus_gazebo)/launch/thorvald.launch">
-      <arg name="robot_name"        value="$(arg robot_name)" />
-      <arg name="tf_prefix"         value="" />
-      <arg name="x"                 value="$(arg X_INIT)" />
-      <arg name="y"                 value="$(arg Y_INIT)" />
-      <arg name="z"                 value="$(arg Z_INIT)" />
-      <arg name="robot_model"       value="$(arg robot_model)"/>
-      <arg name="model_extras"      value="$(arg model_extras)"/>
-      <arg name="world_name"        value="$(arg world)"/>
-      <arg name="fake_localisation" value="$(arg fake_localisation)"/>
-      <arg name="rviz_config_file"  value="$(arg rviz_config_file)"/>
-      <arg name="gui"               value="$(arg gui)"/>
-      <arg name="nav_map_yaml"      value="$(arg nav_map_yaml)"/>
+      <arg name="robot_name"             value="$(arg robot_name)" />
+      <arg name="tf_prefix"              value="" />
+      <arg name="x"                      value="$(arg X_INIT)" />
+      <arg name="y"                      value="$(arg Y_INIT)" />
+      <arg name="z"                      value="$(arg Z_INIT)" />
+      <arg name="robot_model"            value="$(arg robot_model)"/>
+      <arg name="model_extras"           value="$(arg model_extras)"/>
+      <arg name="world_name"             value="$(arg world)"/>
+      <arg name="fake_localisation"      value="$(arg fake_localisation)"/>
+      <arg name="rviz_config_file"       value="$(arg rviz_config_file)"/>
+      <arg name="gui"                    value="$(arg gui)"/>
+      <arg name="launch_move_base"       value="$(arg launch_move_base)"/>
+      <arg name="remap_gazebo_odom_tf"   value="$(arg remap_gazebo_odom_tf)"/>
     </include>
-
   </group>
-
 
     <!-- ################## AMCL LOCALIZATION ############################## -->
   <node pkg="amcl" type="amcl" name="amcl">
@@ -70,15 +69,21 @@
     <param name="odom_frame_id" type="string" value="odom" />
     <param name="base_frame_id" type="string" value="base_link" />
     <param name="global_frame_id" type="string" value="map" />
-  </node>
-
-  <node pkg="teleop_twist_keyboard" type="teleop_twist_keyboard.py" name="teleop_twist_keyboard">
-    <remap from="cmd_vel" to="/thorvald_001/nav_vel" />
+    <param name="odom_model_type" type="string" value="omni-corrected" />
   </node>
 
   <node name="nav_map_server" pkg="map_server" type="map_server" args="$(arg nav_map_yaml)" output="screen"/>
 
+  <node pkg="bacchus_gazebo" type="remap_odom_and_tf.py" name="remap_odom_and_tf_node" output="screen">
+    <param name="odom_topic_name"     value="/thorvald_001/odometry/gazebo" />
+    <param name="new_odom_topic_name" value="/thorvald_001/odometry/GT" />
+    <param name="base_frame_id"       value="base_link_GT" />
+    <param name="odom_frame_id"       value="map" />   
+    <param name="publish_tf"          value="true" />
+  </node>
 
+  <node pkg="rqt_multiplot" type="rqt_multiplot" name="rqt_multiplot" args="--multiplot-config $(find bacchus_slam)/config/GT_vs_AMCL_localization.xml --multiplot-run-all">
+  </node>
 
 
 </launch>

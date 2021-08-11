@@ -3,9 +3,13 @@
 
   <!--MAIN PARAMETERS -->
   <arg name="world_name" default="summer_school_stage0"/>
-  <arg name="gui" default="false"/>
+  <arg name="gui" default="true"/>
 
   <!-- HECTOR SLAM PARAMETERS -->
+  <arg name="laser_min_dist"    default="0.4"/>
+  <arg name="laser_max_dist"    default="30.0"/>
+  <arg name="laser_z_min_value" default="-1.0"/>
+  <arg name="laser_z_max_value" default= "1.0"/>
 
 
 

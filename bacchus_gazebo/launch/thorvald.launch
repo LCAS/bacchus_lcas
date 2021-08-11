@@ -9,6 +9,7 @@
   <arg name="debug" default="false"/>
   <arg name="verbose" default="false"/>
   <arg name="world_name" default=""/>
+
   <!-- Robot params -->
   <arg name="robot_name" />
   <arg name="x" default="0.0"/>
@@ -23,9 +24,10 @@
   <arg name="launch_move_base" default="true"/>
   <arg name="launch_rviz" default="true"/>
   <arg name="rviz_config_file" default=""/>
+  <arg name="remap_gazebo_odom_tf" default="false" />
 
-  <!-- Launch Gazebo simulatiion -->
-  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+  <!-- Launch gazebo simulation -->
+  <include file="$(find bacchus_gazebo)/launch/empty_world.launch">
     <arg name="paused" value="$(arg paused)"/>
     <arg name="use_sim_time" value="$(arg use_sim_time)"/>
     <arg name="gui" value="$(arg gui)"/>
@@ -33,6 +35,7 @@
     <arg name="debug" value="$(arg debug)"/>
     <arg name="verbose" value="$(arg verbose)"/>
     <arg name="world_name" value="$(arg world_name)"/>
+    <arg name="remap_gazebo_odom_tf" value="$(arg remap_gazebo_odom_tf)"/>
   </include>
 
   <!-- Lauch robot model -->
@@ -46,14 +49,29 @@
       <arg name="model_extras" value="$(arg model_extras)" />
     </include>
 
-    <!-- base bringup-->
-    <include file="$(find thorvald_base)/launch/base_bringup.launch">
-      <arg name="tf_prefix" value="$(arg tf_prefix)" />
-      <arg name="robot_model" value="$(arg robot_model)" />
-      <arg name="simple_sim" value="true" />
-      <arg name="enable_odom_tf" value="false" />
-      <arg name="odom_frame_id" value="$(arg tf_prefix)odom" />
-    </include>
+    <group if="$(arg remap_gazebo_odom_tf)">
+        <!-- base bringup-->
+        <include file="$(find thorvald_base)/launch/base_bringup.launch">
+          <arg name="tf_prefix" value="$(arg tf_prefix)" />
+          <arg name="robot_model" value="$(arg robot_model)" />
+          <arg name="simple_sim" value="true" />
+          <arg name="odom_frame_id" value="$(arg tf_prefix)odom" />
+          <arg name="enable_odom_tf" value="True" />
+          <arg name="passthrough_gazebo_odometry" value="False" />
+        </include>
+    </group>
+    <group unless="$(arg remap_gazebo_odom_tf)">
+        <!-- base bringup-->
+        <include file="$(find thorvald_base)/launch/base_bringup.launch">
+          <arg name="tf_prefix" value="$(arg tf_prefix)" />
+          <arg name="robot_model" value="$(arg robot_model)" />
+          <arg name="simple_sim" value="true" />
+          <arg name="odom_frame_id" value="$(arg tf_prefix)odom" />
+          <arg name="enable_odom_tf" value="True" />
+          <arg name="passthrough_gazebo_odometry" value="True" />
+        </include>
+    </group>
+
 
     <!-- twist mux bringup -->
     <include file="$(find thorvald_twist_mux)/launch/twist_mux.launch" />
@@ -91,4 +109,5 @@
   <group if="$(arg launch_rviz)">
     <node name="rviz" pkg="rviz" type= "rviz" args="-d $(arg rviz_config_file)" />
   </group>
+
 </launch>

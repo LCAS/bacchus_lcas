@@ -1,4 +1,4 @@
-image: stage0_occupancy_map.pgm
+image: summer_school_stage0_map.pgm
 resolution: 0.050000
 origin: [-25.624998, -25.624998, 0.000000]
 negate: 0

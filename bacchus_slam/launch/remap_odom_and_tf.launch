@@ -1,0 +1,14 @@
+<?xml version="1.0" ?>
+<launch>
+
+  <node pkg="bacchus_gazebo" type="remap_odom_and_tf.py" name="remap_odom_and_tf_node" output="screen">
+    <param name="odom_topic_name"     value="/thorvald_001/odometry/gazebo" />
+    <param name="new_odom_topic_name" value="/thorvald_001/odometry/GT" />
+    <param name="base_frame_id"       value="base_link_GT" />
+    <param name="odom_frame_id"       value="world" />   
+    <param name="publish_tf"          value="true" />
+  </node>
+
+</launch>
+
+

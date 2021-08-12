@@ -8,24 +8,12 @@
   <!-- RTAB-MAP SLAM PARAMETERS -->
   <arg name="localization"      default="false"/>
 
-  <arg name="Optimizer_Strategy"        default="2"/>          <!-- Graph optimization strategy: 0=TORO, 1=g2o, 2=GTSAM and 3=Ceres.                                                            -->
-  <arg name="Optimizer_Iterations"      default="20"/>         <!-- Optimization iterations.                                                                                                    -->
-  <arg name="Optimizer_Epsilon"         default="0.001"/>      <!-- Stop optimizing when the error improvement is less than this value.                                                         -->
-  <arg name="Reg_Strategy"              default="1"/>          <!-- Loop closure transformation: 0=Visual, 1=ICP, 2=Visual+ICP                                                                  -->
-  <arg name="Reg_Force3DoF"             default="true"/>       <!-- Force 3 degrees-of-freedom transform (3Dof: x,y and yaw). Parameters z, roll and pitch will be set to 0.                    -->
-  <arg name="Odom_Strategy"             default="0"/>          <!-- 0=Frame-to-Map (F2M) 1=Frame-to-Frame (F2F) 2=Fovis 3=viso2 4=DVO-SLAM 5=ORB_SLAM2 6=OKVIS 7=LOAM 8=MSCKF_VIO 9=VINS-Fusion -->
-  <arg name="Icp_CorrespondenceRatio"   default="0.3"/>        <!-- Ratio of matching correspondences to accept the transform                                                                   -->
-  <arg name="Vis_MinInliers"            default="15"/>         <!-- 3D visual words minimum inliers to accept loop closure                                                                      -->
-  <arg name="Vis_InlierDistance"        default="0.1"/>        <!-- 3D visual words correspondence distance                                                                                     -->
-  <arg name="GridGlobal_MinSize"        default="20"/>         <!-- Minimum map size (m).                                                                                                       -->
-  <arg name="RGBD_ProximityBySpace"     default="false"/>      <!-- Local loop closure detection (using estimated position) with locations in WM                                                -->
-
   <!-- ======================= -->
   <!-- DO NOT TOUCH UNDER THIS -->
   <!-- ======================= -->
 
   <!-- Robot arguments -->
-  <arg name="fake_localisation" default="true" doc="fake the localisation, sets map_server and world_tf to true."/>
+  <arg name="fake_localisation" default="false" doc="fake the localisation, sets map_server and world_tf to true."/>
   <arg name="robot_name" default="thorvald_001"/>
 
   <arg name="robot_model" default="$(find bacchus_gazebo)/config/robot.yaml"/>
@@ -41,13 +29,11 @@
   <arg name="Z_INIT" default="0"/>
   <arg name="nav_map_yaml" default="$(find bacchus_gazebo)/maps/cropped.yaml" />
   <arg name="world_2_map_pose" default="0.0 0.0 0.0 0.0 0.0 0.0 1.0" />
+  <arg name="enable_odom_tf" default="true"/>
 
   <!--rtabmap-->
   <arg name="launch_rtabmap"   default="true"/>
   <arg name="rtabmapviz"       default="true"/>
-
-  <arg     if="$(arg fake_localisation)" name="icp_odometry"  default="false"/>
-  <arg unless="$(arg fake_localisation)" name="icp_odometry"  default="true"/> 
 
   <arg     if="$(arg localization)" name="args"  default=""/>
   <arg unless="$(arg localization)" name="args"  default="--delete_db_on_start"/> <!--if in SLAM mode, delete stored map in database, else load previous map-->
@@ -64,6 +50,7 @@
   <arg name="use_sim_time" default="true"/>
   <arg name="debug" default="false"/>
   <arg name="verbose" default="false"/>
+  <arg name="remap_gazebo_odom_tf" default="true"/>
 
   <!-- ############################### RVIZ ############################### -->
   <arg name="launch_rviz" default="true"/>
@@ -86,6 +73,8 @@
       <arg name="nav_map_yaml"      value="$(arg nav_map_yaml)"/>
       <arg name="rviz_config_file"  value="$(arg rviz_config_file)"/>
       <arg name="gui"               value="$(arg gazebo_gui)"/>
+      <arg name="enable_odom_tf"    value="$(arg enable_odom_tf)"/>
+      <arg name="remap_gazebo_odom_tf"   value="$(arg remap_gazebo_odom_tf)"/>
     </include>
 
   </group>
@@ -103,126 +92,66 @@
         <param name="approx_sync"     value="false"/>    <!-- Should be true for not synchronized camera topics (e.g., false for kinectv2, zed, realsense, true for xtion, kinect360)-->
       </node>
 
-    <!-- Odometry: we use rtabmap's icp odometry to generate odometry for us -->
-      <node if="$(arg icp_odometry)" pkg="rtabmap_ros" type="icp_odometry" name="icp_odometry" output="screen" >
-        <remap from="scan"      to="/thorvald_001/scan"/>
-        <remap from="odom"      to="/scanmatch_odom"/>
-        <remap from="odom_info" to="/rtabmap/odom_info"/>
-
-        <param name="frame_id"        type="string" value="base_link"/>
-        <param name="odom_frame_id"   type="string" value="icp_odom"/>
-        <param name="guess_frame_id"  type="string" value="odom"/>
-       
-        <param name="Icp/PointToPlane" type="string" value="false"/>
-        <param name="Icp/Strategy"     type="string" value="1"/> <!--ICP implementation: 0=Point Cloud Library, 1=libpointmatcher, 2=CCCoreLib (CloudCompare).-->
-        <param name="Icp/VoxelSize"    type="string" value="0.05"/>
-        <param name="Icp/RangeMax"     type="string" value="0"/>
-        <param name="Icp/Epsilon"      type="string" value="0.001"/>
-        <param name="Icp/PointToPlane"       type="string" value="false"/>
-        <param name="Icp/PointToPlaneK"      type="string" value="5"/>
-        <param name="Icp/PointToPlaneRadius" type="string" value="0.3"/>
-        <param name="Icp/MaxCorrespondenceDistance" type="string" value="0.1"/>
-        <param name="Icp/PM"               type="string" value="true"/>  <!-- use libpointmatcher to handle PointToPlane with 2d scans-->
-        <param name="Icp/PMOutlierRatio"   type="string" value="0.85"/>
-
-        <param name="Odom/Strategy"        type="string" value="$(arg Odom_Strategy)"/>
-        <param name="Odom/GuessMotion"     type="string" value="true"/>
-        <param name="Odom/ResetCountdown"  type="string" value="0"/>
-        <param name="Odom/ScanKeyFrameThr" type="string" value="0.9"/>
+      <node pkg="hector_mapping" type="hector_mapping" name="hector_mapping">
+        <remap from="scan" to="/thorvald_001/scan" />
+        <param name="odom_frame" type="string" value="odom" />
+        <param name="base_frame" type="string" value="base_link" />
+        <param name="map_frame" type="string" value="map" />
+        <param name="map_resolution" type="double" value="0.05" />
+        <param name="pub_map_odom_transform" type="bool" value="true" />
       </node>
 
-
-      <node name="rtabmap" pkg="rtabmap_ros" type="rtabmap"  output="screen" args="$(arg args)">
+      <node name="rtabmap" pkg="rtabmap_ros" type="rtabmap"  output="screen" args="-d">
         <param name="database_path" type="string" value="~/.ros/rtabmap.db"/>
         <param name="frame_id"      type="string" value="base_link"/>
-        <param name="wait_for_transform_duration" type="double"   value="0.2"/>
-        <param name="subscribe_depth"             type="bool"     value="true"/>
-        <param name="subscribe_scan"              type="bool"     value="true"/>
-        <param name="map_negative_poses_ignored"  type="bool"     value="true"/>
-        <param name="publish_tf"                  type="bool"     value="false"/>
+        <param name="odom_frame_id" type="string" value="odom_rtab"/>
+        <param name="subscribe_rgb"   type="bool" value="false"/>
+        <param name="subscribe_depth" type="bool" value="false"/>
+        <param name="subscribe_rgbd"  type="bool" value="true"/>
+        <param name="subscribe_scan"  type="bool" value="true"/>
+        <param name="approx_sync"     type="bool" value="true"/>
+        <param name="publish_tf"      type="bool" value="true"/>
 
         <!-- inputs -->
         <remap from="scan"            to="/thorvald_001/scan"/>
-        <remap from="rgb/image"       to="$(arg rgb_topic)"/>
-        <remap from="depth/image"     to="$(arg depth_topic)"/>
-        <remap from="rgb/camera_info" to="$(arg camera_info_topic)"/>
+        <remap from="rgbd_image"       to="rgbd_image"/>
 
-        <!-- Fix odom covariance as in simulation the covariance in /odom topic is high (0.1 for linear and 0.05 for angular) -->
-        <remap if="$(arg icp_odometry)" from="odom" to="/scanmatch_odom"/>
-        <param if="$(arg icp_odometry)" name="odom_frame_id" value="icp_odom"/>
-        <param if="$(arg icp_odometry)" name="subscribe_odom_info" type="bool" value="true"/>        
-        <param unless="$(arg icp_odometry)" name="odom_frame_id" value="odom"/>
-        <param unless="$(arg icp_odometry)" name="odom_tf_linear_variance" value="0.001"/>
-        <param unless="$(arg icp_odometry)" name="odom_tf_angular_variance" value="0.001"/>
-
-        <!-- output -->
-        <remap from="grid_map" to="/map"/>
-        <remap from="cloud_map" to="/map_cl"/>
-
-        <!-- RTAB-Map's parameters: do "rosrun rtabmap rtabmap (double-dash)params" to see the list of available parameters. -->
-        <param name="Optimizer/Strategy"           type="string" value="$(arg Optimizer_Strategy)"/>     
-        <param name="Optimizer/Iterations"         type="string" value="$(arg Optimizer_Iterations)"/> 
-        <param name="Optimizer/Epsilon"            type="string" value="$(arg Optimizer_Epsilon)"/> 
-
-        <param name="Reg/Strategy"                 type="string" value="$(arg Reg_Strategy)"/>     
-        <param name="Reg/Force3DoF"                type="string" value="$(arg Reg_Force3DoF)"/>
-
-        <param name="cloud_noise_filtering_radius" value="0.1"/>
-        <param name="cloud_noise_filtering_min_neighbors" value="2"/>
-
-        <param name="RGBD/ProximityBySpace"        type="string" value="$(arg RGBD_ProximityBySpace)"/>   <!-- Local loop closure detection (using estimated position) with locations in WM -->
-        <param name="RGBD/OptimizeFromGraphEnd"    type="string" value="false"/>  <!-- Set to false to generate map correction between /map and /odom -->
-        <param name="RGBD/AngularUpdate"           type="string" value="0.1"/>    <!-- Update map only if the robot is moving -->
-        <param name="RGBD/LinearUpdate"            type="string" value="0.1"/>    <!-- Update map only if the robot is moving -->
-        <param name="RGBD/ProximityPathMaxNeighbors" type="string" value="0"/> 
-
-        <param name="Kp/MaxDepth"                  type="string" value="4.0"/>
-        <param name="Icp/CorrespondenceRatio"      type="string" value="$(arg Icp_CorrespondenceRatio)"/>
-        <param name="Vis/MinInliers"               type="string" value="$(arg Vis_MinInliers)"/>      <!-- 3D visual words minimum inliers to accept loop closure -->
-        <param name="Vis/InlierDistance"           type="string" value="$(arg Vis_InlierDistance)"/>    <!-- 3D visual words correspondence distance -->
-        <param name="Rtabmap/TimeThr"              type="string" value="0"/>  <!--Maximum time allowed for map update (ms) (0 means infinity). When map update time exceeds this fixed time threshold, some nodes in Working Memory (WM) are transferred to Long-Term Memory to limit the size of the WM and decrease the update time.-->
-        <param name="Mem/RehearsalSimilarity"      type="string" value="0.30"/>
-        <param name="GridGlobal/MinSize"           type="string" value="$(arg GridGlobal_MinSize)"/>
-        <param name="Grid/FromDepth"               type="string" value="true"/> <!--Create occupancy grid from depth image(s), otherwise it is created from laser scan.-->
+        <!-- RTAB-Map's parameters -->
+        <param name="Reg/Strategy"                 type="string" value="1"/>
+        <param name="Reg/Force3DoF"                type="string" value="true"/>
+        <param name="GridGlobal/MinSize"           type="string" value="20"/>
 
         <!-- localization mode -->
         <param     if="$(arg localization)" name="Mem/IncrementalMemory" type="string" value="false"/>
-        <param unless="$(arg localization)" name="Mem/IncrementalMemory" type="string" value="true"/> 
-        <param name="Mem/InitWMWithAllNodes" type="string" value="$(arg localization)"/> 
-
+        <param unless="$(arg localization)" name="Mem/IncrementalMemory" type="string" value="true"/>          
       </node>
 
       <!-- visualization with rtabmapviz -->
       <node if="$(arg rtabmapviz)" pkg="rtabmap_ros" type="rtabmapviz" name="rtabmapviz" args="-d $(find rtabmap_ros)/launch/config/rgbd_gui.ini" output="screen">
-        <param name="subscribe_depth"             type="bool"   value="false"/>
-        <param name="subscribe_rgbd"              type="bool"   value="true"/>
-        <param name="subscribe_scan"              type="bool"   value="true"/>
-        <param name="frame_id"                    type="string" value="base_link"/>
-        <param name="wait_for_transform_duration" type="double" value="0.7"/>
-        <param name="publish_tf"                  type="bool"   value="false"/>
-        <param name="approx_sync"                 type="bool"   value="false"/>
-      
+        <param name="subscribe_scan"   type="bool"   value="true"/>
+        <param name="subscribe_odom"   type="bool"   value="false"/>
+        <param name="subscribe_rgbd"   type="bool"   value="true"/>
+        <param name="frame_id"         type="string" value="base_link"/>
+        <param name="odom_frame_id"    type="string" value="odom_rtab"/>
+        <param name="approx_sync"      type="bool"   value="true"/>
+
         <remap from="scan"            to="/thorvald_001/scan"/>
         <remap from="rgbd_image"      to="rgbd_image"/>
-
-        <remap if="$(arg icp_odometry)" from="odom" to="/scanmatch_odom"/>
-        <param if="$(arg icp_odometry)" name="subscribe_odom_info" type="bool" value="true"/>  
-        <param if="$(arg icp_odometry)" name="odom_frame_id" value="icp_odom"/>
-        <param unless="$(arg icp_odometry)" name="odom_frame_id" value="odom"/>
-
-
       </node>
-
-      <node if="$(arg icp_odometry)" pkg="tf" type="static_transform_publisher" name="map_world_broadcaster" args="0 0 0 0 0 0 map /icp_odom 100" />
-      
+  
     </group>
 
   </group>
 
-
-  <node pkg="teleop_twist_keyboard" type="teleop_twist_keyboard.py" name="teleop_twist_keyboard">
-    <remap from="cmd_vel" to="/thorvald_001/nav_vel" />
-  </node>
+  <group if="$(arg remap_gazebo_odom_tf)">
+    <node pkg="bacchus_gazebo" type="remap_odom_and_tf.py" name="remap_odom_and_tf_node" output="screen">
+      <param name="odom_topic_name"     value="/thorvald_001/odometry/gazebo" />
+      <param name="new_odom_topic_name" value="/thorvald_001/odometry/GT" />
+      <param name="base_frame_id"       value="base_link_GT" />
+      <param name="odom_frame_id"       value="map" />   
+      <param name="publish_tf"          value="true" />
+    </node>
+  </group>
 
 
 </launch>

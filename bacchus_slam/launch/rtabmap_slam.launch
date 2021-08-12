@@ -53,7 +53,7 @@
   <arg name="remap_gazebo_odom_tf" default="true"/>
 
   <!-- ############################### RVIZ ############################### -->
-  <arg name="launch_rviz" default="true"/>
+  <arg name="launch_rviz" default="false"/>
   <arg name="rviz_config_file" default="$(find bacchus_gazebo)/rviz/rtab_demo.rviz"/>
 
 
@@ -71,6 +71,7 @@
       <arg name="world_name"        value="$(arg world)"/>
       <arg name="fake_localisation" value="$(arg fake_localisation)"/>
       <arg name="nav_map_yaml"      value="$(arg nav_map_yaml)"/>
+      <arg name="launch_rviz"        value="$(arg launch_rviz)"/>
       <arg name="rviz_config_file"  value="$(arg rviz_config_file)"/>
       <arg name="gui"               value="$(arg gazebo_gui)"/>
       <arg name="enable_odom_tf"    value="$(arg enable_odom_tf)"/>
@@ -103,7 +104,7 @@
         <param name="pub_odometry" value="true"/>
       </node>
 
-      <node name="rtabmap" pkg="rtabmap_ros" type="rtabmap"  output="screen" args="-d">
+      <node name="rtabmap" pkg="rtabmap_ros" type="rtabmap"  output="screen" args="$(arg args)">
         <param name="database_path" type="string" value="~/.ros/rtabmap.db"/>
         <param name="frame_id"      type="string" value="base_link"/>
         <param name="odom_frame_id" type="string" value="odom"/>

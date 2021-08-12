@@ -52,7 +52,7 @@
 
     <group if="$(arg remap_gazebo_odom_tf)">
         <!-- base bringup-->
-        <include file="$(find thorvald_base)/launch/base_bringup.launch">
+        <include file="$(find bacchus_gazebo)/launch/base_bringup.launch">
           <arg name="tf_prefix" value="$(arg tf_prefix)" />
           <arg name="robot_model" value="$(arg robot_model)" />
           <arg name="simple_sim" value="true" />
@@ -63,7 +63,7 @@
     </group>
     <group unless="$(arg remap_gazebo_odom_tf)">
         <!-- base bringup-->
-        <include file="$(find thorvald_base)/launch/base_bringup.launch">
+        <include file="$(find bacchus_gazebo)/launch/base_bringup.launch">
           <arg name="tf_prefix" value="$(arg tf_prefix)" />
           <arg name="robot_model" value="$(arg robot_model)" />
           <arg name="simple_sim" value="true" />

@@ -6,6 +6,10 @@
   <arg name="gazebo_gui" default="false"/>
 
   <!-- RTAB-MAP SLAM PARAMETERS -->
+  <arg name="Reg/Strategy"        default="2"/>    <!-- Loop closure transformation: 0=Visual, 1=ICP, 2=Visual+ICP-->
+  <arg name="Reg/Force3DoF"       default="false"/> <!-- Force 3 degrees-of-freedom transform (3Dof: x,y and yaw). Parameters z, roll and pitch will be set to 0.-->
+  <arg name="GridGlobal/MinSize"  default="5"/>   <!-- Minimum map size (m).-->
+
   <arg name="localization"      default="false"/>
 
   <!-- ======================= -->
@@ -124,9 +128,9 @@
         <remap from="rgbd_image"       to="rgbd_image"/>
 
         <!-- RTAB-Map's parameters -->
-        <param name="Reg/Strategy"                 type="string" value="1"/>
-        <param name="Reg/Force3DoF"                type="string" value="true"/>
-        <param name="GridGlobal/MinSize"           type="string" value="20"/>
+        <param name="Reg/Strategy"                 type="string" value="$(arg Reg/Strategy)"/>
+        <param name="Reg/Force3DoF"                type="string" value="$(arg Reg/Force3DoF)"/>
+        <param name="GridGlobal/MinSize"           type="string" value="$(arg GridGlobal/MinSize)"/>
 
         <!-- localization mode -->
         <param     if="$(arg localization)" name="Mem/IncrementalMemory" type="string" value="false"/>

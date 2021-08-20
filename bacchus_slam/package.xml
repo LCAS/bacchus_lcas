@@ -51,11 +51,18 @@
   <buildtool_depend>catkin</buildtool_depend>
   <build_depend>hector_mapping</build_depend>
   <build_depend>rtabmap_ros</build_depend>
+  <build_depend>rqt_multiplot</build_depend>
+  <build_depend>teleop_twist_keyboard</build_depend>
+  
   <build_export_depend>hector_mapping</build_export_depend>
   <build_export_depend>rtabmap_ros</build_export_depend>
+  <build_export_depend>rqt_multiplot</build_export_depend>
+  <build_export_depend>teleop_twist_keyboard</build_export_depend>
+
   <exec_depend>hector_mapping</exec_depend>
   <exec_depend>rtabmap_ros</exec_depend>
-
+  <exec_depend>rqt_multiplot</exec_depend>
+  <exec_depend>teleop_twist_keyboard</exec_depend>
 
   <!-- The export tag contains other, unspecified, tags -->
   <export>

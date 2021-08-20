@@ -10,6 +10,8 @@ project(bacchus_slam)
 find_package(catkin REQUIRED COMPONENTS
   hector_mapping
   rtabmap_ros
+  rqt_multiplot
+  teleop_twist_keyboard
 )
 
 ## System dependencies are found with CMake's conventions

@@ -3,10 +3,10 @@
 
   <!--MAIN PARAMETERS -->
   <arg name="world_name" default="riseholme_digital_twin"/>
-  <arg name="gazebo_gui" default="false"/>
+  <arg name="gazebo_gui" default="true"/>
 
   <!-- LIO-SAM SLAM PARAMETERS -->
-  <!-- Please find LIO-SAM params in LIO-SAM/config/params.yaml-->
+  <!-- Please find LIO-SAM params in /bacchus_lcas/bacchus_slam/config/lio_sam_params.yaml-->
 
 
   <!-- ======================= -->
@@ -28,7 +28,7 @@
   <arg name="X_INIT" default="40.0"/>
   <arg name="Y_INIT" default="-40.0"/>
   <arg name="Z_INIT" default="0.9"/>
-  <arg name="world_2_map_pose" default="0.0 0.0 0.0 0.0 0.0 0.0 1.0" />
+  <arg name="world_2_map_pose" default="-40 40 -0.9 0.0 0.0 0.0 1.0" />
   <arg name="enable_odom_tf" default="true"/>
 
 
@@ -43,8 +43,8 @@
   <arg name="remap_gazebo_odom_tf" default="true"/>
 
   <!-- ############################### RVIZ ############################### -->
-  <arg name="launch_rviz" default="false"/>
-  <arg name="rviz_config_file" default="$(find bacchus_slam)/rviz/hector_mapping.rviz"/>
+  <arg name="launch_rviz" default="true"/>
+  <arg name="rviz_config_file" default="$(find bacchus_slam)/rviz/lio_sam.rviz"/>
 
 
   <!-- ############################### ROBOT ############################## -->
@@ -70,17 +70,23 @@
 
 
   <!-- ################## LIO-SAM ############################## -->
-  <include file="$(find lio_sam)/launch/run.launch" />
+  <arg name="project" default="lio_sam"/>   
+  <!-- Parameters -->
+  <rosparam file="$(find bacchus_slam)/config/lio_sam_params.yaml" command="load" />
+  <!--- LOAM -->
+  <include file="$(find lio_sam)/launch/include/module_loam.launch" />
 
   <group if="$(arg remap_gazebo_odom_tf)">
     <node pkg="bacchus_gazebo" type="remap_odom_and_tf.py" name="remap_odom_and_tf_node" output="screen">
       <param name="odom_topic_name"     value="/thorvald_001/odometry/gazebo" />
       <param name="new_odom_topic_name" value="/thorvald_001/odometry/GT" />
       <param name="base_frame_id"       value="base_link_GT" />
-      <param name="odom_frame_id"       value="map" />   
+      <param name="odom_frame_id"       value="world" />   
       <param name="publish_tf"          value="true" />
     </node>
   </group>
+
+  <node pkg="tf" type="static_transform_publisher" name="world_2_map_tfb" args="40 -40 0 0.0 0.0 0.0 1.0 world map 1000" />
 
 
 </launch>

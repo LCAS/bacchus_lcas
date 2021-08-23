@@ -51,7 +51,7 @@
     <joint name="$(arg robot_name)_${kinect2_name}_depth_joint" type="fixed">
       <parent link="$(arg tf_prefix)${kinect2_name}_link" />
       <child link="$(arg tf_prefix)${kinect2_name}_depth_optical_frame" />
-      <origin xyz="0 -0.05 0.016" rpy="-1.57 0 -1.57" />
+      <origin xyz="0 0.05 0.016" rpy="-1.57 0 -1.57" />
     </joint>
 
     <gazebo reference="$(arg tf_prefix)${kinect2_name}_link">
@@ -106,7 +106,7 @@
         <always_on>true</always_on>
         <update_rate>30.0</update_rate>
         <camera name="${kinect2_name}_camera">
-          <horizontal_fov>${84.1*3.14/180.0}</horizontal_fov>
+          <horizontal_fov>${70.1*3.14/180.0}</horizontal_fov>
           <image>
             <width>640</width>
             <height>480</height>

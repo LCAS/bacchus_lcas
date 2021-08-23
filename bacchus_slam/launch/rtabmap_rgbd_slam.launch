@@ -1,0 +1,176 @@
+<?xml version="1.0" ?>
+<launch>
+
+  <!--MAIN PARAMETERS -->
+  <arg name="world_name" default="summer_school_stage0"/>
+  <arg name="gazebo_gui" default="false"/>
+
+  <!-- RTAB-MAP SLAM PARAMETERS -->
+  <arg name="Odom/Strategy" default="5" /> <!--0=Frame-to-Map (F2M) 1=Frame-to-Frame (F2F) 2=Fovis 3=viso2 4=DVO-SLAM 5=ORB_SLAM2 6=OKVIS 7=LOAM 8=MSCKF_VIO 9=VINS-Fusion -->
+  <arg name="Kp/DetectorStrategy" default="9"/>    <!-- 2=ORB  7=BRISK 8=GFTT/ORB 9=KAZE 10=ORB-OCTREE 11=SuperPoint 15=PyDetector" -->
+  <arg name="Optimizer/Strategy"  default="3" />  <!-- "Graph optimization strategy: 0=TORO, 1=g2o, 3=Ceres.")-->
+  <arg name="RGBD/OptimizeMaxError"  default="3" /> <!--Reject loop closures if optimization error ratio is greater than this value (0=disabled). Ratio is computed as absolute error over standard deviation of each link. This will help to detect when a wrong loop closure is added to the graph.-->
+
+  <arg name="localization"            default="false"/> <!-- Localization-only mode -->
+  
+
+  <!-- ======================= -->
+  <!-- DO NOT TOUCH UNDER THIS -->
+  <!-- ======================= -->
+
+  <!-- Robot arguments -->
+  <arg name="fake_localisation" default="false" doc="fake the localisation, sets map_server and world_tf to true."/>
+  <arg name="robot_name" default="thorvald_001"/>
+
+  <arg name="robot_model" default="$(find bacchus_gazebo)/config/robot.yaml"/>
+  <arg name="model_extras" default="$(find bacchus_gazebo)/urdf/PhenoRob_sensors.xacro"/>
+
+  <!-- navigation arguments -->
+  <arg name="launch_move_base" default="true"/>
+  <arg name="tf_prefix" default="$(arg robot_name)/"/>
+  <arg name="use_carrot_planner" default="false"/>
+  <arg name="use_omni" default="false"/>
+  <arg name="X_INIT" default="0.0"/>
+  <arg name="Y_INIT" default="0.0"/>
+  <arg name="Z_INIT" default="0"/>
+  <arg name="nav_map_yaml" default="$(find bacchus_gazebo)/maps/cropped.yaml" />
+  <arg name="world_2_map_pose" default="0.0 0.0 0.0 0.0 0.0 0.0 1.0" />
+  <arg name="enable_odom_tf" default="false"/>
+
+  <!-- ############################## GAZEBO ############################## -->
+  <!-- Note: the world_name is with respect to GAZEBO_RESOURCE_PATH environmental variable -->
+  <arg name="world" default="$(find bacchus_gazebo)/worlds/$(arg world_name).world"/>
+  <!-- Note: the world_name is with respect to GAZEBO_RESOURCE_PATH environmental variable -->
+  <arg name="paused" default="false"/>
+  <arg name="use_sim_time" default="true"/>
+  <arg name="debug" default="false"/>
+  <arg name="verbose" default="false"/>
+  <arg name="remap_gazebo_odom_tf" default="true"/>
+
+  <!-- ############################### RVIZ ############################### -->
+  <arg name="launch_rviz" default="false"/>
+  <arg name="rviz_config_file" default="$(find bacchus_gazebo)/rviz/rtab_demo.rviz"/>
+
+
+  <!-- ############################### ROBOT ############################## -->
+  <group if="$(eval robot_name == 'thorvald_001')">
+
+    <include file="$(find bacchus_gazebo)/launch/thorvald.launch">
+      <arg name="robot_name"        value="$(arg robot_name)" />
+      <arg name="tf_prefix"         value="" />
+      <arg name="x"                 value="$(arg X_INIT)" />
+      <arg name="y"                 value="$(arg Y_INIT)" />
+      <arg name="z"                 value="$(arg Z_INIT)" />
+      <arg name="robot_model"       value="$(arg robot_model)"/>
+      <arg name="model_extras"      value="$(arg model_extras)"/>
+      <arg name="world_name"        value="$(arg world)"/>
+      <arg name="fake_localisation" value="$(arg fake_localisation)"/>
+      <arg name="nav_map_yaml"      value="$(arg nav_map_yaml)"/>
+      <arg name="launch_rviz"        value="$(arg launch_rviz)"/>
+      <arg name="rviz_config_file"  value="$(arg rviz_config_file)"/>
+      <arg name="gui"               value="$(arg gazebo_gui)"/>
+      <arg name="enable_odom_tf"    value="$(arg enable_odom_tf)"/>
+      <arg name="remap_gazebo_odom_tf"   value="$(arg remap_gazebo_odom_tf)"/>
+    </include>
+
+  </group>
+
+
+  <!-- ################## RTAB-MAP SLAM ############################## -->
+  <!-- Choose visualization -->
+  <arg name="rviz"                    default="false" />
+  <arg name="rtabmapviz"              default="true" /> 
+  
+  
+  <!-- Corresponding config files -->
+  <arg name="rtabmapviz_cfg"          default="$(find bacchus_slam)/rviz/rtabmap_gui.ini" />
+  <arg name="rviz_cfg"                default="$(find rtabmap_ros)/launch/config/rgbd.rviz" />
+  
+  <arg name="frame_id"                default="base_link"/>   <!-- Fixed frame id, you may set "base_link" or "base_footprint" if they are published -->
+  <arg name="database_path"           default="~/.ros/rtabmap.db"/>
+  <arg name="rtabmap_args"            default=""/>              <!-- delete_db_on_start, udebug -->
+  <arg name="launch_prefix"           default=""/>              <!-- for debugging purpose, it fills launch-prefix tag of the nodes -->
+  <arg name="approx_sync"             default="false"/>         <!-- if timestamps of the input topics are not synchronized -->
+   
+  <arg name="rgb_topic"               default="/thorvald_001/kinect2_front_camera/rgb/image_raw" />
+  <arg name="depth_registered_topic"  default="/thorvald_001/kinect2_front_sensor/ir/depth/image_raw" />
+  <arg name="camera_info_topic"       default="/thorvald_001/kinect2_front_camera/rgb/camera_info" />
+  <arg name="compressed"              default="false"/>
+   
+  <arg name="subscribe_scan"          default="false"/>         <!-- Assuming 2D scan if set, rtabmap will do 3DoF mapping instead of 6DoF -->
+  <arg name="scan_topic"              default="/thorvald_001/scan"/>
+  
+  <arg name="subscribe_scan_cloud"    default="false"/>         <!-- Assuming 3D scan if set -->
+  <arg name="scan_cloud_topic"        default="/scan_cloud"/>
+  
+  <arg name="visual_odometry"         default="true"/>          <!-- Generate visual odometry -->
+  <arg name="odom_topic"              default="/odom"/>         <!-- Odometry topic used if visual_odometry is false -->
+  <arg name="odom_frame_id"           default=""/>              <!-- If set, TF is used to get odometry instead of the topic -->
+   
+  <arg name="namespace"               default="rtabmap"/>
+  <arg name="wait_for_transform"      default="0.2"/>
+
+  <arg name="ground_truth_frame_id"   default="map"/>
+  <arg name="ground_truth_base_frame_id" default="base_link_GT"/>
+
+  <arg name="Reg/Force3DoF"       default="true"/> <!-- Force 3 degrees-of-freedom transform (3Dof: x,y and yaw). Parameters z, roll and pitch will be set to 0.-->
+
+<include file="$(find bacchus_slam)/launch/rtabmap.launch">
+    <arg name="rtabmapviz"              value="$(arg rtabmapviz)" /> 
+    <arg name="rviz"                    value="$(arg rviz)" />
+    <arg name="localization"            value="$(arg localization)"/>
+    <arg name="gui_cfg"                 value="$(arg rtabmapviz_cfg)" />
+    <arg name="rviz_cfg"                value="$(arg rviz_cfg)" />
+  
+    <arg name="frame_id"                value="$(arg frame_id)"/>
+    <arg name="namespace"               value="$(arg namespace)"/>
+    <arg name="database_path"           value="$(arg database_path)"/>
+    <arg name="wait_for_transform"      value="$(arg wait_for_transform)"/>
+    <arg name="rtabmap_args"            value="$(arg rtabmap_args)"/>  
+    <arg name="launch_prefix"           value="$(arg launch_prefix)"/>          
+    <arg name="approx_sync"             value="$(arg approx_sync)"/>
+
+    <arg name="rgb_topic"               value="$(arg rgb_topic)" />
+    <arg name="depth_topic"             value="$(arg depth_registered_topic)" />
+    <arg name="camera_info_topic"       value="$(arg camera_info_topic)" />
+    <arg name="compressed"              value="$(arg compressed)"/>                                                                                
+   
+    <arg name="subscribe_scan"          value="$(arg subscribe_scan)"/>
+    <arg name="scan_topic"              value="$(arg scan_topic)"/>
+  
+    <arg name="subscribe_scan_cloud"    value="$(arg subscribe_scan_cloud)"/>
+    <arg name="scan_cloud_topic"        value="$(arg scan_cloud_topic)"/>
+   
+    <arg name="visual_odometry"         value="$(arg visual_odometry)"/>          
+    <arg name="odom_topic"              value="$(arg odom_topic)"/>    
+    <arg name="odom_frame_id"           value="$(arg odom_frame_id)"/>         
+    <arg name="odom_args"               value="$(arg rtabmap_args)"/>
+    <arg name="ground_truth_frame_id"   value="$(arg ground_truth_frame_id)"/>
+    <arg name="ground_truth_base_frame_id" value="$(arg ground_truth_base_frame_id)"/>
+     
+    <arg name="Reg/Force3DoF"          value="$(arg Reg/Force3DoF)"/>
+    <arg name="Kp/DetectorStrategy"    value="$(arg Kp/DetectorStrategy)"/>
+    <arg name="Optimizer/Strategy"    value="$(arg Optimizer/Strategy)"/>
+    <arg name="RGBD/OptimizeMaxError"    value="$(arg RGBD/OptimizeMaxError)"/>
+    
+    <arg name="Odom/Strategy" value ="$(arg Odom/Strategy)" />
+
+
+</include>
+
+
+
+
+
+  <group if="$(arg remap_gazebo_odom_tf)">
+    <node pkg="bacchus_gazebo" type="remap_odom_and_tf.py" name="remap_odom_and_tf_node" output="screen">
+      <param name="odom_topic_name"     value="/thorvald_001/odometry/gazebo" />
+      <param name="new_odom_topic_name" value="/thorvald_001/odometry/GT" />
+      <param name="base_frame_id"       value="base_link_GT" />
+      <param name="odom_frame_id"       value="map" />   
+      <param name="publish_tf"          value="true" />
+    </node>
+  </group>
+
+
+</launch>

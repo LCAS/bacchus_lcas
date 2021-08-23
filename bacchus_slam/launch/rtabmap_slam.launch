@@ -2,15 +2,15 @@
 <launch>
 
   <!--MAIN PARAMETERS -->
-  <arg name="world_name" default="summer_school_stage0"/>
-  <arg name="gazebo_gui" default="false"/>
+  <arg name="world_name" default="summer_school_stage3"/>
+  <arg name="gazebo_gui" default="true"/>
 
   <!-- RTAB-MAP SLAM PARAMETERS -->
   <arg name="Reg/Strategy"        default="2"/>    <!-- Loop closure transformation: 0=Visual, 1=ICP, 2=Visual+ICP-->
   <arg name="Reg/Force3DoF"       default="false"/> <!-- Force 3 degrees-of-freedom transform (3Dof: x,y and yaw). Parameters z, roll and pitch will be set to 0.-->
   <arg name="GridGlobal/MinSize"  default="5"/>   <!-- Minimum map size (m).-->
 
-  <arg name="localization"      default="false"/>
+  <arg name="localization"      default="true"/>
 
   <!-- ======================= -->
   <!-- DO NOT TOUCH UNDER THIS -->

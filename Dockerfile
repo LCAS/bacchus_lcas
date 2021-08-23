@@ -11,7 +11,10 @@ RUN wget https://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
 
 RUN apt-get update; apt-get -y upgrade
 
-# Get GTSAM for LIO-SAM
+
+# Get GTSAM and depen for LIO-SAM
+RUN apt-get install -y ros-melodic-navigation ros-melodic-robot-localization ros-melodic-robot-state-publisher
+
 RUN apt-get install unzip \
    && wget -O gtsam.zip https://github.com/borglab/gtsam/archive/4.0.2.zip \
    && unzip gtsam.zip \

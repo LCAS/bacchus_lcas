@@ -26,7 +26,7 @@
   <arg name="model_extras" default="$(find bacchus_gazebo)/urdf/PhenoRob_sensors.xacro"/>
 
   <!-- navigation arguments -->
-  <arg name="launch_move_base" default="true"/>
+  <arg name="launch_move_base" default="false"/>
   <arg name="tf_prefix" default="$(arg robot_name)/"/>
   <arg name="use_carrot_planner" default="false"/>
   <arg name="use_omni" default="false"/>

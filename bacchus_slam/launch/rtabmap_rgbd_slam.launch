@@ -3,12 +3,12 @@
 
   <!--MAIN PARAMETERS -->
   <arg name="world_name" default="summer_school_stage0"/>
-  <arg name="gazebo_gui" default="false"/>
+  <arg name="gazebo_gui" default="true"/>
 
   <!-- RTAB-MAP SLAM PARAMETERS -->
   <arg name="Odom/Strategy" default="0" /> <!--0=Frame-to-Map (F2M) 1=Frame-to-Frame (F2F) 2=Fovis 3=viso2 4=DVO-SLAM 5=ORB_SLAM2 6=OKVIS 7=LOAM 8=MSCKF_VIO 9=VINS-Fusion -->
-  <arg name="Kp/DetectorStrategy" default="9"/>    <!-- 2=ORB  7=BRISK 8=GFTT/ORB 9=KAZE 10=ORB-OCTREE 11=SuperPoint 15=PyDetector" -->
-  <arg name="Optimizer/Strategy"  default="3" />  <!-- "Graph optimization strategy: 0=TORO, 1=g2o, 3=Ceres.")-->
+  <arg name="Kp/DetectorStrategy" default="8"/>    <!-- 2=ORB  7=BRISK 8=GFTT/ORB 9=KAZE 10=ORB-OCTREE 11=SuperPoint 15=PyDetector" -->
+  <arg name="Optimizer/Strategy"  default="1" />  <!-- "Graph optimization strategy: 0=TORO, 1=g2o, 3=Ceres.")-->
   <arg name="RGBD/OptimizeMaxError"  default="3" /> <!--Reject loop closures if optimization error ratio is greater than this value (0=disabled). Ratio is computed as absolute error over standard deviation of each link. This will help to detect when a wrong loop closure is added to the graph.-->
 
   <arg name="localization"            default="false"/> <!-- Localization-only mode -->

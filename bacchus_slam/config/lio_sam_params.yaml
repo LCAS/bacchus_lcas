@@ -4,13 +4,7 @@ lio_sam:
   #### PARAMETERS TO CHANGE #################
   ###########################################
 
-  # LOAM feature threshold
-  edgeThreshold: 1.0
-  surfThreshold: 0.1
-  edgeFeatureMinValidNum: 10
-  surfFeatureMinValidNum: 100
-
-  # Surrounding map
+  # Graph Poses
   surroundingkeyframeAddingDistThreshold: 1.0   # meters, regulate keyframe adding threshold
   surroundingkeyframeAddingAngleThreshold: 0.2  # radians, regulate keyframe adding threshold
   surroundingKeyframeDensity: 2.0               # meters, downsample surrounding keyframe poses   
@@ -24,6 +18,12 @@ lio_sam:
   ###########################################
   #### DO NOT TOUCH UNDER THIS LINE #########
   ###########################################
+
+  # LOAM feature threshold
+  edgeThreshold: 1.0
+  surfThreshold: 0.1
+  edgeFeatureMinValidNum: 10
+  surfFeatureMinValidNum: 100
 
   # Loop closure
   surroundingKeyframeSearchRadius: 50.0         # meters, within n meters scan-to-map optimization (when loop closure disabled)

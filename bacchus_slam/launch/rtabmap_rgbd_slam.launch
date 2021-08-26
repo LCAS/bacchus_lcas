@@ -3,7 +3,7 @@
 
   <!--MAIN PARAMETERS -->
   <arg name="world_name" default="summer_school_mix"/>
-  <arg name="gazebo_gui" default="true"/>
+  <arg name="gazebo_gui" default="false"/>
 
   <!-- RTAB-MAP SLAM PARAMETERS -->
   <arg name="Odom/Strategy" default="0" /> <!--0=Frame-to-Map (F2M) 1=Frame-to-Frame (F2F) 2=Fovis 3=viso2 4=DVO-SLAM 5=ORB_SLAM2 6=OKVIS 7=LOAM 8=MSCKF_VIO 9=VINS-Fusion -->

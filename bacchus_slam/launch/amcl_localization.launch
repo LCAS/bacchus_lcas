@@ -3,7 +3,7 @@
 
   <!--MAIN PARAMETERS -->
   <arg name="world_name" default="summer_school_stage0"/>
-  <arg name="gazebo_gui" default="true"/>
+  <arg name="gazebo_gui" default="false"/>
   <arg name="nav_map_yaml" default="$(find bacchus_slam)/maps/summer_school_stage0_map.yaml" />
 
 

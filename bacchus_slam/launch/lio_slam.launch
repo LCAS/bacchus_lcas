@@ -3,7 +3,7 @@
 
   <!--MAIN PARAMETERS -->
   <arg name="world_name" default="riseholme_digital_twin"/>
-  <arg name="gazebo_gui" default="true"/>
+  <arg name="gazebo_gui" default="false"/>
 
   <!-- LIO-SAM SLAM PARAMETERS -->
   <!-- Please find LIO-SAM params in /bacchus_lcas/bacchus_slam/config/lio_sam_params.yaml-->

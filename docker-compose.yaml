@@ -3,6 +3,7 @@ version: '2'
 services:
   app01:
     image: sergimolina/phenorob_summer_school_2021:latest
+    build: .
     environment:
       RESOLUTION: 1280x720
     ports:
@@ -25,3 +26,21 @@ services:
       RESOLUTION: 1280x720
     ports:
       - "6084:80"
+  app05:
+    image: sergimolina/phenorob_summer_school_2021:latest
+    environment:
+      RESOLUTION: 1280x720
+    ports:
+      - "6085:80"
+  app06:
+    image: sergimolina/phenorob_summer_school_2021:latest
+    environment:
+      RESOLUTION: 1280x720
+    ports:
+      - "6086:80"
+  app07:
+    image: sergimolina/phenorob_summer_school_2021:latest
+    environment:
+      RESOLUTION: 1280x720
+    ports:
+      - "6087:80"

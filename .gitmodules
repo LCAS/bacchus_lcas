@@ -1,3 +1,6 @@
 [submodule "liosam"]
 	path = liosam
 	url = https://github.com/ibrahimhroob/LIO-SAM.git
+[submodule "bacchus_slam/gzweb"]
+	path = bacchus_slam/gzweb
+	url = https://github.com/osrf/gzweb

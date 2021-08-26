@@ -2,16 +2,15 @@
 <launch>
 
   <!--MAIN PARAMETERS -->
-  <arg name="world_name" default="summer_school_stage0"/>
+  <arg name="world_name" default="summer_school_mix"/>
   <arg name="gazebo_gui" default="true"/>
 
   <!-- RTAB-MAP SLAM PARAMETERS -->
   <arg name="Odom/Strategy" default="0" /> <!--0=Frame-to-Map (F2M) 1=Frame-to-Frame (F2F) 2=Fovis 3=viso2 4=DVO-SLAM 5=ORB_SLAM2 6=OKVIS 7=LOAM 8=MSCKF_VIO 9=VINS-Fusion -->
   <arg name="Kp/DetectorStrategy" default="8"/>    <!-- 2=ORB  7=BRISK 8=GFTT/ORB 9=KAZE 10=ORB-OCTREE 11=SuperPoint 15=PyDetector" -->
   <arg name="Optimizer/Strategy"  default="1" />  <!-- "Graph optimization strategy: 0=TORO, 1=g2o, 3=Ceres.")-->
-  <arg name="RGBD/OptimizeMaxError"  default="3" /> <!--Reject loop closures if optimization error ratio is greater than this value (0=disabled). Ratio is computed as absolute error over standard deviation of each link. This will help to detect when a wrong loop closure is added to the graph.-->
 
-  <arg name="localization"            default="false"/> <!-- Localization-only mode -->
+  <arg name="localization"        default="false"/> <!-- Localization-only mode -->
   
 
   <!-- ======================= -->
@@ -88,8 +87,7 @@
   
   <arg name="frame_id"                default="base_link"/>   <!-- Fixed frame id, you may set "base_link" or "base_footprint" if they are published -->
   <arg name="database_path"           default="~/.ros/rtabmap.db"/>
-  <arg name="rtabmap_args"            default=""/>              <!-- delete_db_on_start, udebug -->
-  <arg name="launch_prefix"           default=""/>              <!-- for debugging purpose, it fills launch-prefix tag of the nodes -->
+ <arg name="launch_prefix"           default=""/>              <!-- for debugging purpose, it fills launch-prefix tag of the nodes -->
   <arg name="approx_sync"             default="false"/>         <!-- if timestamps of the input topics are not synchronized -->
    
   <arg name="rgb_topic"               default="/thorvald_001/kinect2_front_camera/rgb/image_raw" />
@@ -109,54 +107,102 @@
    
   <arg name="namespace"               default="rtabmap"/>
   <arg name="wait_for_transform"      default="0.2"/>
-
-  <arg name="ground_truth_frame_id"   default="map"/>
-  <arg name="ground_truth_base_frame_id" default="base_link_GT"/>
-
+  <arg name="RGBD/OptimizeMaxError"  default="1" /> <!--Reject loop closures if optimization error ratio is greater than this value (0=disabled). Ratio is computed as absolute error over standard deviation of each link. This will help to detect when a wrong loop closure is added to the graph.-->
   <arg name="Reg/Force3DoF"       default="true"/> <!-- Force 3 degrees-of-freedom transform (3Dof: x,y and yaw). Parameters z, roll and pitch will be set to 0.-->
 
-<include file="$(find bacchus_slam)/launch/rtabmap.launch">
-    <arg name="rtabmapviz"              value="$(arg rtabmapviz)" /> 
-    <arg name="rviz"                    value="$(arg rviz)" />
-    <arg name="localization"            value="$(arg localization)"/>
-    <arg name="gui_cfg"                 value="$(arg rtabmapviz_cfg)" />
-    <arg name="rviz_cfg"                value="$(arg rviz_cfg)" />
-  
-    <arg name="frame_id"                value="$(arg frame_id)"/>
-    <arg name="namespace"               value="$(arg namespace)"/>
-    <arg name="database_path"           value="$(arg database_path)"/>
-    <arg name="wait_for_transform"      value="$(arg wait_for_transform)"/>
-    <arg name="rtabmap_args"            value="$(arg rtabmap_args)"/>  
-    <arg name="launch_prefix"           value="$(arg launch_prefix)"/>          
-    <arg name="approx_sync"             value="$(arg approx_sync)"/>
 
-    <arg name="rgb_topic"               value="$(arg rgb_topic)" />
-    <arg name="depth_topic"             value="$(arg depth_registered_topic)" />
-    <arg name="camera_info_topic"       value="$(arg camera_info_topic)" />
-    <arg name="compressed"              value="$(arg compressed)"/>                                                                                
-   
-    <arg name="subscribe_scan"          value="$(arg subscribe_scan)"/>
-    <arg name="scan_topic"              value="$(arg scan_topic)"/>
-  
-    <arg name="subscribe_scan_cloud"    value="$(arg subscribe_scan_cloud)"/>
-    <arg name="scan_cloud_topic"        value="$(arg scan_cloud_topic)"/>
-   
-    <arg name="visual_odometry"         value="$(arg visual_odometry)"/>          
-    <arg name="odom_topic"              value="$(arg odom_topic)"/>    
-    <arg name="odom_frame_id"           value="$(arg odom_frame_id)"/>         
-    <arg name="odom_args"               value="$(arg rtabmap_args)"/>
-    <arg name="ground_truth_frame_id"   value="$(arg ground_truth_frame_id)"/>
-    <arg name="ground_truth_base_frame_id" value="$(arg ground_truth_base_frame_id)"/>
-     
-    <arg name="Reg/Force3DoF"          value="$(arg Reg/Force3DoF)"/>
-    <arg name="Kp/DetectorStrategy"    value="$(arg Kp/DetectorStrategy)"/>
-    <arg name="Optimizer/Strategy"    value="$(arg Optimizer/Strategy)"/>
-    <arg name="RGBD/OptimizeMaxError"    value="$(arg RGBD/OptimizeMaxError)"/>
-    
-    <arg name="Odom/Strategy" value ="$(arg Odom/Strategy)" />
+  <group unless="$(arg localization)">
 
+    <include file="$(find bacchus_slam)/launch/rtabmap.launch">
+        <arg name="rtabmapviz"              value="$(arg rtabmapviz)" /> 
+        <arg name="rviz"                    value="$(arg rviz)" />
+        <arg name="localization"            value="$(arg localization)"/>
+        <arg name="gui_cfg"                 value="$(arg rtabmapviz_cfg)" />
+        <arg name="rviz_cfg"                value="$(arg rviz_cfg)" />
+      
+        <arg name="frame_id"                value="$(arg frame_id)"/>
+        <arg name="namespace"               value="$(arg namespace)"/>
+        <arg name="database_path"           value="$(arg database_path)"/>
+        <arg name="wait_for_transform"      value="$(arg wait_for_transform)"/>
+        
+        <arg name="launch_prefix"           value="$(arg launch_prefix)"/>          
+        <arg name="approx_sync"             value="$(arg approx_sync)"/>
 
-</include>
+        <arg name="rgb_topic"               value="$(arg rgb_topic)" />
+        <arg name="depth_topic"             value="$(arg depth_registered_topic)" />
+        <arg name="camera_info_topic"       value="$(arg camera_info_topic)" />
+        <arg name="compressed"              value="$(arg compressed)"/>                                                                                
+      
+        <arg name="subscribe_scan"          value="$(arg subscribe_scan)"/>
+        <arg name="scan_topic"              value="$(arg scan_topic)"/>
+      
+        <arg name="subscribe_scan_cloud"    value="$(arg subscribe_scan_cloud)"/>
+        <arg name="scan_cloud_topic"        value="$(arg scan_cloud_topic)"/>
+      
+        <arg name="visual_odometry"         value="$(arg visual_odometry)"/>          
+        <arg name="odom_topic"              value="$(arg odom_topic)"/>    
+        <arg name="odom_frame_id"           value="$(arg odom_frame_id)"/> 
+        
+        <arg name="Reg/Force3DoF"          value="$(arg Reg/Force3DoF)"/>
+        <arg name="Kp/DetectorStrategy"    value="$(arg Kp/DetectorStrategy)"/>
+        <arg name="Optimizer/Strategy"     value="$(arg Optimizer/Strategy)"/>
+        <arg name="RGBD/OptimizeMaxError"  value="$(arg RGBD/OptimizeMaxError)"/>
+        
+        <arg name="Odom/Strategy" value ="$(arg Odom/Strategy)" />
+
+        <arg  name="ground_truth_frame_id"      value="map"/>
+        <arg  name="ground_truth_base_frame_id" value="base_link_GT"/>
+        <arg name="rtabmap_args"                value="-d"/>
+        <arg name="odom_args"                   value="-d"/>
+
+    </include>
+  </group>
+
+  <group if="$(arg localization)">
+    <include file="$(find bacchus_slam)/launch/rtabmap.launch">
+        <arg name="rtabmapviz"              value="$(arg rtabmapviz)" /> 
+        <arg name="rviz"                    value="$(arg rviz)" />
+        <arg name="localization"            value="$(arg localization)"/>
+        <arg name="gui_cfg"                 value="$(arg rtabmapviz_cfg)" />
+        <arg name="rviz_cfg"                value="$(arg rviz_cfg)" />
+      
+        <arg name="frame_id"                value="$(arg frame_id)"/>
+        <arg name="namespace"               value="$(arg namespace)"/>
+        <arg name="database_path"           value="$(arg database_path)"/>
+        <arg name="wait_for_transform"      value="$(arg wait_for_transform)"/>
+        
+        <arg name="launch_prefix"           value="$(arg launch_prefix)"/>          
+        <arg name="approx_sync"             value="$(arg approx_sync)"/>
+
+        <arg name="rgb_topic"               value="$(arg rgb_topic)" />
+        <arg name="depth_topic"             value="$(arg depth_registered_topic)" />
+        <arg name="camera_info_topic"       value="$(arg camera_info_topic)" />
+        <arg name="compressed"              value="$(arg compressed)"/>                                                                                
+      
+        <arg name="subscribe_scan"          value="$(arg subscribe_scan)"/>
+        <arg name="scan_topic"              value="$(arg scan_topic)"/>
+      
+        <arg name="subscribe_scan_cloud"    value="$(arg subscribe_scan_cloud)"/>
+        <arg name="scan_cloud_topic"        value="$(arg scan_cloud_topic)"/>
+      
+        <arg name="visual_odometry"         value="$(arg visual_odometry)"/>          
+        <arg name="odom_topic"              value="$(arg odom_topic)"/>    
+        <arg name="odom_frame_id"           value="$(arg odom_frame_id)"/> 
+        
+        <arg name="Reg/Force3DoF"          value="$(arg Reg/Force3DoF)"/>
+        <arg name="Kp/DetectorStrategy"    value="$(arg Kp/DetectorStrategy)"/>
+        <arg name="Optimizer/Strategy"     value="$(arg Optimizer/Strategy)"/>
+        <arg name="RGBD/OptimizeMaxError"  value="$(arg RGBD/OptimizeMaxError)"/>
+        
+        <arg name="Odom/Strategy" value ="$(arg Odom/Strategy)" />
+
+        <arg  name="ground_truth_frame_id"      value=""/>
+        <arg  name="ground_truth_base_frame_id" value=""/>
+        <arg name="rtabmap_args"                value=""/>
+        <arg name="odom_args"                   value=""/>
+
+    </include>      
+  </group>
 
 
 

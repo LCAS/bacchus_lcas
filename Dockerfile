@@ -41,7 +41,9 @@ RUN . /opt/ros/melodic/setup.sh; rosdep install --from-paths /home/ubuntu/ros_ws
 RUN . /opt/ros/melodic/setup.sh; rosdep install --from-paths /home/ubuntu/ros_ws/src/bacchus_lcas/bacchus_slam  -y
 RUN /bin/bash -c '. /opt/ros/melodic/setup.bash; cd /home/ubuntu/ros_ws; catkin_make'
 
-USER ubuntu
-RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
-RUN source ~/.bashrc; source /home/ubuntu/ros_ws/devel/setup.bash; nvm install 8; cd /home/ubuntu/ros_ws/src/bacchus_lcas/bacchus_slam/gzweb; npm run deploy --- -c -m local
-USER root
+RUN cd ~/ros_ws/src/bacchus_lcas/bacchus_slam; git submodule add -f https://github.com/osrf/gzweb; cd gzweb; git checkout gzweb_1.4.1
+
+RUN bash -c "curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash"
+RUN bash -i -c "cat ~/.bashrc; source ~/.bashrc; source /home/ubuntu/ros_ws/devel/setup.bash; nvm install 8; cd /home/ubuntu/ros_ws/src/bacchus_lcas/bacchus_slam/gzweb; npm run deploy --- -m local"
+
+# start gzweb server in /home/ubuntu/ros_ws/src/bacchus_lcas/bacchus_slam/gzweb with npm start 

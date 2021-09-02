@@ -30,23 +30,28 @@
     </include>
   </group>
 
-  <!-- <group if="$(eval robot_name == 'rb_sherpa_one_arm')">
-    <include file="$(find rbsherpa_sim_bringup)/launch/rbsherpa_complete.launch">
+  <group if="$(eval robot_name == 'rb_sherpa_one_arm')">
+    <include file="$(find bacchus_gazebo)/launch/rbsherpa_complete.launch">
       <arg name="robot_xacro" value="rbsherpa_std_ur10.urdf.xacro" />
       <arg name="launch_arm_control" value="true" />
       <arg name="arm_controllers" value="arm_controller"/>
-      <arg name="world_file" value="$(arg world)"/>
-      <arg name="x_init_pose" value="$(arg X_INIT)" />
-      <arg name="y_init_pose" value="$(arg Y_INIT)" />
-      <arg name="z_init_p@giose" value="$(arg Z_INIT)" />
-      <arg name="run_navigation" value="true"/>
-    </include> -->
+      <arg name="kinematics"        value="omni" />
+      <arg name="world_file"        value="$(arg world_file)"/>
+      <arg name="x_init_pose"       value="$(arg x_init_pose)" />
+      <arg name="y_init_pose"       value="$(arg y_init_pose)" />
+      <arg name="z_init_pose"       value="$(arg z_init_pose)" />
+      <arg name="run_navigation"    value="$(arg run_navigation)"/>
+      <arg name="run_localization"  value="$(arg run_localization)"/>
+      <arg name="map_file"          value="$(arg nav_map_yaml)"/>
+      <arg name="rviz_config_path"  value="$(find bacchus_gazebo)/rviz/rbsherpa.rviz"/>
+      <arg name="paused"            value="$(arg paused)"/>
+    </include>
 
 
     <!-- TODO: it doesn't work if left here in this launch file -->
     <!-- $ ROS_NAMESPACE=robot roslaunch rbsherpa_moveit_ur10 demo.launch -->
     <!-- $ ROS_NAMESPACE=robot rosrun rqt_joint_trajectory_controller rqt_joint_trajectory_controller -->
-  <!-- </group> -->
+  </group>
 
   <group if="$(eval robot_name == 'rb_sherpa_xl')">
     <include file="$(find bacchus_gazebo)/launch/rbsherpa_complete.launch">
@@ -66,15 +71,25 @@
     </include>
   </group>
 
-  <!-- <group if="$(eval robot_name == 'rb_sherpa_xl_two_arms')">
-    <include file="$(find rbsherpa_sim_bringup)/launch/rbsherpa_complete.launch">
+  <group if="$(eval robot_name == 'rb_sherpa_xl_two_arms')">
+    <include file="$(find bacchus_gazebo)/launch/rbsherpa_complete.launch">
       <arg name="robot_xacro" value="rbsherpa_xl.urdf.xacro" />
       <arg name="launch_arm_control" value="true" />
-      <arg name="world_file" value="$(arg world)"/>
+      <arg name="kinematics"          value="omni" />
+      <arg name="twist2ackermann"     value="false" />
+      <arg name="world_file"          value="$(arg world_file)"/>
+      <arg name="x_init_pose"         value="$(arg x_init_pose)" />
+      <arg name="y_init_pose"         value="$(arg y_init_pose)" />
+      <arg name="z_init_pose"         value="$(arg z_init_pose)" />
+      <arg name="run_navigation"      value="$(arg run_navigation)"/>
+      <arg name="run_localization"   value="$(arg run_localization)"/>
+      <arg name="map_file"            value="$(arg nav_map_yaml)"/>
+      <arg name="rviz_config_path"    value="$(find bacchus_gazebo)/rviz/rbsherpa.rviz"/>
+      <arg name="paused"              value="$(arg paused)"/>
     </include>
 
     <include file="$(find rbsherpa_xl_2ur10_e_moveit)/launch/rbsherpa_xl_moveit_config.launch"/>
-  </group> -->
+  </group>
 
   <!-- Localisation -->
   <group if="$(arg fake_localisation)">

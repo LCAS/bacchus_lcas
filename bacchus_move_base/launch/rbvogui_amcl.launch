@@ -19,7 +19,7 @@
   
   <!-- TODO: integrate two laser scan into a mux topic, this topic has two msgs with two headers (?)-->
   <node pkg="amcl" type="amcl" name="amcl" output="screen">
-    <rosparam command="load" file="$(find rbsherpa_localization)/config/amcl.yaml" subst_value="true" />
+    <rosparam command="load" file="$(find rbvogui_localization)/config/amcl.yaml" subst_value="true" />
     <remap from="scan" to="$(arg scan_topic)"/>
     <remap from="map" to="$(arg map_topic)"/>
   </node>

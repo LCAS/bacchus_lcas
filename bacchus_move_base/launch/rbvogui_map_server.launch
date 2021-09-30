@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <launch>
 	<!-- maps inside the folder rbsherpa_localization/maps -->
-	<arg name="map_file" default="$(find rbsherpa_localization)/maps/empty/map_empty.yaml"/>
+	<arg name="map_file" default="$(find rbvogui_localization)/maps/empty/map_empty.yaml"/>
 	<arg name="robot_id" default="robot"/>
 	<arg name="prefix" default="$(arg robot_id)_"/>
 	<arg name="frame_id" default="$(arg prefix)map"/>

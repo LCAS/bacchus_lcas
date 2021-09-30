@@ -3,14 +3,14 @@
 
   <!-- Robot arguments -->
   <arg name="fake_localisation" default="true" doc="fake the localisation, sets map_server and world_tf to true."/>
-  <arg name="riseholme_dt" default="true"/>
-  <arg name="robot_name" default="rb_sherpa_xl"/>
+  <arg name="riseholme_dt" default="false"/>
+  <arg name="robot_name" default="rbvogui_xl"/>
   <!-- robot supported:
     - thorvald_001
-    - rb_sherpa
-    - rb_sherpa_one_arm
-    - rb_sherpa_xl
-    - rb_sherpa_xl_two_arms
+    - rbvogui
+    - rbvogui_one_arm
+    - rbvogui_xl
+    - rbvogui_xl_two_arms
     -->
   <!-- <arg name="robot_no" default="001"/> -->  <!-- unused-->
   <arg name="robot_model" default="$(find bacchus_gazebo)/config/robot.yaml"/>
@@ -82,7 +82,7 @@
 
 
   <group unless="$(eval robot_name == 'thorvald_001')">
-    <include file="$(find bacchus_gazebo)/launch/rbsherpa.launch">
+    <include file="$(find bacchus_gazebo)/launch/rbvogui.launch">
       <arg name="robot_name"        value="$(arg robot_name)" />
       <arg name="world_file"        value="$(arg world)"/>
       <arg name="x_init_pose"       value="$(arg X_INIT)" />

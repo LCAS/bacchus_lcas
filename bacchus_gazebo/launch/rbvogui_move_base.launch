@@ -10,7 +10,7 @@
   <arg name="has_safety_controller" default="$(optenv HAS_SAFETY_CONTROLLER false)"/>
 
   <!-- What navigation config package to use -->
-  <arg name="navigation_package" default="$(optenv NAVIGATION_PACKAGE rbsherpa_navigation)"/>
+  <arg name="navigation_package" default="$(optenv NAVIGATION_PACKAGE rbvogui_navigation)"/>
   <arg name="config_folder" default="$(eval find(navigation_package) + '/config')" />
 
   <!-- Topics argumments -->

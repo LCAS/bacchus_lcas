@@ -15,7 +15,7 @@
   <!-- - - - - - --> 
   <!--   FILES   -->
   <!-- - - - - - --> 
-  <arg name="navigation_package" default="$(optenv NAVIGATION_PACKAGE rbsherpa_navigation)"/>
+  <arg name="navigation_package" default="$(optenv NAVIGATION_PACKAGE rbvogui_navigation)"/>
   <arg name="move_base_file" default="$(eval find(navigation_package) + '/launch/move_base.launch')"/>
   <arg name="move_file" default="$(eval find(navigation_package) + '/launch/move.launch')"/>
   <arg name="scan_filter_file" default="$(eval find(navigation_package) + '/launch/scan_filter.launch')"/>

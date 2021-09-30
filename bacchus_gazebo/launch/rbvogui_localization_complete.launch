@@ -15,8 +15,8 @@
   <arg name="map_file" default="$(eval find(localization_package)+'/maps/' + map)" />
 
   <!-- Files -->
-  <arg name="localization_system_file" default="$(eval find(localization_package) + '/launch/rbsherpa_amcl.launch')"/>
-  <arg name="map_server_file" default="$(eval find(localization_package) + '/launch/rbsherpa_map_server.launch')"/>
+  <arg name="localization_system_file" default="$(eval find(localization_package) + '/launch/rbvogui_amcl.launch')"/>
+  <arg name="map_server_file" default="$(eval find(localization_package) + '/launch/rbvogui_map_server.launch')"/>
 
   <group ns="$(arg robot_id)">
 

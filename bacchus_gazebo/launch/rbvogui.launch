@@ -26,14 +26,14 @@
       <arg name="run_navigation"    value="$(arg run_navigation)"/>
       <arg name="run_localization"  value="$(arg run_localization)"/>
       <arg name="map_file"          value="$(arg nav_map_yaml)"/>
-      <arg name="rviz_config_path"    value="$(arg rviz_config_path"/>
+      <arg name="rviz_config_path"  value="$(arg rviz_config_path)"/>
       <arg name="paused"            value="$(arg paused)"/>
     </include>
   </group>
 
   <group if="$(eval robot_name == 'rbvogui_one_arm')">
     <include file="$(find bacchus_gazebo)/launch/rbvogui_complete.launch">
-      <arg name="robot_xacro" value="rbvogui_std_ur10.urdf.xacro" />
+      <arg name="robot_xacro"       value="rbvogui_std_ur10.urdf.xacro" />
       <arg name="kinematics"        value="omni" />
       <arg name="world_file"        value="$(arg world_file)"/>
       <arg name="x_init_pose"       value="$(arg x_init_pose)" />
@@ -42,7 +42,7 @@
       <arg name="run_navigation"    value="$(arg run_navigation)"/>
       <arg name="run_localization"  value="$(arg run_localization)"/>
       <arg name="map_file"          value="$(arg nav_map_yaml)"/>
-      <arg name="rviz_config_path"    value="$(arg rviz_config_path"/>
+      <arg name="rviz_config_path"  value="$(arg rviz_config_path)"/>
       <arg name="paused"            value="$(arg paused)"/>
     </include>
 
@@ -64,14 +64,14 @@
       <arg name="run_navigation"      value="$(arg run_navigation)"/>
       <arg name="run_localization"    value="$(arg run_localization)"/>
       <arg name="map_file"            value="$(arg nav_map_yaml)"/>
-      <arg name="rviz_config_path"    value="$(arg rviz_config_path"/>
-      <!-- <arg name="paused"              value="$(arg paused)"/> -->
+      <arg name="rviz_config_path"    value="$(arg rviz_config_path)"/>
+      <arg name="paused"              value="$(arg paused)"/>
     </include>
   </group>
 
   <group if="$(eval robot_name == 'rbvogui_xl_two_arms')">
     <include file="$(find bacchus_gazebo)/launch/rbvogui_complete.launch">
-      <arg name="robot_xacro" value="rbvogui_xl.urdf.xacro" />
+      <arg name="robot_xacro"         value="rbvogui_xl.urdf.xacro" />
       <arg name="kinematics"          value="omni" />
       <arg name="twist2ackermann"     value="false" />
       <arg name="world_file"          value="$(arg world_file)"/>
@@ -79,9 +79,9 @@
       <arg name="y_init_pose"         value="$(arg y_init_pose)" />
       <arg name="z_init_pose"         value="$(arg z_init_pose)" />
       <arg name="run_navigation"      value="$(arg run_navigation)"/>
-      <arg name="run_localization"   value="$(arg run_localization)"/>
+      <arg name="run_localization"    value="$(arg run_localization)"/>
       <arg name="map_file"            value="$(arg nav_map_yaml)"/>
-      <arg name="rviz_config_path"    value="$(arg rviz_config_path"/>
+      <arg name="rviz_config_path"    value="$(arg rviz_config_path)"/>
       <arg name="paused"              value="$(arg paused)"/>
     </include>
 

@@ -1,6 +1,8 @@
 <?xml version="1.0"?>
 <launch>
 
+  <arg name="node_start_delay" default="20.0" /> 
+
   <!-- What simulator config package to use -->
   <arg name="simulation_package" default="$(optenv SIMULATION_CONFIG_PACKAGE rbvogui_gazebo)"/>
   <arg name="config_package" default="$(optenv CONFIG_PACKAGE rbvogui_gazebo)"/>
@@ -20,8 +22,8 @@
 
   <!-- Simulation configuration -->
   <arg name="sim" default="$(optenv SIM_CONTROLLER true)"/>
-  <arg name="world" default="worlds/rbvogui.world" /> <!-- relative path to config_package -->
-  <arg name="world_file" default="$(eval find(config_package) + '/' + world)"/> <!-- absolute path -->
+  <arg name="world" default="$(optenv ROBOT_SIM_GAZEBO_WORLD worlds/demo.world)" /> <!-- demo.world, rbvogui.world -->
+  <arg name="world_file" default="$(eval find(world_package) + '/' + world)"/> <!-- absolute path -->
   <arg name="debug" default="false"/>
   <arg name="paused" default="false"/>
   <arg name="headless" default="false"/>
@@ -71,7 +73,38 @@
   </include>
 
   <!-- launch robot -->
-  <include if="$(arg run_robot)" file="$(eval find(sim_bringup_package) + '/launch/run_robot.launch')" >
+
+  
+  <include if="$(arg run_robot)" file="$(find timed_roslaunch)/launch/timed_roslaunch.launch">
+    <arg name="time" value="20" />
+    <arg name="pkg" value="rbvogui_sim_bringup" />
+    <arg name="file" value="run_robot.launch" />
+    <arg name="value" value="simulation_package:=$(arg simulation_package)
+                             config_package:=$(arg config_package)
+                             robot_id:=$(arg robot_id)
+                             prefix:=$(arg prefix)
+                             robot_xacro:=$(arg robot_xacro)
+                             x_init_pose:=$(arg x_init_pose) 
+                             y_init_pose:=$(arg y_init_pose)
+                             z_init_pose:=$(arg z_init_pose)
+                             a_init_pose:=$(arg a_init_pose)
+                             launch_base_hw_sim:=$(arg launch_base_hw_sim)
+                             load_kinematics_file:=$(arg load_kinematics_file)
+                             gpu:=$(arg gpu)
+                             launch_arm:=$(arg launch_arm)
+                             arm_manufacturer:=$(arg arm_manufacturer)
+                             arm_model:=$(arg arm_model)
+                             kinematics:=$(arg kinematics)
+                             twist2ackermann:=$(arg twist2ackermann)
+                             pad_config_file:=$(arg pad_config_file)
+                             pad_config_path:=$(arg pad_config_path)
+                             " />
+    <arg name="node_name" value="timed_roslaunch" /> <!-- This is optional argument -->
+  </include>
+  
+
+
+  <!-- <include if="$(arg run_robot)" file="$(eval find(sim_bringup_package) + '/launch/run_robot.launch')">
     <arg name="simulation_package" value="$(arg simulation_package)"/>
     <arg name="config_package" value="$(arg config_package)"/>
     <arg name="robot_id" value="$(arg robot_id)"/>
@@ -91,7 +124,7 @@
     <arg name="twist2ackermann" value="$(arg twist2ackermann)"/>
     <arg name="pad_config_file" value="$(arg pad_config_file)"/>
     <arg name="pad_config_path" value="$(arg pad_config_path)"/>
-  </include>
+  </include> -->
 
   <!-- launch rviz -->
   <include if="$(arg run_rviz)" file="$(eval find(sim_bringup_package) + '/launch/run_rviz.launch')">
@@ -102,7 +135,7 @@
 
   <!-- gps_localization launch file -->
   <group if="$(arg run_localization)" ns="$(arg robot_id)">  
-    <include file="$(find bacchus_gazebo)/launch/rbvogui_localization_complete.launch">
+    <include file="$(find bacchus_move_base)/launch/rbvogui_localization_complete.launch">
       <arg name="prefix" value="$(arg prefix)"/>
       <arg name="map_file" value="$(arg map_file)"/>
       <arg name="x_init_pose" value="$(arg x_init_pose)"/>
@@ -112,7 +145,7 @@
   </group>
 
   <!-- navigation launch file -->
-  <include if="$(arg run_navigation)" file="$(find bacchus_gazebo)/launch/rbvogui_navigation_complete.launch">
+  <include if="$(arg run_navigation)" file="$(find bacchus_move_base)/launch/rbvogui_navigation_complete.launch">
 		<arg name="prefix" value="$(arg prefix)"/>
 	</include>
 

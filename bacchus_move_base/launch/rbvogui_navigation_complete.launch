@@ -16,7 +16,7 @@
   <!--   FILES   -->
   <!-- - - - - - --> 
   <arg name="navigation_package" default="$(optenv NAVIGATION_PACKAGE rbvogui_navigation)"/>
-  <arg name="move_base_file" default="$(eval find(navigation_package) + '/launch/move_base.launch')"/>
+  <arg name="move_base_file" default="$( find bacchus_move_base)/launch/rbvogui_move_base.launch"/>
   <arg name="move_file" default="$(eval find(navigation_package) + '/launch/move.launch')"/>
   <arg name="scan_filter_file" default="$(eval find(navigation_package) + '/launch/scan_filter.launch')"/>
   <arg name="rgbd_to_laserscan_file" default="$(eval find(navigation_package) + '/launch/rgbd_to_laserscan.launch')"/>

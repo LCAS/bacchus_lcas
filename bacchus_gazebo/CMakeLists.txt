@@ -17,6 +17,7 @@ find_package(catkin REQUIRED COMPONENTS
   #velodyne_gazebo_plugins
   kinect2_description
   fake_localization
+  timed_roslaunch
 )
 
 find_package (gazebo REQUIRED)

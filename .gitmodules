@@ -1,3 +1,6 @@
 [submodule "rbvogui_sim"]
 	path = rbvogui_sim
 	url = https://github.com/RobotnikAutomation/rbvogui_sim
+[submodule "rbvogui_common"]
+	path = rbvogui_common
+	url = https://github.com/RobotnikAutomation/rbvogui_common

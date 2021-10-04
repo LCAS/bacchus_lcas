@@ -42,6 +42,7 @@
   <arg name="z_init_pose" default="$(optenv ROBOT_SIM_GAZEBO_INIT_POSE_Z 0)"/>
   <arg name="a_init_pose" default="$(optenv ROBOT_SIM_GAZEBO_INIT_POSE_A 0)"/>
   <arg name="launch_base_hw_sim" default="$(optenv ROBOT_SIM_BASE_HW false)"/>
+  <arg name="xl_version" default="false"/>
 
   <!-- Arm configuration-->
   <arg name="launch_arm" default="$(optenv ROBOT_HAS_ARM false)"/>
@@ -77,11 +78,12 @@
   
   <include if="$(arg run_robot)" file="$(find timed_roslaunch)/launch/timed_roslaunch.launch">
     <arg name="time" value="20" />
-    <arg name="pkg" value="rbvogui_sim_bringup" />
-    <arg name="file" value="run_robot.launch" />
+    <arg name="pkg" value="bacchus_gazebo" />
+    <arg name="file" value="rbvogui_run_robot.launch" />
     <arg name="value" value="simulation_package:=$(arg simulation_package)
                              config_package:=$(arg config_package)
                              robot_id:=$(arg robot_id)
+                             xl_version:=$(arg xl_version)
                              prefix:=$(arg prefix)
                              robot_xacro:=$(arg robot_xacro)
                              x_init_pose:=$(arg x_init_pose) 

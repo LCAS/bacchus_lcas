@@ -66,6 +66,7 @@
       <arg name="map_file"            value="$(arg nav_map_yaml)"/>
       <arg name="rviz_config_path"    value="$(arg rviz_config_path)"/>
       <arg name="paused"              value="$(arg paused)"/>
+      <arg name="xl_version"          value="true"/>
     </include>
   </group>
 
@@ -83,6 +84,7 @@
       <arg name="map_file"            value="$(arg nav_map_yaml)"/>
       <arg name="rviz_config_path"    value="$(arg rviz_config_path)"/>
       <arg name="paused"              value="$(arg paused)"/>
+      <arg name="xl_version"          value="true"/>
     </include>
 
     <include file="$(find rbvogui_xl_2ur10_e_moveit)/launch/rbvogui_xl_moveit_config.launch"/>

@@ -4,3 +4,6 @@
 [submodule "rbvogui_common"]
 	path = rbvogui_common
 	url = https://github.com/RobotnikAutomation/rbvogui_common
+[submodule "robotnik_base_hw_sim"]
+	path = robotnik_base_hw_sim
+	url = https://github.com/RobotnikAutomation/robotnik_base_hw_sim

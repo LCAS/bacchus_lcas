@@ -32,6 +32,11 @@
   <build_depend>rbvogui_control</build_depend>
   <build_depend>robotnik_pad</build_depend>
   <build_depend>robotnik_base_hw_sim</build_depend>
+  <build_depend>robotnik_msgs</build_depend>
+  <build_depend>robotnik_twist2ackermann</build_depend>
+  <build_depend>rcomponent</build_depend>
+  <build_depend>omni_drive_controller</build_depend>
+  <build_depend>ackermann_drive_controller</build_depend>
 
   <exec_depend>dwa_local_planner</exec_depend>
   <!--exec_depend>eband_local_planner</exec_depend-->
@@ -47,6 +52,11 @@
   <exec_depend>rbvogui_control</exec_depend>
   <exec_depend>robotnik_pad</exec_depend>
   <exec_depend>robotnik_base_hw_sim</exec_depend>
+  <run_depend>robotnik_msgs</run_depend>
+  <run_depend>robotnik_twist2ackermann</run_depend>
+  <run_depend>rcomponent</run_depend>
+  <run_depend>omni_drive_controller</run_depend>
+  <run_depend>ackermann_drive_controller</run_depend>
 
 
   <!-- The export tag contains other, unspecified, tags -->

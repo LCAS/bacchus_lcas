@@ -52,11 +52,11 @@
   <exec_depend>rbvogui_control</exec_depend>
   <exec_depend>robotnik_pad</exec_depend>
   <exec_depend>robotnik_base_hw_sim</exec_depend>
-  <run_depend>robotnik_msgs</run_depend>
-  <run_depend>robotnik_twist2ackermann</run_depend>
-  <run_depend>rcomponent</run_depend>
-  <run_depend>omni_drive_controller</run_depend>
-  <run_depend>ackermann_drive_controller</run_depend>
+  <exec_depend>robotnik_msgs</exec_depend>
+  <exec_depend>robotnik_twist2ackermann</exec_depend>
+  <exec_depend>rcomponent</exec_depend>
+  <exec_depend>omni_drive_controller</exec_depend>
+  <exec_depend>ackermann_drive_controller</exec_depend>
 
 
   <!-- The export tag contains other, unspecified, tags -->

@@ -1,0 +1,3 @@
+[submodule "rbvogui_sim"]
+	path = rbvogui_sim
+	url = https://github.com/RobotnikAutomation/rbvogui_sim

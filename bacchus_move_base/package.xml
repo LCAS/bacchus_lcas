@@ -25,6 +25,13 @@
   <build_depend>teb_local_planner</build_depend>
   <build_depend>tf</build_depend>
   <build_depend>ira_laser_tools</build_depend>
+  <build_depend>rbvogui_localization</build_depend>
+  <build_depend>rbvogui_navigation</build_depend>
+  <build_depend>rbvogui_gazebo</build_depend>
+  <build_depend>rbvogui_description</build_depend>
+  <build_depend>rbvogui_control</build_depend>
+  <build_depend>robotnik_pad</build_depend>
+  <build_depend>robotnik_base_hw_sim</build_depend>
 
   <exec_depend>dwa_local_planner</exec_depend>
   <!--exec_depend>eband_local_planner</exec_depend-->
@@ -33,6 +40,13 @@
   <exec_depend>teb_local_planner</exec_depend>
   <exec_depend>tf</exec_depend>
   <exec_depend>ira_laser_tools</exec_depend>
+  <exec_depend>rbvogui_localization</exec_depend>
+  <exec_depend>rbvogui_navigation</exec_depend>
+  <exec_depend>rbvogui_gazebo</exec_depend>
+  <exec_depend>rbvogui_description</exec_depend>
+  <exec_depend>rbvogui_control</exec_depend>
+  <exec_depend>robotnik_pad</exec_depend>
+  <exec_depend>robotnik_base_hw_sim</exec_depend>
 
 
   <!-- The export tag contains other, unspecified, tags -->

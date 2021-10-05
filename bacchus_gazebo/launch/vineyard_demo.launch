@@ -4,13 +4,6 @@
   <!-- Robot arguments -->
   <arg name="fake_localisation" default="true" doc="fake the localisation, sets map_server and world_tf to true."/>
   <arg name="robot_name" default="thorvald_001"/>
-  <!-- robot supported:
-    - thorvald_001
-    - rb_sherpa
-    - rb_sherpa_one_arm
-    - rb_sherpa_xl
-    - rb_sherpa_xl_two_arms
-    -->
   <!-- <arg name="robot_no" default="001"/> -->  <!-- unused-->
   <arg name="robot_model" default="$(find bacchus_gazebo)/config/robot.yaml"/>
   <arg name="model_extras" default="$(find bacchus_gazebo)/urdf/bacchus_sensors.xacro"/>
@@ -50,36 +43,19 @@
 
 
   <!-- ############################### ROBOT ############################## -->
-  <group if="$(eval robot_name == 'thorvald_001')">
-
-    <include file="$(find bacchus_gazebo)/launch/thorvald.launch">
-      <arg name="robot_name"        value="$(arg robot_name)" />
-      <arg name="tf_prefix"         value="" />
-      <arg name="x"                 value="$(arg X_INIT)" />
-      <arg name="y"                 value="$(arg Y_INIT)" />
-      <arg name="z"                 value="$(arg Z_INIT)" />
-      <arg name="robot_model"       value="$(arg robot_model)"/>
-      <arg name="model_extras"      value="$(arg model_extras)"/>
-      <arg name="world_name"        value="$(arg world)"/>
-      <arg name="fake_localisation" value="$(arg fake_localisation)"/>
-      <arg name="nav_map_yaml"      value="$(arg nav_map_yaml)"/>
-      <arg name="rviz_config_file"  value="$(arg rviz_config_file)"/>
-    </include>
-
-  </group>
-
-
-  <group unless="$(eval robot_name == 'thorvald_001')">
-    <include file="$(find bacchus_gazebo)/launch/rbsherpa.launch">
-      <arg name="robot_name"        value="$(arg robot_name)" />
-      <arg name="world_file"        value="$(arg world)"/>
-      <arg name="x_init_pose"       value="$(arg X_INIT)" />
-      <arg name="y_init_pose"       value="$(arg Y_INIT)" />
-      <arg name="z_init_pose"       value="$(arg Z_INIT)" />
-      <arg name="run_navigation"    value="true"/>
-    </include>
-  </group>
-
+  <include file="$(find bacchus_gazebo)/launch/thorvald.launch">
+    <arg name="robot_name"        value="$(arg robot_name)" />
+    <arg name="tf_prefix"         value="" />
+    <arg name="x"                 value="$(arg X_INIT)" />
+    <arg name="y"                 value="$(arg Y_INIT)" />
+    <arg name="z"                 value="$(arg Z_INIT)" />
+    <arg name="robot_model"       value="$(arg robot_model)"/>
+    <arg name="model_extras"      value="$(arg model_extras)"/>
+    <arg name="world_name"        value="$(arg world)"/>
+    <arg name="fake_localisation" value="$(arg fake_localisation)"/>
+    <arg name="nav_map_yaml"      value="$(arg nav_map_yaml)"/>
+    <arg name="rviz_config_file"  value="$(arg rviz_config_file)"/>
+  </include>
 
 </launch>
 

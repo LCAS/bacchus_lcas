@@ -11,3 +11,7 @@
 	path = robotnik_pad
 	url = https://github.com/RobotnikAutomation/robotnik_pad
 	shallow = true
+[submodule "robotnik_sensors"]
+	path = robotnik_sensors
+	url = https://github.com/RobotnikAutomation/robotnik_sensors
+	shallow = true

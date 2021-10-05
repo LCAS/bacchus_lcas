@@ -7,3 +7,7 @@
 [submodule "robotnik_base_hw_sim"]
 	path = robotnik_base_hw_sim
 	url = https://github.com/RobotnikAutomation/robotnik_base_hw_sim
+[submodule "robotnik_pad"]
+	path = robotnik_pad
+	url = https://github.com/RobotnikAutomation/robotnik_pad
+	shallow = true

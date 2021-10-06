@@ -4,7 +4,7 @@
   <!-- Robot arguments -->
   <arg name="fake_localisation" default="true" doc="fake the localisation, sets map_server and world_tf to true."/>
   <arg name="riseholme_dt" default="false"/>
-  <arg name="robot_name" default="rbvogui_xl"/>
+  <arg name="robot_name" default="thorvald_001"/>
   <!-- robot supported:
     - thorvald_001
     - rbvogui

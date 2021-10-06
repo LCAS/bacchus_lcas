@@ -32,9 +32,9 @@ class MoveBaseSeq():
 
         self.goal_cnt = 0
         #Create action client
-        self.client = actionlib.SimpleActionClient('thorvald_001/move_base',MoveBaseAction)
+        self.client = actionlib.SimpleActionClient('/move_base',MoveBaseAction)
         rospy.loginfo("Waiting for move_base action server...")
-        wait = self.client.wait_for_server(rospy.Duration(5.0))
+        wait = self.client.wait_for_server()
         if not wait:
             rospy.logerr("Action server not available!")
             rospy.signal_shutdown("Action server not available!")

@@ -136,5 +136,10 @@ bacchus_gazebo/models/heightmap*
 /bacchus_gazebo/cmake-build-debug/
 /bacchus_gazebo/.vscode/
 /bacchus_gazebo/.idea/
+bacchus_gazebo/models/grass_ground_plane/
+velodyne_simulator/
+universal_robot/
+robotnik*
+rbsherpa*
+joint_read_command_controller/
 
-.vscode/

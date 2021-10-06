@@ -76,7 +76,7 @@
   <!-- launch robot -->
 
   
-  <include if="$(arg run_robot)" file="$(find timed_roslaunch)/launch/timed_roslaunch.launch">
+  <include if="$(arg run_robot)" file="$(find timed_roslaunch)/timed_roslaunch.launch">
     <arg name="time" value="20" />
     <arg name="pkg" value="bacchus_gazebo" />
     <arg name="file" value="rbvogui_run_robot.launch" />

@@ -136,3 +136,5 @@ bacchus_gazebo/models/heightmap*
 /bacchus_gazebo/cmake-build-debug/
 /bacchus_gazebo/.vscode/
 /bacchus_gazebo/.idea/
+
+.vscode/

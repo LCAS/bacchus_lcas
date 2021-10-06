@@ -276,8 +276,8 @@ Changelog for package rasberry_move_base
 0.0.2 (2018-05-21)
 ------------------
 
-Forthcoming
------------
+0.3.0 (2021-10-06)
+------------------
 * Merge pull request `#30 <https://github.com/LCAS/bacchus_lcas/issues/30>`_ from LCAS/fix_digital_twin_sim
   thorvald up and running - sherpa still pending (new pull request will be opened)
 * Rename Action Client

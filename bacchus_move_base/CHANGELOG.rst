@@ -276,6 +276,22 @@ Changelog for package rasberry_move_base
 0.0.2 (2018-05-21)
 ------------------
 
+Forthcoming
+-----------
+* Merge pull request `#30 <https://github.com/LCAS/bacchus_lcas/issues/30>`_ from LCAS/fix_digital_twin_sim
+  thorvald up and running - sherpa still pending (new pull request will be opened)
+* Rename Action Client
+* Added corner_laser_merger automatically launched after 20s
+* Maintainer in Package.xml
+* Fix Thorvald navigation using move_base
+* Fix SINGLE Thorvald navigation
+* Merge pull request `#7 <https://github.com/LCAS/bacchus_lcas/issues/7>`_ from pulver22/robotnik-launch
+  Merging after passing all the tests.
+* Parametrised hokuyo + 2 sensors suites
+  The test should now pass
+* Laser merger required to fuse lidar and fix costmap generation
+* Contributors: Ibrahim, Riccardo, Riccardo Polvara, Sergi Molina
+
 0.2.2 (2020-11-18)
 ------------------
 

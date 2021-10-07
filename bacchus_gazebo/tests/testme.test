@@ -3,6 +3,7 @@
     <env name="DISPLAY" value="" />
     <arg name="gui" value="false" />
     <arg name="paused" value="false" />
+    <arg name="robot_name" default="thorvald_001"/>
     <arg name="fake_localisation" value="true" />
     <arg name="launch_move_base" value="false" />
     <arg name="launch_rviz" value="false" />

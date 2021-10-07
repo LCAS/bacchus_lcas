@@ -11,6 +11,7 @@
   <arg name="world_name" default=""/>
   <!-- Robot params -->
   <arg name="robot_name" />
+  <arg name="robot_no" />
   <arg name="x" default="0.0"/>
   <arg name="y" default="0.0"/>
   <arg name="z" default="0.0"/>
@@ -36,7 +37,7 @@
   </include>
 
   <!-- Lauch robot model -->
-  <group ns="$(arg robot_name)">
+  <group ns="$(arg robot_name)_$(arg robot_no)">
 
     <!-- model bringup -->
     <include file="$(find thorvald_description)/launch/model.launch">
@@ -71,7 +72,7 @@
     <node name="nav_map_server" pkg="map_server" type="map_server" args="$(arg nav_map_yaml)" output="screen"/>
     
     <node pkg="fake_localization" type="fake_localization" respawn="false" name="fake_loc">
-      <remap from="base_pose_ground_truth" to="/thorvald_001/odometry/gazebo" />
+      <remap from="base_pose_ground_truth" to="/$(arg robot_name)/odometry/gazebo" />
       <param name="~odom_frame_id" type="string" value="odom" />
       <param name="~base_frame_id" type="string" value="base_link" />
       <param name="~global_frame_id" type="string" value="map" />
@@ -81,7 +82,9 @@
 
   <!-- Navigation -->
   <group if="$(arg launch_move_base)">
-    <include file="$(find bacchus_move_base)/launch/move_base_dwa.launch" />
+    <include file="$(find bacchus_move_base)/launch/move_base_dwa.launch" >
+      <arg name="robot_no" value="$(arg robot_no)"/>
+    </include>
   </group>
 
   <include file="$(find bacchus_move_base)/launch/corner_lasers_merger.launch">

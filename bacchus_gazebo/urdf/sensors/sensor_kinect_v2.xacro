@@ -87,7 +87,7 @@
           <pointCloudTopicName>sd/points</pointCloudTopicName>
           <cameraInfoTopicName>sd/camera_info</cameraInfoTopicName>
           <!--<depthImageCameraInfoTopicName>depth/camera_info</depthImageCameraInfoTopicName>-->
-          <frameName>/${kinect2_name}_depth_optical_frame</frameName>
+          <frameName>/$(arg tf_prefix)${kinect2_name}_depth_optical_frame</frameName>
           <pointCloudCutoff>0.5</pointCloudCutoff>
           <pointCloudCutoffMax>8.0</pointCloudCutoffMax>
           <baseline>0.1</baseline>

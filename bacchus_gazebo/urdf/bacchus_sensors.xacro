@@ -11,9 +11,9 @@
           xyz="0 0 1.56"
           rpy="0 0 0"/>
 
-  <xacro:imu sensor_name="imu"
+  <!--xacro:imu sensor_name="imu"
           xyz="0 0 1.5"
-          rpy="0 0 0"/>
+          rpy="0 0 0"/-->
 
   <xacro:hokuyo sensor_name="hokuyo_back"
           xyz="0.172 -0.152 -0.034"
@@ -39,17 +39,17 @@
           kinect2_cam_op="0" 
           kinect2_cam_oy="0.0"/>
 
-  <xacro:kinect kinect2_name="kinect2_left" 
+  <!--xacro:kinect kinect2_name="kinect2_left" 
           kinect2_cam_px="0.0" 
-          kinect2_cam_py="0.34" 
+          kinect2_cam_py="0.50" 
           kinect2_cam_pz="0.80" 
           kinect2_cam_or="0" 
           kinect2_cam_op="0" 
-          kinect2_cam_oy="${90*M_PI/180}"/>
+          kinect2_cam_oy="${90*M_PI/180}"/-->
 
   <xacro:kinect kinect2_name="kinect2_right" 
           kinect2_cam_px="0.0" 
-          kinect2_cam_py="-0.34" 
+          kinect2_cam_py="-0.50" 
           kinect2_cam_pz="0.80" 
           kinect2_cam_or="0" 
           kinect2_cam_op="0" 

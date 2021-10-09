@@ -1,0 +1,1508 @@
+<sdf version='1.6'>
+  <world name='default'>
+    <gui fullscreen='0'>
+      <camera name='user_camera'>
+        <pose frame=''>17.5356 -63.6693 17.2387 -0 0.457794 0.777445</pose>
+        <view_controller>orbit</view_controller>
+        <projection_type>perspective</projection_type>
+      </camera>
+    </gui>
+    <light name='sun' type='directional'>
+      <cast_shadows>1</cast_shadows>
+      <pose frame=''>0 0 10 0 -0 0</pose>
+      <diffuse>0.8 0.8 0.8 1</diffuse>
+      <specular>0.2 0.2 0.2 1</specular>
+      <attenuation>
+        <range>1000</range>
+        <constant>0.9</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <direction>-0.5 0.1 -0.9</direction>
+    </light>
+    <model name='heightmap'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://heightmap_riseholme/meshes/heightmap.dae</uri>
+              <scale>2 3 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://heightmap_riseholme/meshes/heightmap.dae</uri>
+              <scale>2 3 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>0 0 0.1 -0.085 0 0</pose>
+    </model>
+    <physics name='default_physics' default='0' type='ode'>
+      <real_time_update_rate>200</real_time_update_rate>
+      <real_time_factor>1</real_time_factor>
+      <max_step_size>0.005</max_step_size>
+    </physics>
+    <gravity>0 0 -9.8</gravity>
+    <magnetic_field>6e-06 2.3e-05 -4.2e-05</magnetic_field>
+    <atmosphere type='adiabatic'/>
+    <scene>
+      <sky>
+        <clouds>
+          <speed>12</speed>
+        </clouds>
+      </sky>
+      <shadows>1</shadows>
+      <ambient>0.4 0.4 0.4 1</ambient>
+      <background>0.7 0.7 0.7 1</background>
+    </scene>
+    <wind/>
+    <spherical_coordinates>
+      <surface_model>EARTH_WGS84</surface_model>
+      <latitude_deg>0</latitude_deg>
+      <longitude_deg>0</longitude_deg>
+      <elevation>0</elevation>
+      <heading_deg>0</heading_deg>
+    </spherical_coordinates>
+    <state world_name='default'>
+      <sim_time>5848 945000000</sim_time>
+      <real_time>925 765912640</real_time>
+      <wall_time>1633720149 916570673</wall_time>
+      <iterations>178788</iterations>
+      <model name='fence_5_clone_0_clone'>
+        <pose frame=''>69.2194 -35.0559 1.4696 -0.006743 0.026823 -1.61271</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>69.2194 -35.0559 1.4696 -0.006743 0.026823 -1.61271</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='fence_5_clone_0_clone_1_clone_clone_1'>
+        <pose frame=''>44.4871 -57.5498 0.725711 -0.084624 0.000646 -3.03348</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>44.4871 -57.5498 0.725711 -0.084624 0.000646 -3.03348</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='fence_5_clone_0_clone_1_clone_clone_1_clone'>
+        <pose frame=''>51.7003 -56.7499 0.725711 -0.084624 0.000646 -3.03348</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>51.7003 -56.7499 0.725711 -0.084624 0.000646 -3.03348</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='fence_5_clone_0_clone_1_clone_clone_1_clone_0'>
+        <pose frame=''>58.9822 -56.0231 0.725711 -0.084624 0.000646 -3.03348</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>58.9822 -56.0231 0.725711 -0.084624 0.000646 -3.03348</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='fence_5_clone_0_clone_1_clone_clone_1_clone_1'>
+        <pose frame=''>64.2267 -55.4727 0.725711 -0.084624 0.000646 -3.03348</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>64.2267 -55.4727 0.725711 -0.084624 0.000646 -3.03348</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='fence_5_clone_0_clone_clone'>
+        <pose frame=''>68.9483 -42.3967 1.2439 -0.006744 0.033552 -1.61275</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>68.9483 -42.3967 1.2439 -0.006744 0.033552 -1.61275</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='fence_5_clone_0_clone_clone_0'>
+        <pose frame=''>68.695 -49.5603 1.03346 -0.006743 0.026823 -1.61271</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>68.695 -49.5603 1.03346 -0.006743 0.026823 -1.61271</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='fence_5_clone_0_clone_clone_1'>
+        <pose frame=''>38.323 -38.1901 1.46942 -0.000653 0.02765 -1.39001</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>38.323 -38.1901 1.46942 -0.000653 0.02765 -1.39001</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='fence_5_clone_0_clone_clone_1_clone'>
+        <pose frame=''>39.5924 -45.6031 1.15196 -0.000653 0.02765 -1.39001</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>39.5924 -45.6031 1.15196 -0.000653 0.02765 -1.39001</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='fence_5_clone_0_clone_clone_1_clone_0'>
+        <pose frame=''>40.8587 -52.8993 0.932428 -0.000653 0.02765 -1.39001</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>40.8587 -52.8993 0.932428 -0.000653 0.02765 -1.39001</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='fence_5_clone_0_clone_clone_clone_0_clone_1'>
+        <pose frame=''>64.3056 -30.7213 1.66379 0.084583 -0.00842 0.112795</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>64.3056 -30.7213 1.66379 0.084583 -0.00842 0.112795</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='fence_5_clone_0_clone_clone_clone_0_clone_1_clone'>
+        <pose frame=''>57.0285 -31.4964 1.6618 0.084583 -0.00842 0.112795</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>57.0285 -31.4964 1.6618 0.084583 -0.00842 0.112795</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='fence_5_clone_0_clone_clone_clone_0_clone_1_clone_0'>
+        <pose frame=''>49.7838 -32.2913 1.64525 0.084583 -0.00842 0.112795</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>49.7838 -32.2913 1.64525 0.084583 -0.00842 0.112795</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='fence_5_clone_0_clone_clone_clone_0_clone_1_clone_1'>
+        <pose frame=''>42.5453 -33.1249 1.63636 0.084583 -0.00842 0.112795</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>42.5453 -33.1249 1.63636 0.084583 -0.00842 0.112795</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='fence_5_clone_0_clone_clone_clone_0_clone_1_clone_1_clone'>
+        <pose frame=''>39.9355 -33.4127 1.63266 0.084583 -0.00842 0.112795</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>39.9355 -33.4127 1.63266 0.084583 -0.00842 0.112795</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='grass_ground_plane'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='heightmap'>
+        <pose frame=''>44.2561 -58.626 0.2 0 -0 0</pose>
+        <scale>2 3 1</scale>
+        <link name='link'>
+          <pose frame=''>44.2561 -58.626 0.2 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='vine_t4'>
+        <pose frame=''>47.1698 -42.2927 0.801953 0 -0 0.075009</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>47.1698 -42.2927 0.801953 0 -0 0.075009</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='vine_t4_clone'>
+        <pose frame=''>53.9179 -41.871 0.801953 0 -0 0.075009</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>53.9179 -41.871 0.801953 0 -0 0.075009</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='vine_t4_clone_0'>
+        <pose frame=''>60.6413 -41.3375 0.801953 0 -0 0.075009</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>60.6413 -41.3375 0.801953 0 -0 0.075009</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='vine_t4_clone_1'>
+        <pose frame=''>60.4247 -45.8907 0.624997 0 -0 0.075009</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>60.4247 -45.8907 0.624997 0 -0 0.075009</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='vine_t4_clone_1_clone'>
+        <pose frame=''>53.6854 -46.4364 0.624997 0 -0 0.075009</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>53.6854 -46.4364 0.624997 0 -0 0.075009</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='vine_t4_clone_1_clone_0'>
+        <pose frame=''>47.1098 -46.9355 0.624997 0 -0 0.075009</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>47.1098 -46.9355 0.624997 0 -0 0.075009</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='vine_t4_clone_2'>
+        <pose frame=''>60.3759 -50.0289 0.549792 0 -0 0.075009</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>60.3759 -50.0289 0.549792 0 -0 0.075009</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='vine_t4_clone_2_clone'>
+        <pose frame=''>53.6428 -50.7448 0.549792 0 -0 0.075009</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>53.6428 -50.7448 0.549792 0 -0 0.075009</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='vine_t4_clone_2_clone_0'>
+        <pose frame=''>47.0917 -51.3149 0.549792 0 -0 0.075009</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>47.0917 -51.3149 0.549792 0 -0 0.075009</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <light name='sun'>
+        <pose frame=''>0 0 10 0 -0 0</pose>
+      </light>
+    </state>
+    <model name='fence_5_clone_0_clone'>
+      <static>1</static>
+      <link name='link'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <inertial>
+          <mass>100</mass>
+          <inertia>
+            <ixx>192.33</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>12.33</iyy>
+            <iyz>0</iyz>
+            <izz>204</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://fence_5/meshes/fence_5_brown.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://fence_5/meshes/fence_5_brown.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>18.869 7.19074 1.25236 -1e-06 0.085 -1.557</pose>
+    </model>
+    <model name='fence_5_clone_0_clone_1_clone_clone_1'>
+      <static>1</static>
+      <link name='link'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <inertial>
+          <mass>100</mass>
+          <inertia>
+            <ixx>192.33</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>12.33</iyy>
+            <iyz>0</iyz>
+            <izz>204</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://fence_5/meshes/fence_5_brown.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://fence_5/meshes/fence_5_brown.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>-12.593 -11.8272 0.946255 -0.085 -0.000309 -3.13141</pose>
+    </model>
+    <model name='grass_ground_plane'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>200 200</size>
+            </plane>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.5</mu>
+                <mu2>0.5</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='visual'>
+          <cast_shadows>0</cast_shadows>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>200 200</size>
+            </plane>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://grass_ground_plane/materials/scripts/grass_ground_plane.material</uri>
+              <name>GrassGroundPlane/Image</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <model name='fence_5_clone_0_clone_clone_clone_0_clone_1'>
+      <static>1</static>
+      <link name='link'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <inertial>
+          <mass>100</mass>
+          <inertia>
+            <ixx>192.33</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>12.33</iyy>
+            <iyz>0</iyz>
+            <izz>204</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://fence_5/meshes/fence_5_brown.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://fence_5/meshes/fence_5_brown.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>65.3644 -30.6539 2.28918 0.084583 -0.00842 0.112795</pose>
+    </model>
+    <model name='fence_5_clone_0_clone_clone'>
+      <static>1</static>
+      <link name='link'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <inertial>
+          <mass>100</mass>
+          <inertia>
+            <ixx>192.33</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>12.33</iyy>
+            <iyz>0</iyz>
+            <izz>204</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://fence_5/meshes/fence_5_brown.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://fence_5/meshes/fence_5_brown.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>68.4389 -42.3829 1.4696 -0.006743 0.026823 -1.61271</pose>
+    </model>
+    <model name='fence_5_clone_0_clone_clone_0'>
+      <static>1</static>
+      <link name='link'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <inertial>
+          <mass>100</mass>
+          <inertia>
+            <ixx>192.33</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>12.33</iyy>
+            <iyz>0</iyz>
+            <izz>204</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://fence_5/meshes/fence_5_brown.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://fence_5/meshes/fence_5_brown.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>68.2179 -49.552 1.4696 -0.006743 0.026823 -1.61271</pose>
+    </model>
+    <model name='fence_5_clone_0_clone_clone_clone_0_clone_1_clone'>
+      <static>1</static>
+      <link name='link'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <inertial>
+          <mass>100</mass>
+          <inertia>
+            <ixx>192.33</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>12.33</iyy>
+            <iyz>0</iyz>
+            <izz>204</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://fence_5/meshes/fence_5_brown.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://fence_5/meshes/fence_5_brown.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>57.0258 -31.4731 1.66379 0.084583 -0.00842 0.112795</pose>
+    </model>
+    <model name='fence_5_clone_0_clone_clone_clone_0_clone_1_clone_0'>
+      <static>1</static>
+      <link name='link'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <inertial>
+          <mass>100</mass>
+          <inertia>
+            <ixx>192.33</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>12.33</iyy>
+            <iyz>0</iyz>
+            <izz>204</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://fence_5/meshes/fence_5_brown.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://fence_5/meshes/fence_5_brown.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>49.759 -32.074 1.66379 0.084583 -0.00842 0.112795</pose>
+    </model>
+    <model name='fence_5_clone_0_clone_clone_clone_0_clone_1_clone_1'>
+      <static>1</static>
+      <link name='link'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <inertial>
+          <mass>100</mass>
+          <inertia>
+            <ixx>192.33</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>12.33</iyy>
+            <iyz>0</iyz>
+            <izz>204</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://fence_5/meshes/fence_5_brown.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://fence_5/meshes/fence_5_brown.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>42.5087 -32.8035 1.66379 0.084583 -0.00842 0.112795</pose>
+    </model>
+    <model name='fence_5_clone_0_clone_clone_clone_0_clone_1_clone_1_clone'>
+      <static>1</static>
+      <link name='link'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <inertial>
+          <mass>100</mass>
+          <inertia>
+            <ixx>192.33</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>12.33</iyy>
+            <iyz>0</iyz>
+            <izz>204</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://fence_5/meshes/fence_5_brown.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://fence_5/meshes/fence_5_brown.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>39.9306 -33.3694 1.63636 0.084583 -0.00842 0.112795</pose>
+    </model>
+    <model name='fence_5_clone_0_clone_clone_1'>
+      <static>1</static>
+      <link name='link'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <inertial>
+          <mass>100</mass>
+          <inertia>
+            <ixx>192.33</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>12.33</iyy>
+            <iyz>0</iyz>
+            <izz>204</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://fence_5/meshes/fence_5_brown.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://fence_5/meshes/fence_5_brown.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>38.0501 -38.24 1.4696 -0.006743 0.026823 -1.61271</pose>
+    </model>
+    <model name='fence_5_clone_0_clone_clone_1_clone'>
+      <static>1</static>
+      <link name='link'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <inertial>
+          <mass>100</mass>
+          <inertia>
+            <ixx>192.33</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>12.33</iyy>
+            <iyz>0</iyz>
+            <izz>204</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://fence_5/meshes/fence_5_brown.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://fence_5/meshes/fence_5_brown.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>39.6124 -45.7116 1.46942 -0.000653 0.02765 -1.39001</pose>
+    </model>
+    <model name='fence_5_clone_0_clone_clone_1_clone_0'>
+      <static>1</static>
+      <link name='link'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <inertial>
+          <mass>100</mass>
+          <inertia>
+            <ixx>192.33</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>12.33</iyy>
+            <iyz>0</iyz>
+            <izz>204</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://fence_5/meshes/fence_5_brown.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://fence_5/meshes/fence_5_brown.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>40.8617 -52.9138 1.46942 -0.000653 0.02765 -1.39001</pose>
+    </model>
+    <model name='fence_5_clone_0_clone_1_clone_clone_1_clone'>
+      <static>1</static>
+      <link name='link'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <inertial>
+          <mass>100</mass>
+          <inertia>
+            <ixx>192.33</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>12.33</iyy>
+            <iyz>0</iyz>
+            <izz>204</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://fence_5/meshes/fence_5_brown.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://fence_5/meshes/fence_5_brown.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>51.7003 -56.7499 0.725711 -0.084624 0.000646 -3.03348</pose>
+    </model>
+    <model name='fence_5_clone_0_clone_1_clone_clone_1_clone_0'>
+      <static>1</static>
+      <link name='link'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <inertial>
+          <mass>100</mass>
+          <inertia>
+            <ixx>192.33</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>12.33</iyy>
+            <iyz>0</iyz>
+            <izz>204</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://fence_5/meshes/fence_5_brown.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://fence_5/meshes/fence_5_brown.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>58.9822 -56.0231 0.725711 -0.084624 0.000646 -3.03348</pose>
+    </model>
+    <model name='fence_5_clone_0_clone_1_clone_clone_1_clone_1'>
+      <static>1</static>
+      <link name='link'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <inertial>
+          <mass>100</mass>
+          <inertia>
+            <ixx>192.33</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>12.33</iyy>
+            <iyz>0</iyz>
+            <izz>204</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://fence_5/meshes/fence_5_brown.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://fence_5/meshes/fence_5_brown.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>64.2267 -55.4727 0.725711 -0.084624 0.000646 -3.03348</pose>
+    </model>
+    <model name='vine_t4'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://vine_t4/meshes/vine_t4.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://vine_t4/meshes/vine_t4.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>47.1698 -42.2927 0 0 -0 0</pose>
+    </model>
+    <model name='vine_t4_clone'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://vine_t4/meshes/vine_t4.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://vine_t4/meshes/vine_t4.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>53.9179 -41.871 0.801953 0 -0 0.075009</pose>
+    </model>
+    <model name='vine_t4_clone_0'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://vine_t4/meshes/vine_t4.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://vine_t4/meshes/vine_t4.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>60.6413 -41.3375 0.801953 0 -0 0.075009</pose>
+    </model>
+    <model name='vine_t4_clone_1'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://vine_t4/meshes/vine_t4.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://vine_t4/meshes/vine_t4.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>60.4247 -45.8907 0.801953 0 -0 0.075009</pose>
+    </model>
+    <model name='vine_t4_clone_2'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://vine_t4/meshes/vine_t4.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://vine_t4/meshes/vine_t4.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>60.3759 -50.0289 0.801953 0 -0 0.075009</pose>
+    </model>
+    <model name='vine_t4_clone_1_clone'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://vine_t4/meshes/vine_t4.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://vine_t4/meshes/vine_t4.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>53.6854 -46.4364 0.624997 0 -0 0.075009</pose>
+    </model>
+    <model name='vine_t4_clone_1_clone_0'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://vine_t4/meshes/vine_t4.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://vine_t4/meshes/vine_t4.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>47.1098 -46.9355 0.624997 0 -0 0.075009</pose>
+    </model>
+    <model name='vine_t4_clone_2_clone'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://vine_t4/meshes/vine_t4.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://vine_t4/meshes/vine_t4.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>53.6428 -50.7448 0.549792 0 -0 0.075009</pose>
+    </model>
+    <model name='vine_t4_clone_2_clone_0'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://vine_t4/meshes/vine_t4.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://vine_t4/meshes/vine_t4.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>47.0917 -51.3149 0.549792 0 -0 0.075009</pose>
+    </model>
+  </world>
+</sdf>

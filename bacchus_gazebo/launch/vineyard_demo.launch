@@ -34,7 +34,7 @@
 
 
   <!-- ############################## GAZEBO ############################## -->
-  <arg name="world_name" default="vineyard_stage0_heightmap" unless="$(arg riseholme_dt)"/>
+  <arg name="world_name" default="vineyard_small" unless="$(arg riseholme_dt)"/>
   <arg name="world_name" value="riseholme_digital_twin" if="$(arg riseholme_dt)"/>
   <!-- Note: the world_name is with respect to GAZEBO_RESOURCE_PATH environmental variable -->
   <arg name="world" default="$(find bacchus_gazebo)/worlds/$(arg world_name).world"/>

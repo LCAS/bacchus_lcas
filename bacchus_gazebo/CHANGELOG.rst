@@ -2,8 +2,8 @@
 Changelog for package bacchus_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.3.1 (2021-10-10)
+------------------
 * change defaults (for teaching only)
 * added smaller worlds for teaching
 * removed sprayer

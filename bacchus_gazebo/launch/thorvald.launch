@@ -60,7 +60,6 @@
 
     <!-- spawn robot in gazebo -->
     <node pkg="gazebo_ros" type="spawn_model" name="spawner" args="-urdf -x $(arg x) -y $(arg y) -z $(arg z) -param robot_description -model $(arg robot_name)" />
-    <node pkg="bacchus_gazebo" type="sprayer.py" name="sprayer" />
   </group>
 
   <!-- Localisation -->

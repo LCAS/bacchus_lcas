@@ -120,7 +120,6 @@ endif()
 
 catkin_package(
   INCLUDE_DIRS ${GAZEBO_INCLUDE_DIRS}
-  #LIBRARIES  ActorCollisionsPlugin
   CATKIN_DEPENDS roscpp #gazebo_plugins gazebo_ros
 )
 
@@ -180,7 +179,6 @@ set(CMAKE_CXX_FLAGS "-std=c++11 ${CMAKE_CXX_FLAGS} ${GAZEBO_CXX_FLAGS}")
 # See http://ros.org/doc/api/catkin/html/adv_user_guide/variables.html
 install(PROGRAMS
   tests/simple_test.py
-#  scripts/sprayer.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 

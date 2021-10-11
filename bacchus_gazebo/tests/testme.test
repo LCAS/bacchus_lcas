@@ -8,6 +8,7 @@
     <arg name="launch_move_base" value="false" />
     <arg name="launch_rviz" value="false" />
     <arg name="world_name" value="cmp9767m_1"/>
+    <arg name="model_extras" default="$(find bacchus_gazebo)/urdf/simple_sensors.xacro"/>
   </include>
 
   <!-- a very basic Python unittest -->

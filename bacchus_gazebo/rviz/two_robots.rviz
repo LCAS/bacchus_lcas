@@ -126,8 +126,6 @@ Visualization Manager:
               Value: false
             thorvald_001/pipe3_2:
               Value: false
-            thorvald_001/sprayer:
-              Value: true
             thorvald_001/top0:
               Value: false
             thorvald_001/top1:
@@ -212,8 +210,6 @@ Visualization Manager:
               Value: false
             thorvald_002/pipe3_2:
               Value: false
-            thorvald_002/sprayer:
-              Value: true
             thorvald_002/top0:
               Value: false
             thorvald_002/top1:
@@ -306,8 +302,6 @@ Visualization Manager:
                     {}
                   thorvald_001/pipe3_2:
                     {}
-                  thorvald_001/sprayer:
-                    {}
                   thorvald_001/top0:
                     {}
                   thorvald_001/top1:
@@ -379,8 +373,6 @@ Visualization Manager:
                   thorvald_002/pipe3_1:
                     {}
                   thorvald_002/pipe3_2:
-                    {}
-                  thorvald_002/sprayer:
                     {}
                   thorvald_002/top0:
                     {}
@@ -575,11 +567,6 @@ Visualization Manager:
               Show Trail: false
               Value: true
             thorvald_001/pipe3_2:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-              Value: true
-            thorvald_001/sprayer:
               Alpha: 1
               Show Axes: false
               Show Trail: false
@@ -908,11 +895,6 @@ Visualization Manager:
               Show Trail: false
               Value: true
             thorvald_002/pipe3_2:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-              Value: true
-            thorvald_002/sprayer:
               Alpha: 1
               Show Axes: false
               Show Trail: false

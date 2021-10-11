@@ -2,6 +2,14 @@
 Changelog for package bacchus_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.3.1 (2021-10-10)
+------------------
+* change defaults (for teaching only)
+* added smaller worlds for teaching
+* removed sprayer
+* Various fix (sensor frame, local costmap, enable/disable dt)
+* Contributors: Marc Hanheide, Riccardo
+
 0.3.0 (2021-10-06)
 ------------------
 * Removed actor plugin

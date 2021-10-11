@@ -276,6 +276,11 @@ Changelog for package rasberry_move_base
 0.0.2 (2018-05-21)
 ------------------
 
+0.3.1 (2021-10-10)
+------------------
+* Various fix (sensor frame, local costmap, enable/disable dt)
+* Contributors: Riccardo
+
 0.3.0 (2021-10-06)
 ------------------
 * Merge pull request `#30 <https://github.com/LCAS/bacchus_lcas/issues/30>`_ from LCAS/fix_digital_twin_sim

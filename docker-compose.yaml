@@ -1,0 +1,10 @@
+version: '2'
+
+services:
+  bacchus_teaching:
+    build: .
+    image: uollcas/teaching:latest
+    environment:
+      RESOLUTION: 1280x720
+    ports:
+      - "6080:80"

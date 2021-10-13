@@ -8,3 +8,4 @@ services:
       RESOLUTION: 1280x720
     ports:
       - "6080:80"
+      - "6081:8888"

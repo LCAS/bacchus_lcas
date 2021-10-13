@@ -74,7 +74,7 @@
         </ray>
         <plugin name="$(arg robot_name)${sensor_name}_node" filename="libgazebo_ros_laser.so">
           <topicName>${topic}</topicName>
-          <frameName>/$(arg tf_prefix)${sensor_name}</frameName>
+          <frameName>$(arg tf_prefix)${sensor_name}</frameName>
         </plugin>
       </sensor>
     </gazebo>

@@ -89,6 +89,7 @@
     <!-- Navigation -->
     <group if="$(arg launch_move_base)">
       <include file="$(find bacchus_move_base)/launch/move_base_dwa.launch" >
+        <!-- <arg name="tf_prefix" value="/$(arg tf_prefix)" /> -->
         <arg name="robot_name" value="$(arg robot_name)"/>
         <arg name="robot_no" value="$(arg robot_no)"/>
       </include>

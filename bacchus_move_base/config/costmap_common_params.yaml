@@ -1,5 +1,5 @@
 global_frame: map
-robot_base_frame: $(arg robot_name)/base_link
+robot_base_frame: base_link
 
 #footprint parameter has been moved to footprints/robot_xxx_footprint.yaml.
 

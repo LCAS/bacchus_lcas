@@ -8,7 +8,7 @@
   <arg name="robot_no" default="001"/>  <!-- unused-->
   <arg name="robot_model" default="$(find bacchus_gazebo)/config/robot.yaml"/>
   <arg name="model_extras" default="$(find bacchus_gazebo)/urdf/bacchus_sensors.xacro"/>
-  <arg name="multi_sim" default="false"/>
+  <arg name="multi_sim" default="true"/>
   <!-- sensor suites:
     - simple_sensors
     - bacchus_sensors (2 hokuyo, 3 kinect v2, 1 velodyne)
@@ -39,7 +39,7 @@
   <arg name="world_name" value="riseholme_digital_twin" if="$(arg riseholme_dt)"/>
   <!-- Note: the world_name is with respect to GAZEBO_RESOURCE_PATH environmental variable -->
   <arg name="world" default="$(find bacchus_gazebo)/worlds/$(arg world_name).world"/>
-  <arg name="paused" default="false"/>
+  <arg name="paused" default="true"/>
   <arg name="use_sim_time" default="true"/>
   <arg name="gui" default="true"/>
   <arg name="debug" default="false"/>
@@ -79,7 +79,7 @@
       <arg name="robot_name"        value="$(arg robot_name)_002" />
       <arg name="robot_no"          value="001" />
       <!-- <arg name="tf_prefix"         value="$(arg robot_name)_2/" /> -->
-      <arg name="x"                 value="-$(arg X_INIT)" />
+      <arg name="x"                 value="-8.0" />
       <arg name="y"                 value="$(arg Y_INIT)" />
       <arg name="z"                 value="$(arg Z_INIT)" />
       <arg name="robot_model"       value="$(arg robot_model)"/>

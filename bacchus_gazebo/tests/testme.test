@@ -2,10 +2,14 @@
   <include file="$(find bacchus_gazebo)/launch/vineyard_demo.launch">
     <env name="DISPLAY" value="" />
     <arg name="gui" value="false" />
+    <arg name="paused" value="false" />
+    <arg name="robot_name" default="thorvald"/>
     <arg name="fake_localisation" value="true" />
     <arg name="launch_move_base" value="false" />
     <arg name="launch_rviz" value="false" />
     <arg name="world_name" value="cmp9767m_1"/>
+    <arg name="model_extras" default="$(find bacchus_gazebo)/urdf/simple_sensors.xacro"/>
+    <arg name="multi_sim" default="false"/>
   </include>
 
   <!-- a very basic Python unittest -->

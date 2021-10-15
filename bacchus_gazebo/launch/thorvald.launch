@@ -11,6 +11,7 @@
   <arg name="world_name" default=""/>
   <!-- Robot params -->
   <arg name="robot_name" />
+  <arg name="robot_no" />
   <arg name="x" default="0.0"/>
   <arg name="y" default="0.0"/>
   <arg name="z" default="0.0"/>
@@ -23,17 +24,29 @@
   <arg name="launch_move_base" default="true"/>
   <arg name="launch_rviz" default="true"/>
   <arg name="rviz_config_file" default=""/>
+  <arg name="single_robot" default="true"/>
 
   <!-- Launch Gazebo simulatiion -->
-  <include file="$(find gazebo_ros)/launch/empty_world.launch">
-    <arg name="paused" value="$(arg paused)"/>
-    <arg name="use_sim_time" value="$(arg use_sim_time)"/>
-    <arg name="gui" value="$(arg gui)"/>
-    <arg name="headless" value="$(arg headless)"/>
-    <arg name="debug" value="$(arg debug)"/>
-    <arg name="verbose" value="$(arg verbose)"/>
-    <arg name="world_name" value="$(arg world_name)"/>
-  </include>
+  <group if="$(arg single_robot)">
+    <include file="$(find gazebo_ros)/launch/empty_world.launch">
+      <arg name="paused" value="$(arg paused)"/>
+      <arg name="use_sim_time" value="$(arg use_sim_time)"/>
+      <arg name="gui" value="$(arg gui)"/>
+      <arg name="headless" value="$(arg headless)"/>
+      <arg name="debug" value="$(arg debug)"/>
+      <arg name="verbose" value="$(arg verbose)"/>
+      <arg name="world_name" value="$(arg world_name)"/>
+    </include>
+
+    <group if="$(arg launch_rviz)">
+      <node name="rviz" pkg="rviz" type= "rviz" args="-d $(arg rviz_config_file)" />
+    </group>
+
+    <node pkg="tf" type="static_transform_publisher" name="world_2_map_tfb" args="$(arg world_2_map_pose) world map 1000" />
+
+    <node name="nav_map_server" pkg="map_server" type="map_server" args="$(arg nav_map_yaml)" output="screen"/>
+
+  </group>
 
   <!-- Lauch robot model -->
   <group ns="$(arg robot_name)">
@@ -41,14 +54,14 @@
     <!-- model bringup -->
     <include file="$(find thorvald_description)/launch/model.launch">
       <arg name="robot_name" value="$(arg robot_name)" />
-      <arg name="tf_prefix" value="$(arg tf_prefix)" />
+      <arg name="tf_prefix" value="/$(arg tf_prefix)" />
       <arg name="robot_model" value="$(arg robot_model)" />
       <arg name="model_extras" value="$(arg model_extras)" />
     </include>
 
     <!-- base bringup-->
     <include file="$(find thorvald_base)/launch/base_bringup.launch">
-      <arg name="tf_prefix" value="$(arg tf_prefix)" />
+      <arg name="tf_prefix" value="/$(arg tf_prefix)" />
       <arg name="robot_model" value="$(arg robot_model)" />
       <arg name="simple_sim" value="true" />
       <arg name="enable_odom_tf" value="false" />
@@ -60,34 +73,33 @@
 
     <!-- spawn robot in gazebo -->
     <node pkg="gazebo_ros" type="spawn_model" name="spawner" args="-urdf -x $(arg x) -y $(arg y) -z $(arg z) -param robot_description -model $(arg robot_name)" />
-  </group>
 
-  <!-- Localisation -->
-  <group if="$(arg fake_localisation)">
+    <!-- Localisation -->
+    <group if="$(arg fake_localisation)">
       
-    <node pkg="tf" type="static_transform_publisher" name="world_2_map_tfb" args="$(arg world_2_map_pose) world map 1000" />
+      <node pkg="fake_localization" type="fake_localization" respawn="false" name="fake_loc">
+        <remap from="base_pose_ground_truth" to="/$(arg robot_name)/odometry/gazebo" />
+        <param name="~odom_frame_id" type="string" value="$(arg robot_name)/odom" />
+        <param name="~base_frame_id" type="string" value="$(arg robot_name)/base_link" />
+        <param name="~global_frame_id" type="string" value="map" />
+      </node>
+      
+    </group>
 
-    <node name="nav_map_server" pkg="map_server" type="map_server" args="$(arg nav_map_yaml)" output="screen"/>
-    
-    <node pkg="fake_localization" type="fake_localization" respawn="false" name="fake_loc">
-      <remap from="base_pose_ground_truth" to="/thorvald_001/odometry/gazebo" />
-      <param name="~odom_frame_id" type="string" value="odom" />
-      <param name="~base_frame_id" type="string" value="base_link" />
-      <param name="~global_frame_id" type="string" value="map" />
-    </node>
-    
+    <!-- Navigation -->
+    <group if="$(arg launch_move_base)">
+      <include file="$(find bacchus_move_base)/launch/move_base_dwa.launch" >
+        <!-- <arg name="tf_prefix" value="/$(arg tf_prefix)" /> -->
+        <arg name="robot_name" value="$(arg robot_name)"/>
+        <arg name="robot_no" value="$(arg robot_no)"/>
+      </include>
+    </group>
   </group>
 
-  <!-- Navigation -->
-  <group if="$(arg launch_move_base)">
-    <include file="$(find bacchus_move_base)/launch/move_base_dwa.launch" />
-  </group>
+  
 
   <!-- <include file="$(find bacchus_move_base)/launch/corner_lasers_merger.launch">
     <arg name="node_start_delay"  value="20.0"/>
   </include> -->
 
-  <group if="$(arg launch_rviz)">
-    <node name="rviz" pkg="rviz" type= "rviz" args="-d $(arg rviz_config_file)" />
-  </group>
 </launch>

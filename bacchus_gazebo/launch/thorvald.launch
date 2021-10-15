@@ -5,7 +5,6 @@
   <arg name="paused" default="false"/>
   <arg name="use_sim_time" default="true"/>
   <arg name="gui" default="true"/>
-  <arg name="headless" default="false"/>
   <arg name="debug" default="false"/>
   <arg name="verbose" default="false"/>
   <arg name="world_name" default=""/>
@@ -29,7 +28,6 @@
     <arg name="paused" value="$(arg paused)"/>
     <arg name="use_sim_time" value="$(arg use_sim_time)"/>
     <arg name="gui" value="$(arg gui)"/>
-    <arg name="headless" value="$(arg headless)"/>
     <arg name="debug" value="$(arg debug)"/>
     <arg name="verbose" value="$(arg verbose)"/>
     <arg name="world_name" value="$(arg world_name)"/>
@@ -84,9 +82,9 @@
     <include file="$(find bacchus_move_base)/launch/move_base_dwa.launch" />
   </group>
 
-  <include file="$(find bacchus_move_base)/launch/corner_lasers_merger.launch">
+  <!-- <include file="$(find bacchus_move_base)/launch/corner_lasers_merger.launch">
     <arg name="node_start_delay"  value="20.0"/>
-  </include>
+  </include> -->
 
   <group if="$(arg launch_rviz)">
     <node name="rviz" pkg="rviz" type= "rviz" args="-d $(arg rviz_config_file)" />

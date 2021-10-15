@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<launch>
+	<!-- maps inside the folder rbsherpa_localization/maps -->
+	<arg name="map_file" default="$(find rbvogui_localization)/maps/empty/map_empty.yaml"/>
+	<arg name="robot_id" default="robot"/>
+	<arg name="prefix" default="$(arg robot_id)_"/>
+	<arg name="frame_id" default="$(arg prefix)map"/>
+
+	<!-- Run the map server -->
+	<node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)">
+		<param name="frame_id" value="$(arg frame_id)"/>
+		<remap from="map" to="/map"/>
+	</node>
+
+</launch>

@@ -6,5 +6,15 @@ global_costmap:
   plugins:  
     - {name: map_layer, type: "costmap_2d::StaticLayer"}
   #  - {name: no_go_layer, type: "costmap_2d::StaticLayer"}
-    - {name: global_obstacle_layer, type: "costmap_2d::ObstacleLayer"}
+    # - {name: global_obstacle_layer, type: "costmap_2d::ObstacleLayer"}
     - {name: global_inflation_layer, type: "costmap_2d::InflationLayer"}
+    - {name: static_layer, type: "costmap_2d::StaticLayer"}
+
+  static_layer:
+    enabled: false
+    lethal_cost_threshold: 94
+    static_map: false
+    map_topic: /map
+    unknown_cost_value: 1
+    trinary_costmap: false
+    use_maximum: false

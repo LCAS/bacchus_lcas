@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<launch>
+
+  <arg name="robot_id" default="$(optenv ROBOT_ID robot)"/>
+  <arg name="prefix" default="$(arg robot_id)_"/>
+
+  <arg name="x_init_pose" default="0"/>
+  <arg name="y_init_pose" default="0"/>
+  <arg name="z_init_pose" default="0"/>
+
+  <arg name="scan_topic" default="front_laser/scan"/>
+  <arg name="map_topic" default="map"/>
+
+  <arg name="global_frame" default="$(arg prefix)map"/>
+  <arg name="odom_frame" default="$(arg prefix)odom"/>
+  <arg name="base_frame" default="$(arg prefix)base_footprint"/>
+
+  <arg name="odom_model_type" default="omni"/>
+  
+  <!-- TODO: integrate two laser scan into a mux topic, this topic has two msgs with two headers (?)-->
+  <node pkg="amcl" type="amcl" name="amcl" output="screen">
+    <rosparam command="load" file="$(find rbvogui_localization)/config/amcl.yaml" subst_value="true" />
+    <remap from="scan" to="$(arg scan_topic)"/>
+    <remap from="map" to="$(arg map_topic)"/>
+  </node>
+
+</launch>

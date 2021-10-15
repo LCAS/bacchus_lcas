@@ -15,6 +15,12 @@ find_package(catkin REQUIRED COMPONENTS
   teb_local_planner
   tf
   ira_laser_tools
+  rbvogui_localization
+  rbvogui_navigation
+  rbvogui_gazebo
+  rbvogui_description
+  rbvogui_control
+  robotnik_pad
 )
 
 ## System dependencies are found with CMake's conventions

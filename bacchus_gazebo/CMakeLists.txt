@@ -17,6 +17,11 @@ find_package(catkin REQUIRED COMPONENTS
   #velodyne_gazebo_plugins
   kinect2_description
   fake_localization
+  timed_roslaunch
+  rbvogui_gazebo
+  rbvogui_control
+  rbvogui_description
+  rbvogui_xl_2ur10_e_moveit
 )
 
 find_package (gazebo REQUIRED)

@@ -3,13 +3,14 @@
 
   <!-- Robot arguments -->
   <arg name="fake_localisation" default="true" doc="fake the localisation, sets map_server and world_tf to true."/>
+  <arg name="riseholme_dt" default="false"/>
   <arg name="robot_name" default="thorvald_001"/>
   <!-- robot supported:
     - thorvald_001
-    - rb_sherpa
-    - rb_sherpa_one_arm
-    - rb_sherpa_xl
-    - rb_sherpa_xl_two_arms
+    - rbvogui
+    - rbvogui_one_arm
+    - rbvogui_xl
+    - rbvogui_xl_two_arms
     -->
   <!-- <arg name="robot_no" default="001"/> -->  <!-- unused-->
   <arg name="robot_model" default="$(find bacchus_gazebo)/config/robot.yaml"/>
@@ -24,23 +25,29 @@
   <arg name="tf_prefix" default="$(arg robot_name)/"/>
   <arg name="use_carrot_planner" default="false"/>
   <arg name="use_omni" default="false"/>
-  <arg name="X_INIT" default="40.0"/>
-  <arg name="Y_INIT" default="-40.0"/>
-  <arg name="Z_INIT" default="0.8"/>
-  <arg name="loc_map_yaml" default="$(find bacchus_gazebo)/maps/riseholme.yaml" />
-  <arg name="nav_map_yaml" default="$(find bacchus_gazebo)/maps/riseholme.yaml" />
   <arg name="world_2_map_pose" default="0.0 0.0 0.0 0.0 0.0 0.0 1.0" />
+  
+  <arg name="X_INIT" value="40.0" if="$(arg riseholme_dt)"/>
+  <arg name="Y_INIT" value="-40.0" if="$(arg riseholme_dt)"/>
+  <arg name="Z_INIT" value="1.2" if="$(arg riseholme_dt)"/>
+  <arg name="loc_map_yaml" value="$(find bacchus_gazebo)/maps/riseholme.yaml" if="$(arg riseholme_dt)"/>
+  <arg name="nav_map_yaml" value="$(find bacchus_gazebo)/maps/riseholme.yaml" if="$(arg riseholme_dt)"/>
+
+  <arg name="X_INIT" value="-11.0" unless="$(arg riseholme_dt)"/>
+  <arg name="Y_INIT" value="0.0" unless="$(arg riseholme_dt)"/>
+  <arg name="Z_INIT" value="1.0" unless="$(arg riseholme_dt)"/>
+  <arg name="loc_map_yaml" value="$(find bacchus_gazebo)/maps/cropped.yaml" unless="$(arg riseholme_dt)"/>
+  <arg name="nav_map_yaml" value="$(find bacchus_gazebo)/maps/cropped.yaml" unless="$(arg riseholme_dt)"/>
 
 
   <!-- ############################## GAZEBO ############################## -->
-  <arg name="world_name" default="riseholme_digital_twin"/>
+  <arg name="world_name" default="vineyard_stage0_heightmap" unless="$(arg riseholme_dt)"/>
+  <arg name="world_name" value="riseholme_digital_twin" if="$(arg riseholme_dt)"/>
   <!-- Note: the world_name is with respect to GAZEBO_RESOURCE_PATH environmental variable -->
   <arg name="world" default="$(find bacchus_gazebo)/worlds/$(arg world_name).world"/>
-  <!-- Note: the world_name is with respect to GAZEBO_RESOURCE_PATH environmental variable -->
   <arg name="paused" default="false"/>
   <arg name="use_sim_time" default="true"/>
   <arg name="gui" default="true"/>
-  <arg name="headless" default="false"/>
   <arg name="debug" default="false"/>
   <arg name="verbose" default="false"/>
 
@@ -64,19 +71,27 @@
       <arg name="fake_localisation" value="$(arg fake_localisation)"/>
       <arg name="nav_map_yaml"      value="$(arg nav_map_yaml)"/>
       <arg name="rviz_config_file"  value="$(arg rviz_config_file)"/>
+      <arg name="paused"            value="$(arg paused)"/>
+      <arg name="use_sim_time"      value="$(arg use_sim_time)"/>
+      <arg name="gui"               value="$(arg gui)"/>
+      <arg name="debug"             value="$(arg debug)"/>
+      <arg name="verbose"           value="$(arg verbose)"/>
     </include>
 
   </group>
 
 
   <group unless="$(eval robot_name == 'thorvald_001')">
-    <include file="$(find bacchus_gazebo)/launch/rbsherpa.launch">
+    <include file="$(find bacchus_gazebo)/launch/rbvogui.launch">
       <arg name="robot_name"        value="$(arg robot_name)" />
       <arg name="world_file"        value="$(arg world)"/>
       <arg name="x_init_pose"       value="$(arg X_INIT)" />
       <arg name="y_init_pose"       value="$(arg Y_INIT)" />
       <arg name="z_init_pose"       value="$(arg Z_INIT)" />
       <arg name="run_navigation"    value="true"/>
+      <arg name="fake_localisation" value="$(arg fake_localisation)"/>
+      <arg name="nav_map_yaml"      value="$(arg nav_map_yaml)"/>
+      <arg name="paused"            value="$(arg paused)"/>
     </include>
   </group>
 

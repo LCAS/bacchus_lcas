@@ -1,0 +1,5 @@
+**/.git
+**/.github
+**/node_modules
+bacchus_gazebo/models/vine_*
+bacchus_gazebo/models/heightmap*

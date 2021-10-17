@@ -21,15 +21,16 @@ RUN /bin/bash -c "source /opt/ros/melodic/setup.bash && \
                   echo 'source ~/ros_ws/devel/setup.bash' >> /root/.bashrc "
 
 # copying bacchus repo
-#ADD . /home/ubuntu/ros_ws/src/bacchus_lcas
-RUN cd ~/ros_ws/src; git clone -b teaching --recursive https://github.com/LCAS/bacchus_lcas.git
+ADD . /home/ubuntu/ros_ws/src/bacchus_lcas
+#RUN cd ~/ros_ws/src; git clone -b teaching --recursive https://github.com/LCAS/bacchus_lcas.git
 RUN cd ~/ros_ws/src; git clone -b master --recursive https://github.com/LCAS/CMP9767M.git
 
 
 # Installing dependecies and compiling
-RUN . /opt/ros/melodic/setup.sh; rosdep install --from-paths /home/ubuntu/ros_ws/src/bacchus_lcas/bacchus_gazebo  -y
-RUN . /opt/ros/melodic/setup.sh; rosdep install --from-paths /home/ubuntu/ros_ws/src/bacchus_lcas/bacchus_move_base  -y
-RUN . /opt/ros/melodic/setup.sh; rosdep install --from-paths /home/ubuntu/ros_ws/src/CMP9767M  -y
+RUN . /opt/ros/melodic/setup.sh; rosdep install --from-paths /home/ubuntu/ros_ws/src/bacchus_lcas/bacchus_gazebo  -y && \
+    rosdep install --from-paths /home/ubuntu/ros_ws/src  -i -y && \
+    apt-get -y clean
+
 RUN /bin/bash -c '. /opt/ros/melodic/setup.bash; cd /home/ubuntu/ros_ws; catkin_make'
 
 RUN cd /tmp && curl -fOL https://github.com/cdr/code-server/releases/download/v3.12.0/code-server_3.12.0_amd64.deb && dpkg -i code-server_3.12.0_amd64.deb && rm code-server_3.12.0_amd64.deb

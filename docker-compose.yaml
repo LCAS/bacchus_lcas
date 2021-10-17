@@ -3,7 +3,7 @@ version: '2'
 services:
   bacchus_teaching:
     build: .
-    image: lcas.lincoln.ac.uk/uollcas/teaching:teaching
+    image: lcas.lincoln.ac.uk/LCAS/bacchus_lcas_teaching:teaching
     environment:
       RESOLUTION: 1280x720
     ports:

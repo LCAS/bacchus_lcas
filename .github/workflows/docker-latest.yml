@@ -47,6 +47,6 @@ jobs:
         file: ./Dockerfile
         platforms: linux/amd64
         push: true
-        tags: lcas.lincoln.ac.uk/uollcas/teaching:${{ env.BRANCH }}
+        tags: lcas.lincoln.ac.uk/LCAS/bacchus_lcas_teaching:${{ env.BRANCH }}
         build-args: |
             BRANCH=${{ env.BRANCH }}

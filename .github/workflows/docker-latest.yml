@@ -14,6 +14,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - name: What
+      run: echo "BRANCH=${GITHUB_REF##*/}" >> $GITHUB_ENV
     - name: Docker Login LCAS
       # You may pin to the exact commit or the version.
       # uses: docker/login-action@f054a8b539a109f9f41c372932f1ae047eff08c9
@@ -34,5 +36,15 @@ jobs:
         password: ${{ secrets.DOCKERHUB_TOKEN }}
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag lcas.lincoln.ac.uk/uollcas/teaching:latest
-    - name: Push the Docker image
-      run: docker push lcas.lincoln.ac.uk/uollcas/teaching:latest
+    #- name: Push the Docker image
+    #  run: docker push lcas.lincoln.ac.uk/uollcas/teaching:latest
+    - name: Build and push
+      uses: docker/build-push-action@v2
+      with:
+        context: .
+        file: ./Dockerfile
+        platforms: linux/amd64
+        push: true
+        tags: splitbrain/dokuwiki:${{ env.BRANCH }}
+        build-args: |
+            BRANCH=${{ env.BRANCH }}

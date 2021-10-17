@@ -45,6 +45,6 @@ jobs:
         file: ./Dockerfile
         platforms: linux/amd64
         push: true
-        tags: splitbrain/dokuwiki:${{ env.BRANCH }}
+        tags: lcas.lincoln.ac.uk/uollcas/teaching:${{ env.BRANCH }}
         build-args: |
             BRANCH=${{ env.BRANCH }}

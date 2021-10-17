@@ -276,6 +276,19 @@ Changelog for package rasberry_move_base
 0.0.2 (2018-05-21)
 ------------------
 
+Forthcoming
+-----------
+* Merge pull request `#39 <https://github.com/LCAS/bacchus_lcas/issues/39>`_ from pulver22/teaching-multisim
+  Added support for multisim robot and various fix on tf prefix
+* Single robot does work in multisim scenario
+* Working on the single robot to work in a multisim scenario
+  Tf-tree looks fine but local costmap is not built and the robot is not moving
+* Merge pull request `#1 <https://github.com/LCAS/bacchus_lcas/issues/1>`_ from LCAS/teaching
+  Synchronise with upstream
+* Merge branch 'teaching-multisim' into teaching
+* Start working towards offering multisim
+* Contributors: Riccardo, Riccardo Polvara, pulver
+
 0.3.1 (2021-10-10)
 ------------------
 * Various fix (sensor frame, local costmap, enable/disable dt)

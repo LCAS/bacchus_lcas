@@ -2,6 +2,28 @@
 Changelog for package bacchus_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge pull request `#40 <https://github.com/LCAS/bacchus_lcas/issues/40>`_ from LCAS/coarse_models
+  Added new world with the coarse meshes
+* Delete semantic.xacro
+  This is not needed here
+* Added new world with the coarse meshes
+  + disable multi_sim + set the world default to the simplified models.
+* Merge pull request `#39 <https://github.com/LCAS/bacchus_lcas/issues/39>`_ from pulver22/teaching-multisim
+  Added support for multisim robot and various fix on tf prefix
+* Fix velodyne frame and wrong robot description in rviz
+* Fix test case
+* Multisim seems to work + Rviz config
+* Single robot does work in multisim scenario
+* Working on the single robot to work in a multisim scenario
+  Tf-tree looks fine but local costmap is not built and the robot is not moving
+* Merge pull request `#1 <https://github.com/LCAS/bacchus_lcas/issues/1>`_ from LCAS/teaching
+  Synchronise with upstream
+* Merge branch 'teaching-multisim' into teaching
+* Start working towards offering multisim
+* Contributors: Ibrahim, Riccardo, Riccardo Polvara, pulver
+
 0.3.1 (2021-10-10)
 ------------------
 * change defaults (for teaching only)

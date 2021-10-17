@@ -5,6 +5,8 @@ on:
     branches: [ teaching ]
 #  pull_request:
 #    branches: [ teaching ]
+    tags:
+      - '*'
 
 jobs:
 

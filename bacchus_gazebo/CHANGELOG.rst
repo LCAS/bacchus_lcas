@@ -2,8 +2,8 @@
 Changelog for package bacchus_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.3.2 (2021-10-17)
+------------------
 * Merge pull request `#40 <https://github.com/LCAS/bacchus_lcas/issues/40>`_ from LCAS/coarse_models
   Added new world with the coarse meshes
 * Delete semantic.xacro

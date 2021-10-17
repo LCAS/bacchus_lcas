@@ -34,8 +34,8 @@ jobs:
         username: ${{ secrets.DOCKERHUB_USER }}
         # Password or personal access token used to log against the Docker registry
         password: ${{ secrets.DOCKERHUB_TOKEN }}
-    - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag lcas.lincoln.ac.uk/uollcas/teaching:latest
+    #- name: Build the Docker image
+    #  run: docker build . --file Dockerfile --tag lcas.lincoln.ac.uk/uollcas/teaching:latest
     #- name: Push the Docker image
     #  run: docker push lcas.lincoln.ac.uk/uollcas/teaching:latest
     - name: Build and push

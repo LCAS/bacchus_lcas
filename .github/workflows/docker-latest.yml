@@ -5,8 +5,7 @@ on:
     branches: [ teaching ]
 #  pull_request:
 #    branches: [ teaching ]
-    tags:
-      - '*'
+
 jobs:
 
   build:
@@ -34,6 +33,6 @@ jobs:
         # Password or personal access token used to log against the Docker registry
         password: ${{ secrets.DOCKERHUB_TOKEN }}
     - name: Build the Docker image
-      run: "docker build . --file Dockerfile --tag lcas.lincoln.ac.uk/uollcas/teaching:$GITHUB_REF"
+      run: docker build . --file Dockerfile --tag lcas.lincoln.ac.uk/uollcas/teaching:latest
     - name: Push the Docker image
-      run: "docker push lcas.lincoln.ac.uk/uollcas/teaching:$GITHUB_REF"
+      run: docker push lcas.lincoln.ac.uk/uollcas/teaching:latest

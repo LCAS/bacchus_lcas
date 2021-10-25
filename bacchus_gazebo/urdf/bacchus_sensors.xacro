@@ -6,7 +6,8 @@
   <xacro:include filename="$(find bacchus_gazebo)/urdf/sensors/sensor_imu.xacro" />  
   <xacro:include filename="$(find bacchus_gazebo)/urdf/sensors/sensor_hokuyo_laser.xacro"/> 
   <xacro:include filename="$(find bacchus_gazebo)/urdf/sensors/sensor_kinect_v2.xacro"/> 
-
+  <xacro:include filename="$(find logical_camera)/urdf/sensors/sensor_logical_camera.xacro" />
+  
   <xacro:VLP-16 velodyne_name="velodyne"
           xyz="0 0 1.56"
           rpy="0 0 0"/>
@@ -54,7 +55,14 @@
           kinect2_cam_or="0" 
           kinect2_cam_op="0" 
           kinect2_cam_oy="${270*M_PI/180}"/>
-  
+
+  <xacro:log_cam log_cam_name="log_cam_front" 
+          log_cam_px="0.5025" 
+          log_cam_py="0.0" 
+          log_cam_pz="0.66" 
+          log_cam_or="0" 
+          log_cam_op="0" 
+          log_cam_oy="0.0"/>  
 
 </robot>
 

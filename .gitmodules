@@ -1,0 +1,3 @@
+[submodule "logical_camera"]
+	path = logical_camera
+	url = https://github.com/ibrahimhroob/logical_camera.git

@@ -7,6 +7,7 @@ volumes:
 services:
   bacchus_teaching:
     build: .
+    restart: unless-stopped
     image: lcas.lincoln.ac.uk/lcas/bacchus_lcas_teaching:teaching
     environment:
       RESOLUTION: 1280x720

@@ -7,16 +7,16 @@
   <xacro:property name="M_PI" value="3.1415926535897931" />
   <xacro:property name="velodyne_parent" value="base_link" />
   <xacro:property name="velodyne_topic" value="velodyne_points" />
-  <xacro:property name="velodyne_hz" value="10" />
+  <xacro:property name="velodyne_hz" value="15" />
   <xacro:property name="velodyne_lasers" value="16" />
-  <xacro:property name="velodyne_samples" value="440" />
+  <xacro:property name="velodyne_samples" value="3600" />
   <xacro:property name="velodyne_collision_range" value="0.3" />
   <xacro:property name="velodyne_min_range" value="0.9" />
-  <xacro:property name="velodyne_max_range" value="130.0" />
+  <xacro:property name="velodyne_max_range" value="100.0" />
   <xacro:property name="velodyne_noise" value="0.008" />
   <xacro:property name="velodyne_min_angle" value="-${M_PI}" />
   <xacro:property name="velodyne_max_angle" value="${M_PI}" />
-  <xacro:property name="velodyne_gpu" value="false" />
+  <xacro:property name="velodyne_gpu" value="true" />
 
   <xacro:macro name="VLP-16" params="xyz rpy velodyne_name" >
 

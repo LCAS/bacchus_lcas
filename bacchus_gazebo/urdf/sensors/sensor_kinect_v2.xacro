@@ -131,7 +131,7 @@
           <cameraName>${kinect2_name}_camera</cameraName>
           <imageTopicName>hd/image_color_rect</imageTopicName>
           <cameraInfoTopicName>hd/camera_info</cameraInfoTopicName>
-          <frameName>/${kinect2_name}_rgb_optical_frame</frameName>
+          <frameName>$(arg tf_prefix)${kinect2_name}_rgb_optical_frame</frameName>
           <baseline>0.1</baseline>
           <distortionK1>0.0</distortionK1>
           <distortionK2>0.0</distortionK2>

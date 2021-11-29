@@ -71,6 +71,7 @@
     <arg name="gui"               value="$(arg gui)"/>
     <arg name="debug"             value="$(arg debug)"/>
     <arg name="verbose"           value="$(arg verbose)"/>
+    <arg name="launch_move_base"  value="$(arg launch_move_base)"/>
   </include>
 
   <group if="$(arg multi_sim)">
@@ -93,6 +94,7 @@
       <arg name="gui"               value="$(arg gui)"/>
       <arg name="debug"             value="$(arg debug)"/>
       <arg name="verbose"           value="$(arg verbose)"/>
+      <arg name="launch_move_base"  value="$(arg launch_move_base)"/>
     </include>
   </group>
 

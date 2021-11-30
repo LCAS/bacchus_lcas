@@ -2,8 +2,15 @@
 Changelog for package bacchus_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-0.3.2 (2021-10-17)
-------------------
+Forthcoming
+-----------
+* Patched arg for move_base missing in hierarchical launch files
+* Fix camera frame in camera_info topic
+* Contributors: Riccardo, pulver
+
+0.3.2 (2021-10-17 09:00)
+------------------------
+* changelogs
 * Merge pull request `#40 <https://github.com/LCAS/bacchus_lcas/issues/40>`_ from LCAS/coarse_models
   Added new world with the coarse meshes
 * Delete semantic.xacro
@@ -22,10 +29,11 @@ Changelog for package bacchus_gazebo
   Synchronise with upstream
 * Merge branch 'teaching-multisim' into teaching
 * Start working towards offering multisim
-* Contributors: Ibrahim, Riccardo, Riccardo Polvara, pulver
+* Contributors: Ibrahim, Marc Hanheide, Riccardo, Riccardo Polvara, pulver
 
 0.3.1 (2021-10-10)
 ------------------
+* changelogs
 * change defaults (for teaching only)
 * added smaller worlds for teaching
 * removed sprayer
@@ -34,6 +42,7 @@ Changelog for package bacchus_gazebo
 
 0.3.0 (2021-10-06)
 ------------------
+* changelogs
 * Removed actor plugin
 * Cleanup Robotnik reference
 * Merge pull request `#30 <https://github.com/LCAS/bacchus_lcas/issues/30>`_ from LCAS/fix_digital_twin_sim
@@ -79,25 +88,29 @@ Changelog for package bacchus_gazebo
 * Single Launch file for Thorvald & Robotnik
 * Contributors: Ibrahim, Marc Hanheide, Riccardo, Riccardo Polvara, Sergi Molina, ibrahim hroob, sergimolina
 
-0.2.2 (2020-11-18)
-------------------
+0.2.2 (2020-11-18 15:35)
+------------------------
+* changelogs
 * added exec_depend for launch files
 * Contributors: Marc Hanheide
 
-0.2.1 (2020-11-18)
-------------------
+0.2.1 (2020-11-18 12:07)
+------------------------
+* changelogs
 * fix deps
 * Contributors: Marc Hanheide
 
-0.2.0 (2020-11-18)
-------------------
+0.2.0 (2020-11-18 11:08)
+------------------------
+* changelogs
 * Merge pull request `#6 <https://github.com/LCAS/bacchus_lcas/issues/6>`_ from LCAS/better_download_models
   Better build and demo
 * improved the download build and also allow rviz navigation
 * Contributors: Marc Hanheide
 
-0.1.0 (2020-11-18)
-------------------
+0.1.0 (2020-11-18 08:07)
+------------------------
+* changelogs
 * Merge pull request `#5 <https://github.com/LCAS/bacchus_lcas/issues/5>`_ from LCAS/vine_stages
   Vine stages
 * deleted vine_t0 model
@@ -115,10 +128,12 @@ Changelog for package bacchus_gazebo
   adding move base and main launch file
 * adding move base and main launch file
 * Add vineyard simulation at stage 0
-* Contributors: Ibrahim Hroob, Sergi Molina, sergimolina
+* Contributors: Ibrahim Hroob, Marc Hanheide, Sergi Molina, sergimolina
 
 0.0.1 (2020-07-08)
 ------------------
+* version
+* changelogs
 * renamed file
 * changed to cmp9767m base
 * removed outdated deps

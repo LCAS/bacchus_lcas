@@ -87,7 +87,7 @@
   
   <arg name="frame_id"                default="base_link"/>   <!-- Fixed frame id, you may set "base_link" or "base_footprint" if they are published -->
   <arg name="database_path"           default="~/.ros/rtabmap.db"/>
- <arg name="launch_prefix"           default=""/>              <!-- for debugging purpose, it fills launch-prefix tag of the nodes -->
+  <arg name="launch_prefix"           default=""/>              <!-- for debugging purpose, it fills launch-prefix tag of the nodes -->
   <arg name="approx_sync"             default="false"/>         <!-- if timestamps of the input topics are not synchronized -->
    
   <arg name="rgb_topic"               default="/thorvald_001/kinect2_front_camera/rgb/image_raw" />
@@ -107,8 +107,10 @@
    
   <arg name="namespace"               default="rtabmap"/>
   <arg name="wait_for_transform"      default="0.2"/>
-  <arg name="RGBD/OptimizeMaxError"  default="1" /> <!--Reject loop closures if optimization error ratio is greater than this value (0=disabled). Ratio is computed as absolute error over standard deviation of each link. This will help to detect when a wrong loop closure is added to the graph.-->
-  <arg name="Reg/Force3DoF"       default="true"/> <!-- Force 3 degrees-of-freedom transform (3Dof: x,y and yaw). Parameters z, roll and pitch will be set to 0.-->
+  <arg name="RGBD/OptimizeMaxError"   default="1" /> <!--Reject loop closures if optimization error ratio is greater than this value (0=disabled). Ratio is computed as absolute error over standard deviation of each link. This will help to detect when a wrong loop closure is added to the graph.-->
+  <arg name="Reg/Force3DoF"           default="true"/> <!-- Force 3 degrees-of-freedom transform (3Dof: x,y and yaw). Parameters z, roll and pitch will be set to 0.-->
+
+  <arg name="rgbd_sync"               default="true"/> <!-- Synchronize topics at different rates -->
 
 
   <group unless="$(arg localization)">
@@ -148,12 +150,14 @@
         <arg name="Optimizer/Strategy"     value="$(arg Optimizer/Strategy)"/>
         <arg name="RGBD/OptimizeMaxError"  value="$(arg RGBD/OptimizeMaxError)"/>
         
-        <arg name="Odom/Strategy" value ="$(arg Odom/Strategy)" />
+        <arg name="Odom/Strategy"           value ="$(arg Odom/Strategy)" />
 
         <arg  name="ground_truth_frame_id"      value="map"/>
         <arg  name="ground_truth_base_frame_id" value="base_link_GT"/>
         <arg name="rtabmap_args"                value="-d"/>
         <arg name="odom_args"                   value="-d"/>
+
+        <arg name="rgbd_sync"               value="$(arg rgbd_sync)"/>
 
     </include>
   </group>
@@ -194,12 +198,14 @@
         <arg name="Optimizer/Strategy"     value="$(arg Optimizer/Strategy)"/>
         <arg name="RGBD/OptimizeMaxError"  value="$(arg RGBD/OptimizeMaxError)"/>
         
-        <arg name="Odom/Strategy" value ="$(arg Odom/Strategy)" />
+        <arg name="Odom/Strategy"           value ="$(arg Odom/Strategy)" />
 
         <arg  name="ground_truth_frame_id"      value=""/>
         <arg  name="ground_truth_base_frame_id" value=""/>
         <arg name="rtabmap_args"                value=""/>
         <arg name="odom_args"                   value=""/>
+
+        <arg name="rgbd_sync"               value="$(arg rgbd_synch)"/>
 
     </include>      
   </group>

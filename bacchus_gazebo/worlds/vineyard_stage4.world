@@ -17,97 +17,97 @@
     </include>
 
     <include>
-      <uri>model://vine_t4</uri>
+      <uri>model://vine_t4_coarse</uri>
       <pose>-0 -7.5 0 0 0 0</pose>
       <name>vine_t0_0</name>
     </include>
     <include>
-      <uri>model://vine_t4</uri>
+      <uri>model://vine_t4_coarse</uri>
       <pose>-6 -7.5 0 0 0 0</pose>
       <name>vine_t0_1</name>
     </include>
     <include>
-      <uri>model://vine_t4</uri>
+      <uri>model://vine_t4_coarse</uri>
       <pose>6 -7.5 0 0 0 0</pose>
       <name>vine_t0_2</name>
     </include>
 
     <include>
-      <uri>model://vine_t4</uri>
+      <uri>model://vine_t4_coarse</uri>
       <pose>0 -4.5 0 0 0 0</pose>
       <name>vine_t1_0</name>
     </include>
     <include>
-      <uri>model://vine_t4</uri>
+      <uri>model://vine_t4_coarse</uri>
       <pose>-6 -4.5 0 0 0 0</pose>
       <name>vine_t1_1</name>
     </include>
     <include>
-      <uri>model://vine_t4</uri>
+      <uri>model://vine_t4_coarse</uri>
       <pose>6 -4.5 0 0 0 0</pose>
       <name>vine_t1_2</name>
     </include>
 
     <include>
-      <uri>model://vine_t4</uri>
+      <uri>model://vine_t4_coarse</uri>
       <pose>0 -1.5 -0.1 0 0 0</pose>
       <name>vine_t2_0</name>
     </include>
     <include>
-      <uri>model://vine_t4</uri>
+      <uri>model://vine_t4_coarse</uri>
       <pose>-6 -1.5 -0.1 0 0 0</pose>
       <name>vine_t2_1</name>
     </include>
     <include>
-      <uri>model://vine_t4</uri>
+      <uri>model://vine_t4_coarse</uri>
       <pose>6 -1.5 -0.1 0 0 0</pose>
       <name>vine_t2_2</name>
     </include>
 
     <include>
-      <uri>model://vine_t4</uri>
+      <uri>model://vine_t4_coarse</uri>
       <pose>0 1.5 -0.1 0 0 0</pose>
       <name>vine_t3_0</name>
     </include>
     <include>
-      <uri>model://vine_t4</uri>
+      <uri>model://vine_t4_coarse</uri>
       <pose>-6 1.5 -0.1 0 0 0</pose>
       <name>vine_t3_1</name>
     </include>
     <include>
-      <uri>model://vine_t4</uri>
+      <uri>model://vine_t4_coarse</uri>
       <pose>6 1.5 -0.1 0 0 0</pose>
       <name>vine_t3_2</name>
     </include>
 
     <include>
-      <uri>model://vine_t4</uri>
+      <uri>model://vine_t4_coarse</uri>
       <pose>0 4.5 0 0 0 0</pose>
-      <name>vine_t4_0</name>
+      <name>vine_t4_coarse_0</name>
     </include>
     <include>
-      <uri>model://vine_t4</uri>
+      <uri>model://vine_t4_coarse</uri>
       <pose>-6 4.5 0 0 0 0</pose>
-      <name>vine_t4_1</name>
+      <name>vine_t4_coarse_1</name>
     </include>
     <include>
-      <uri>model://vine_t4</uri>
+      <uri>model://vine_t4_coarse</uri>
       <pose>6 4.5 0 0 0 0</pose>
-      <name>vine_t4_2</name>
+      <name>vine_t4_coarse_2</name>
     </include>
 
     <include>
-      <uri>model://vine_t4</uri>
+      <uri>model://vine_t4_coarse</uri>
       <pose>0 7.5 0 0 0 0</pose>
       <name>vine_t5_0</name>
     </include>
     <include>
-      <uri>model://vine_t4</uri>
+      <uri>model://vine_t4_coarse</uri>
       <pose>-6 7.5 0 0 0 0</pose>
       <name>vine_t5_1</name>
     </include>
     <include>
-      <uri>model://vine_t4</uri>
+      <uri>model://vine_t4_coarse</uri>
       <pose>6 7.5 0 0 0 0</pose>
       <name>vine_t5_2</name>
     </include>

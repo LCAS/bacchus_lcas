@@ -45,8 +45,8 @@
     <rosparam file="$(arg robot_footprint)" command="load" ns="global_costmap"/>
     <rosparam file="$(arg robot_footprint)" command="load" ns="local_costmap"/>
 
-    <rosparam file="$(find bacchus_move_base)/config/local_costmap_params.yaml" command="load" subst_value="true"/>/>
-    <rosparam file="$(find bacchus_move_base)/config/global_costmap_params.yaml" command="load" subst_value="true"/>/>
+    <rosparam file="$(find bacchus_move_base)/config/local_costmap_params.yaml" command="load" subst_value="true"/>
+    <rosparam file="$(find bacchus_move_base)/config/global_costmap_params.yaml" command="load" subst_value="true"/>
 
     <rosparam file="$(find bacchus_move_base)/config/carrot_planner.yaml" command="load" if="$(arg use_carrot_planner)" />
     <rosparam file="$(find bacchus_move_base)/config/nav_fn_ros.yaml" command="load" unless="$(arg use_carrot_planner)" />

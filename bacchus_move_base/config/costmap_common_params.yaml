@@ -12,29 +12,10 @@ map_layer:
 global_inflation_layer:
   inflation_radius: 1.75
   cost_scaling_factor: 2.58
-#  inflation_radius: 0.66
-#  cost_scaling_factor: 0.97
 
 local_inflation_layer:
   inflation_radius: 1.5
   cost_scaling_factor: 5.0
-# inflation_radius: 1.75
-# cost_scaling_factor: 2.58
-#  inflation_radius: 0.66
-#  cost_scaling_factor: 0.97
-
-# obstacle_layer:
-#   max_obstacle_height: 2.0
-#   obstacle_range: 3.5
-#   raytrace_range: 4.0
-
-#   unknown_threshold: 6
-#   mark_threshold: 0
-  
-#   track_unknown_space: true
-  
-#   observation_sources: merged_laser_scan
-#   merged_laser_scan: {sensor_frame: base_link, data_type: LaserScan, topic: /thorvald_001/scan, marking: true, clearing: true}
 
 global_obstacle_layer:
   max_obstacle_height: 2.0
@@ -46,8 +27,19 @@ global_obstacle_layer:
 
   track_unknown_space: true
 
-  observation_sources: merged_laser_scan
-  merged_laser_scan: {sensor_frame: base_link, data_type: LaserScan, topic: /$(arg robot_name)/scan, marking: false, clearing: false}
+  observation_sources: front_laser rear_laser
+  front_laser: 
+    sensor_frame: hokuyo_front
+    data_type: LaserScan
+    topic: /$(arg robot_name)/front_scan
+    marking: false
+    clearing: false
+  rear_laser: 
+    sensor_frame: hokuyo_back
+    data_type: LaserScan
+    topic: /$(arg robot_name)/back_scan
+    marking: false
+    clearing: false
 
 obstacle_layer:
   obstacle_range: 2.5

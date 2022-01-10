@@ -4,6 +4,14 @@ Changelog for package bacchus_gazebo
 
 Forthcoming
 -----------
+* Merge pull request `#43 <https://github.com/LCAS/bacchus_lcas/issues/43>`_ from gcielniak/teaching
+  fix global costmap parameters
+* enable nav_map_yaml as a configurable parameter
+* Enable non-paused sim + Fix depth camera_info topic
+* Revert Niko's commit
+* 'improve' the world ;)
+* Contributors: Riccardo, Riccardo Polvara, gcielniak, nikostsagk
+
 * Patched arg for move_base missing in hierarchical launch files
 * Fix camera frame in camera_info topic
 * Contributors: Riccardo, pulver

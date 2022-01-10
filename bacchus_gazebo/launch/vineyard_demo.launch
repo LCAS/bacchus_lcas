@@ -24,14 +24,14 @@
   <arg name="X_INIT" value="40.0" if="$(arg riseholme_dt)"/>
   <arg name="Y_INIT" value="-40.0" if="$(arg riseholme_dt)"/>
   <arg name="Z_INIT" value="1.2" if="$(arg riseholme_dt)"/>
-  <arg name="loc_map_yaml" value="$(find bacchus_gazebo)/maps/riseholme.yaml" if="$(arg riseholme_dt)"/>
-  <arg name="nav_map_yaml" value="$(find bacchus_gazebo)/maps/riseholme.yaml" if="$(arg riseholme_dt)"/>
+  <arg name="loc_map_yaml" default="$(find bacchus_gazebo)/maps/riseholme.yaml" if="$(arg riseholme_dt)"/>
+  <arg name="nav_map_yaml" default="$(find bacchus_gazebo)/maps/riseholme.yaml" if="$(arg riseholme_dt)"/>
 
   <arg name="X_INIT" value="-11.0" unless="$(arg riseholme_dt)"/>
   <arg name="Y_INIT" value="0.0" unless="$(arg riseholme_dt)"/>
   <arg name="Z_INIT" value="1.0" unless="$(arg riseholme_dt)"/>
-  <arg name="loc_map_yaml" value="$(find bacchus_gazebo)/maps/cropped.yaml" unless="$(arg riseholme_dt)"/>
-  <arg name="nav_map_yaml" value="$(find bacchus_gazebo)/maps/cropped.yaml" unless="$(arg riseholme_dt)"/>
+  <arg name="loc_map_yaml" default="$(find bacchus_gazebo)/maps/cropped.yaml" unless="$(arg riseholme_dt)"/>
+  <arg name="nav_map_yaml" default="$(find bacchus_gazebo)/maps/cropped.yaml" unless="$(arg riseholme_dt)"/>
 
 
   <!-- ############################## GAZEBO ############################## -->

@@ -2,8 +2,8 @@
 Changelog for package bacchus_move_base
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.3.4 (2022-01-10)
+------------------
 * Merge pull request `#43 <https://github.com/LCAS/bacchus_lcas/issues/43>`_ from gcielniak/teaching
   fix global costmap parameters
 * fix global costmap parameters

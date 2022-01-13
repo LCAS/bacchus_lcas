@@ -144,3 +144,7 @@ rbsherpa*
 joint_read_command_controller/
 
 .vscode/
+
+rbvogui_common
+
+rbvogui_sim

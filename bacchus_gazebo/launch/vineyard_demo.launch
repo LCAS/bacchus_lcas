@@ -2,10 +2,10 @@
 <launch>
 
   <!-- Robot arguments -->
-  <arg name="fake_localisation" default="true" doc="fake the localisation, sets map_server and world_tf to true."/>
+  <arg name="fake_localisation" default="false" doc="fake the localisation, sets map_server and world_tf to true."/>
   <arg name="riseholme_dt" default="false"/>
-  <arg name="robot_name" default="thorvald"/>
-  <arg name="robot_no" default="001"/>  <!-- unused-->
+  <arg name="robot_name" default="thorvald_001"/>
+
   <arg name="robot_model" default="$(find bacchus_gazebo)/config/robot.yaml"/>
   <arg name="model_extras" default="$(find bacchus_gazebo)/urdf/bacchus_sensors.xacro"/>
   <arg name="multi_sim" default="false"/>
@@ -15,13 +15,13 @@
     -->
 
   <!-- navigation arguments -->
-  <arg name="launch_move_base" default="true"/>
+  <arg name="launch_move_base" default="false"/>
   <arg name="tf_prefix" default="$(arg robot_name)/"/>
   <arg name="use_carrot_planner" default="false"/>
   <arg name="use_omni" default="false"/>
   <arg name="world_2_map_pose" default="0.0 0.0 0.0 0.0 0.0 0.0 1.0" />
   
-  <arg name="X_INIT" value="40.0" if="$(arg riseholme_dt)"/>
+  <arg name="X_INIT" value="36.0" if="$(arg riseholme_dt)"/>
   <arg name="Y_INIT" value="-40.0" if="$(arg riseholme_dt)"/>
   <arg name="Z_INIT" value="1.2" if="$(arg riseholme_dt)"/>
   <arg name="loc_map_yaml" value="$(find bacchus_gazebo)/maps/riseholme.yaml" if="$(arg riseholme_dt)"/>
@@ -36,7 +36,7 @@
 
   <!-- ############################## GAZEBO ############################## -->
   <arg name="world_name" default="vineyard_small_s0_coarse" unless="$(arg riseholme_dt)"/>
-  <arg name="world_name" value="riseholme_digital_twin" if="$(arg riseholme_dt)"/>
+  <arg name="world_name" value="ndt_stage0_fence" if="$(arg riseholme_dt)"/>
   <!-- Note: the world_name is with respect to GAZEBO_RESOURCE_PATH environmental variable -->
   <arg name="world" default="$(find bacchus_gazebo)/worlds/$(arg world_name).world"/>
   <arg name="paused" default="true"/>
@@ -53,10 +53,8 @@
   <!-- ############################### ROBOT ############################## -->
 
   <include file="$(find bacchus_gazebo)/launch/thorvald.launch">
-    <arg name="single_robot"      value="true"/>
-    <arg name="robot_name"        value="$(arg robot_name)_001" />
-    <arg name="robot_no"          value="$(arg robot_no)" />
-    <!-- <arg name="tf_prefix"         value="$(arg robot_name)_1/" /> -->
+    <arg name="robot_name"        value="$(arg robot_name)" />
+    <arg name="tf_prefix"         value="" />
     <arg name="x"                 value="$(arg X_INIT)" />
     <arg name="y"                 value="$(arg Y_INIT)" />
     <arg name="z"                 value="$(arg Z_INIT)" />
@@ -72,29 +70,6 @@
     <arg name="debug"             value="$(arg debug)"/>
     <arg name="verbose"           value="$(arg verbose)"/>
   </include>
-
-  <group if="$(arg multi_sim)">
-    <include file="$(find bacchus_gazebo)/launch/thorvald.launch" >
-      <arg name="single_robot"      value="false"/>
-      <arg name="robot_name"        value="$(arg robot_name)_002" />
-      <arg name="robot_no"          value="001" />
-      <!-- <arg name="tf_prefix"         value="$(arg robot_name)_2/" /> -->
-      <arg name="x"                 value="-8.0" />
-      <arg name="y"                 value="$(arg Y_INIT)" />
-      <arg name="z"                 value="$(arg Z_INIT)" />
-      <arg name="robot_model"       value="$(arg robot_model)"/>
-      <arg name="model_extras"      value="$(arg model_extras)"/>
-      <arg name="world_name"        value="$(arg world)"/>
-      <arg name="fake_localisation" value="$(arg fake_localisation)"/>
-      <arg name="nav_map_yaml"      value="$(arg nav_map_yaml)"/>
-      <arg name="rviz_config_file"  value="$(arg rviz_config_file)"/>
-      <arg name="paused"            value="$(arg paused)"/>
-      <arg name="use_sim_time"      value="$(arg use_sim_time)"/>
-      <arg name="gui"               value="$(arg gui)"/>
-      <arg name="debug"             value="$(arg debug)"/>
-      <arg name="verbose"           value="$(arg verbose)"/>
-    </include>
-  </group>
 
 
 </launch>

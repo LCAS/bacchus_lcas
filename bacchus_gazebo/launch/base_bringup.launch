@@ -1,0 +1,28 @@
+<?xml version="1.0" ?>
+
+<launch>
+  <arg name="tf_prefix" default="" />
+  <arg name="robot_model" />
+  <arg name="simple_sim" />
+  <arg name="enable_odom_tf" default="False" />
+  <arg name="odom_frame_id" default="odom" />
+  <arg name="can_interface_type" default=""/>
+  <arg name="can_interface_name" default="" />
+  <arg name="joint_states_remap_to" default="base_driver/joint_states" />
+  <arg name="passthrough_gazebo_odometry" default="False" />
+
+  <node pkg="thorvald_base" type="base_driver" name="base_driver" output="screen">
+    <param name="tf_prefix" value="$(arg tf_prefix)" />
+    <rosparam command="load" file="$(arg robot_model)" />
+    <param name="simple_sim" value="$(arg simple_sim)" />
+    <param name="enable_odom_tf" value="$(arg enable_odom_tf)" />
+    <param name="odom_frame_id" value="$(arg odom_frame_id)" />
+    <!-- passthrough_gazebo_odometry == true will forward gazebo odometry should it become available -->
+    <param name="passthrough_gazebo_odometry" value="$(arg passthrough_gazebo_odometry)" /> 
+    <param unless="$(eval can_interface_type == '')" name="can_interface_type" value="$(arg can_interface_type)" />
+    <param unless="$(eval can_interface_type == '')" name="can_interface_name" value="$(arg can_interface_name)" />
+    <remap from="cmd_vel" to="twist_mux/cmd_vel" />
+    <remap from="joint_states" to="$(arg joint_states_remap_to)" />
+  </node>
+
+</launch>

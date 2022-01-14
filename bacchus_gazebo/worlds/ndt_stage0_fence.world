@@ -2,7 +2,7 @@
   <world name='default'>
     <gui fullscreen='0'>
       <camera name='user_camera'>
-        <pose frame=''>-34.0529 -51.3033 41.4334 0 0.437796 -0.173601</pose>
+        <pose frame=''>7.40945 -10.9154 66.8716 -2e-06 1.5698 1.55202</pose>
         <view_controller>orbit</view_controller>
         <projection_type>perspective</projection_type>
       </camera>
@@ -47,10 +47,10 @@
       <heading_deg>0</heading_deg>
     </spherical_coordinates>
     <state world_name='default'>
-      <sim_time>4990 713000000</sim_time>
-      <real_time>0 0</real_time>
-      <wall_time>1642072554 61936783</wall_time>
-      <iterations>0</iterations>
+      <sim_time>5258 475000000</sim_time>
+      <real_time>332 183351758</real_time>
+      <wall_time>1642184320 626588710</wall_time>
+      <iterations>267762</iterations>
       <model name='grass_ground_plane'>
         <pose frame=''>0 0 0 0 -0 0</pose>
         <scale>1 1 1</scale>
@@ -62,650 +62,780 @@
         </link>
       </model>
       <model name='heightmap'>
-        <pose frame=''>40 -40 0 0 -0 0</pose>
+        <pose frame=''>0 0 0 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose frame=''>40 -40 0 0 -0 0</pose>
+          <pose frame=''>0 0 0 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
       <model name='heightmap_0'>
-        <pose frame=''>65 -40 0 0 -0 0</pose>
+        <pose frame=''>25 0 0 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose frame=''>65 -40 0 0 -0 0</pose>
+          <pose frame=''>25 0 0 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
       <model name='heightmap_1'>
-        <pose frame=''>65 -65 0 0 -0 0</pose>
+        <pose frame=''>25 -25 0 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose frame=''>65 -65 0 0 -0 0</pose>
+          <pose frame=''>25 -25 0 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
       <model name='heightmap_2'>
-        <pose frame=''>40 -65 0 0 -0 0</pose>
+        <pose frame=''>0 -25 0 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose frame=''>40 -65 0 0 -0 0</pose>
+          <pose frame=''>0 -25 0 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
       <model name='vine_t0_coarse'>
-        <pose frame=''>40 -42 0 0 -0 0</pose>
+        <pose frame=''>0 -2 0 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose frame=''>40 -42 0 0 -0 0</pose>
+          <pose frame=''>0 -2 0 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
       <model name='vine_t0_coarse_clone'>
-        <pose frame=''>46.5 -42 0 0 -0 0</pose>
+        <pose frame=''>6.5 -2 0 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose frame=''>46.5 -42 0 0 -0 0</pose>
+          <pose frame=''>6.5 -2 0 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
       <model name='vine_t0_coarse_clone_clone'>
-        <pose frame=''>53 -42 0 0 -0 0</pose>
+        <pose frame=''>13 -2 0 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose frame=''>53 -42 0 0 -0 0</pose>
+          <pose frame=''>13 -2 0 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
       <model name='vine_t0_coarse_clone_clone_0'>
-        <pose frame=''>60 -42 0 0 -0 0</pose>
+        <pose frame=''>20 -2 0 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose frame=''>60 -42 0 0 -0 0</pose>
+          <pose frame=''>20 -2 0 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
       <model name='vine_t0_coarse_clone_clone_1'>
-        <pose frame=''>67 -42 0 0 -0 0</pose>
+        <pose frame=''>27 -2 0 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose frame=''>67 -42 0 0 -0 0</pose>
+          <pose frame=''>27 -2 0 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
       <model name='vine_t0_coarse_clone_clone_10'>
-        <pose frame=''>52.9 -54 0 0 -0 0</pose>
+        <pose frame=''>12.9 -14 0 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose frame=''>52.9 -54 0 0 -0 0</pose>
+          <pose frame=''>12.9 -14 0 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
       <model name='vine_t0_coarse_clone_clone_11'>
-        <pose frame=''>60.1 -46.0129 0 0 -0 0</pose>
+        <pose frame=''>20.1 -6.0129 0 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose frame=''>60.1 -46.0129 0 0 -0 0</pose>
+          <pose frame=''>20.1 -6.0129 0 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
       <model name='vine_t0_coarse_clone_clone_12'>
-        <pose frame=''>60 -49.8135 0 0 -0 0</pose>
+        <pose frame=''>20 -9.8135 0 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose frame=''>60 -49.8135 0 0 -0 0</pose>
+          <pose frame=''>20 -9.8135 0 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
       <model name='vine_t0_coarse_clone_clone_13'>
-        <pose frame=''>60 -54.1038 0 0 -0 0</pose>
+        <pose frame=''>20 -14.1038 0 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose frame=''>60 -54.1038 0 0 -0 0</pose>
+          <pose frame=''>20 -14.1038 0 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
       <model name='vine_t0_coarse_clone_clone_14'>
-        <pose frame=''>67 -46.2199 0 0 -0 0</pose>
+        <pose frame=''>27 -6.2199 0 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose frame=''>67 -46.2199 0 0 -0 0</pose>
+          <pose frame=''>27 -6.2199 0 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
       <model name='vine_t0_coarse_clone_clone_15'>
-        <pose frame=''>67 -49.8499 0 0 -0 0</pose>
+        <pose frame=''>27 -9.8499 0 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose frame=''>67 -49.8499 0 0 -0 0</pose>
+          <pose frame=''>27 -9.8499 0 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
       <model name='vine_t0_coarse_clone_clone_16'>
-        <pose frame=''>67 -54.1902 0 0 -0 0</pose>
+        <pose frame=''>27 -14.1902 0 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose frame=''>67 -54.1902 0 0 -0 0</pose>
+          <pose frame=''>27 -14.1902 0 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
       <model name='vine_t0_coarse_clone_clone_17'>
-        <pose frame=''>40 -58 0 0 -0 0</pose>
+        <pose frame=''>0 -18 0 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose frame=''>40 -58 0 0 -0 0</pose>
+          <pose frame=''>0 -18 0 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
       <model name='vine_t0_coarse_clone_clone_18'>
-        <pose frame=''>46.5 -58.5457 0 0 -0 0</pose>
+        <pose frame=''>6.5 -18.5457 0 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose frame=''>46.5 -58.5457 0 0 -0 0</pose>
+          <pose frame=''>6.5 -18.5457 0 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
       <model name='vine_t0_coarse_clone_clone_19'>
-        <pose frame=''>53.3 -58.5 0 0 -0 0</pose>
+        <pose frame=''>13.3 -18.5 0 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose frame=''>53.3 -58.5 0 0 -0 0</pose>
+          <pose frame=''>13.3 -18.5 0 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
       <model name='vine_t0_coarse_clone_clone_2'>
-        <pose frame=''>40 -46 0 0 -0 0</pose>
+        <pose frame=''>0 -6 0 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose frame=''>40 -46 0 0 -0 0</pose>
+          <pose frame=''>0 -6 0 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
       <model name='vine_t0_coarse_clone_clone_20'>
-        <pose frame=''>60 -58 0 0 -0 0</pose>
+        <pose frame=''>20 -18 0 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose frame=''>60 -58 0 0 -0 0</pose>
+          <pose frame=''>20 -18 0 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
       <model name='vine_t0_coarse_clone_clone_21'>
-        <pose frame=''>67 -58.2744 0 0 -0 0</pose>
+        <pose frame=''>27 -18.2744 0 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose frame=''>67 -58.2744 0 0 -0 0</pose>
+          <pose frame=''>27 -18.2744 0 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
       <model name='vine_t0_coarse_clone_clone_3'>
-        <pose frame=''>40 -50 0 0 -0 0</pose>
+        <pose frame=''>0 -10 0 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose frame=''>40 -50 0 0 -0 0</pose>
+          <pose frame=''>0 -10 0 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
       <model name='vine_t0_coarse_clone_clone_4'>
-        <pose frame=''>40 -53.54 0 0 -0 0</pose>
+        <pose frame=''>0 -13.54 0 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose frame=''>40 -53.54 0 0 -0 0</pose>
+          <pose frame=''>0 -13.54 0 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
       <model name='vine_t0_coarse_clone_clone_5'>
-        <pose frame=''>46.5 -46 0 0 -0 0</pose>
+        <pose frame=''>6.5 -6 0 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose frame=''>46.5 -46 0 0 -0 0</pose>
+          <pose frame=''>6.5 -6 0 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
       <model name='vine_t0_coarse_clone_clone_6'>
-        <pose frame=''>46.5 -50 0 0 -0 0</pose>
+        <pose frame=''>6.5 -10 0 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose frame=''>46.5 -50 0 0 -0 0</pose>
+          <pose frame=''>6.5 -10 0 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
       <model name='vine_t0_coarse_clone_clone_7'>
-        <pose frame=''>47 -54 0 0 -0 0</pose>
+        <pose frame=''>7 -14 0 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose frame=''>47 -54 0 0 -0 0</pose>
+          <pose frame=''>7 -14 0 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
       <model name='vine_t0_coarse_clone_clone_8'>
-        <pose frame=''>53 -46 0 0 -0 0</pose>
+        <pose frame=''>13 -6 0 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose frame=''>53 -46 0 0 -0 0</pose>
+          <pose frame=''>13 -6 0 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
       <model name='vine_t0_coarse_clone_clone_9'>
-        <pose frame=''>53.2 -50 0 0 -0 0</pose>
+        <pose frame=''>13.2 -10 0 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose frame=''>53.2 -50 0 0 -0 0</pose>
+          <pose frame=''>13.2 -10 0 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
       <model name='wooden_fence'>
-        <pose frame=''>38.1324 -35.5958 0.66 0 -0 0</pose>
+        <pose frame=''>-6.79434 5.4444 0.66 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose frame=''>38.1324 -35.5958 0.66 0 -0 0</pose>
+          <pose frame=''>-6.79434 5.4444 0.66 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
       <model name='wooden_fence_0'>
-        <pose frame=''>40.7111 -35.5453 0.66 0 -0 0</pose>
+        <pose frame=''>-4.44566 5.42359 0.66 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose frame=''>40.7111 -35.5453 0.66 0 -0 0</pose>
+          <pose frame=''>-4.44566 5.42359 0.66 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
       <model name='wooden_fence_1'>
-        <pose frame=''>43.6776 -35.5433 0.66 0 -0 0</pose>
+        <pose frame=''>-1.94114 5.41665 0.66 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose frame=''>43.6776 -35.5433 0.66 0 -0 0</pose>
+          <pose frame=''>-1.94114 5.41665 0.66 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
       <model name='wooden_fence_10'>
-        <pose frame=''>70.9898 -35.3651 0.66 0 -0 0</pose>
+        <pose frame=''>20.7286 5.29085 0.66 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose frame=''>70.9898 -35.3651 0.66 0 -0 0</pose>
+          <pose frame=''>20.7286 5.29085 0.66 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
       <model name='wooden_fence_11'>
-        <pose frame=''>73.7936 -35.4519 0.66 0 -0 0</pose>
+        <pose frame=''>23.3421 5.26949 0.66 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose frame=''>73.7936 -35.4519 0.66 0 -0 0</pose>
+          <pose frame=''>23.3421 5.26949 0.66 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
       <model name='wooden_fence_12'>
-        <pose frame=''>75.6915 -39.2227 0.66 0 -0 1.5708</pose>
+        <pose frame=''>35.9913 1.73301 0 0 -0 1.5708</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose frame=''>75.6915 -39.2227 0.66 0 -0 1.5708</pose>
+          <pose frame=''>35.9913 1.73301 0 0 -0 1.5708</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
       <model name='wooden_fence_12_clone'>
-        <pose frame=''>76.1935 -41.3163 0.66 0 -0 1.5708</pose>
+        <pose frame=''>35.417 1.53592 0.66 0 -0 1.5708</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose frame=''>76.1935 -41.3163 0.66 0 -0 1.5708</pose>
+          <pose frame=''>35.417 1.53592 0.66 0 -0 1.5708</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
       <model name='wooden_fence_12_clone_0'>
-        <pose frame=''>76.1482 -43.4412 0.66 0 -0 1.5708</pose>
+        <pose frame=''>35.4675 -0.469485 0.66 0 -0 1.5708</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose frame=''>76.1482 -43.4412 0.66 0 -0 1.5708</pose>
+          <pose frame=''>35.4675 -0.469485 0.66 0 -0 1.5708</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
       <model name='wooden_fence_12_clone_1'>
-        <pose frame=''>76.0062 -45.705 0.66 0 -0 1.5708</pose>
+        <pose frame=''>35.422 -2.61868 0.66 0 -0 1.5708</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose frame=''>76.0062 -45.705 0.66 0 -0 1.5708</pose>
+          <pose frame=''>35.422 -2.61868 0.66 0 -0 1.5708</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
-      <model name='wooden_fence_12_clone_11_clone'>
-        <pose frame=''>30.8864 -39.2 0.66 0 -0 1.5708</pose>
+      <model name='wooden_fence_12_clone_10'>
+        <pose frame=''>35.4011 -21.0305 0.66 0 -0 1.5708</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose frame=''>30.8864 -39.2 0.66 0 -0 1.5708</pose>
+          <pose frame=''>35.4011 -21.0305 0.66 0 -0 1.5708</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
-      <model name='wooden_fence_12_clone_11_clone_0'>
-        <pose frame=''>30.93 -41.2272 0.66 0 -0 1.5708</pose>
+      <model name='wooden_fence_12_clone_11'>
+        <pose frame=''>35.3451 -23.0553 0.66 0 -0 1.5708</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose frame=''>30.93 -41.2272 0.66 0 -0 1.5708</pose>
+          <pose frame=''>35.3451 -23.0553 0.66 0 -0 1.5708</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
-      <model name='wooden_fence_12_clone_11_clone_1'>
-        <pose frame=''>30.8426 -43.4772 0.66 0 -0 1.5708</pose>
+      <model name='wooden_fence_12_clone_12'>
+        <pose frame=''>35.4027 -25.0051 0.66 0 -0 1.5708</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose frame=''>30.8426 -43.4772 0.66 0 -0 1.5708</pose>
+          <pose frame=''>35.4027 -25.0051 0.66 0 -0 1.5708</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
-      <model name='wooden_fence_12_clone_11_clone_2'>
-        <pose frame=''>30.7889 -45.6978 0.66 0 -0 1.5708</pose>
+      <model name='wooden_fence_12_clone_13'>
+        <pose frame=''>35.5312 -27.1029 0.66 0 -0 1.5708</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose frame=''>30.7889 -45.6978 0.66 0 -0 1.5708</pose>
+          <pose frame=''>35.5312 -27.1029 0.66 0 -0 1.5708</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
-      <model name='wooden_fence_12_clone_11_clone_3'>
-        <pose frame=''>30.7452 -47.8118 0.66 0 -0 1.5708</pose>
+      <model name='wooden_fence_12_clone_14'>
+        <pose frame=''>35.3298 -29.0717 0.66 0 -0 1.5708</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose frame=''>30.7452 -47.8118 0.66 0 -0 1.5708</pose>
+          <pose frame=''>35.3298 -29.0717 0.66 0 -0 1.5708</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
-      <model name='wooden_fence_12_clone_11_clone_4'>
-        <pose frame=''>30.604 -49.8078 0.66 0 -0 1.5708</pose>
+      <model name='wooden_fence_12_clone_15'>
+        <pose frame=''>35.463 -31.1525 0.66 0 -0 1.5708</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose frame=''>30.604 -49.8078 0.66 0 -0 1.5708</pose>
+          <pose frame=''>35.463 -31.1525 0.66 0 -0 1.5708</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
-      <model name='wooden_fence_12_clone_11_clone_5'>
-        <pose frame=''>30.5545 -51.9392 0.66 0 -0 1.5708</pose>
+      <model name='wooden_fence_12_clone_16'>
+        <pose frame=''>35.4526 -33.1305 0.66 0 -0 1.5708</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose frame=''>30.5545 -51.9392 0.66 0 -0 1.5708</pose>
+          <pose frame=''>35.4526 -33.1305 0.66 0 -0 1.5708</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='wooden_fence_12_clone_17'>
+        <pose frame=''>35.5653 -35.0813 0.66 0 -0 1.5708</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>35.5653 -35.0813 0.66 0 -0 1.5708</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='wooden_fence_12_clone_18'>
+        <pose frame=''>35.5057 -37.1702 0.66 0 -0 1.5708</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>35.5057 -37.1702 0.66 0 -0 1.5708</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='wooden_fence_12_clone_19'>
+        <pose frame=''>-11.6066 1.99178 0.66 0 -0 1.5708</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>-11.6066 1.99178 0.66 0 -0 1.5708</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
       <model name='wooden_fence_12_clone_2'>
-        <pose frame=''>76.0218 -47.9435 0.66 0 -0 1.5708</pose>
+        <pose frame=''>35.4244 -4.80023 0.66 0 -0 1.5708</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose frame=''>76.0218 -47.9435 0.66 0 -0 1.5708</pose>
+          <pose frame=''>35.4244 -4.80023 0.66 0 -0 1.5708</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='wooden_fence_12_clone_20'>
+        <pose frame=''>-11.5155 -0.014984 0.66 0 -0 1.5708</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>-11.5155 -0.014984 0.66 0 -0 1.5708</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='wooden_fence_12_clone_21'>
+        <pose frame=''>-11.5797 -2.15756 0.66 0 -0 1.5708</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>-11.5797 -2.15756 0.66 0 -0 1.5708</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='wooden_fence_12_clone_22'>
+        <pose frame=''>-11.7193 -4.57977 0.66 0 -0 1.5708</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>-11.7193 -4.57977 0.66 0 -0 1.5708</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='wooden_fence_12_clone_23'>
+        <pose frame=''>-11.6991 -6.59107 0.66 0 -0 1.5708</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>-11.6991 -6.59107 0.66 0 -0 1.5708</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='wooden_fence_12_clone_24'>
+        <pose frame=''>-11.6817 -8.81124 0.66 0 -0 1.5708</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>-11.6817 -8.81124 0.66 0 -0 1.5708</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='wooden_fence_12_clone_25'>
+        <pose frame=''>-11.6329 -10.7928 0.66 0 -0 1.5708</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>-11.6329 -10.7928 0.66 0 -0 1.5708</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='wooden_fence_12_clone_26'>
+        <pose frame=''>-11.5157 -12.8801 0.66 0 -0 1.5708</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>-11.5157 -12.8801 0.66 0 -0 1.5708</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='wooden_fence_12_clone_27'>
+        <pose frame=''>-11.6467 -14.7535 0.66 0 -0 1.5708</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>-11.6467 -14.7535 0.66 0 -0 1.5708</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
       <model name='wooden_fence_12_clone_3'>
-        <pose frame=''>76.0337 -50.061 0.66 0 -0 1.5708</pose>
+        <pose frame=''>35.4929 -6.81323 0.66 0 -0 1.5708</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose frame=''>76.0337 -50.061 0.66 0 -0 1.5708</pose>
+          <pose frame=''>35.4929 -6.81323 0.66 0 -0 1.5708</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
       <model name='wooden_fence_12_clone_4'>
-        <pose frame=''>75.9122 -52.4647 0.66 0 -0 1.5708</pose>
+        <pose frame=''>35.3729 -8.89235 0.66 0 -0 1.5708</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose frame=''>75.9122 -52.4647 0.66 0 -0 1.5708</pose>
+          <pose frame=''>35.3729 -8.89235 0.66 0 -0 1.5708</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
       <model name='wooden_fence_12_clone_5'>
-        <pose frame=''>75.6411 -54.7039 0.66 0 -0 1.5708</pose>
+        <pose frame=''>35.4126 -10.9275 0.66 0 -0 1.5708</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose frame=''>75.6411 -54.7039 0.66 0 -0 1.5708</pose>
+          <pose frame=''>35.4126 -10.9275 0.66 0 -0 1.5708</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
       <model name='wooden_fence_12_clone_6'>
-        <pose frame=''>75.8253 -57.1255 0.66 0 -0 1.5708</pose>
+        <pose frame=''>35.435 -12.9453 0.66 0 -0 1.5708</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose frame=''>75.8253 -57.1255 0.66 0 -0 1.5708</pose>
+          <pose frame=''>35.435 -12.9453 0.66 0 -0 1.5708</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
       <model name='wooden_fence_12_clone_7'>
-        <pose frame=''>76.166 -59.2467 0.66 0 -0 1.5708</pose>
+        <pose frame=''>35.387 -14.9602 0.66 0 -0 1.5708</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose frame=''>76.166 -59.2467 0.66 0 -0 1.5708</pose>
+          <pose frame=''>35.387 -14.9602 0.66 0 -0 1.5708</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
       <model name='wooden_fence_12_clone_8'>
-        <pose frame=''>76.2896 -61.3022 0.66 0 -0 1.5708</pose>
+        <pose frame=''>35.4556 -16.9795 0.66 0 -0 1.5708</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose frame=''>76.2896 -61.3022 0.66 0 -0 1.5708</pose>
+          <pose frame=''>35.4556 -16.9795 0.66 0 -0 1.5708</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
       <model name='wooden_fence_12_clone_9'>
-        <pose frame=''>76.2417 -63.466 0.66 0 -0 1.5708</pose>
+        <pose frame=''>35.4143 -18.9475 0.66 0 -0 1.5708</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose frame=''>76.2417 -63.466 0.66 0 -0 1.5708</pose>
+          <pose frame=''>35.4143 -18.9475 0.66 0 -0 1.5708</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
       <model name='wooden_fence_13'>
-        <pose frame=''>36.4705 -35.5992 0.66 0 -0 0</pose>
+        <pose frame=''>25.858 5.24726 0.66 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose frame=''>36.4705 -35.5992 0.66 0 -0 0</pose>
+          <pose frame=''>25.858 5.24726 0.66 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
       <model name='wooden_fence_14'>
-        <pose frame=''>34.6232 -35.4752 0.66 0 -0 0</pose>
+        <pose frame=''>28.5272 5.19276 0.66 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose frame=''>34.6232 -35.4752 0.66 0 -0 0</pose>
+          <pose frame=''>28.5272 5.19276 0.66 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
       <model name='wooden_fence_15'>
-        <pose frame=''>32.8822 -35.6265 0.66 0 -0 0</pose>
+        <pose frame=''>31.2176 5.19126 0.66 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose frame=''>32.8822 -35.6265 0.66 0 -0 0</pose>
+          <pose frame=''>31.2176 5.19126 0.66 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
       <model name='wooden_fence_16'>
-        <pose frame=''>31.2867 -35.4693 0.66 0 -0 0</pose>
+        <pose frame=''>-9.2867 5.4693 0.66 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose frame=''>31.2867 -35.4693 0.66 0 -0 0</pose>
+          <pose frame=''>-9.2867 5.4693 0.66 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='wooden_fence_17'>
+        <pose frame=''>33.8163 5.20085 0.66 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>33.8163 5.20085 0.66 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='wooden_fence_18'>
+        <pose frame=''>-11.0524 5.47712 0.66 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>-11.0524 5.47712 0.66 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
       <model name='wooden_fence_2'>
-        <pose frame=''>46.5315 -35.5053 0.66 0 -0 0</pose>
+        <pose frame=''>0.640969 5.40785 0.66 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose frame=''>46.5315 -35.5053 0.66 0 -0 0</pose>
+          <pose frame=''>0.640969 5.40785 0.66 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
       <model name='wooden_fence_3'>
-        <pose frame=''>49.6235 -35.5158 0.66 0 -0 0</pose>
+        <pose frame=''>3.18548 5.41094 0.66 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose frame=''>49.6235 -35.5158 0.66 0 -0 0</pose>
+          <pose frame=''>3.18548 5.41094 0.66 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
       <model name='wooden_fence_4'>
-        <pose frame=''>52.8294 -35.4898 0.66 0 -0 0</pose>
+        <pose frame=''>5.60159 5.40146 0.66 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose frame=''>52.8294 -35.4898 0.66 0 -0 0</pose>
+          <pose frame=''>5.60159 5.40146 0.66 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
       <model name='wooden_fence_5'>
-        <pose frame=''>56.1704 -35.5069 0.66 0 -0 0</pose>
+        <pose frame=''>8.02873 5.41528 0.66 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose frame=''>56.1704 -35.5069 0.66 0 -0 0</pose>
+          <pose frame=''>8.02873 5.41528 0.66 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
       <model name='wooden_fence_6'>
-        <pose frame=''>58.9553 -35.4418 0.66 0 -0 0</pose>
+        <pose frame=''>10.5315 5.41729 0.66 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose frame=''>58.9553 -35.4418 0.66 0 -0 0</pose>
+          <pose frame=''>10.5315 5.41729 0.66 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
       <model name='wooden_fence_7'>
-        <pose frame=''>62.092 -35.2657 0.66 0 -0 0</pose>
+        <pose frame=''>13.0657 5.40562 0.66 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose frame=''>62.092 -35.2657 0.66 0 -0 0</pose>
+          <pose frame=''>13.0657 5.40562 0.66 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
       <model name='wooden_fence_8'>
-        <pose frame=''>65.0511 -35.2903 0.66 0 -0 0</pose>
+        <pose frame=''>15.6059 5.42849 0.66 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose frame=''>65.0511 -35.2903 0.66 0 -0 0</pose>
+          <pose frame=''>15.6059 5.42849 0.66 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
       <model name='wooden_fence_9'>
-        <pose frame=''>67.9079 -35.4591 0.66 0 -0 0</pose>
+        <pose frame=''>18.1572 5.35539 0.66 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose frame=''>67.9079 -35.4591 0.66 0 -0 0</pose>
+          <pose frame=''>18.1572 5.35539 0.66 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
@@ -797,42 +927,6 @@
         <kinematic>0</kinematic>
       </link>
       <pose frame=''>37.4848 -33.1118 0.66 0 -0 0</pose>
-    </model>
-    <model name='heightmap_0'>
-      <static>1</static>
-      <link name='link'>
-        <collision name='collision'>
-          <geometry>
-            <mesh>
-              <uri>model://heightmap_realistic/meshes/heightmap.dae</uri>
-            </mesh>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <visual name='visual'>
-          <geometry>
-            <mesh>
-              <uri>model://heightmap_realistic/meshes/heightmap.dae</uri>
-            </mesh>
-          </geometry>
-        </visual>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <pose frame=''>65.4904 -40.0033 0.66 0 -0 0</pose>
     </model>
     <model name='heightmap_1'>
       <static>1</static>
@@ -1806,682 +1900,6 @@
       </link>
       <pose frame=''>74.4696 -58.2744 0.66 0 -0 0</pose>
     </model>
-    <model name='wooden_fence'>
-      <static>1</static>
-      <link name='link'>
-        <pose frame=''>0 0 0 0 -0 0</pose>
-        <inertial>
-          <mass>100</mass>
-          <inertia>
-            <ixx>192.33</ixx>
-            <ixy>0</ixy>
-            <ixz>0</ixz>
-            <iyy>12.33</iyy>
-            <iyz>0</iyz>
-            <izz>204</izz>
-          </inertia>
-        </inertial>
-        <collision name='collision'>
-          <pose frame=''>0 0 0 0 -0 0</pose>
-          <geometry>
-            <mesh>
-              <uri>model://wooden_fence/meshes/fence.dae</uri>
-              <scale>1 1 1</scale>
-            </mesh>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <visual name='visual'>
-          <pose frame=''>0 0 0 0 -0 0</pose>
-          <geometry>
-            <mesh>
-              <uri>model://wooden_fence/meshes/fence.dae</uri>
-              <scale>1 1 1</scale>
-            </mesh>
-          </geometry>
-        </visual>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <pose frame=''>38.1324 -35.5958 0.66 0 -0 0</pose>
-    </model>
-    <model name='wooden_fence_0'>
-      <static>1</static>
-      <link name='link'>
-        <pose frame=''>0 0 0 0 -0 0</pose>
-        <inertial>
-          <mass>100</mass>
-          <inertia>
-            <ixx>192.33</ixx>
-            <ixy>0</ixy>
-            <ixz>0</ixz>
-            <iyy>12.33</iyy>
-            <iyz>0</iyz>
-            <izz>204</izz>
-          </inertia>
-        </inertial>
-        <collision name='collision'>
-          <pose frame=''>0 0 0 0 -0 0</pose>
-          <geometry>
-            <mesh>
-              <uri>model://wooden_fence/meshes/fence.dae</uri>
-              <scale>1 1 1</scale>
-            </mesh>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <visual name='visual'>
-          <pose frame=''>0 0 0 0 -0 0</pose>
-          <geometry>
-            <mesh>
-              <uri>model://wooden_fence/meshes/fence.dae</uri>
-              <scale>1 1 1</scale>
-            </mesh>
-          </geometry>
-        </visual>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <pose frame=''>40.7111 -35.5453 0.66 0 -0 0</pose>
-    </model>
-    <model name='wooden_fence_1'>
-      <static>1</static>
-      <link name='link'>
-        <pose frame=''>0 0 0 0 -0 0</pose>
-        <inertial>
-          <mass>100</mass>
-          <inertia>
-            <ixx>192.33</ixx>
-            <ixy>0</ixy>
-            <ixz>0</ixz>
-            <iyy>12.33</iyy>
-            <iyz>0</iyz>
-            <izz>204</izz>
-          </inertia>
-        </inertial>
-        <collision name='collision'>
-          <pose frame=''>0 0 0 0 -0 0</pose>
-          <geometry>
-            <mesh>
-              <uri>model://wooden_fence/meshes/fence.dae</uri>
-              <scale>1 1 1</scale>
-            </mesh>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <visual name='visual'>
-          <pose frame=''>0 0 0 0 -0 0</pose>
-          <geometry>
-            <mesh>
-              <uri>model://wooden_fence/meshes/fence.dae</uri>
-              <scale>1 1 1</scale>
-            </mesh>
-          </geometry>
-        </visual>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <pose frame=''>43.6776 -35.5433 0.66 0 -0 0</pose>
-    </model>
-    <model name='wooden_fence_2'>
-      <static>1</static>
-      <link name='link'>
-        <pose frame=''>0 0 0 0 -0 0</pose>
-        <inertial>
-          <mass>100</mass>
-          <inertia>
-            <ixx>192.33</ixx>
-            <ixy>0</ixy>
-            <ixz>0</ixz>
-            <iyy>12.33</iyy>
-            <iyz>0</iyz>
-            <izz>204</izz>
-          </inertia>
-        </inertial>
-        <collision name='collision'>
-          <pose frame=''>0 0 0 0 -0 0</pose>
-          <geometry>
-            <mesh>
-              <uri>model://wooden_fence/meshes/fence.dae</uri>
-              <scale>1 1 1</scale>
-            </mesh>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <visual name='visual'>
-          <pose frame=''>0 0 0 0 -0 0</pose>
-          <geometry>
-            <mesh>
-              <uri>model://wooden_fence/meshes/fence.dae</uri>
-              <scale>1 1 1</scale>
-            </mesh>
-          </geometry>
-        </visual>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <pose frame=''>46.5315 -35.5053 0.66 0 -0 0</pose>
-    </model>
-    <model name='wooden_fence_3'>
-      <static>1</static>
-      <link name='link'>
-        <pose frame=''>0 0 0 0 -0 0</pose>
-        <inertial>
-          <mass>100</mass>
-          <inertia>
-            <ixx>192.33</ixx>
-            <ixy>0</ixy>
-            <ixz>0</ixz>
-            <iyy>12.33</iyy>
-            <iyz>0</iyz>
-            <izz>204</izz>
-          </inertia>
-        </inertial>
-        <collision name='collision'>
-          <pose frame=''>0 0 0 0 -0 0</pose>
-          <geometry>
-            <mesh>
-              <uri>model://wooden_fence/meshes/fence.dae</uri>
-              <scale>1 1 1</scale>
-            </mesh>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <visual name='visual'>
-          <pose frame=''>0 0 0 0 -0 0</pose>
-          <geometry>
-            <mesh>
-              <uri>model://wooden_fence/meshes/fence.dae</uri>
-              <scale>1 1 1</scale>
-            </mesh>
-          </geometry>
-        </visual>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <pose frame=''>49.6235 -35.5158 0.66 0 -0 0</pose>
-    </model>
-    <model name='wooden_fence_4'>
-      <static>1</static>
-      <link name='link'>
-        <pose frame=''>0 0 0 0 -0 0</pose>
-        <inertial>
-          <mass>100</mass>
-          <inertia>
-            <ixx>192.33</ixx>
-            <ixy>0</ixy>
-            <ixz>0</ixz>
-            <iyy>12.33</iyy>
-            <iyz>0</iyz>
-            <izz>204</izz>
-          </inertia>
-        </inertial>
-        <collision name='collision'>
-          <pose frame=''>0 0 0 0 -0 0</pose>
-          <geometry>
-            <mesh>
-              <uri>model://wooden_fence/meshes/fence.dae</uri>
-              <scale>1 1 1</scale>
-            </mesh>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <visual name='visual'>
-          <pose frame=''>0 0 0 0 -0 0</pose>
-          <geometry>
-            <mesh>
-              <uri>model://wooden_fence/meshes/fence.dae</uri>
-              <scale>1 1 1</scale>
-            </mesh>
-          </geometry>
-        </visual>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <pose frame=''>52.8294 -35.4898 0.66 0 -0 0</pose>
-    </model>
-    <model name='wooden_fence_5'>
-      <static>1</static>
-      <link name='link'>
-        <pose frame=''>0 0 0 0 -0 0</pose>
-        <inertial>
-          <mass>100</mass>
-          <inertia>
-            <ixx>192.33</ixx>
-            <ixy>0</ixy>
-            <ixz>0</ixz>
-            <iyy>12.33</iyy>
-            <iyz>0</iyz>
-            <izz>204</izz>
-          </inertia>
-        </inertial>
-        <collision name='collision'>
-          <pose frame=''>0 0 0 0 -0 0</pose>
-          <geometry>
-            <mesh>
-              <uri>model://wooden_fence/meshes/fence.dae</uri>
-              <scale>1 1 1</scale>
-            </mesh>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <visual name='visual'>
-          <pose frame=''>0 0 0 0 -0 0</pose>
-          <geometry>
-            <mesh>
-              <uri>model://wooden_fence/meshes/fence.dae</uri>
-              <scale>1 1 1</scale>
-            </mesh>
-          </geometry>
-        </visual>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <pose frame=''>56.1704 -35.5069 0.66 0 -0 0</pose>
-    </model>
-    <model name='wooden_fence_6'>
-      <static>1</static>
-      <link name='link'>
-        <pose frame=''>0 0 0 0 -0 0</pose>
-        <inertial>
-          <mass>100</mass>
-          <inertia>
-            <ixx>192.33</ixx>
-            <ixy>0</ixy>
-            <ixz>0</ixz>
-            <iyy>12.33</iyy>
-            <iyz>0</iyz>
-            <izz>204</izz>
-          </inertia>
-        </inertial>
-        <collision name='collision'>
-          <pose frame=''>0 0 0 0 -0 0</pose>
-          <geometry>
-            <mesh>
-              <uri>model://wooden_fence/meshes/fence.dae</uri>
-              <scale>1 1 1</scale>
-            </mesh>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <visual name='visual'>
-          <pose frame=''>0 0 0 0 -0 0</pose>
-          <geometry>
-            <mesh>
-              <uri>model://wooden_fence/meshes/fence.dae</uri>
-              <scale>1 1 1</scale>
-            </mesh>
-          </geometry>
-        </visual>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <pose frame=''>58.9553 -35.4418 0.66 0 -0 0</pose>
-    </model>
-    <model name='wooden_fence_7'>
-      <static>1</static>
-      <link name='link'>
-        <pose frame=''>0 0 0 0 -0 0</pose>
-        <inertial>
-          <mass>100</mass>
-          <inertia>
-            <ixx>192.33</ixx>
-            <ixy>0</ixy>
-            <ixz>0</ixz>
-            <iyy>12.33</iyy>
-            <iyz>0</iyz>
-            <izz>204</izz>
-          </inertia>
-        </inertial>
-        <collision name='collision'>
-          <pose frame=''>0 0 0 0 -0 0</pose>
-          <geometry>
-            <mesh>
-              <uri>model://wooden_fence/meshes/fence.dae</uri>
-              <scale>1 1 1</scale>
-            </mesh>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <visual name='visual'>
-          <pose frame=''>0 0 0 0 -0 0</pose>
-          <geometry>
-            <mesh>
-              <uri>model://wooden_fence/meshes/fence.dae</uri>
-              <scale>1 1 1</scale>
-            </mesh>
-          </geometry>
-        </visual>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <pose frame=''>62.092 -35.2657 0.66 0 -0 0</pose>
-    </model>
-    <model name='wooden_fence_8'>
-      <static>1</static>
-      <link name='link'>
-        <pose frame=''>0 0 0 0 -0 0</pose>
-        <inertial>
-          <mass>100</mass>
-          <inertia>
-            <ixx>192.33</ixx>
-            <ixy>0</ixy>
-            <ixz>0</ixz>
-            <iyy>12.33</iyy>
-            <iyz>0</iyz>
-            <izz>204</izz>
-          </inertia>
-        </inertial>
-        <collision name='collision'>
-          <pose frame=''>0 0 0 0 -0 0</pose>
-          <geometry>
-            <mesh>
-              <uri>model://wooden_fence/meshes/fence.dae</uri>
-              <scale>1 1 1</scale>
-            </mesh>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <visual name='visual'>
-          <pose frame=''>0 0 0 0 -0 0</pose>
-          <geometry>
-            <mesh>
-              <uri>model://wooden_fence/meshes/fence.dae</uri>
-              <scale>1 1 1</scale>
-            </mesh>
-          </geometry>
-        </visual>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <pose frame=''>65.0511 -35.2903 0.66 0 -0 0</pose>
-    </model>
-    <model name='wooden_fence_9'>
-      <static>1</static>
-      <link name='link'>
-        <pose frame=''>0 0 0 0 -0 0</pose>
-        <inertial>
-          <mass>100</mass>
-          <inertia>
-            <ixx>192.33</ixx>
-            <ixy>0</ixy>
-            <ixz>0</ixz>
-            <iyy>12.33</iyy>
-            <iyz>0</iyz>
-            <izz>204</izz>
-          </inertia>
-        </inertial>
-        <collision name='collision'>
-          <pose frame=''>0 0 0 0 -0 0</pose>
-          <geometry>
-            <mesh>
-              <uri>model://wooden_fence/meshes/fence.dae</uri>
-              <scale>1 1 1</scale>
-            </mesh>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <visual name='visual'>
-          <pose frame=''>0 0 0 0 -0 0</pose>
-          <geometry>
-            <mesh>
-              <uri>model://wooden_fence/meshes/fence.dae</uri>
-              <scale>1 1 1</scale>
-            </mesh>
-          </geometry>
-        </visual>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <pose frame=''>67.9079 -35.4591 0.66 0 -0 0</pose>
-    </model>
-    <model name='wooden_fence_10'>
-      <static>1</static>
-      <link name='link'>
-        <pose frame=''>0 0 0 0 -0 0</pose>
-        <inertial>
-          <mass>100</mass>
-          <inertia>
-            <ixx>192.33</ixx>
-            <ixy>0</ixy>
-            <ixz>0</ixz>
-            <iyy>12.33</iyy>
-            <iyz>0</iyz>
-            <izz>204</izz>
-          </inertia>
-        </inertial>
-        <collision name='collision'>
-          <pose frame=''>0 0 0 0 -0 0</pose>
-          <geometry>
-            <mesh>
-              <uri>model://wooden_fence/meshes/fence.dae</uri>
-              <scale>1 1 1</scale>
-            </mesh>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <visual name='visual'>
-          <pose frame=''>0 0 0 0 -0 0</pose>
-          <geometry>
-            <mesh>
-              <uri>model://wooden_fence/meshes/fence.dae</uri>
-              <scale>1 1 1</scale>
-            </mesh>
-          </geometry>
-        </visual>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <pose frame=''>70.9898 -35.3651 0.66 0 -0 0</pose>
-    </model>
-    <model name='wooden_fence_11'>
-      <static>1</static>
-      <link name='link'>
-        <pose frame=''>0 0 0 0 -0 0</pose>
-        <inertial>
-          <mass>100</mass>
-          <inertia>
-            <ixx>192.33</ixx>
-            <ixy>0</ixy>
-            <ixz>0</ixz>
-            <iyy>12.33</iyy>
-            <iyz>0</iyz>
-            <izz>204</izz>
-          </inertia>
-        </inertial>
-        <collision name='collision'>
-          <pose frame=''>0 0 0 0 -0 0</pose>
-          <geometry>
-            <mesh>
-              <uri>model://wooden_fence/meshes/fence.dae</uri>
-              <scale>1 1 1</scale>
-            </mesh>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <visual name='visual'>
-          <pose frame=''>0 0 0 0 -0 0</pose>
-          <geometry>
-            <mesh>
-              <uri>model://wooden_fence/meshes/fence.dae</uri>
-              <scale>1 1 1</scale>
-            </mesh>
-          </geometry>
-        </visual>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <pose frame=''>73.7936 -35.4519 0.66 0 -0 0</pose>
-    </model>
     <model name='wooden_fence_12'>
       <static>1</static>
       <link name='link'>
@@ -2533,734 +1951,6 @@
         <kinematic>0</kinematic>
       </link>
       <pose frame=''>75.189 -36.7755 0.66 0 -0 0</pose>
-    </model>
-    <model name='wooden_fence_12_clone'>
-      <static>1</static>
-      <link name='link'>
-        <pose frame=''>0 0 0 0 -0 0</pose>
-        <inertial>
-          <mass>100</mass>
-          <inertia>
-            <ixx>192.33</ixx>
-            <ixy>0</ixy>
-            <ixz>0</ixz>
-            <iyy>12.33</iyy>
-            <iyz>0</iyz>
-            <izz>204</izz>
-          </inertia>
-        </inertial>
-        <collision name='collision'>
-          <pose frame=''>0 0 0 0 -0 0</pose>
-          <geometry>
-            <mesh>
-              <uri>model://wooden_fence/meshes/fence.dae</uri>
-              <scale>1 1 1</scale>
-            </mesh>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <visual name='visual'>
-          <pose frame=''>0 0 0 0 -0 0</pose>
-          <geometry>
-            <mesh>
-              <uri>model://wooden_fence/meshes/fence.dae</uri>
-              <scale>1 1 1</scale>
-            </mesh>
-          </geometry>
-        </visual>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <pose frame=''>76.1935 -41.3163 0.66 0 -0 1.5708</pose>
-    </model>
-    <model name='wooden_fence_12_clone_0'>
-      <static>1</static>
-      <link name='link'>
-        <pose frame=''>0 0 0 0 -0 0</pose>
-        <inertial>
-          <mass>100</mass>
-          <inertia>
-            <ixx>192.33</ixx>
-            <ixy>0</ixy>
-            <ixz>0</ixz>
-            <iyy>12.33</iyy>
-            <iyz>0</iyz>
-            <izz>204</izz>
-          </inertia>
-        </inertial>
-        <collision name='collision'>
-          <pose frame=''>0 0 0 0 -0 0</pose>
-          <geometry>
-            <mesh>
-              <uri>model://wooden_fence/meshes/fence.dae</uri>
-              <scale>1 1 1</scale>
-            </mesh>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <visual name='visual'>
-          <pose frame=''>0 0 0 0 -0 0</pose>
-          <geometry>
-            <mesh>
-              <uri>model://wooden_fence/meshes/fence.dae</uri>
-              <scale>1 1 1</scale>
-            </mesh>
-          </geometry>
-        </visual>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <pose frame=''>76.1482 -43.4412 0.66 0 -0 1.5708</pose>
-    </model>
-    <model name='wooden_fence_12_clone_1'>
-      <static>1</static>
-      <link name='link'>
-        <pose frame=''>0 0 0 0 -0 0</pose>
-        <inertial>
-          <mass>100</mass>
-          <inertia>
-            <ixx>192.33</ixx>
-            <ixy>0</ixy>
-            <ixz>0</ixz>
-            <iyy>12.33</iyy>
-            <iyz>0</iyz>
-            <izz>204</izz>
-          </inertia>
-        </inertial>
-        <collision name='collision'>
-          <pose frame=''>0 0 0 0 -0 0</pose>
-          <geometry>
-            <mesh>
-              <uri>model://wooden_fence/meshes/fence.dae</uri>
-              <scale>1 1 1</scale>
-            </mesh>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <visual name='visual'>
-          <pose frame=''>0 0 0 0 -0 0</pose>
-          <geometry>
-            <mesh>
-              <uri>model://wooden_fence/meshes/fence.dae</uri>
-              <scale>1 1 1</scale>
-            </mesh>
-          </geometry>
-        </visual>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <pose frame=''>76.0062 -45.705 0.66 0 -0 1.5708</pose>
-    </model>
-    <model name='wooden_fence_12_clone_2'>
-      <static>1</static>
-      <link name='link'>
-        <pose frame=''>0 0 0 0 -0 0</pose>
-        <inertial>
-          <mass>100</mass>
-          <inertia>
-            <ixx>192.33</ixx>
-            <ixy>0</ixy>
-            <ixz>0</ixz>
-            <iyy>12.33</iyy>
-            <iyz>0</iyz>
-            <izz>204</izz>
-          </inertia>
-        </inertial>
-        <collision name='collision'>
-          <pose frame=''>0 0 0 0 -0 0</pose>
-          <geometry>
-            <mesh>
-              <uri>model://wooden_fence/meshes/fence.dae</uri>
-              <scale>1 1 1</scale>
-            </mesh>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <visual name='visual'>
-          <pose frame=''>0 0 0 0 -0 0</pose>
-          <geometry>
-            <mesh>
-              <uri>model://wooden_fence/meshes/fence.dae</uri>
-              <scale>1 1 1</scale>
-            </mesh>
-          </geometry>
-        </visual>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <pose frame=''>76.0218 -47.9435 0.66 0 -0 1.5708</pose>
-    </model>
-    <model name='wooden_fence_12_clone_3'>
-      <static>1</static>
-      <link name='link'>
-        <pose frame=''>0 0 0 0 -0 0</pose>
-        <inertial>
-          <mass>100</mass>
-          <inertia>
-            <ixx>192.33</ixx>
-            <ixy>0</ixy>
-            <ixz>0</ixz>
-            <iyy>12.33</iyy>
-            <iyz>0</iyz>
-            <izz>204</izz>
-          </inertia>
-        </inertial>
-        <collision name='collision'>
-          <pose frame=''>0 0 0 0 -0 0</pose>
-          <geometry>
-            <mesh>
-              <uri>model://wooden_fence/meshes/fence.dae</uri>
-              <scale>1 1 1</scale>
-            </mesh>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <visual name='visual'>
-          <pose frame=''>0 0 0 0 -0 0</pose>
-          <geometry>
-            <mesh>
-              <uri>model://wooden_fence/meshes/fence.dae</uri>
-              <scale>1 1 1</scale>
-            </mesh>
-          </geometry>
-        </visual>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <pose frame=''>76.0337 -50.061 0.66 0 -0 1.5708</pose>
-    </model>
-    <model name='wooden_fence_12_clone_4'>
-      <static>1</static>
-      <link name='link'>
-        <pose frame=''>0 0 0 0 -0 0</pose>
-        <inertial>
-          <mass>100</mass>
-          <inertia>
-            <ixx>192.33</ixx>
-            <ixy>0</ixy>
-            <ixz>0</ixz>
-            <iyy>12.33</iyy>
-            <iyz>0</iyz>
-            <izz>204</izz>
-          </inertia>
-        </inertial>
-        <collision name='collision'>
-          <pose frame=''>0 0 0 0 -0 0</pose>
-          <geometry>
-            <mesh>
-              <uri>model://wooden_fence/meshes/fence.dae</uri>
-              <scale>1 1 1</scale>
-            </mesh>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <visual name='visual'>
-          <pose frame=''>0 0 0 0 -0 0</pose>
-          <geometry>
-            <mesh>
-              <uri>model://wooden_fence/meshes/fence.dae</uri>
-              <scale>1 1 1</scale>
-            </mesh>
-          </geometry>
-        </visual>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <pose frame=''>75.9122 -52.4647 0.66 0 -0 1.5708</pose>
-    </model>
-    <model name='wooden_fence_12_clone_5'>
-      <static>1</static>
-      <link name='link'>
-        <pose frame=''>0 0 0 0 -0 0</pose>
-        <inertial>
-          <mass>100</mass>
-          <inertia>
-            <ixx>192.33</ixx>
-            <ixy>0</ixy>
-            <ixz>0</ixz>
-            <iyy>12.33</iyy>
-            <iyz>0</iyz>
-            <izz>204</izz>
-          </inertia>
-        </inertial>
-        <collision name='collision'>
-          <pose frame=''>0 0 0 0 -0 0</pose>
-          <geometry>
-            <mesh>
-              <uri>model://wooden_fence/meshes/fence.dae</uri>
-              <scale>1 1 1</scale>
-            </mesh>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <visual name='visual'>
-          <pose frame=''>0 0 0 0 -0 0</pose>
-          <geometry>
-            <mesh>
-              <uri>model://wooden_fence/meshes/fence.dae</uri>
-              <scale>1 1 1</scale>
-            </mesh>
-          </geometry>
-        </visual>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <pose frame=''>75.6411 -54.7039 0.66 0 -0 1.5708</pose>
-    </model>
-    <model name='wooden_fence_12_clone_6'>
-      <static>1</static>
-      <link name='link'>
-        <pose frame=''>0 0 0 0 -0 0</pose>
-        <inertial>
-          <mass>100</mass>
-          <inertia>
-            <ixx>192.33</ixx>
-            <ixy>0</ixy>
-            <ixz>0</ixz>
-            <iyy>12.33</iyy>
-            <iyz>0</iyz>
-            <izz>204</izz>
-          </inertia>
-        </inertial>
-        <collision name='collision'>
-          <pose frame=''>0 0 0 0 -0 0</pose>
-          <geometry>
-            <mesh>
-              <uri>model://wooden_fence/meshes/fence.dae</uri>
-              <scale>1 1 1</scale>
-            </mesh>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <visual name='visual'>
-          <pose frame=''>0 0 0 0 -0 0</pose>
-          <geometry>
-            <mesh>
-              <uri>model://wooden_fence/meshes/fence.dae</uri>
-              <scale>1 1 1</scale>
-            </mesh>
-          </geometry>
-        </visual>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <pose frame=''>75.8253 -57.1255 0.66 0 -0 1.5708</pose>
-    </model>
-    <model name='wooden_fence_12_clone_7'>
-      <static>1</static>
-      <link name='link'>
-        <pose frame=''>0 0 0 0 -0 0</pose>
-        <inertial>
-          <mass>100</mass>
-          <inertia>
-            <ixx>192.33</ixx>
-            <ixy>0</ixy>
-            <ixz>0</ixz>
-            <iyy>12.33</iyy>
-            <iyz>0</iyz>
-            <izz>204</izz>
-          </inertia>
-        </inertial>
-        <collision name='collision'>
-          <pose frame=''>0 0 0 0 -0 0</pose>
-          <geometry>
-            <mesh>
-              <uri>model://wooden_fence/meshes/fence.dae</uri>
-              <scale>1 1 1</scale>
-            </mesh>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <visual name='visual'>
-          <pose frame=''>0 0 0 0 -0 0</pose>
-          <geometry>
-            <mesh>
-              <uri>model://wooden_fence/meshes/fence.dae</uri>
-              <scale>1 1 1</scale>
-            </mesh>
-          </geometry>
-        </visual>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <pose frame=''>76.166 -59.2467 0.66 0 -0 1.5708</pose>
-    </model>
-    <model name='wooden_fence_12_clone_8'>
-      <static>1</static>
-      <link name='link'>
-        <pose frame=''>0 0 0 0 -0 0</pose>
-        <inertial>
-          <mass>100</mass>
-          <inertia>
-            <ixx>192.33</ixx>
-            <ixy>0</ixy>
-            <ixz>0</ixz>
-            <iyy>12.33</iyy>
-            <iyz>0</iyz>
-            <izz>204</izz>
-          </inertia>
-        </inertial>
-        <collision name='collision'>
-          <pose frame=''>0 0 0 0 -0 0</pose>
-          <geometry>
-            <mesh>
-              <uri>model://wooden_fence/meshes/fence.dae</uri>
-              <scale>1 1 1</scale>
-            </mesh>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <visual name='visual'>
-          <pose frame=''>0 0 0 0 -0 0</pose>
-          <geometry>
-            <mesh>
-              <uri>model://wooden_fence/meshes/fence.dae</uri>
-              <scale>1 1 1</scale>
-            </mesh>
-          </geometry>
-        </visual>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <pose frame=''>76.2896 -61.3022 0.66 0 -0 1.5708</pose>
-    </model>
-    <model name='wooden_fence_12_clone_9'>
-      <static>1</static>
-      <link name='link'>
-        <pose frame=''>0 0 0 0 -0 0</pose>
-        <inertial>
-          <mass>100</mass>
-          <inertia>
-            <ixx>192.33</ixx>
-            <ixy>0</ixy>
-            <ixz>0</ixz>
-            <iyy>12.33</iyy>
-            <iyz>0</iyz>
-            <izz>204</izz>
-          </inertia>
-        </inertial>
-        <collision name='collision'>
-          <pose frame=''>0 0 0 0 -0 0</pose>
-          <geometry>
-            <mesh>
-              <uri>model://wooden_fence/meshes/fence.dae</uri>
-              <scale>1 1 1</scale>
-            </mesh>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <visual name='visual'>
-          <pose frame=''>0 0 0 0 -0 0</pose>
-          <geometry>
-            <mesh>
-              <uri>model://wooden_fence/meshes/fence.dae</uri>
-              <scale>1 1 1</scale>
-            </mesh>
-          </geometry>
-        </visual>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <pose frame=''>76.2417 -63.466 0.66 0 -0 1.5708</pose>
-    </model>
-    <model name='wooden_fence_13'>
-      <static>1</static>
-      <link name='link'>
-        <pose frame=''>0 0 0 0 -0 0</pose>
-        <inertial>
-          <mass>100</mass>
-          <inertia>
-            <ixx>192.33</ixx>
-            <ixy>0</ixy>
-            <ixz>0</ixz>
-            <iyy>12.33</iyy>
-            <iyz>0</iyz>
-            <izz>204</izz>
-          </inertia>
-        </inertial>
-        <collision name='collision'>
-          <pose frame=''>0 0 0 0 -0 0</pose>
-          <geometry>
-            <mesh>
-              <uri>model://wooden_fence/meshes/fence.dae</uri>
-              <scale>1 1 1</scale>
-            </mesh>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <visual name='visual'>
-          <pose frame=''>0 0 0 0 -0 0</pose>
-          <geometry>
-            <mesh>
-              <uri>model://wooden_fence/meshes/fence.dae</uri>
-              <scale>1 1 1</scale>
-            </mesh>
-          </geometry>
-        </visual>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <pose frame=''>36.4705 -35.5992 0.66 0 -0 0</pose>
-    </model>
-    <model name='wooden_fence_14'>
-      <static>1</static>
-      <link name='link'>
-        <pose frame=''>0 0 0 0 -0 0</pose>
-        <inertial>
-          <mass>100</mass>
-          <inertia>
-            <ixx>192.33</ixx>
-            <ixy>0</ixy>
-            <ixz>0</ixz>
-            <iyy>12.33</iyy>
-            <iyz>0</iyz>
-            <izz>204</izz>
-          </inertia>
-        </inertial>
-        <collision name='collision'>
-          <pose frame=''>0 0 0 0 -0 0</pose>
-          <geometry>
-            <mesh>
-              <uri>model://wooden_fence/meshes/fence.dae</uri>
-              <scale>1 1 1</scale>
-            </mesh>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <visual name='visual'>
-          <pose frame=''>0 0 0 0 -0 0</pose>
-          <geometry>
-            <mesh>
-              <uri>model://wooden_fence/meshes/fence.dae</uri>
-              <scale>1 1 1</scale>
-            </mesh>
-          </geometry>
-        </visual>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <pose frame=''>34.6232 -35.4752 0.66 0 -0 0</pose>
-    </model>
-    <model name='wooden_fence_15'>
-      <static>1</static>
-      <link name='link'>
-        <pose frame=''>0 0 0 0 -0 0</pose>
-        <inertial>
-          <mass>100</mass>
-          <inertia>
-            <ixx>192.33</ixx>
-            <ixy>0</ixy>
-            <ixz>0</ixz>
-            <iyy>12.33</iyy>
-            <iyz>0</iyz>
-            <izz>204</izz>
-          </inertia>
-        </inertial>
-        <collision name='collision'>
-          <pose frame=''>0 0 0 0 -0 0</pose>
-          <geometry>
-            <mesh>
-              <uri>model://wooden_fence/meshes/fence.dae</uri>
-              <scale>1 1 1</scale>
-            </mesh>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <visual name='visual'>
-          <pose frame=''>0 0 0 0 -0 0</pose>
-          <geometry>
-            <mesh>
-              <uri>model://wooden_fence/meshes/fence.dae</uri>
-              <scale>1 1 1</scale>
-            </mesh>
-          </geometry>
-        </visual>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <pose frame=''>32.8822 -35.6265 0.66 0 -0 0</pose>
     </model>
     <model name='wooden_fence_16'>
       <static>1</static>
@@ -3314,27 +2004,13 @@
       </link>
       <pose frame=''>31.2867 -35.4693 0.66 0 -0 0</pose>
     </model>
-    <model name='wooden_fence_12_clone_11_clone'>
+    <model name='heightmap_0'>
       <static>1</static>
       <link name='link'>
-        <pose frame=''>0 0 0 0 -0 0</pose>
-        <inertial>
-          <mass>100</mass>
-          <inertia>
-            <ixx>192.33</ixx>
-            <ixy>0</ixy>
-            <ixz>0</ixz>
-            <iyy>12.33</iyy>
-            <iyz>0</iyz>
-            <izz>204</izz>
-          </inertia>
-        </inertial>
         <collision name='collision'>
-          <pose frame=''>0 0 0 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://wooden_fence/meshes/fence.dae</uri>
-              <scale>1 1 1</scale>
+              <uri>model://heightmap_realistic/meshes/heightmap.dae</uri>
             </mesh>
           </geometry>
           <max_contacts>10</max_contacts>
@@ -3352,11 +2028,9 @@
           </surface>
         </collision>
         <visual name='visual'>
-          <pose frame=''>0 0 0 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://wooden_fence/meshes/fence.dae</uri>
-              <scale>1 1 1</scale>
+              <uri>model://heightmap_realistic/meshes/heightmap.dae</uri>
             </mesh>
           </geometry>
         </visual>
@@ -3364,9 +2038,9 @@
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
-      <pose frame=''>30.8864 -39.2 0.66 0 -0 1.5708</pose>
+      <pose frame=''>25.414 -0.207531 0.66 0 -0 0</pose>
     </model>
-    <model name='wooden_fence_12_clone_11_clone_0'>
+    <model name='wooden_fence'>
       <static>1</static>
       <link name='link'>
         <pose frame=''>0 0 0 0 -0 0</pose>
@@ -3416,9 +2090,9 @@
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
-      <pose frame=''>30.93 -41.2272 0.66 0 -0 1.5708</pose>
+      <pose frame=''>-6.79434 5.4444 0.66 0 -0 0</pose>
     </model>
-    <model name='wooden_fence_12_clone_11_clone_1'>
+    <model name='wooden_fence_0'>
       <static>1</static>
       <link name='link'>
         <pose frame=''>0 0 0 0 -0 0</pose>
@@ -3468,9 +2142,9 @@
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
-      <pose frame=''>30.8426 -43.4772 0.66 0 -0 1.5708</pose>
+      <pose frame=''>-4.44566 5.42359 0.66 0 -0 0</pose>
     </model>
-    <model name='wooden_fence_12_clone_11_clone_2'>
+    <model name='wooden_fence_1'>
       <static>1</static>
       <link name='link'>
         <pose frame=''>0 0 0 0 -0 0</pose>
@@ -3520,9 +2194,9 @@
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
-      <pose frame=''>30.7889 -45.6978 0.66 0 -0 1.5708</pose>
+      <pose frame=''>-1.94114 5.41665 0.66 0 -0 0</pose>
     </model>
-    <model name='wooden_fence_12_clone_11_clone_3'>
+    <model name='wooden_fence_2'>
       <static>1</static>
       <link name='link'>
         <pose frame=''>0 0 0 0 -0 0</pose>
@@ -3572,9 +2246,9 @@
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
-      <pose frame=''>30.7452 -47.8118 0.66 0 -0 1.5708</pose>
+      <pose frame=''>0.640969 5.40785 0.66 0 -0 0</pose>
     </model>
-    <model name='wooden_fence_12_clone_11_clone_4'>
+    <model name='wooden_fence_3'>
       <static>1</static>
       <link name='link'>
         <pose frame=''>0 0 0 0 -0 0</pose>
@@ -3624,9 +2298,9 @@
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
-      <pose frame=''>30.604 -49.8078 0.66 0 -0 1.5708</pose>
+      <pose frame=''>3.18548 5.41094 0.66 0 -0 0</pose>
     </model>
-    <model name='wooden_fence_12_clone_11_clone_5'>
+    <model name='wooden_fence_4'>
       <static>1</static>
       <link name='link'>
         <pose frame=''>0 0 0 0 -0 0</pose>
@@ -3676,7 +2350,2139 @@
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
-      <pose frame=''>30.5545 -51.9392 0.66 0 -0 1.5708</pose>
+      <pose frame=''>5.60159 5.40146 0.66 0 -0 0</pose>
+    </model>
+    <model name='wooden_fence_5'>
+      <static>1</static>
+      <link name='link'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <inertial>
+          <mass>100</mass>
+          <inertia>
+            <ixx>192.33</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>12.33</iyy>
+            <iyz>0</iyz>
+            <izz>204</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://wooden_fence/meshes/fence.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://wooden_fence/meshes/fence.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>8.02873 5.41528 0.66 0 -0 0</pose>
+    </model>
+    <model name='wooden_fence_6'>
+      <static>1</static>
+      <link name='link'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <inertial>
+          <mass>100</mass>
+          <inertia>
+            <ixx>192.33</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>12.33</iyy>
+            <iyz>0</iyz>
+            <izz>204</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://wooden_fence/meshes/fence.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://wooden_fence/meshes/fence.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>10.5315 5.41729 0.66 0 -0 0</pose>
+    </model>
+    <model name='wooden_fence_7'>
+      <static>1</static>
+      <link name='link'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <inertial>
+          <mass>100</mass>
+          <inertia>
+            <ixx>192.33</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>12.33</iyy>
+            <iyz>0</iyz>
+            <izz>204</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://wooden_fence/meshes/fence.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://wooden_fence/meshes/fence.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>13.0657 5.40562 0.66 0 -0 0</pose>
+    </model>
+    <model name='wooden_fence_8'>
+      <static>1</static>
+      <link name='link'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <inertial>
+          <mass>100</mass>
+          <inertia>
+            <ixx>192.33</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>12.33</iyy>
+            <iyz>0</iyz>
+            <izz>204</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://wooden_fence/meshes/fence.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://wooden_fence/meshes/fence.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>15.6059 5.42849 0.66 0 -0 0</pose>
+    </model>
+    <model name='wooden_fence_9'>
+      <static>1</static>
+      <link name='link'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <inertial>
+          <mass>100</mass>
+          <inertia>
+            <ixx>192.33</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>12.33</iyy>
+            <iyz>0</iyz>
+            <izz>204</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://wooden_fence/meshes/fence.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://wooden_fence/meshes/fence.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>18.1572 5.35539 0.66 0 -0 0</pose>
+    </model>
+    <model name='wooden_fence_10'>
+      <static>1</static>
+      <link name='link'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <inertial>
+          <mass>100</mass>
+          <inertia>
+            <ixx>192.33</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>12.33</iyy>
+            <iyz>0</iyz>
+            <izz>204</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://wooden_fence/meshes/fence.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://wooden_fence/meshes/fence.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>20.7286 5.29085 0.66 0 -0 0</pose>
+    </model>
+    <model name='wooden_fence_11'>
+      <static>1</static>
+      <link name='link'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <inertial>
+          <mass>100</mass>
+          <inertia>
+            <ixx>192.33</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>12.33</iyy>
+            <iyz>0</iyz>
+            <izz>204</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://wooden_fence/meshes/fence.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://wooden_fence/meshes/fence.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>23.3421 5.26949 0.66 0 -0 0</pose>
+    </model>
+    <model name='wooden_fence_13'>
+      <static>1</static>
+      <link name='link'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <inertial>
+          <mass>100</mass>
+          <inertia>
+            <ixx>192.33</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>12.33</iyy>
+            <iyz>0</iyz>
+            <izz>204</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://wooden_fence/meshes/fence.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://wooden_fence/meshes/fence.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>25.858 5.24726 0.66 0 -0 0</pose>
+    </model>
+    <model name='wooden_fence_14'>
+      <static>1</static>
+      <link name='link'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <inertial>
+          <mass>100</mass>
+          <inertia>
+            <ixx>192.33</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>12.33</iyy>
+            <iyz>0</iyz>
+            <izz>204</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://wooden_fence/meshes/fence.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://wooden_fence/meshes/fence.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>28.5272 5.19276 0.66 0 -0 0</pose>
+    </model>
+    <model name='wooden_fence_15'>
+      <static>1</static>
+      <link name='link'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <inertial>
+          <mass>100</mass>
+          <inertia>
+            <ixx>192.33</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>12.33</iyy>
+            <iyz>0</iyz>
+            <izz>204</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://wooden_fence/meshes/fence.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://wooden_fence/meshes/fence.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>31.2176 5.19126 0.66 0 -0 0</pose>
+    </model>
+    <model name='wooden_fence_17'>
+      <static>1</static>
+      <link name='link'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <inertial>
+          <mass>100</mass>
+          <inertia>
+            <ixx>192.33</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>12.33</iyy>
+            <iyz>0</iyz>
+            <izz>204</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://wooden_fence/meshes/fence.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://wooden_fence/meshes/fence.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>33.8163 5.20085 0.66 0 -0 0</pose>
+    </model>
+    <model name='wooden_fence_18'>
+      <static>1</static>
+      <link name='link'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <inertial>
+          <mass>100</mass>
+          <inertia>
+            <ixx>192.33</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>12.33</iyy>
+            <iyz>0</iyz>
+            <izz>204</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://wooden_fence/meshes/fence.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://wooden_fence/meshes/fence.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>-11.0524 5.47712 0.66 0 -0 0</pose>
+    </model>
+    <model name='wooden_fence_12_clone'>
+      <static>1</static>
+      <link name='link'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <inertial>
+          <mass>100</mass>
+          <inertia>
+            <ixx>192.33</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>12.33</iyy>
+            <iyz>0</iyz>
+            <izz>204</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://wooden_fence/meshes/fence.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://wooden_fence/meshes/fence.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>35.417 1.53592 0.66 0 -0 1.5708</pose>
+    </model>
+    <model name='wooden_fence_12_clone_0'>
+      <static>1</static>
+      <link name='link'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <inertial>
+          <mass>100</mass>
+          <inertia>
+            <ixx>192.33</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>12.33</iyy>
+            <iyz>0</iyz>
+            <izz>204</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://wooden_fence/meshes/fence.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://wooden_fence/meshes/fence.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>35.4675 -0.469485 0.66 0 -0 1.5708</pose>
+    </model>
+    <model name='wooden_fence_12_clone_1'>
+      <static>1</static>
+      <link name='link'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <inertial>
+          <mass>100</mass>
+          <inertia>
+            <ixx>192.33</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>12.33</iyy>
+            <iyz>0</iyz>
+            <izz>204</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://wooden_fence/meshes/fence.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://wooden_fence/meshes/fence.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>35.422 -2.61868 0.66 0 -0 1.5708</pose>
+    </model>
+    <model name='wooden_fence_12_clone_2'>
+      <static>1</static>
+      <link name='link'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <inertial>
+          <mass>100</mass>
+          <inertia>
+            <ixx>192.33</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>12.33</iyy>
+            <iyz>0</iyz>
+            <izz>204</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://wooden_fence/meshes/fence.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://wooden_fence/meshes/fence.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>35.4244 -4.80023 0.66 0 -0 1.5708</pose>
+    </model>
+    <model name='wooden_fence_12_clone_3'>
+      <static>1</static>
+      <link name='link'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <inertial>
+          <mass>100</mass>
+          <inertia>
+            <ixx>192.33</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>12.33</iyy>
+            <iyz>0</iyz>
+            <izz>204</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://wooden_fence/meshes/fence.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://wooden_fence/meshes/fence.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>35.4929 -6.81323 0.66 0 -0 1.5708</pose>
+    </model>
+    <model name='wooden_fence_12_clone_4'>
+      <static>1</static>
+      <link name='link'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <inertial>
+          <mass>100</mass>
+          <inertia>
+            <ixx>192.33</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>12.33</iyy>
+            <iyz>0</iyz>
+            <izz>204</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://wooden_fence/meshes/fence.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://wooden_fence/meshes/fence.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>35.3729 -8.89235 0.66 0 -0 1.5708</pose>
+    </model>
+    <model name='wooden_fence_12_clone_5'>
+      <static>1</static>
+      <link name='link'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <inertial>
+          <mass>100</mass>
+          <inertia>
+            <ixx>192.33</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>12.33</iyy>
+            <iyz>0</iyz>
+            <izz>204</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://wooden_fence/meshes/fence.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://wooden_fence/meshes/fence.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>35.4126 -10.9275 0.66 0 -0 1.5708</pose>
+    </model>
+    <model name='wooden_fence_12_clone_6'>
+      <static>1</static>
+      <link name='link'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <inertial>
+          <mass>100</mass>
+          <inertia>
+            <ixx>192.33</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>12.33</iyy>
+            <iyz>0</iyz>
+            <izz>204</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://wooden_fence/meshes/fence.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://wooden_fence/meshes/fence.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>35.435 -12.9453 0.66 0 -0 1.5708</pose>
+    </model>
+    <model name='wooden_fence_12_clone_7'>
+      <static>1</static>
+      <link name='link'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <inertial>
+          <mass>100</mass>
+          <inertia>
+            <ixx>192.33</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>12.33</iyy>
+            <iyz>0</iyz>
+            <izz>204</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://wooden_fence/meshes/fence.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://wooden_fence/meshes/fence.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>35.387 -14.9602 0.66 0 -0 1.5708</pose>
+    </model>
+    <model name='wooden_fence_12_clone_8'>
+      <static>1</static>
+      <link name='link'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <inertial>
+          <mass>100</mass>
+          <inertia>
+            <ixx>192.33</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>12.33</iyy>
+            <iyz>0</iyz>
+            <izz>204</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://wooden_fence/meshes/fence.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://wooden_fence/meshes/fence.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>35.4556 -16.9795 0.66 0 -0 1.5708</pose>
+    </model>
+    <model name='wooden_fence_12_clone_9'>
+      <static>1</static>
+      <link name='link'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <inertial>
+          <mass>100</mass>
+          <inertia>
+            <ixx>192.33</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>12.33</iyy>
+            <iyz>0</iyz>
+            <izz>204</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://wooden_fence/meshes/fence.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://wooden_fence/meshes/fence.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>35.4143 -18.9475 0.66 0 -0 1.5708</pose>
+    </model>
+    <model name='wooden_fence_12_clone_10'>
+      <static>1</static>
+      <link name='link'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <inertial>
+          <mass>100</mass>
+          <inertia>
+            <ixx>192.33</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>12.33</iyy>
+            <iyz>0</iyz>
+            <izz>204</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://wooden_fence/meshes/fence.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://wooden_fence/meshes/fence.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>35.4011 -21.0305 0.66 0 -0 1.5708</pose>
+    </model>
+    <model name='wooden_fence_12_clone_11'>
+      <static>1</static>
+      <link name='link'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <inertial>
+          <mass>100</mass>
+          <inertia>
+            <ixx>192.33</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>12.33</iyy>
+            <iyz>0</iyz>
+            <izz>204</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://wooden_fence/meshes/fence.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://wooden_fence/meshes/fence.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>35.3451 -23.0553 0.66 0 -0 1.5708</pose>
+    </model>
+    <model name='wooden_fence_12_clone_12'>
+      <static>1</static>
+      <link name='link'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <inertial>
+          <mass>100</mass>
+          <inertia>
+            <ixx>192.33</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>12.33</iyy>
+            <iyz>0</iyz>
+            <izz>204</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://wooden_fence/meshes/fence.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://wooden_fence/meshes/fence.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>35.4027 -25.0051 0.66 0 -0 1.5708</pose>
+    </model>
+    <model name='wooden_fence_12_clone_13'>
+      <static>1</static>
+      <link name='link'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <inertial>
+          <mass>100</mass>
+          <inertia>
+            <ixx>192.33</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>12.33</iyy>
+            <iyz>0</iyz>
+            <izz>204</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://wooden_fence/meshes/fence.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://wooden_fence/meshes/fence.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>35.5312 -27.1029 0.66 0 -0 1.5708</pose>
+    </model>
+    <model name='wooden_fence_12_clone_14'>
+      <static>1</static>
+      <link name='link'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <inertial>
+          <mass>100</mass>
+          <inertia>
+            <ixx>192.33</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>12.33</iyy>
+            <iyz>0</iyz>
+            <izz>204</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://wooden_fence/meshes/fence.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://wooden_fence/meshes/fence.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>35.3298 -29.0717 0.66 0 -0 1.5708</pose>
+    </model>
+    <model name='wooden_fence_12_clone_15'>
+      <static>1</static>
+      <link name='link'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <inertial>
+          <mass>100</mass>
+          <inertia>
+            <ixx>192.33</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>12.33</iyy>
+            <iyz>0</iyz>
+            <izz>204</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://wooden_fence/meshes/fence.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://wooden_fence/meshes/fence.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>35.463 -31.1525 0.66 0 -0 1.5708</pose>
+    </model>
+    <model name='wooden_fence_12_clone_16'>
+      <static>1</static>
+      <link name='link'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <inertial>
+          <mass>100</mass>
+          <inertia>
+            <ixx>192.33</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>12.33</iyy>
+            <iyz>0</iyz>
+            <izz>204</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://wooden_fence/meshes/fence.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://wooden_fence/meshes/fence.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>35.4526 -33.1305 0.66 0 -0 1.5708</pose>
+    </model>
+    <model name='wooden_fence_12_clone_17'>
+      <static>1</static>
+      <link name='link'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <inertial>
+          <mass>100</mass>
+          <inertia>
+            <ixx>192.33</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>12.33</iyy>
+            <iyz>0</iyz>
+            <izz>204</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://wooden_fence/meshes/fence.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://wooden_fence/meshes/fence.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>35.5653 -35.0813 0.66 0 -0 1.5708</pose>
+    </model>
+    <model name='wooden_fence_12_clone_18'>
+      <static>1</static>
+      <link name='link'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <inertial>
+          <mass>100</mass>
+          <inertia>
+            <ixx>192.33</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>12.33</iyy>
+            <iyz>0</iyz>
+            <izz>204</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://wooden_fence/meshes/fence.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://wooden_fence/meshes/fence.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>35.5057 -37.1702 0.66 0 -0 1.5708</pose>
+    </model>
+    <model name='wooden_fence_12_clone_19'>
+      <static>1</static>
+      <link name='link'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <inertial>
+          <mass>100</mass>
+          <inertia>
+            <ixx>192.33</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>12.33</iyy>
+            <iyz>0</iyz>
+            <izz>204</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://wooden_fence/meshes/fence.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://wooden_fence/meshes/fence.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>-11.6066 1.99178 0.66 0 -0 1.5708</pose>
+    </model>
+    <model name='wooden_fence_12_clone_20'>
+      <static>1</static>
+      <link name='link'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <inertial>
+          <mass>100</mass>
+          <inertia>
+            <ixx>192.33</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>12.33</iyy>
+            <iyz>0</iyz>
+            <izz>204</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://wooden_fence/meshes/fence.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://wooden_fence/meshes/fence.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>-11.5155 -0.014984 0.66 0 -0 1.5708</pose>
+    </model>
+    <model name='wooden_fence_12_clone_21'>
+      <static>1</static>
+      <link name='link'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <inertial>
+          <mass>100</mass>
+          <inertia>
+            <ixx>192.33</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>12.33</iyy>
+            <iyz>0</iyz>
+            <izz>204</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://wooden_fence/meshes/fence.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://wooden_fence/meshes/fence.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>-11.5797 -2.15756 0.66 0 -0 1.5708</pose>
+    </model>
+    <model name='wooden_fence_12_clone_22'>
+      <static>1</static>
+      <link name='link'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <inertial>
+          <mass>100</mass>
+          <inertia>
+            <ixx>192.33</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>12.33</iyy>
+            <iyz>0</iyz>
+            <izz>204</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://wooden_fence/meshes/fence.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://wooden_fence/meshes/fence.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>-11.7193 -4.57977 0.66 0 -0 1.5708</pose>
+    </model>
+    <model name='wooden_fence_12_clone_23'>
+      <static>1</static>
+      <link name='link'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <inertial>
+          <mass>100</mass>
+          <inertia>
+            <ixx>192.33</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>12.33</iyy>
+            <iyz>0</iyz>
+            <izz>204</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://wooden_fence/meshes/fence.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://wooden_fence/meshes/fence.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>-11.6991 -6.59107 0.66 0 -0 1.5708</pose>
+    </model>
+    <model name='wooden_fence_12_clone_24'>
+      <static>1</static>
+      <link name='link'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <inertial>
+          <mass>100</mass>
+          <inertia>
+            <ixx>192.33</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>12.33</iyy>
+            <iyz>0</iyz>
+            <izz>204</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://wooden_fence/meshes/fence.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://wooden_fence/meshes/fence.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>-11.6817 -8.81124 0.66 0 -0 1.5708</pose>
+    </model>
+    <model name='wooden_fence_12_clone_25'>
+      <static>1</static>
+      <link name='link'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <inertial>
+          <mass>100</mass>
+          <inertia>
+            <ixx>192.33</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>12.33</iyy>
+            <iyz>0</iyz>
+            <izz>204</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://wooden_fence/meshes/fence.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://wooden_fence/meshes/fence.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>-11.6329 -10.7928 0.66 0 -0 1.5708</pose>
+    </model>
+    <model name='wooden_fence_12_clone_26'>
+      <static>1</static>
+      <link name='link'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <inertial>
+          <mass>100</mass>
+          <inertia>
+            <ixx>192.33</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>12.33</iyy>
+            <iyz>0</iyz>
+            <izz>204</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://wooden_fence/meshes/fence.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://wooden_fence/meshes/fence.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>-11.5157 -12.8801 0.66 0 -0 1.5708</pose>
+    </model>
+    <model name='wooden_fence_12_clone_27'>
+      <static>1</static>
+      <link name='link'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <inertial>
+          <mass>100</mass>
+          <inertia>
+            <ixx>192.33</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>12.33</iyy>
+            <iyz>0</iyz>
+            <izz>204</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://wooden_fence/meshes/fence.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://wooden_fence/meshes/fence.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>-11.6467 -14.7535 0.66 0 -0 1.5708</pose>
     </model>
   </world>
 </sdf>

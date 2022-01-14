@@ -4,12 +4,12 @@
   <arg name="tf_prefix" default="" />
   <arg name="robot_model" />
   <arg name="simple_sim" />
-  <arg name="enable_odom_tf" default="False" />
+  <arg name="enable_odom_tf" default="True" />
   <arg name="odom_frame_id" default="odom" />
   <arg name="can_interface_type" default=""/>
   <arg name="can_interface_name" default="" />
   <arg name="joint_states_remap_to" default="base_driver/joint_states" />
-  <arg name="passthrough_gazebo_odometry" default="False" />
+  <arg name="passthrough_gazebo_odometry" default="True" />
 
   <node pkg="thorvald_base" type="base_driver" name="base_driver" output="screen">
     <param name="tf_prefix" value="$(arg tf_prefix)" />

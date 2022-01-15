@@ -2,16 +2,16 @@
 <launch>
 
   <!-- Robot arguments -->
-  <arg name="enable_odom_tf" default="true" />
+  <arg name="enable_odom_tf" default="false" />
   <arg name="remap_gazebo_odom_tf" default="true" /> <!--Note there is a bug if enable_odom_tf set to true and remap_gazebo_odom_tf set to false-->
-  <arg name="fake_localisation" default="true" doc="fake the localisation, sets map_server and world_tf to true."/>
+  <arg name="fake_localisation" default="false" doc="fake the localisation, sets map_server and world_tf to true."/>
 
   <arg name="robot_name" default="thorvald_001"/>
   <arg name="robot_model" default="$(find bacchus_gazebo)/config/robot.yaml"/>
   <arg name="model_extras" default="$(find bacchus_gazebo)/urdf/bacchus_sensors.xacro"/>
 
   <!-- world arguments -->
-  <arg name="world_name" default="ndt_stage2_fence"/> <!--vineyard_small_s0_coarse-->
+  <arg name="world_name" default="ndt_stage0_fence"/> <!--vineyard_small_s0_coarse-->
 
   <!-- navigation arguments -->
   <arg name="launch_move_base" default="true"/>
@@ -64,5 +64,18 @@
     <arg name="remap_gazebo_odom_tf" value="$(arg remap_gazebo_odom_tf)" />
   </include>
 
+
+  <include file="$(find ndt_localizer)/launch/ndt_vine.launch">
+    <arg name="roll"  value="0.0" />
+    <arg name="pitch" value="0.0" />
+    <arg name="yaw"   value="0.0" />
+    <arg name="x"     value="0.0" />
+    <arg name="y"     value="0.0" />
+    <arg name="z"     value="0.0" />    
+    <arg name="pcd_path"     value="/home/ibrahim/iros22_data_and_stuff/PCD/iros_stage0.pcd"/> 
+    <arg name="points_topic" value="/thorvald_001/velodyne_points" />
+    <arg name="leaf_size"    value="2.0" doc="map filter leaf size"/>
+    <arg name="resolution"   value="2.0" doc="The ND voxel grid resolution" />
+  </include>
 
 </launch>

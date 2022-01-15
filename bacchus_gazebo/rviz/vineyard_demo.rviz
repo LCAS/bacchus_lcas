@@ -5,6 +5,9 @@ Panels:
     Property Tree Widget:
       Expanded:
         - /Sensors1
+        - /Sensors1/T11
+        - /Sensors1/T11/Odometry1
+        - /Sensors1/T11/gt1
       Splitter Ratio: 0.5374677181243896
     Tree Height: 333
   - Class: rviz/Selection
@@ -559,7 +562,7 @@ Visualization Manager:
                 Shaft Length: 1
                 Shaft Radius: 0.05000000074505806
                 Value: Arrow
-              Topic: /thorvald_001/odometry/base_raw
+              Topic: /thorvald_001/odometry/gazebo
               Unreliable: false
               Value: true
             - Angle Tolerance: 0.10000000149011612
@@ -593,7 +596,7 @@ Visualization Manager:
                 Shaft Length: 1
                 Shaft Radius: 0.05000000074505806
                 Value: Arrow
-              Topic: /thorvald_001/odometry/gazebo
+              Topic: /thorvald_001/odometry/base_raw
               Unreliable: false
               Value: true
           Enabled: true
@@ -628,25 +631,25 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/XYOrbit
-      Distance: 15.426326751708984
+      Distance: 13.009613037109375
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: -9.265522956848145
-        Y: -5.0503668785095215
+        X: 6.42791223526001
+        Y: -4.046526908874512
         Z: 3.827042746706866e-5
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 1.065396785736084
+      Pitch: 1.3597965240478516
       Target Frame: <Fixed Frame>
       Value: XYOrbit (rviz)
-      Yaw: 4.245431423187256
+      Yaw: 4.500432014465332
     Saved: ~
 Window Geometry:
   Displays:

@@ -139,7 +139,7 @@ bacchus_gazebo/models/heightmap*
 bacchus_gazebo/models/grass_ground_plane/
 velodyne_simulator/
 universal_robot/
-robotnik*
+#robotnik*
 rbsherpa*
 joint_read_command_controller/
 

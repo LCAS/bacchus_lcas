@@ -15,3 +15,25 @@
 	path = robotnik_sensors
 	url = https://github.com/RobotnikAutomation/robotnik_sensors
 	shallow = true
+[submodule "robotnik_msgs"]
+        path = robotnik_msgs
+        url = https://github.com/RobotnikAutomation/robotnik_msgs
+        shallow = true
+[submodule "universal_robot"]
+        path = universal_robot
+        url = https://github.com/fmauch/universal_robot
+        shallow = true
+[submodule "teleop_panel"]
+        path = teleop_panel 
+        url = https://github.com/RobotnikAutomation/teleop_panel    
+        shallow = true
+[submodule "ewellix_description"]
+        path = ewellix_description   
+        url = https://github.com/RobotnikAutomation/ewellix_description
+        shallow = true
+[submodule "velodyne_simulator"]
+        path = veldyne_simulator
+        url = https://github.com/RobotnikAutomation/velodyne_simulator
+        shallow = true
+
+

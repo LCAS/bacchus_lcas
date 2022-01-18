@@ -35,5 +35,8 @@
         path = veldyne_simulator
         url = https://github.com/RobotnikAutomation/velodyne_simulator
         shallow = true
-
+[submodule "rcomponent"]
+        path = rcomponent
+        url = https://github.com/RobotnikAutomation/rcomponent
+        shallow = true
 

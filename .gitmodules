@@ -32,7 +32,7 @@
         url = https://github.com/RobotnikAutomation/ewellix_description
         shallow = true
 [submodule "velodyne_simulator"]
-        path = veldyne_simulator
+        path = velodyne_simulator
         url = https://github.com/RobotnikAutomation/velodyne_simulator
         shallow = true
 [submodule "rcomponent"]

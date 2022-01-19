@@ -39,4 +39,8 @@
         path = rcomponent
         url = https://github.com/RobotnikAutomation/rcomponent
         shallow = true
+[submodule "joint_read_command_controller"]
+        path = joint_read_command_controller
+        url = https://github.com/RobotnikAutomation/joint_read_command_controller
+        shallow = true
 

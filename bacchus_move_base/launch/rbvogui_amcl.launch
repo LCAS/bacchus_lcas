@@ -11,7 +11,7 @@
   <arg name="scan_topic" default="front_laser/scan"/>
   <arg name="map_topic" default="map"/>
 
-  <arg name="global_frame" default="$(arg prefix)map"/>
+  <arg name="global_frame" default="map"/>
   <arg name="odom_frame" default="$(arg prefix)odom"/>
   <arg name="base_frame" default="$(arg prefix)base_footprint"/>
 

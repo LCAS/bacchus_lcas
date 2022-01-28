@@ -17,6 +17,7 @@
 
   <group if="$(eval robot_name == 'rbvogui')">
     <include file="$(find bacchus_gazebo)/launch/rbvogui_complete.launch">
+      <arg name="robot_model"       value="rbvogui"/>
       <arg name="kinematics"        value="omni" />
       <arg name="twist2ackermann"   value="false" />
       <arg name="world_file"        value="$(arg world_file)"/>
@@ -33,6 +34,7 @@
 
   <group if="$(eval robot_name == 'rbvogui_one_arm')">
     <include file="$(find bacchus_gazebo)/launch/rbvogui_complete.launch">
+      <arg name="robot_model"       value="rbvogui"/>
       <arg name="robot_xacro"       value="rbvogui_std_ur10.urdf.xacro" />
       <arg name="kinematics"        value="omni" />
       <arg name="world_file"        value="$(arg world_file)"/>
@@ -54,7 +56,8 @@
 
   <group if="$(eval robot_name == 'rbvogui_xl')">
     <include file="$(find bacchus_gazebo)/launch/rbvogui_complete.launch">
-      <arg name="robot_xacro"         value="rbvogui_xl.urdf.xacro" />
+      <arg name="robot_model"       value="rbvogui_xl"/>
+      <arg name="robot_xacro"         value="rbvogui_xl_std.urdf.xacro" />
       <!-- <arg name="kinematics"          value="omni" />
       <arg name="twist2ackermann"     value="false" /> -->
       <arg name="world_file"          value="$(arg world_file)"/>
@@ -72,7 +75,8 @@
 
   <group if="$(eval robot_name == 'rbvogui_xl_two_arms')">
     <include file="$(find bacchus_gazebo)/launch/rbvogui_complete.launch">
-      <arg name="robot_xacro"         value="rbvogui_xl.urdf.xacro" />
+      <arg name="robot_model"       value="rbvogui"/>
+      <arg name="robot_xacro"         value="rbvogui_xl_std.urdf.xacro" />
       <arg name="kinematics"          value="omni" />
       <arg name="twist2ackermann"     value="false" />
       <arg name="world_file"          value="$(arg world_file)"/>

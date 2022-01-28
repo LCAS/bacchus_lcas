@@ -10,7 +10,9 @@
   <!-- arg to config the launch file-->
   <arg name="robot_model" default="$(optenv ROBOT_MODEL rbvogui)"/> 
   <arg name="robot_xacro" default="$(optenv ROBOT_XACRO rbvogui_xl_std.urdf.xacro)"/>
-  <arg name="gpu" default="false"/>
+  <arg name="robot_use_custom_xacro_path" default="$(optenv ROBOT_USE_CUSTOM_XACRO_PATH false)"/>
+  <arg name="robot_custom_xacro_path" default="$(optenv ROBOT_CUSTOM_XACRO_PATH /home/robot/)"/>
+  <arg name="use_gpu" default="false"/>
 
   <!-- Robot configuration -->
   <arg name="robot_id" default="$(optenv ROBOT_ID robot)"/>
@@ -22,6 +24,7 @@
   <arg name="launch_base_hw_sim" default="false"/>
   <arg name="kinematics" default="$(optenv ROBOT_KINEMATICS omni)"/>
   <arg name="twist2ackermann" default="$(optenv ROBOT_ACKERMANN false)"/>
+  <arg name="merge_lasers" default="$(optenv ROBOT_MERGE_LASERS true)"/>
   <arg name="xl_version" default="false"/>
   <arg name="wheel_diameter" default="0.22" unless="$(arg xl_version)"/>
   <arg name="track_width" default="0.439" unless="$(arg xl_version)"/> 
@@ -37,6 +40,7 @@
   <arg name="load_kinematics_file" default="true"/> <!-- Necesary for ur_description compatible with official ur drivers--> 
   
   <!-- Pad configuratin -->
+  <arg name="launch_pad" default="false"/>
   <arg name="pad_model" default="ps4"/>
   <arg name="pad_config_file" default="config/robotnik_pad_plugins_$(arg pad_model).yaml"/>
   <arg name="pad_config_path" default="$(eval find(pad_package) + '/' + pad_config_file)"/>
@@ -59,10 +63,13 @@
     <!-- Load the URDF into the ROS Parameter Server -->
     <include file="$(find rbvogui_description)/launch/rbvogui_state.launch" >
       <arg name="robot_id" value="$(arg robot_id)" />
+      <arg name="robot_model" value="$(arg robot_model)" />
       <arg name="robot_xacro" value="$(arg robot_xacro)" />
+      <arg name="robot_use_custom_xacro_path" value="$(arg robot_use_custom_xacro_path)" />
+      <arg name="robot_custom_xacro_path" value="$(arg robot_custom_xacro_path)" />
       <arg name="launch_arm" value="$(arg launch_arm)" />
       <arg name="load_kinematics_file" value="$(arg load_kinematics_file)"/>
-      <arg name="gpu" value="$(arg gpu)"/>
+      <arg name="gpu" value="$(arg use_gpu)"/>
     </include>
 
     <!-- Start control nodes -->
@@ -74,9 +81,9 @@
       <arg name="arm_manufacturer" value="$(arg arm_manufacturer)"/>
       <arg name="arm_model" value="$(arg arm_model)"/>
       <!-- For the XL version -->
-      <arg name="wheel_diameter" value="0.34"/>
-      <arg name="track_width" value="0.584"/> 
-      <arg name="wheel_base" value="0.958"/>  
+      <arg name="wheel_diameter" value="$(arg wheel_diameter)"/>
+      <arg name="track_width" value="$(arg track_width)"/> 
+      <arg name="wheel_base" value="$(arg wheel_base)"/>  
     </include>
 
     <!-- pad: to do: add rbvogui pad into robotnik_pad as plugin -->

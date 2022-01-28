@@ -16,7 +16,7 @@
   <arg name="run_robot" default="true"/>
   <arg name="run_rviz" default="true"/>
   <arg name="run_localization" default="false"/>
-  <arg name="run_mapping" default="false"/>
+  <!-- <arg name="run_mapping" default="false"/> -->
   <arg name="run_navigation" default="false"/>
   <arg name="map_file" default=""/>
 
@@ -27,16 +27,19 @@
   <arg name="debug" default="false"/>
   <arg name="paused" default="false"/>
   <arg name="headless" default="false"/>
-  <arg name="gui" default="true"/>
-  <arg name="gpu" default="$(optenv ROBOT_SIM_GPU false)"/>
+  <arg name="use_gui" default="true"/>
+  <arg name="use_gpu" default="$(optenv ROBOT_SIM_GPU false)"/>
 
   <!-- Robot configuration -->
   <arg name="robot_id" default="$(optenv ROBOT_ID robot)"/>
   <arg name="prefix" default="$(arg robot_id)_"/>
   <arg name="robot_model" default="$(optenv ROBOT_MODEL rbvogui)"/>
   <arg name="robot_xacro" default="$(optenv ROBOT_XACRO rbvogui_std.urdf.xacro)"/>
+  <arg name="robot_use_custom_xacro_path" default="$(optenv ROBOT_USE_CUSTOM_XACRO_PATH false)"/>
+  <arg name="robot_custom_xacro_path" default="$(optenv ROBOT_CUSTOM_XACRO_PATH /home/robot/)"/>
   <arg name="kinematics" default="$(optenv ROBOT_KINEMATICS omni)"/>
   <arg name="twist2ackermann" default="$(optenv ROBOT_ACKERMANN false)"/>
+  <arg name="merge_lasers" default="$(optenv ROBOT_MERGE_LASERS false)"/> 
   <arg name="x_init_pose" default="$(optenv ROBOT_SIM_GAZEBO_INIT_POSE_X 0)"/>
   <arg name="y_init_pose" default="$(optenv ROBOT_SIM_GAZEBO_INIT_POSE_Y 0)"/>
   <arg name="z_init_pose" default="$(optenv ROBOT_SIM_GAZEBO_INIT_POSE_Z 0)"/>
@@ -57,6 +60,7 @@
   <arg name="rviz_config_path" default="$(eval find(rviz_package) + '/' + rviz_config_file)"/>
 
   <!-- Pad configuratin -->
+  <arg name="launch_pad" default="$(optenv HAS_PAD false)"/>
   <arg name="pad_config_file" default="$(optenv PAD_FILE robotnik_pad_plugins_ps4.yaml)"/>
   <arg name="pad_config_relative_path" default="$(optenv PAD_RELATIVE_PATH /config/)" />
   <arg name="pad_config_path" default="$(eval find(pad_package) + pad_config_relative_path + pad_config_file)"/>
@@ -70,7 +74,7 @@
     <arg name="debug" value="$(arg debug)" />
     <arg name="paused" value="$(arg paused)" />
     <arg name="headless" value="$(arg headless)"/>
-    <arg name="gui" value="$(arg gui)"/>
+    <arg name="use_gui" value="$(arg use_gui)"/>
   </include>
 
   <!-- launch robot -->
@@ -85,19 +89,24 @@
                              robot_id:=$(arg robot_id)
                              xl_version:=$(arg xl_version)
                              prefix:=$(arg prefix)
+                             robot_model:=$(arg robot_model)
                              robot_xacro:=$(arg robot_xacro)
+                             robot_use_custom_xacro_path:=$(arg robot_use_custom_xacro_path)
+                             robot_custom_xacro_path:=$(arg robot_custom_xacro_path)
                              x_init_pose:=$(arg x_init_pose) 
                              y_init_pose:=$(arg y_init_pose)
                              z_init_pose:=$(arg z_init_pose)
                              a_init_pose:=$(arg a_init_pose)
                              launch_base_hw_sim:=$(arg launch_base_hw_sim)
                              load_kinematics_file:=$(arg load_kinematics_file)
-                             gpu:=$(arg gpu)
+                             use_gpu:=$(arg use_gpu)
                              launch_arm:=$(arg launch_arm)
                              arm_manufacturer:=$(arg arm_manufacturer)
                              arm_model:=$(arg arm_model)
                              kinematics:=$(arg kinematics)
                              twist2ackermann:=$(arg twist2ackermann)
+                             merge_lasers:=$(arg merge_lasers)
+                             launch_pad:=$(arg launch_pad)
                              pad_config_file:=$(arg pad_config_file)
                              pad_config_path:=$(arg pad_config_path)
                              " />
@@ -140,6 +149,8 @@
     <include file="$(find bacchus_move_base)/launch/rbvogui_localization_complete.launch">
       <arg name="prefix" value="$(arg prefix)"/>
       <arg name="map_file" value="$(arg map_file)"/>
+      <!-- <arg if="$(arg merge_lasers)" name="scan_topic" value="merged_laser/scan"/>
+      <arg unless="$(arg merge_lasers)" name="scan_topic" value="front_laser/scan"/> -->
       <arg name="x_init_pose" value="$(arg x_init_pose)"/>
       <arg name="y_init_pose" value="$(arg y_init_pose)"/>
       <arg name="z_init_pose" value="$(arg z_init_pose)"/>

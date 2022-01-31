@@ -75,7 +75,7 @@
 
   <group if="$(eval robot_name == 'rbvogui_xl_two_arms')">
     <include file="$(find bacchus_gazebo)/launch/rbvogui_complete.launch">
-      <arg name="robot_model"       value="rbvogui"/>
+      <arg name="robot_model"         value="rbvogui_xl"/>
       <arg name="robot_xacro"         value="rbvogui_xl_std.urdf.xacro" />
       <arg name="kinematics"          value="omni" />
       <arg name="twist2ackermann"     value="false" />
@@ -89,9 +89,13 @@
       <arg name="rviz_config_path"    value="$(arg rviz_config_path)"/>
       <arg name="paused"              value="$(arg paused)"/>
       <arg name="xl_version"          value="true"/>
+      <arg name="launch_arm"          value="true"/>
+      <arg name="arm_manufacturer"    value="ur"/>
+      <arg name="arm_model"           value="bi_ur10e"/>
     </include>
 
-    <include file="$(find rbvogui_xl_2ur10_e_moveit)/launch/rbvogui_xl_moveit_config.launch"/>
+    <!-- the following needs to be launched separately in order to work -->
+    <!-- <include file="$(find rbvogui_xl_2ur10_e_moveit)/launch/rbvogui_xl_moveit_config.launch"/> -->
   </group>
 
   <!-- Localisation -->

@@ -111,7 +111,7 @@
   <exec_depend>map_server</exec_depend>
   <exec_depend>fake_localization</exec_depend>
   <exec_depend>timed_roslaunch</exec_depend>
-  <exec_depend>ackermann_msgs<exec_depend>
+  <exec_depend>ackermann_msgs</exec_depend>
   <exec_depend>ackermann_drive_controller</exec_depend>
   <exec_depend>omni_drive_controller</exec_depend>
   <exec_depend>robotnik_twist2ackermann</exec_depend>

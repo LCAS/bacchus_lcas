@@ -37,13 +37,15 @@
 
   <!-- check that odometry is published at around 20Hz -->
   <test test-name="hztest_odom" pkg="rostest" type="hztest" name="hztest_odom">
-  <param name="topic" value="/thorvald_001/odometry/gazebo" />
-  <param name="hz" value="20.0" />
-  <param name="hzerror" value="2" />
-  <param name="test_duration" value="10.0" />
+    <param name="topic" value="/thorvald_001/odometry/gazebo" />
+    <param name="hz" value="20.0" />
+    <param name="hzerror" value="2" />
+    <param name="test_duration" value="10.0" />
   </test>
 
   <!-- a very basic Python unittest -->
+  <param name="odom_topic" value="/thorvald_001/odometry/gazebo" />
+  <param name="cmd_vel_topic" value="/thorvald_001/twist_mux/cmd_vel"/>
   <test pkg="bacchus_gazebo" type="nav_test.py" test-name="nav_test" />
 
 </launch>

@@ -10,6 +10,9 @@
     <arg name="world_name" value="cmp9767m_1"/>
   </include>
 
+  <!-- a very basic Python unittest -->
+  <test pkg="bacchus_gazebo" type="simple_test.py" test-name="simpletest" />
+  
   <!-- run a test to check that some basic topics are available -->
   <test name="publishtest"
         test-name="publishtest"
@@ -40,6 +43,8 @@
   </test>
 
   <!-- a very basic Python unittest -->
+  <param name="odom_topic" value="/robot/robotnik_base_control/odom" />
+  <param name="cmd_vel_topic" value="/robot/move_base/cmd_vel"/>
   <test pkg="bacchus_gazebo" type="nav_test.py" test-name="nav_test" />
 
 </launch>

@@ -1,5 +1,5 @@
 global_costmap:
-  global_frame: $(arg prefix)map
+  global_frame: map
   robot_base_frame: $(arg prefix)base_footprint
   update_frequency: 5.0
   publish_frequency: 2.0

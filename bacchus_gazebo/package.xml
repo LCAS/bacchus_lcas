@@ -60,11 +60,16 @@
   <build_depend>thorvald_twist_mux</build_depend>
   <build_depend>velodyne_description</build_depend>
   <build_depend>velodyne_gazebo_plugins</build_depend>
+  <build_depend>velodyne_simulator</build_depend>
   <build_depend>kinect2_description</build_depend>
   <build_depend>unzip</build_depend>
   <build_depend>curl</build_depend>
   <build_depend>fake_localization</build_depend>
   <build_depend>timed_roslaunch</build_depend>
+  <build_depend>rbvogui_gazebo</build_depend>
+  <build_depend>rbvogui_control</build_depend>
+  <build_depend>rbvogui_description</build_depend>
+  <build_depend>rbvogui_xl_2ur10_e_moveit</build_depend>
   <build_depend>rbvogui_gazebo</build_depend>
   <build_depend>rbvogui_control</build_depend>
   <build_depend>rbvogui_description</build_depend>
@@ -90,6 +95,7 @@
   <exec_depend>thorvald_twist_mux</exec_depend>
   <exec_depend>velodyne_description</exec_depend>
   <exec_depend>velodyne_gazebo_plugins</exec_depend>
+  <exec_depend>velodyne_simulator</exec_depend>
   <exec_depend>kinect2_description</exec_depend>
   <exec_depend>thorvald_base</exec_depend>
   <exec_depend>gazebo_ros</exec_depend>
@@ -100,10 +106,7 @@
   <exec_depend>map_server</exec_depend>
   <exec_depend>fake_localization</exec_depend>
   <exec_depend>timed_roslaunch</exec_depend>
-  <build_depend>rbvogui_gazebo</build_depend>
-  <build_depend>rbvogui_control</build_depend>
-  <build_depend>rbvogui_description</build_depend>
-  <build_depend>rbvogui_xl_2ur10_e_moveit</build_depend>
+  
 
 
   <!-- The export tag contains other, unspecified, tags -->

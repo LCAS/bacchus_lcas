@@ -15,45 +15,6 @@
   <arg name="rviz_config_path"  default="$(find bacchus_gazebo)/rviz/rbvogui.rviz"/>
   <arg name="paused"            default="false"/>
 
-  <group if="$(eval robot_name == 'rbvogui')">
-    <include file="$(find bacchus_gazebo)/launch/rbvogui_complete.launch">
-      <arg name="robot_model"       value="rbvogui"/>
-      <arg name="kinematics"        value="omni" />
-      <arg name="twist2ackermann"   value="false" />
-      <arg name="world_file"        value="$(arg world_file)"/>
-      <arg name="x_init_pose"       value="$(arg x_init_pose)" />
-      <arg name="y_init_pose"       value="$(arg y_init_pose)" />
-      <arg name="z_init_pose"       value="$(arg z_init_pose)" />
-      <arg name="run_navigation"    value="$(arg run_navigation)"/>
-      <arg name="run_localization"  value="$(arg run_localization)"/>
-      <arg name="map_file"          value="$(arg nav_map_yaml)"/>
-      <arg name="rviz_config_path"  value="$(arg rviz_config_path)"/>
-      <arg name="paused"            value="$(arg paused)"/>
-    </include>
-  </group>
-
-  <group if="$(eval robot_name == 'rbvogui_one_arm')">
-    <include file="$(find bacchus_gazebo)/launch/rbvogui_complete.launch">
-      <arg name="robot_model"       value="rbvogui"/>
-      <arg name="robot_xacro"       value="rbvogui_std_ur10.urdf.xacro" />
-      <arg name="kinematics"        value="omni" />
-      <arg name="world_file"        value="$(arg world_file)"/>
-      <arg name="x_init_pose"       value="$(arg x_init_pose)" />
-      <arg name="y_init_pose"       value="$(arg y_init_pose)" />
-      <arg name="z_init_pose"       value="$(arg z_init_pose)" />
-      <arg name="run_navigation"    value="$(arg run_navigation)"/>
-      <arg name="run_localization"  value="$(arg run_localization)"/>
-      <arg name="map_file"          value="$(arg nav_map_yaml)"/>
-      <arg name="rviz_config_path"  value="$(arg rviz_config_path)"/>
-      <arg name="paused"            value="$(arg paused)"/>
-    </include>
-
-
-    <!-- TODO: it doesn't work if left here in this launch file -->
-    <!-- $ ROS_NAMESPACE=robot roslaunch rbvogui_moveit_ur10 demo.launch -->
-    <!-- $ ROS_NAMESPACE=robot rosrun rqt_joint_trajectory_controller rqt_joint_trajectory_controller -->
-  </group>
-
   <group if="$(eval robot_name == 'rbvogui_xl')">
     <include file="$(find bacchus_gazebo)/launch/rbvogui_complete.launch">
       <arg name="robot_model"       value="rbvogui_xl"/>

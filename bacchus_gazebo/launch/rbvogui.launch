@@ -62,17 +62,17 @@
   <!-- Localisation -->
   <group if="$(arg fake_localisation)">
       
-    <node pkg="tf" type="static_transform_publisher" name="world_2_map_tfb" args="$(arg world_2_map_pose) world robot_map 1000" />
+    <node pkg="tf" type="static_transform_publisher" name="world_2_map_tfb" args="$(arg world_2_map_pose) world map 1000" />
 
     <node name="nav_map_server" pkg="map_server" type="map_server" args="$(arg nav_map_yaml)" output="screen">
-      <param name="frame_id" value="robot_map"/>
+      <param name="frame_id" value="map"/>
     </node>
     
     <node pkg="fake_localization" type="fake_localization" respawn="false" name="fake_loc">
       <remap from="base_pose_ground_truth" to="/robot/robotnik_base_control/odom" />
       <param name="~odom_frame_id" type="string" value="robot_odom" />
       <param name="~base_frame_id" type="string" value="robot_base_link" />
-      <param name="~global_frame_id" type="string" value="robot_map" />
+      <param name="~global_frame_id" type="string" value="map" />
       <param name="~delta_x" value="$(eval -1. * arg('x_init_pose'))"/>
       <param name="~delta_y" value="$(eval -1. * arg('y_init_pose'))"/>
     </node>

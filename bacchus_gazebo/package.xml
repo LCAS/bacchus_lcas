@@ -76,7 +76,6 @@
   <build_depend>rbvogui_xl_2ur10_e_moveit</build_depend>
   <build_depend>ackermann_msgs</build_depend>
   <build_depend>ackermann_drive_controller</build_depend>
-  <build_depend>omni-drive-controller</build_depend>
   <build_depend>robotnik_twist2ackermann</build_depend>
   <build_depend>global_planner</build_depend>
 
@@ -113,7 +112,6 @@
   <exec_depend>timed_roslaunch</exec_depend>
   <exec_depend>ackermann_msgs</exec_depend>
   <exec_depend>ackermann_drive_controller</exec_depend>
-  <exec_depend>omni_drive_controller</exec_depend>
   <exec_depend>robotnik_twist2ackermann</exec_depend>
   <exec_depend>global_planner</exec_depend>
   

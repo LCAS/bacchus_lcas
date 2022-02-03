@@ -31,10 +31,10 @@
   <build_depend>rbvogui_description</build_depend>
   <build_depend>rbvogui_control</build_depend>
   <build_depend>robotnik_pad</build_depend>
-  <build_depend>robotnik_base_hw_sim</build_depend>
+  <!-- <build_depend>robotnik_base_hw_sim</build_depend> -->
   <build_depend>robotnik_msgs</build_depend>
   <build_depend>robotnik_twist2ackermann</build_depend>
-  <build_depend>rcomponent</build_depend>
+  <!-- <build_depend>rcomponent</build_depend> -->
   <build_depend>omni_drive_controller</build_depend>
   <build_depend>ackermann_drive_controller</build_depend>
 
@@ -51,10 +51,10 @@
   <exec_depend>rbvogui_description</exec_depend>
   <exec_depend>rbvogui_control</exec_depend>
   <exec_depend>robotnik_pad</exec_depend>
-  <exec_depend>robotnik_base_hw_sim</exec_depend>
+  <!-- <exec_depend>robotnik_base_hw_sim</exec_depend> -->
   <exec_depend>robotnik_msgs</exec_depend>
   <exec_depend>robotnik_twist2ackermann</exec_depend>
-  <exec_depend>rcomponent</exec_depend>
+  <!-- <exec_depend>rcomponent</exec_depend> -->
   <exec_depend>omni_drive_controller</exec_depend>
   <exec_depend>ackermann_drive_controller</exec_depend>
 

@@ -3,17 +3,16 @@
     <env name="DISPLAY" value="" />
     <arg name="gui" value="false" />
     <arg name="paused" value="false" />
-    <arg name="robot_name" default="thorvald_001"/>
+    <arg name="robot_name" default="rbvogui_xl"/>
     <arg name="fake_localisation" value="true" />
     <arg name="launch_move_base" value="false" />
     <arg name="launch_rviz" value="false" />
     <arg name="world_name" value="cmp9767m_1"/>
-    <arg name="model_extras" default="$(find bacchus_gazebo)/urdf/simple_sensors.xacro"/>
   </include>
 
   <!-- a very basic Python unittest -->
   <test pkg="bacchus_gazebo" type="simple_test.py" test-name="simpletest" />
-
+  
   <!-- run a test to check that some basic topics are available -->
   <test name="publishtest"
         test-name="publishtest"
@@ -26,10 +25,10 @@
         - name: /tf
           timeout: 10
           negative: False
-        - name: /thorvald_001/velodyne_points
+        - name: /robot/front_laser/scan
           timeout: 10
           negative: False
-        - name: /thorvald_001/scan
+        - name: /robot/robot_zed/left/image_raw
           timeout: 10
           negative: False
     </rosparam>
@@ -37,15 +36,15 @@
 
   <!-- check that odometry is published at around 20Hz -->
   <test test-name="hztest_odom" pkg="rostest" type="hztest" name="hztest_odom">
-    <param name="topic" value="/thorvald_001/odometry/gazebo" />
-    <param name="hz" value="20.0" />
-    <param name="hzerror" value="2" />
-    <param name="test_duration" value="10.0" />
+  <param name="topic" value="/robot/robotnik_base_control/odom" />
+  <param name="hz" value="66.0" />
+  <param name="hzerror" value="2" />
+  <param name="test_duration" value="10.0" />
   </test>
 
   <!-- a very basic Python unittest -->
-  <param name="odom_topic" value="/thorvald_001/odometry/gazebo" />
-  <param name="cmd_vel_topic" value="/thorvald_001/twist_mux/cmd_vel"/>
+  <param name="odom_topic" value="/robot/robotnik_base_control/odom" />
+  <param name="cmd_vel_topic" value="/robot/move_base/cmd_vel"/>
   <test pkg="bacchus_gazebo" type="nav_test.py" test-name="nav_test" />
 
 </launch>

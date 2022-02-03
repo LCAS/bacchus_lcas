@@ -1,0 +1,36 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "",
+        "limitSymbolsToIncludedHeaders": true
+      },
+      "includePath": [
+        "/home/pulver/ros_workspaces/bacchus_ws/devel/include/**",
+        "/home/pulver/ros_workspaces/ncnr_ws/devel/include/**",
+        "/home/pulver/ros_workspaces/nbs_ws/devel/include/**",
+        "/opt/ros/melodic/include/**",
+        "/home/pulver/ros_workspaces/rasberry_ws/devel/include/**",
+        "/home/pulver/ros_workspaces/bacchus_ws/src/bacchus_lcas/bacchus_gazebo/include/**",
+        "/home/pulver/ros_workspaces/nbs_ws/src/RFID/gazebo/gazebo_custom_sensor_preloader/include/**",
+        "/home/pulver/ros_workspaces/ncnr_ws/src/gazebo_radiation_plugin/include/**",
+        "/home/pulver/ros_workspaces/nbs_ws/src/RFID/gazebo/gazebo_rfid/include/**",
+        "/home/pulver/ros_workspaces/nbs_ws/src/RFID/gazebo/gazebo_rfid_node/include/**",
+        "/home/pulver/ros_workspaces/bacchus_ws/src/joint_read_command_controller/include/**",
+        "/home/pulver/ros_workspaces/bacchus_ws/src/localisation/mel_amcl/include/**",
+        "/home/pulver/ros_workspaces/nbs_ws/src/nbs_ros/include/**",
+        "/home/pulver/ros_workspaces/ncnr_ws/src/radiation_layer/include/**",
+        "/home/pulver/ros_workspaces/bacchus_ws/src/rcomponent/include/**",
+        "/home/pulver/ros_workspaces/nbs_ws/src/RFID/rfid_grid_map/include/**",
+        "/home/pulver/ros_workspaces/bacchus_ws/src/robotnik_pad/robotnik_pad/include/**",
+        "/home/pulver/ros_workspaces/bacchus_ws/src/robotnik_pad/robotnik_pad_plugins/include/**",
+        "/home/pulver/ros_workspaces/ncnr_ws/src/safe-exploration-demo/include/**",
+        "/home/pulver/ros_workspaces/bacchus_ws/src/universal_robot/ur_kinematics/include/**",
+        "/home/pulver/ros_workspaces/bacchus_ws/src/velodyne_simulator/velodyne_gazebo_plugins/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS"
+    }
+  ],
+  "version": 4
+}

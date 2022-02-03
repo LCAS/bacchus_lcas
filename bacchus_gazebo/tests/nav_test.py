@@ -20,10 +20,9 @@ class TestNav(unittest.TestCase):
 
     def setUp(self):
         rospy.init_node("nav_tester")
-        self.sub = rospy.Subscriber('/thorvald_001/odometry/gazebo', Odometry, self.odom_callback )
-        self.pub = rospy.Publisher('/thorvald_001/twist_mux/cmd_vel', Twist, queue_size=10)
+        self.sub = rospy.Subscriber(odom_topic, Odometry, self.odom_callback )
+        self.pub = rospy.Publisher(cmd_vel_topic, Twist, queue_size=10)
         self.start_pose = None
-
 
     def distance(self):
         if not self.start_pose:
@@ -60,4 +59,6 @@ class TestNav(unittest.TestCase):
 if __name__ == '__main__':
     PKG = 'bacchus_gazebo'
     import rostest
+    odom_topic = rospy.get_param("odom_topic")
+    cmd_vel_topic = rospy.get_param("cmd_vel_topic")
     rostest.rosrun(PKG, 'TestNav', TestNav)

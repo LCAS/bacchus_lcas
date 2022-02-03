@@ -239,7 +239,7 @@ endforeach(dir)
 if(CATKIN_ENABLE_TESTING)
   find_package(rostest REQUIRED)
   add_rostest(tests/testme.test)
-  add_rostest(tests/test_vogui.test)
+  # add_rostest(tests/test_vogui.test)
 endif()
 
 set(MODELS_ZIPFILE '3D models.zip')

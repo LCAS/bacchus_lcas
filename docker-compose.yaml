@@ -6,9 +6,11 @@ volumes:
 
 services:
   bacchus_teaching:
-    build: ./docker
+    build: 
+      context: ./docker
+      dockerfile: ../Dockerfile
     restart: unless-stopped
-    image: lcas.lincoln.ac.uk/lcas/bacchus_lcas_teaching:teaching
+    image: lcas.lincoln.ac.uk/lcas/bacchus_lcas_teaching:teaching_noetic
     environment:
       RESOLUTION: 1280x720
     volumes:

@@ -2,9 +2,9 @@ name: Docker Image CI
 
 on:
   push:
-    branches: [ teaching ]
+    branches: [ teaching_noetic ]
 #  pull_request:
-#    branches: [ teaching ]
+#    branches: [ teaching_noetic ]
     tags:
       - '*'
 

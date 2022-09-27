@@ -51,17 +51,29 @@
   <!-- Lauch robot model -->
   <group ns="$(arg robot_name)">
 
-    <!-- model bringup -->
+    <param name="robot_description" command="$(find xacro)/xacro '$(find thorvald_description)/urdf/thorvald_model.xacro' --inorder datum_file:='' robot_name:='$(arg robot_name)' tf_prefix:='$(arg tf_prefix)' robot_config:='$(arg robot_model)' model_extras:='$(arg model_extras)'" />
+
+    <!-- state publisher -->
+    <group ns="rsp">
+      <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher" >
+        <remap from="/$(arg robot_name)/rsp/joint_states" to="/$(arg robot_name)/base_driver/joint_states" />
+      </node>
+      <!--<node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher" />-->
+    </group>
+
+
+
+    <!-- model bringup 
     <include file="$(find thorvald_description)/launch/model.launch">
       <arg name="robot_name" value="$(arg robot_name)" />
-      <arg name="tf_prefix" value="/$(arg tf_prefix)" />
+      <arg name="tf_prefix" value="$(arg tf_prefix)" />
       <arg name="robot_model" value="$(arg robot_model)" />
       <arg name="model_extras" value="$(arg model_extras)" />
-    </include>
+    </include>-->
 
     <!-- base bringup-->
     <include file="$(find thorvald_base)/launch/base_bringup.launch">
-      <arg name="tf_prefix" value="/$(arg tf_prefix)" />
+      <arg name="tf_prefix" value="$(arg tf_prefix)" />
       <arg name="robot_model" value="$(arg robot_model)" />
       <arg name="simple_sim" value="true" />
       <arg name="enable_odom_tf" value="false" />

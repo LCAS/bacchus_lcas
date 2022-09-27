@@ -6,7 +6,7 @@ volumes:
 
 services:
   bacchus_teaching:
-    build: .
+    build: ./docker
     restart: unless-stopped
     image: lcas.lincoln.ac.uk/lcas/bacchus_lcas_teaching:teaching
     environment:

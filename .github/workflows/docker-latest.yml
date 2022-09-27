@@ -40,6 +40,12 @@ jobs:
     #  run: docker build . --file Dockerfile --tag lcas.lincoln.ac.uk/uollcas/teaching:latest
     #- name: Push the Docker image
     #  run: docker push lcas.lincoln.ac.uk/uollcas/teaching:latest
+    - uses: actions/checkout@v3
+      with:
+        repository: 'SAGARobotics/Thorvald'
+        ref: '2.2.2'
+        token: '${{ secrets.THORVALD_TOKEN }}'
+        path: 'docker/Thorvald'
     - name: Build and push
       uses: docker/build-push-action@v2
       with:

@@ -12,7 +12,7 @@ services:
     restart: unless-stopped
     image: lcas.lincoln.ac.uk/lcas/bacchus_lcas_teaching:teaching_noetic
     environment:
-      RESOLUTION: 1280x720
+      RESOLUTION: 1440x720
     volumes:
       - bacchus_home:/home/ubuntu
       - .:/volume/host

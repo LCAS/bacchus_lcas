@@ -43,7 +43,7 @@ RUN /bin/bash -c ".  ~/thorvald_ws/install/setup.bash && \
 
 RUN /bin/bash -c ". ~/thorvald_ws/install/setup.bash; cd ~/ros_ws; catkin_make -DCMAKE_CXX_STANDARD=17"
 
-RUN cd /tmp && curl -fOL https://github.com/cdr/code-server/releases/download/v3.12.0/code-server_3.12.0_amd64.deb && dpkg -i code-server_3.12.0_amd64.deb && rm code-server_3.12.0_amd64.deb
+RUN cd /tmp && curl -fOL https://github.com/cdr/code-server/releases/download/v3.12.0/code-server_3.12.0_amd64.deb && dpkg -i code-server_3.12.0_amd64.deb && rm code-server_3.12.0_amd64.deb && /usr/bin/code-server --install-extension ms-python.python && /usr/bin/code-server --install-extension pijar.ros-snippets
 
-RUN bash -c 'echo -e "[supervisord]\nredirect_stderr=true\nstopsignal=QUIT\nautorestart=true\ndirectory=/root\n\n[program:codeserver]\ndirectory=/home/ubuntu\ncommand=/usr/bin/code-server --auth none --bind-addr 0.0.0.0:8888\nuser=ubuntu\nenvironment=DISPLAY=:1,HOME=/home/ubuntu,USER=ubuntu" > /etc/supervisor/conf.d/codeserver.conf'
+RUN bash -c 'echo -e "[supervisord]\nredirect_stderr=true\nstopsignal=QUIT\nautorestart=true\ndirectory=/root\n\n[program:codeserver]\ndirectory=/home/ubuntu\ncommand=/usr/bin/code-server --auth none --bind-addr 0.0.0.0:8888\nuser=ubuntu\nenvironment=DISPLAY=:1,HOME=/home/ubuntu,USER=ubuntu,PYTHONPATH=/home/ubuntu/ros_ws/devel/lib/python3/dist-packages:/home/ubuntu/thorvald_ws/install/lib/python3/dist-packages:/opt/ros/noetic/lib/python3/dist-packages" > /etc/supervisor/conf.d/codeserver.conf'
 

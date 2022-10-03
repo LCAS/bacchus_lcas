@@ -29,7 +29,7 @@ RUN /bin/bash -c ". ~/thorvald_ws/install/setup.bash && cd ~/ros_ws && catkin_ma
 # copying bacchus repo
 RUN cd /home/ubuntu/ros_ws/src && \
     git clone -b master --recursive https://github.com/LCAS/CMP9767M.git && \
-    git clone -b teaching --recursive https://github.com/LCAS/bacchus_lcas.git
+    git clone -b teaching_noetic --recursive https://github.com/LCAS/bacchus_lcas.git
 
 # Installing dependecies
 RUN /bin/bash -c ".  ~/thorvald_ws/install/setup.bash && \

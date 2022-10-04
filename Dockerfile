@@ -10,8 +10,13 @@ RUN sh -c 'echo "deb http://packages.osrfoundation.org/gazebo/ubuntu-stable `lsb
 RUN wget https://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
 
 # Installing dependencies (map-server has some weird conflicts with libsdl)
+RUN wget -O /etc/apt/preferences.d/cuda-repository-pin-600 https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/cuda-ubuntu2004.pin && \
+    apt-key adv --fetch-keys https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/cuda-ubuntu2004-keyring.gpg && \
+    add-apt-repository "deb http://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/ /" 
+
 RUN apt-get update; apt-get -y upgrade; \
-    apt-get install -y ros-noetic-desktop-full ros-noetic-map-server
+    apt-get install -y  ros-noetic-desktop-full ros-noetic-map-server \ 
+                        cuda-11-4
 
 # Creating thorvald_ws
 RUN mkdir -p /home/ubuntu/thorvald_ws/src

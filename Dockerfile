@@ -2,6 +2,44 @@ FROM tiryoh/ros-desktop-vnc:noetic
 LABEL maintainer="L-CAS<mhanheide@lincoln.ac.uk>"
 LABEL maintainer="L-CAS<25921584@lincoln.ac.uk>"
 
+
+######### CUDA (see https://gitlab.com/nvidia/container-images/cuda/-/blob/master/dist/11.4.0/ubuntu2004/base/Dockerfile)
+ENV NVARCH x86_64
+
+ENV NVIDIA_REQUIRE_CUDA "cuda>=11.4 brand=tesla,driver>=418,driver<419 brand=tesla,driver>=450,driver<451"
+ENV NV_CUDA_CUDART_VERSION 11.4.43-1
+ENV NV_CUDA_COMPAT_PACKAGE cuda-compat-11-4
+
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    gnupg2 curl ca-certificates && \
+    curl -fsSL https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/${NVARCH}/3bf863cc.pub | apt-key add - && \
+    echo "deb https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/${NVARCH} /" > /etc/apt/sources.list.d/cuda.list 
+
+
+ENV CUDA_VERSION 11.4.0
+
+# For libraries in the cuda-compat-* package: https://docs.nvidia.com/cuda/eula/index.html#attachment-a
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    cuda-cudart-11-4=${NV_CUDA_CUDART_VERSION} \
+    ${NV_CUDA_COMPAT_PACKAGE} \
+    && ln -s cuda-11.4 /usr/local/cuda
+
+# Required for nvidia-docker v1
+RUN echo "/usr/local/nvidia/lib" >> /etc/ld.so.conf.d/nvidia.conf \
+    && echo "/usr/local/nvidia/lib64" >> /etc/ld.so.conf.d/nvidia.conf
+
+ENV PATH /usr/local/nvidia/bin:/usr/local/cuda/bin:${PATH}
+ENV LD_LIBRARY_PATH /usr/local/nvidia/lib:/usr/local/nvidia/lib64
+
+# nvidia-container-runtime
+ENV NVIDIA_VISIBLE_DEVICES all
+ENV NVIDIA_DRIVER_CAPABILITIES compute,utility
+
+##############
+
+
+
 # Add repos
 ## LCAS repo (not available in noetic yet)
 # RUN curl https://raw.githubusercontent.com/LCAS/rosdistro/master/lcas-rosdistro-setup.sh | bash -
@@ -9,14 +47,9 @@ LABEL maintainer="L-CAS<25921584@lincoln.ac.uk>"
 RUN sh -c 'echo "deb http://packages.osrfoundation.org/gazebo/ubuntu-stable `lsb_release -cs` main" > /etc/apt/sources.list.d/gazebo-stable.list'
 RUN wget https://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
 
-# Installing dependencies (map-server has some weird conflicts with libsdl)
-RUN wget -O /etc/apt/preferences.d/cuda-repository-pin-600 https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/cuda-ubuntu2004.pin && \
-    apt-key adv --fetch-keys https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/cuda-ubuntu2004-keyring.gpg && \
-    add-apt-repository "deb http://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/ /" 
 
 RUN apt-get update; apt-get -y upgrade; \
-    apt-get install -y  ros-noetic-desktop-full ros-noetic-map-server \ 
-                        cuda-11-4
+    apt-get install -y  ros-noetic-desktop-full ros-noetic-map-server
 
 # Creating thorvald_ws
 RUN mkdir -p /home/ubuntu/thorvald_ws/src

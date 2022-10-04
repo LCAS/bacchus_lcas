@@ -9,7 +9,7 @@ services:
     build: 
       context: .
       dockerfile: ./Dockerfile
-    restart: unless-stopped
+    restart: no
     image: lcas.lincoln.ac.uk/lcas/bacchus_lcas_teaching:teaching_noetic
     environment:
       RESOLUTION: 1440x720

@@ -7,8 +7,8 @@ volumes:
 services:
   bacchus_teaching:
     build: 
-      context: ./docker
-      dockerfile: ../Dockerfile
+      context: .
+      dockerfile: ./Dockerfile
     restart: unless-stopped
     image: lcas.lincoln.ac.uk/lcas/bacchus_lcas_teaching:teaching_noetic
     environment:

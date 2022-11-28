@@ -40,7 +40,6 @@ RUN /bin/bash -c ".  /opt/lcas/thorvald_ws/install/setup.bash && \
                   apt-get install -y ros-noetic-dwa-local-planner ros-noetic-teb-local-planner \
                   ros-noetic-velodyne-description ros-noetic-ira-laser-tools ros-noetic-move-base && \
                   apt-get -y clean"
-
 RUN /bin/bash -c ". /opt/lcas/thorvald_ws/install/setup.bash; cd /opt/lcas/ros_ws; catkin_make -DCMAKE_CXX_STANDARD=17"
 
 RUN cd /tmp && curl -fOL https://github.com/coder/code-server/releases/download/v4.8.3/code-server_4.8.3_amd64.deb && dpkg -i code-server_4.8.3_amd64.deb && rm code-server_4.8.3_amd64.deb && /usr/bin/code-server --install-extension ms-python.python && /usr/bin/code-server --install-extension pijar.ros-snippets && \

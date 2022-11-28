@@ -16,6 +16,10 @@ services:
     volumes:
       - bacchus_home:/home/ubuntu
       - .:/volume/host
+      - /dev/net/tun:/dev/net/tun
     ports:
       - "6080:80"
       - "6081:8888"
+      - "6082:22"
+    cap_add:
+      - NET_ADMIN

@@ -43,7 +43,7 @@ RUN /bin/bash -c ".  /opt/lcas/thorvald_ws/install/setup.bash && \
 
 RUN /bin/bash -c ". /opt/lcas/thorvald_ws/install/setup.bash; cd /opt/lcas/ros_ws; catkin_make -DCMAKE_CXX_STANDARD=17"
 
-RUN cd /tmp && curl -fOL https://github.com/cdr/code-server/releases/download/v3.12.0/code-server_3.12.0_amd64.deb && dpkg -i code-server_3.12.0_amd64.deb && rm code-server_3.12.0_amd64.deb && /usr/bin/code-server --install-extension ms-python.python && /usr/bin/code-server --install-extension pijar.ros-snippets && \
+RUN cd /tmp && curl -fOL https://github.com/coder/code-server/releases/download/v4.8.3/code-server_4.8.3_amd64.deb && dpkg -i code-server_4.8.3_amd64.deb && rm code-server_4.8.3_amd64.deb && /usr/bin/code-server --install-extension ms-python.python && /usr/bin/code-server --install-extension pijar.ros-snippets && \
     wget -O code.deb 'https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64' && dpkg -i code.deb
 RUN su -c '/usr/bin/code --install-extension ms-python.python && /usr/bin/code --install-extension pijar.ros-snippets' ubuntu
 

@@ -39,6 +39,7 @@ RUN /bin/bash -c ".  /opt/lcas/thorvald_ws/install/setup.bash && \
                   git clone https://github.com/GT-RAIL/robot_pose_publisher.git && \
                   apt-get install -y ros-noetic-dwa-local-planner ros-noetic-teb-local-planner \
                   ros-noetic-velodyne-description ros-noetic-ira-laser-tools ros-noetic-move-base && \
+                  rosdep install --from-paths /opt/lcas/ros_ws/src -i -y && \
                   apt-get -y clean"
 RUN /bin/bash -c ". /opt/lcas/thorvald_ws/install/setup.bash; cd /opt/lcas/ros_ws; catkin_make -DCMAKE_CXX_STANDARD=17"
 

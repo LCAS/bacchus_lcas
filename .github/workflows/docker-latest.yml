@@ -3,10 +3,10 @@ name: Docker Image CI
 on:
   push:
     branches: [ teaching_noetic ]
-#  pull_request:
-#    branches: [ teaching_noetic ]
     tags:
       - '*'
+  pull_request:
+    branches: [ teaching_noetic ]
 
 jobs:
 
@@ -52,7 +52,7 @@ jobs:
         context: ./docker
         file: ./Dockerfile
         platforms: linux/amd64
-        push: true
+        push: ${{ github.event_name != 'pull_request' }}
         tags: lcas.lincoln.ac.uk/lcas/bacchus_lcas_teaching:${{ env.BRANCH }}
         build-args: |
             BRANCH=${{ env.BRANCH }}

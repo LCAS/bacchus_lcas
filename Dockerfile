@@ -38,7 +38,7 @@ RUN /bin/bash -c ".  /opt/lcas/thorvald_ws/install/setup.bash && \
                   git clone https://github.com/LCAS/topological_navigation.git && \
                   git clone https://github.com/GT-RAIL/robot_pose_publisher.git && \
                   apt-get install -y ros-noetic-dwa-local-planner ros-noetic-teb-local-planner \
-                        ros-noetic-velodyne-description ros-noetic-ira-laser-tools ros-noetic-move-base ros-noetic-rospy-message-converter && \
+                        ros-noetic-velodyne-description ros-noetic-ira-laser-tools ros-noetic-move-base ros-noetic-rospy-message-converter  ros-noetic-mongodb-store && \
                   apt-get -y clean"
 RUN /bin/bash -c ". /opt/lcas/thorvald_ws/install/setup.bash; cd /opt/lcas/ros_ws; catkin_make -DCMAKE_CXX_STANDARD=17"
 

@@ -11,7 +11,7 @@ RUN wget https://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
 
 # Installing dependencies (map-server has some weird conflicts with libsdl)
 RUN apt-get update; apt-get -y upgrade; \
-    apt-get install -y ros-noetic-desktop-full ros-noetic-map-server
+    apt-get install -y ros-noetic-desktop-full ros-noetic-map-server openssh-server
 
 # Creating thorvald_ws
 RUN mkdir -p /opt/lcas/thorvald_ws/src

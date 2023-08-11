@@ -47,8 +47,8 @@
       <heading_deg>0</heading_deg>
     </spherical_coordinates>
     <state world_name='default'>
-      <sim_time>5880 740000000</sim_time>
-      <real_time>302 434280743</real_time>
+      <sim_time>0 740000000</sim_time>
+      <real_time>0 434280743</real_time>
       <wall_time>1622022138 281400665</wall_time>
       <iterations>59935</iterations>
       <model name='fence_5'>

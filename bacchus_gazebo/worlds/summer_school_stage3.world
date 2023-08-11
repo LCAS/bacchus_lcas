@@ -802,8 +802,8 @@
       <pose frame=''>-11.6086 7.76474 0.569052 0 -0 0.506204</pose>
     </model>
     <state world_name='default'>
-      <sim_time>270 422000000</sim_time>
-      <real_time>270 945549737</real_time>
+      <sim_time>0 422000000</sim_time>
+      <real_time>0 945549737</real_time>
       <wall_time>1628520508 453126690</wall_time>
       <iterations>270422</iterations>
       <model name='ground_plane'>

@@ -2,11 +2,11 @@ name: Docker Image CI
 
 on:
   push:
-    branches: [ summer_school_2021 ]
+    branches: [ summer_school_2023 ]
     tags:
       - '*'
   pull_request:
-    branches: [ summer_school_2021 ]
+    branches: [ summer_school_2023 ]
 
 jobs:
 

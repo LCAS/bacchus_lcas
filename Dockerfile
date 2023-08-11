@@ -23,6 +23,9 @@ RUN apt-get install unzip \
    && cmake -DGTSAM_BUILD_WITH_MARCH_NATIVE=OFF .. \
    && make install -j4
 
+#RUN mkdir -p ~/.config/rosdistro && echo "index_url: https://raw.github.com/lcas/rosdistro/master/index-v4.yaml" > ~/.config/rosdistro/config.yaml
+RUN rosdep --rosdistro=melodic --include-eol-distros update 
+
 # Creating ros_ws
 RUN mkdir -p ~/ros_ws/src 
 RUN /bin/bash -c "source /opt/ros/melodic/setup.bash && \
@@ -37,6 +40,7 @@ RUN cd ~/ros_ws/src; git clone -b summer_school_2021 --recursive https://github.
 
 
 # Installing dependecies and compiling
+RUN . /opt/ros/melodic/setup.sh; rosdep -v db; cat ~/.config/rosdistro/config.yaml; rosdep db | grep catkin
 RUN . /opt/ros/melodic/setup.sh; rosdep install --from-paths /home/ubuntu/ros_ws/src/bacchus_lcas/bacchus_gazebo  -y
 RUN . /opt/ros/melodic/setup.sh; rosdep install --from-paths /home/ubuntu/ros_ws/src/bacchus_lcas/bacchus_move_base  -y
 RUN . /opt/ros/melodic/setup.sh; rosdep install --from-paths /home/ubuntu/ros_ws/src/bacchus_lcas/bacchus_slam  -y
